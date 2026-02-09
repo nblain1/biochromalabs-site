@@ -13,10 +13,10 @@ import { testimonials } from '../data/siteData';
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {testimonials.map((testimonial) => (
-        <div class="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-orange-500 transition-all transform hover:scale-105">
+        <div class="bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-[#4db848] transition-all transform hover:scale-105">
           <div class="flex mb-4">
             {[...Array(testimonial.rating)].map((_, index) => (
-              <i class="ri-star-fill text-orange-500 text-xl"></i>
+              <i class="ri-star-fill text-[#4db848] text-xl"></i>
             ))}
           </div>
           <p class="text-gray-300 leading-relaxed mb-6">"{testimonial.content}"</p>
