@@ -1,83 +1,118 @@
 export const siteData = {
-  name: "BioChroma Analytical Labs",
-  tagline: "Analytical clarity for regulated science",
+  name: "BioChroma Analytical Labs LLC",
+  tagline: "The Color of Life",
   description:
-    "BioChroma Analytical Labs delivers defensible analytical testing, method validation, and stability programs for regulated products.",
-  address: "500 Research Parkway, Suite 200, Cambridge, MA 02139",
-  phone: "+1 (555) 214-9010",
+    "Based in the DFW metroplex in the heart of Texas, BioChroma Analytical Labs LLC fills technical gaps in new product development through analytical testing, consulting, and quality-focused support.",
+  phone: "(972) 454-9166",
   email: "info@biochromalabs.com",
-  social: {
-    linkedin: "https://www.linkedin.com",
-  },
+  social: {},
 };
 
-export const socialLinks = [{ name: "linkedin", icon: "ri-linkedin-fill", label: "LinkedIn" }];
+export const socialLinks = [];
 
 export const navigation = [
   { name: "Home", href: "/" },
-  { name: "Capabilities", href: "/services" },
-  { name: "Quality", href: "/about" },
+  { name: "Capabilities", href: "/capabilities" },
+  { name: "Quality", href: "/quality" },
   { name: "Contact", href: "/contact" },
 ];
 
 export const heroStats = [
-  { number: "20+", label: "Validated methods", note: "Across chemistry + microbiology" },
-  { number: "48h", label: "Status cadence", note: "Defined project updates" },
-  { number: "100%", label: "Chain of custody", note: "Documented receipt to release" },
+  { number: "ISO 17025", label: "Quality system experience", note: "Expertise in regulated testing programs." },
+  {
+    number: "Compendia methods",
+    label: "USP • AOAC • FDA BAM • USDA",
+    note: "Microbiological and chemical testing.",
+  },
+  {
+    number: "End-to-end support",
+    label: "Inception to marketplace",
+    note: "Analytical testing, consulting, and quality guidance.",
+  },
 ];
 
 export const capabilityHighlights = [
   {
-    title: "Analytical chemistry",
-    description: "Assay, impurities, and compositional analysis using qualified instrumentation.",
-    icon: "ri-flask-line",
-    bullets: ["HPLC/UPLC", "GC & residuals", "Spectroscopy"],
-  },
-  {
     title: "Microbiology",
-    description: "Bioburden, sterility, and environmental monitoring for regulated manufacturing.",
+    description: "Compendia microbiological testing to support shelf life, quality, and safety decisions.",
     icon: "ri-bug-line",
-    bullets: ["Bioburden & endotoxin", "EM programs", "Micro ID"],
+    bullets: ["Shelf life studies", "Pathogenic bacteria", "Preservative efficacy", "Environmental monitoring"],
   },
   {
-    title: "Stability programs",
-    description: "Protocol design, pulls, and trend reporting with qualified chambers.",
+    title: "Chemistry",
+    description: "Chemical testing using compendia methods for raw materials and active ingredients.",
+    icon: "ri-flask-line",
+    bullets: ["Raw material ID", "Active ingredient assay", "Nutritional analysis", "Allergen testing"],
+  },
+  {
+    title: "Stability",
+    description: "Stability studies designed to monitor performance across storage conditions.",
     icon: "ri-timer-line",
-    bullets: ["Protocol authoring", "Stability pulls", "Trend analysis"],
+    bullets: ["Real time", "Accelerated", "Stress", "Forced degradation"],
   },
   {
-    title: "Method development",
-    description: "Development, transfer, and validation aligned to regulatory expectations.",
-    icon: "ri-file-list-3-line",
-    bullets: ["Transfer packages", "Validation plans", "Documentation"],
+    title: "Laboratory studies",
+    description: "Functional studies to demonstrate product performance outside regulatory GMPs.",
+    icon: "ri-test-tube-line",
+    bullets: ["In vitro bioavailability", "Skin permeability", "Enzyme assays", "Microbial kill studies"],
+  },
+  {
+    title: "Consulting",
+    description: "Guidance on manufacturing, packaging, and quality or regulatory planning.",
+    icon: "ri-lightbulb-flash-line",
+    bullets: [
+      "Ingredient stability advice",
+      "Packaging & closures",
+      "Contract manufacturer selection",
+      "Quality & regulatory advice",
+    ],
+  },
+  {
+    title: "Product development",
+    description: "Support from concept through launch with R&D, formulation, and scale-up planning.",
+    icon: "ri-rocket-2-line",
+    bullets: [
+      "Skin/body/hair care",
+      "Dietary supplement development",
+      "Prototype formulation",
+      "Scale-up support",
+    ],
   },
 ];
 
 export const industries = [
-  "Pharmaceuticals",
-  "Medical devices",
-  "Nutraceuticals",
+  "Cosmetics",
+  "Skin care",
+  "Topical & oral OTCs",
   "Food & beverage",
-  "Biotech R&D",
-  "Cosmeceuticals",
+  "Dietary supplements",
+  "Household cleaners",
 ];
 
 export const processSteps = [
   {
-    title: "Scope + feasibility",
-    description: "Align on sample types, methods, regulatory expectations, and timing constraints.",
+    title: "Discovery",
+    description: "Client-driven ideas shaped by market trends, buyer requests, and competitive insights.",
   },
   {
-    title: "Sample intake",
-    description: "Documented receipt, accessioning, and chain-of-custody controls.",
+    title: "Screening",
+    description: "Consulting on technical merits, regulatory requirements, and early manufacturing plans.",
   },
   {
-    title: "Execution + review",
-    description: "Testing run by qualified analysts with independent data review checkpoints.",
+    title: "Feasibility assessment",
+    description: "Guidance on ingredient pricing, packaging choices, and logistics to define scope.",
   },
   {
-    title: "Reporting",
-    description: "Audit-ready reports delivered with clear tables, methods, and sign-off.",
+    title: "Development",
+    description: "Ingredient research, prototype formulation, and planning for scale-up production.",
+  },
+  {
+    title: "Testing",
+    description: "Chemical ID, stability, organoleptic, contamination, and active ingredient assays.",
+  },
+  {
+    title: "Launch",
+    description: "Support as products move into distribution pipelines and market activation.",
   },
 ];
 
@@ -173,34 +208,28 @@ export const testimonials = [
 
 export const faqs = [
   {
-    question: "What sample types do you accept?",
+    question: "Where is BioChroma Analytical Labs LLC based?",
     answer:
-      "We support raw materials, intermediates, finished goods, and environmental samples. We confirm suitability during scoping.",
+      "We are based out of the DFW metroplex in the heart of Texas.",
   },
   {
-    question: "How fast is turnaround?",
+    question: "What products do you support?",
     answer:
-      "Turnaround is defined in the scope. We provide confirmed scheduling windows and 48-hour status updates.",
+      "We bring experience across cosmetics, skin care, topical and oral OTCs, food, beverages, dietary supplements, and household cleaners.",
   },
   {
-    question: "Can you support method validation?",
+    question: "What testing areas are available?",
     answer:
-      "Yes. We build validation plans aligned to your regulatory pathway and provide complete documentation.",
+      "We provide microbiological and chemical testing using compendia methods, plus stability and laboratory studies to support product performance.",
   },
   {
-    question: "How are reports delivered?",
+    question: "How do you support product development?",
     answer:
-      "Reports are delivered electronically with method references, data tables, and reviewer sign-off.",
+      "We assist through discovery, screening, feasibility, development, testing, and launch with consulting and technical guidance.",
   },
 ];
 
 export const contactInfo = [
-  {
-    icon: "ri-map-pin-line",
-    title: "Address",
-    content: siteData.address,
-    link: null,
-  },
   {
     icon: "ri-phone-line",
     title: "Phone",
@@ -212,12 +241,6 @@ export const contactInfo = [
     title: "Email",
     content: siteData.email,
     link: `mailto:${siteData.email}`,
-  },
-  {
-    icon: "ri-time-line",
-    title: "Hours",
-    content: ["Monday - Friday: 8:00 AM - 6:00 PM", "Sample receiving by appointment"],
-    link: null,
   },
 ];
 
