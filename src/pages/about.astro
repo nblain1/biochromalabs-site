@@ -51,12 +51,12 @@ import { siteData, teamMembers, history } from "../data/siteData";
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <div
-          class="bg-slate-800 p-8 rounded-xl border border-slate-700 text-center hover:border-orange-500 transition-all"
+          class="bg-slate-800 p-8 rounded-xl border border-slate-700 text-center hover:border-[#4db848] transition-all"
         >
           <div
-            class="w-20 h-20 bg-orange-500/10 rounded-lg flex items-center justify-center mx-auto mb-6"
+            class="w-20 h-20 bg-[#4db848]/10 rounded-lg flex items-center justify-center mx-auto mb-6"
           >
-            <i class="ri-shield-check-line text-4xl text-orange-500"></i>
+            <i class="ri-shield-check-line text-4xl text-[#4db848]"></i>
           </div>
           <h3 class="text-2xl font-bold text-white mb-3">Integrity</h3>
           <p class="text-gray-400 leading-relaxed">
@@ -64,12 +64,12 @@ import { siteData, teamMembers, history } from "../data/siteData";
           </p>
         </div>
         <div
-          class="bg-slate-800 p-8 rounded-xl border border-slate-700 text-center hover:border-orange-500 transition-all"
+          class="bg-slate-800 p-8 rounded-xl border border-slate-700 text-center hover:border-[#4db848] transition-all"
         >
           <div
-            class="w-20 h-20 bg-orange-500/10 rounded-lg flex items-center justify-center mx-auto mb-6"
+            class="w-20 h-20 bg-[#4db848]/10 rounded-lg flex items-center justify-center mx-auto mb-6"
           >
-            <i class="ri-flask-line text-4xl text-orange-500"></i>
+            <i class="ri-flask-line text-4xl text-[#4db848]"></i>
           </div>
           <h3 class="text-2xl font-bold text-white mb-3">Technical rigor</h3>
           <p class="text-gray-400 leading-relaxed">
@@ -77,12 +77,12 @@ import { siteData, teamMembers, history } from "../data/siteData";
           </p>
         </div>
         <div
-          class="bg-slate-800 p-8 rounded-xl border border-slate-700 text-center hover:border-orange-500 transition-all"
+          class="bg-slate-800 p-8 rounded-xl border border-slate-700 text-center hover:border-[#4db848] transition-all"
         >
           <div
-            class="w-20 h-20 bg-orange-500/10 rounded-lg flex items-center justify-center mx-auto mb-6"
+            class="w-20 h-20 bg-[#4db848]/10 rounded-lg flex items-center justify-center mx-auto mb-6"
           >
-            <i class="ri-hand-heart-line text-4xl text-orange-500"></i>
+            <i class="ri-hand-heart-line text-4xl text-[#4db848]"></i>
           </div>
           <h3 class="text-2xl font-bold text-white mb-3">Partnership</h3>
           <p class="text-gray-400 leading-relaxed">
@@ -103,7 +103,7 @@ import { siteData, teamMembers, history } from "../data/siteData";
         <div class="relative">
           <!-- Timeline Line -->
           <div
-            class="absolute left-8 top-0 bottom-0 w-0.5 bg-orange-500/30 hidden md:block"
+            class="absolute left-8 top-0 bottom-0 w-0.5 bg-[#264177]/40 hidden md:block"
           >
           </div>
 
@@ -112,15 +112,15 @@ import { siteData, teamMembers, history } from "../data/siteData";
               history.map((milestone) => (
                 <div class="relative flex items-start gap-6">
                   <div class="hidden md:block shrink-0">
-                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center border-4 border-slate-900">
+                    <div class="w-16 h-16 bg-[#264177] rounded-full flex items-center justify-center border-4 border-slate-900">
                       <span class="text-white font-bold text-sm">
                         {milestone.year}
                       </span>
                     </div>
                   </div>
-                  <div class="flex-1 bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-orange-500 transition-all">
+                  <div class="flex-1 bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-[#4db848] transition-all">
                     <div class="md:hidden mb-2">
-                      <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      <span class="bg-[#264177] text-white px-3 py-1 rounded-full text-sm font-bold">
                         {milestone.year}
                       </span>
                     </div>
@@ -160,9 +160,9 @@ import { siteData, teamMembers, history } from "../data/siteData";
               className = "md:col-start-2 lg:col-start-4";
             }
             return (
-              <div class={`bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-orange-500 transition-all transform hover:scale-105 md:col-span-2 ${className}`}>
+              <div class={`bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-[#4db848] transition-all transform hover:scale-105 md:col-span-2 ${className}`}>
                 <div class="text-center mb-6">
-                  <div class="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden border-4 border-orange-500/20">
+                  <div class="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden border-4 border-[#4db848]/20">
                     <Image
                       src={member.image}
                       alt={`${member.name} - ${member.role}`}
@@ -175,7 +175,7 @@ import { siteData, teamMembers, history } from "../data/siteData";
                   <h3 class="text-xl font-bold text-white mb-2">
                     {member.name}
                   </h3>
-                  <p class="text-orange-500 mb-1 font-semibold">
+                  <p class="text-[#4db848] mb-1 font-semibold">
                     {member.role}
                   </p>
                   <p class="text-gray-400 text-sm mb-3">
