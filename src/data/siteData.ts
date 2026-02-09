@@ -50,8 +50,6 @@ export const contactInfo = [
 export const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Classes", href: "/classes" },
-  { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -484,4 +482,3 @@ export const paymentOptions = {
   guarantee: "7-day money-back guarantee on all memberships",
   trial: "Free 7-day trial available for new members",
 };
-
