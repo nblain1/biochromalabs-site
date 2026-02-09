@@ -1,44 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import Statistics from '../components/Statistics.astro';
 import Features from '../components/Features.astro';
-import Facilities from '../components/Facilities.astro';
-import Classes from '../components/Classes.astro';
-import ClassSchedule from '../components/ClassSchedule.astro';
-import PricingPlans from '../components/PricingPlans.astro';
-import SuccessStories from '../components/SuccessStories.astro';
-import Testimonials from '../components/Testimonials.astro';
-import FAQ from '../components/FAQ.astro';
+import Services from '../components/Classes.astro';
 import { siteData } from '../data/siteData';
+
+const steps = [
+  { title: "Scope", description: "Define tests, timelines, and reporting needs." },
+  { title: "Receive", description: "Sample intake with documented chain of custody." },
+  { title: "Test", description: "Analytical execution with quality review." },
+  { title: "Report", description: "Clear, audit-ready results delivered securely." },
+];
 ---
 
 <Layout title={`${siteData.name} - ${siteData.tagline}`} description={siteData.description}>
   <Hero />
-  <Statistics />
   <Features />
-  <Facilities />
-  <Classes />
-  <ClassSchedule />
-  <PricingPlans />
-  <SuccessStories />
-  <Testimonials />
-  <FAQ />
+  <Services />
+
+  <!-- How It Works -->
+  <section class="py-20 bg-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">How it works</h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          A streamlined workflow that keeps projects on track.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        {steps.map((step, index) => (
+          <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 text-center">
+            <div class="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="text-orange-500 font-bold">{index + 1}</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">{step.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
   
   <!-- CTA Section -->
   <section class="py-20 bg-linear-to-r from-orange-500 to-orange-600">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-        Ready to Transform Your Life?
+        Ready to scope your testing?
       </h2>
       <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Join hundreds of members who are already on their fitness journey
+        Tell us about your samples and timelines. We'll respond with a clear plan.
       </p>
       <a
         href="/contact"
         class="inline-flex items-center justify-center gap-3 bg-white text-orange-500 hover:bg-slate-100 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
       >
-        Get Started Today
+        Request a Quote
         <i class="ri-arrow-right-line"></i>
       </a>
     </div>
