@@ -26,18 +26,18 @@ import {
           Trusted analytical programs
         </div>
         <h1 class="text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
-          Analytical clarity for regulated products and critical decisions.
+          BioChroma Analytical Labs LLC bridges technical gaps in product development.
         </h1>
         <p class="text-base text-slate-300 sm:text-lg">
-          BioChroma Analytical Labs partners with quality, regulatory, and R&amp;D teams to deliver defensible data,
-          compliant documentation, and transparent reporting across chemistry, microbiology, and stability programs.
+          Based in the DFW metroplex in the heart of Texas, we provide analytical testing, consulting, and quality or
+          regulatory support to guide products from inception to the marketplace.
         </p>
         <div class="flex flex-col gap-3 sm:flex-row">
           <a class="btn-primary" href="/contact">
             Start a project
             <i class="ri-arrow-right-up-line"></i>
           </a>
-          <a class="btn-secondary" href="/services">
+          <a class="btn-secondary" href="/capabilities">
             View capabilities
             <i class="ri-arrow-right-line"></i>
           </a>
@@ -59,9 +59,9 @@ import {
           />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
           <div class="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-slate-950/70 p-5">
-            <p class="text-sm text-white font-semibold">Regulatory-ready documentation</p>
+            <p class="text-sm text-white font-semibold">End-to-end product support</p>
             <p class="text-xs text-slate-300 mt-2">
-              Chain-of-custody tracking, validated methods, and independent data review.
+              Analytical testing, consulting, and quality guidance from concept to market.
             </p>
           </div>
         </div>
@@ -73,16 +73,17 @@ import {
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <SectionIntro
         eyebrow="Capabilities"
-        title="Complete laboratory coverage, built for regulated delivery"
-        description="Our lab teams deliver chemistry, microbiology, and stability support with a single quality system and dedicated program management."
+        title="Six capability areas that support product quality from concept to scale"
+        description="We provide microbiology, chemistry, stability, laboratory studies, consulting, and product development support tailored to regulated consumer products."
       />
-      <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {capabilityHighlights.map((capability) => (
           <FeatureCard
             icon={capability.icon}
             title={capability.title}
             description={capability.description}
             bullets={capability.bullets}
+            href="/capabilities"
           />
         ))}
       </div>
@@ -94,14 +95,14 @@ import {
       <SectionIntro
         eyebrow="Who we support"
         title="Programs tailored to the teams that move regulated science forward"
-        description="We partner with regulated manufacturers and R&amp;D teams that need fast, accurate decisions without compromising compliance."
+        description="Our teams bring experience across R&amp;D, formulations, scale-up, testing, and quality support for diverse consumer products."
       />
       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {industries.map((industry) => (
-          <div class="card-surface flex items-center justify-between">
+          <a class="card-surface flex items-center justify-between hover:border-emerald-400/50" href="/capabilities">
             <span class="text-sm font-semibold text-white">{industry}</span>
             <i class="ri-arrow-right-up-line text-emerald-300"></i>
-          </div>
+          </a>
         ))}
       </div>
     </div>
@@ -111,10 +112,10 @@ import {
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <SectionIntro
         eyebrow="Process"
-        title="Predictable delivery from scope to report"
-        description="Clear scoping, documented intake, and defined reporting cadence keep every project on track."
+        title="Product development stages from discovery to launch"
+        description="We align consulting, testing, and formulation support to match each stage of the product journey."
       />
-      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {processSteps.map((step, index) => (
           <ProcessStep index={index + 1} title={step.title} description={step.description} />
         ))}
@@ -149,8 +150,8 @@ import {
         <div>
           <SectionIntro
             eyebrow="FAQ"
-            title="Fast answers for faster scoping"
-            description="Have questions? We keep our intake process straightforward and transparent."
+            title="Quick answers about BioChroma Analytical Labs LLC"
+            description="Learn how our testing, consulting, and product development support align to your goals."
           />
           <div class="mt-8">
             <FaqList items={faqs} />
@@ -159,18 +160,18 @@ import {
         <div class="space-y-6">
           <IconCard
             icon="ri-shield-check-line"
-            title="Quality-first workflows"
-            description="Every project is executed under controlled procedures with independent data review."
+            title="Quality & regulatory advice"
+            description="Guidance on CFR expectations, quality program setup, and label do’s and don’ts."
           />
           <IconCard
-            icon="ri-time-line"
-            title="Status updates you can plan around"
-            description="We provide 48-hour cadence updates so stakeholders stay aligned."
+            icon="ri-store-2-line"
+            title="Manufacturing & packaging guidance"
+            description="Support for contract manufacturer selection, inspections, and container closure decisions."
           />
           <IconCard
-            icon="ri-file-paper-2-line"
-            title="Audit-ready reporting"
-            description="Clear tables, method references, and reviewer sign-off in every report."
+            icon="ri-flask-line"
+            title="Ingredient stability insight"
+            description="Advice on ingredient stability, formulation, and processing conditions that impact shelf life."
           />
         </div>
       </div>
@@ -185,7 +186,7 @@ import {
         primaryLabel="Request a quote"
         primaryHref="/contact"
         secondaryLabel="Review capabilities"
-        secondaryHref="/services"
+        secondaryHref="/capabilities"
       />
     </div>
   </section>
