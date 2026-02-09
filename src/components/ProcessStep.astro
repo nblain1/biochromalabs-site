@@ -8,12 +8,10 @@ interface Props {
 const { index, title, description } = Astro.props;
 ---
 
-<div class="card-surface flex flex-col gap-3">
-  <div class="flex items-center gap-3">
-    <span class="h-9 w-9 rounded-full bg-emerald-500/20 text-emerald-200 flex items-center justify-center text-sm font-semibold">
-      {index}
-    </span>
+<div class="process-step motion-fade-up">
+  <span class="process-node">{index}</span>
+  <div class="process-body">
     <h3 class="text-lg font-semibold text-white">{title}</h3>
+    <p class="text-sm text-slate-300">{description}</p>
   </div>
-  <p class="text-sm text-slate-300">{description}</p>
 </div>
