@@ -15,7 +15,7 @@ import { siteData, navigation, socialLinks, contactInfo } from '../data/siteData
               href={siteData.social[social.name as keyof typeof siteData.social]}
               target="_blank"
               rel="noopener noreferrer"
-              class="w-10 h-10 bg-slate-800 hover:bg-orange-500 text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all"
+              class="w-10 h-10 bg-slate-800 hover:bg-[#4db848] text-gray-400 hover:text-white rounded-lg flex items-center justify-center transition-all"
               aria-label={social.label}
             >
               <i class={`${social.icon} text-xl`}></i>
@@ -32,7 +32,7 @@ import { siteData, navigation, socialLinks, contactInfo } from '../data/siteData
             <li>
               <a
                 href={item.href}
-                class="text-gray-400 hover:text-orange-500 transition-colors"
+                class="text-gray-400 hover:text-[#4db848] transition-colors"
               >
                 {item.name}
               </a>
@@ -47,9 +47,9 @@ import { siteData, navigation, socialLinks, contactInfo } from '../data/siteData
         <ul class="space-y-4 text-gray-400">
           {contactInfo.slice(0, 3).map((info) => (
             <li class="flex items-start gap-3">
-              <i class={`${info.icon} text-orange-500 text-xl mt-1 shrink-0`}></i>
+              <i class={`${info.icon} text-[#4db848] text-xl mt-1 shrink-0`}></i>
               {info.link ? (
-                <a href={info.link} class="hover:text-orange-500 transition-colors leading-relaxed">
+                <a href={info.link} class="hover:text-[#4db848] transition-colors leading-relaxed">
                   {info.content}
                 </a>
               ) : (
@@ -68,11 +68,11 @@ import { siteData, navigation, socialLinks, contactInfo } from '../data/siteData
           <input
             type="email"
             placeholder="Your email"
-            class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-orange-500"
+            class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#4db848]"
           />
           <button
             type="submit"
-            class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg font-semibold transition-colors"
+            class="bg-[#4db848] hover:bg-[#3ea942] text-white px-4 py-2 rounded-lg font-semibold transition-colors"
           >
             Subscribe
           </button>
