@@ -1,0 +1,19 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+
+<div class="card-surface flex flex-col gap-3">
+  <span class="h-12 w-12 rounded-2xl bg-slate-800 text-emerald-300 flex items-center justify-center">
+    <i class={`${icon} text-2xl`}></i>
+  </span>
+  <div>
+    <h3 class="text-lg font-semibold text-white">{title}</h3>
+    <p class="text-sm text-slate-300 mt-2">{description}</p>
+  </div>
+</div>

@@ -1,7 +1,8 @@
 export const siteData = {
   name: "BioChroma Analytical Labs",
-  tagline: "Analytical testing for regulated products",
-  description: "BioChroma Analytical Labs provides quality-focused analytical testing, method development, and stability support for regulated industries.",
+  tagline: "Analytical clarity for regulated science",
+  description:
+    "BioChroma Analytical Labs delivers defensible analytical testing, method validation, and stability programs for regulated products.",
   address: "500 Research Parkway, Suite 200, Cambridge, MA 02139",
   phone: "+1 (555) 214-9010",
   email: "info@biochromalabs.com",
@@ -10,8 +11,187 @@ export const siteData = {
   },
 };
 
-export const socialLinks = [
-  { name: "linkedin", icon: "ri-linkedin-fill", label: "LinkedIn" },
+export const socialLinks = [{ name: "linkedin", icon: "ri-linkedin-fill", label: "LinkedIn" }];
+
+export const navigation = [
+  { name: "Home", href: "/" },
+  { name: "Capabilities", href: "/services" },
+  { name: "Quality", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
+
+export const heroStats = [
+  { number: "20+", label: "Validated methods", note: "Across chemistry + microbiology" },
+  { number: "48h", label: "Status cadence", note: "Defined project updates" },
+  { number: "100%", label: "Chain of custody", note: "Documented receipt to release" },
+];
+
+export const capabilityHighlights = [
+  {
+    title: "Analytical chemistry",
+    description: "Assay, impurities, and compositional analysis using qualified instrumentation.",
+    icon: "ri-flask-line",
+    bullets: ["HPLC/UPLC", "GC & residuals", "Spectroscopy"],
+  },
+  {
+    title: "Microbiology",
+    description: "Bioburden, sterility, and environmental monitoring for regulated manufacturing.",
+    icon: "ri-bug-line",
+    bullets: ["Bioburden & endotoxin", "EM programs", "Micro ID"],
+  },
+  {
+    title: "Stability programs",
+    description: "Protocol design, pulls, and trend reporting with qualified chambers.",
+    icon: "ri-timer-line",
+    bullets: ["Protocol authoring", "Stability pulls", "Trend analysis"],
+  },
+  {
+    title: "Method development",
+    description: "Development, transfer, and validation aligned to regulatory expectations.",
+    icon: "ri-file-list-3-line",
+    bullets: ["Transfer packages", "Validation plans", "Documentation"],
+  },
+];
+
+export const industries = [
+  "Pharmaceuticals",
+  "Medical devices",
+  "Nutraceuticals",
+  "Food & beverage",
+  "Biotech R&D",
+  "Cosmeceuticals",
+];
+
+export const processSteps = [
+  {
+    title: "Scope + feasibility",
+    description: "Align on sample types, methods, regulatory expectations, and timing constraints.",
+  },
+  {
+    title: "Sample intake",
+    description: "Documented receipt, accessioning, and chain-of-custody controls.",
+  },
+  {
+    title: "Execution + review",
+    description: "Testing run by qualified analysts with independent data review checkpoints.",
+  },
+  {
+    title: "Reporting",
+    description: "Audit-ready reports delivered with clear tables, methods, and sign-off.",
+  },
+];
+
+export const qualityCommitments = [
+  {
+    title: "Documented quality system",
+    description: "Controlled procedures, change management, and deviation tracking for every program.",
+    icon: "ri-shield-check-line",
+  },
+  {
+    title: "Data integrity focus",
+    description: "Independent review and traceable datasets with secure reporting workflows.",
+    icon: "ri-lock-line",
+  },
+  {
+    title: "Regulatory alignment",
+    description: "Fit-for-purpose validation plans mapped to client regulatory requirements.",
+    icon: "ri-git-merge-line",
+  },
+];
+
+export const serviceLines = [
+  {
+    title: "Analytical chemistry",
+    description: "Quantitative and qualitative analysis for regulated products and intermediates.",
+    services: [
+      "Assay + potency",
+      "Impurity profiling",
+      "Residual solvent testing",
+      "Spectroscopy",
+      "Raw material identification",
+    ],
+  },
+  {
+    title: "Microbiology",
+    description: "Risk-based microbiology programs designed for release and monitoring.",
+    services: [
+      "Bioburden & endotoxin",
+      "Sterility testing",
+      "Environmental monitoring",
+      "Microbial identification",
+      "Cleanroom support",
+    ],
+  },
+  {
+    title: "Stability",
+    description: "Stability programs that scale from pilot studies to commercial lifecycle support.",
+    services: ["Protocol design", "Stability pulls", "Trend analysis", "Storage monitoring"],
+  },
+  {
+    title: "Method development",
+    description: "Transfer-ready methods with full documentation and validation support.",
+    services: ["Method development", "Transfer packages", "Validation planning", "Tech transfer"],
+  },
+];
+
+export const serviceAssurance = [
+  {
+    title: "Dedicated project lead",
+    description: "Single point of contact for scheduling, updates, and deliverables.",
+    icon: "ri-user-star-line",
+  },
+  {
+    title: "Defined turnaround windows",
+    description: "Scoping includes scheduling windows and clear reporting cadence.",
+    icon: "ri-calendar-check-line",
+  },
+  {
+    title: "Regulatory-ready documentation",
+    description: "Reports structured for submissions, audits, and partner review.",
+    icon: "ri-file-paper-2-line",
+  },
+];
+
+export const testimonials = [
+  {
+    name: "Quality Director",
+    role: "Nutraceutical manufacturer",
+    content:
+      "BioChroma’s documentation and data review made our audit preparation far more efficient.",
+  },
+  {
+    name: "Regulatory Affairs Lead",
+    role: "Medical device company",
+    content: "Their method transfer support aligned perfectly with our submission timeline.",
+  },
+  {
+    name: "Operations Manager",
+    role: "Food producer",
+    content: "Clear communication and dependable data quality helped us scale our program quickly.",
+  },
+];
+
+export const faqs = [
+  {
+    question: "What sample types do you accept?",
+    answer:
+      "We support raw materials, intermediates, finished goods, and environmental samples. We confirm suitability during scoping.",
+  },
+  {
+    question: "How fast is turnaround?",
+    answer:
+      "Turnaround is defined in the scope. We provide confirmed scheduling windows and 48-hour status updates.",
+  },
+  {
+    question: "Can you support method validation?",
+    answer:
+      "Yes. We build validation plans aligned to your regulatory pathway and provide complete documentation.",
+  },
+  {
+    question: "How are reports delivered?",
+    answer:
+      "Reports are delivered electronically with method references, data tables, and reviewer sign-off.",
+  },
 ];
 
 export const contactInfo = [
@@ -41,264 +221,6 @@ export const contactInfo = [
   },
 ];
 
-export const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
-];
-
-export const features = [
-  {
-    title: "Quality systems",
-    description: "Documented procedures, controlled records, and review checkpoints for every project.",
-    icon: "ri-shield-check-line",
-  },
-  {
-    title: "Experienced analysts",
-    description: "Specialists in analytical chemistry, microbiology, and data review.",
-    icon: "ri-flask-line",
-  },
-  {
-    title: "Documented methods",
-    description: "Validated or fit-for-purpose methods with traceable results.",
-    icon: "ri-file-list-3-line",
-  },
-  {
-    title: "Secure reporting",
-    description: "Chain-of-custody handling with clear, audit-ready reports.",
-    icon: "ri-lock-line",
-  },
-];
-
-export const services = [
-  {
-    name: "Analytical chemistry",
-    description: "Assay, impurities, and compositional analysis with validated instrumentation.",
-  },
-  {
-    name: "Microbiology testing",
-    description: "Bioburden, environmental monitoring, and microbial identification support.",
-  },
-  {
-    name: "Contaminant screening",
-    description: "Targeted screening for residuals, metals, and contaminants of concern.",
-  },
-  {
-    name: "Method development",
-    description: "Method development, transfer, and validation aligned to regulatory needs.",
-  },
-  {
-    name: "Stability programs",
-    description: "Protocol design, stability testing, and trend reporting.",
-  },
-];
-
-export const pricingPlans = [
-  {
-    name: "Project-based",
-    price: "Scope-defined",
-    period: "",
-    features: [
-      "Single-method or single-product engagements",
-      "Defined timelines and deliverables",
-      "Standard reporting package",
-      "Dedicated project contact",
-    ],
-    popular: false,
-  },
-  {
-    name: "Program support",
-    price: "Retainer",
-    period: "",
-    features: [
-      "Multi-method program management",
-      "Priority scheduling windows",
-      "Stability and lifecycle support",
-      "Regular reporting cadence",
-    ],
-    popular: true,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    features: [
-      "Dedicated team and instrumentation",
-      "Customized quality agreements",
-      "Integrated data review",
-      "Strategic partnership planning",
-    ],
-    popular: false,
-  },
-];
-
-export const testimonials = [
-  {
-    name: "Quality Director",
-    role: "Nutraceutical manufacturer",
-    content: "BioChroma delivered clear, defensible results with timely communication throughout the project.",
-    rating: 5,
-  },
-  {
-    name: "Regulatory Affairs Lead",
-    role: "Medical device company",
-    content: "Their method transfer support and documentation aligned with our submission timeline.",
-    rating: 5,
-  },
-  {
-    name: "Operations Manager",
-    role: "Food producer",
-    content: "Consistent data quality and responsive analysts made it easy to scale our testing program.",
-    rating: 5,
-  },
-];
-
-export const facilities = [
-  {
-    title: "Analytical chemistry lab",
-    description: "HPLC, GC, and spectroscopy instrumentation for quantitative analysis.",
-    image: "https://images.unsplash.com/photo-1581091012184-5c7a6c4d8e9f?w=800&h=600&fit=crop&q=80",
-  },
-  {
-    title: "Microbiology suite",
-    description: "Controlled environments for culture work and microbial identification.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=800&h=600&fit=crop&q=80",
-  },
-  {
-    title: "Sample receiving",
-    description: "Documented intake, chain-of-custody, and secure storage.",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop&q=80",
-  },
-  {
-    title: "Stability chambers",
-    description: "Qualified chambers with continuous monitoring and data logging.",
-    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=600&fit=crop&q=80",
-  },
-  {
-    title: "Data review rooms",
-    description: "Independent review, QA oversight, and report finalization.",
-    image: "https://images.unsplash.com/photo-1581092919534-7f2ffae4c0c5?w=800&h=600&fit=crop&q=80",
-  },
-  {
-    title: "Metrology and calibration",
-    description: "Instrument calibration and performance verification workflows.",
-    image: "https://images.unsplash.com/photo-1581093448790-5d23a8f5f1c0?w=800&h=600&fit=crop&q=80",
-  },
-];
-
-export const faqs = [
-  {
-    question: "What sample types do you accept?",
-    answer: "We support raw materials, intermediates, finished products, and environmental samples. Contact us to confirm requirements.",
-  },
-  {
-    question: "How do you manage chain of custody?",
-    answer: "Every sample is logged at receipt, tracked through testing, and stored or disposed of per documented procedures.",
-  },
-  {
-    question: "Can you develop or validate methods?",
-    answer: "Yes. We provide method development, transfer, and validation aligned to regulatory expectations.",
-  },
-  {
-    question: "What is your typical turnaround time?",
-    answer: "Turnaround depends on method complexity. We confirm timelines during scoping and provide status updates.",
-  },
-  {
-    question: "Do you support stability studies?",
-    answer: "We offer protocol design, stability testing, and trend reporting with qualified chambers.",
-  },
-  {
-    question: "How are reports delivered?",
-    answer: "Reports are delivered electronically with clear data tables, method references, and reviewer sign-off.",
-  },
-];
-
-export const classSchedule = [
-  { time: "Sample intake", class: "Logging & accessioning", trainer: "Operations" },
-  { time: "Testing", class: "Analytical execution", trainer: "Laboratory" },
-  { time: "Review", class: "Data verification", trainer: "Quality" },
-  { time: "Reporting", class: "Final report delivery", trainer: "Project team" },
-];
-
-export const successStories = [
-  {
-    name: "Stability program scale-up",
-    age: "Device manufacturer",
-    duration: "12 months",
-    result: "Program expansion",
-    story: "Expanded stability testing across multiple SKUs with consistent data review and trend reporting.",
-    beforeImage: "https://images.unsplash.com/photo-1581091012184-5c7a6c4d8e9f?w=400&h=600&fit=crop&q=80",
-    afterImage: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=600&fit=crop&q=80",
-  },
-  {
-    name: "Method transfer",
-    age: "Pharma partner",
-    duration: "8 weeks",
-    result: "Validated method",
-    story: "Transferred and validated a complex assay with full documentation and training support.",
-    beforeImage: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=600&fit=crop&q=80",
-    afterImage: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=600&fit=crop&q=80",
-  },
-  {
-    name: "Contaminant screening",
-    age: "Food producer",
-    duration: "6 weeks",
-    result: "Risk mitigation",
-    story: "Implemented targeted screening program to support supplier qualification and compliance reporting.",
-    beforeImage: "https://images.unsplash.com/photo-1581092919534-7f2ffae4c0c5?w=400&h=600&fit=crop&q=80",
-    afterImage: "https://images.unsplash.com/photo-1581093448790-5d23a8f5f1c0?w=400&h=600&fit=crop&q=80",
-  },
-];
-
-export const statistics = [
-  { number: "20+", label: "Validated methods", icon: "ri-file-check-line" },
-  { number: "15", label: "Core analysts", icon: "ri-user-line" },
-  { number: "3", label: "Laboratory suites", icon: "ri-building-line" },
-  { number: "100%", label: "Documented chain of custody", icon: "ri-shield-check-line" },
-  { number: "48h", label: "Status updates", icon: "ri-timer-line" },
-  { number: "10+", label: "Years in operation", icon: "ri-award-line" },
-];
-
-export const fullSchedule = {
-  monday: [
-    { time: "8:00 AM", class: "Sample intake", trainer: "Operations" },
-    { time: "10:00 AM", class: "Analytical testing", trainer: "Chemistry" },
-    { time: "1:00 PM", class: "Microbiology testing", trainer: "Microbiology" },
-    { time: "3:00 PM", class: "Data review", trainer: "Quality" },
-  ],
-  tuesday: [
-    { time: "8:00 AM", class: "Sample intake", trainer: "Operations" },
-    { time: "10:00 AM", class: "Analytical testing", trainer: "Chemistry" },
-    { time: "1:00 PM", class: "Stability pulls", trainer: "Stability" },
-    { time: "3:00 PM", class: "Data review", trainer: "Quality" },
-  ],
-  wednesday: [
-    { time: "8:00 AM", class: "Sample intake", trainer: "Operations" },
-    { time: "10:00 AM", class: "Analytical testing", trainer: "Chemistry" },
-    { time: "1:00 PM", class: "Microbiology testing", trainer: "Microbiology" },
-    { time: "3:00 PM", class: "Reporting", trainer: "Project team" },
-  ],
-  thursday: [
-    { time: "8:00 AM", class: "Sample intake", trainer: "Operations" },
-    { time: "10:00 AM", class: "Analytical testing", trainer: "Chemistry" },
-    { time: "1:00 PM", class: "Method development", trainer: "Chemistry" },
-    { time: "3:00 PM", class: "Data review", trainer: "Quality" },
-  ],
-  friday: [
-    { time: "8:00 AM", class: "Sample intake", trainer: "Operations" },
-    { time: "10:00 AM", class: "Analytical testing", trainer: "Chemistry" },
-    { time: "1:00 PM", class: "Stability pulls", trainer: "Stability" },
-    { time: "3:00 PM", class: "Reporting", trainer: "Project team" },
-  ],
-  saturday: [
-    { time: "By appointment", class: "Sample receiving", trainer: "Operations" },
-  ],
-  sunday: [
-    { time: "Closed", class: "No routine testing", trainer: "" },
-  ],
-};
-
 export const teamMembers = [
   {
     name: "Dr. Maya Patel",
@@ -306,7 +228,7 @@ export const teamMembers = [
     specialization: "Analytical Chemistry & Quality Systems",
     experience: "12+ years",
     bio: "Maya oversees laboratory operations, method validation, and quality documentation to ensure defensible results.",
-    image: "https://images.unsplash.com/photo-1581091012184-5c7a6c4d8e9f?w=400&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1581091012184-5c7a6c4d8e9f?w=500&h=500&fit=crop&q=80",
     certifications: ["Ph.D. Chemistry", "Quality Systems Lead", "Method Validation"],
   },
   {
@@ -315,7 +237,7 @@ export const teamMembers = [
     specialization: "Microbiology & Environmental Monitoring",
     experience: "10+ years",
     bio: "Jordan leads microbiology testing programs with a focus on compliance and risk-based monitoring.",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=400&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=500&h=500&fit=crop&q=80",
     certifications: ["Microbiology Lead", "EM Program Design", "Sterility Testing"],
   },
   {
@@ -324,26 +246,8 @@ export const teamMembers = [
     specialization: "Method Development & Transfer",
     experience: "9+ years",
     bio: "Elena manages complex method development and transfer projects with a focus on regulatory readiness.",
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=500&h=500&fit=crop&q=80",
     certifications: ["Method Development", "Validation Planning", "Tech Transfer"],
-  },
-  {
-    name: "Samuel Kim",
-    role: "Quality Assurance",
-    specialization: "Data Review & Compliance",
-    experience: "8+ years",
-    bio: "Samuel leads independent data review and ensures reports meet quality and compliance expectations.",
-    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=400&h=400&fit=crop&q=80",
-    certifications: ["QA Lead", "Data Integrity", "Audit Readiness"],
-  },
-  {
-    name: "Renee Walker",
-    role: "Project Manager",
-    specialization: "Client Communications & Scheduling",
-    experience: "7+ years",
-    bio: "Renee coordinates timelines, delivers updates, and keeps testing programs on track.",
-    image: "https://images.unsplash.com/photo-1581092919534-7f2ffae4c0c5?w=400&h=400&fit=crop&q=80",
-    certifications: ["Project Management", "Client Services", "Program Planning"],
   },
 ];
 
@@ -354,14 +258,9 @@ export const history = [
     description: "BioChroma Analytical Labs launched to provide rigorous analytical testing for regulated products.",
   },
   {
-    year: "2016",
-    title: "Instrumentation Expansion",
-    description: "Added advanced chromatography and spectroscopy instrumentation to support new methods.",
-  },
-  {
-    year: "2019",
-    title: "Quality System Maturity",
-    description: "Formalized quality systems, documentation controls, and independent data review.",
+    year: "2018",
+    title: "Quality System Expansion",
+    description: "Formalized documentation controls, independent data review, and client reporting workflows.",
   },
   {
     year: "2021",
@@ -369,24 +268,8 @@ export const history = [
     description: "Opened a dedicated microbiology lab to support sterility and environmental programs.",
   },
   {
-    year: "2023",
-    title: "Stability Programs",
-    description: "Launched stability chamber capacity with integrated protocol design and reporting.",
-  },
-  {
     year: "2024",
-    title: "Client Partnerships",
-    description: "Expanded long-term partnerships with regulated manufacturers and R&D teams.",
+    title: "Stability Capacity",
+    description: "Expanded stability chamber capacity with integrated protocol design and reporting.",
   },
 ];
-
-export const paymentOptions = {
-  methods: ["ACH transfer", "Wire transfer", "Credit card"],
-  plans: [
-    { type: "Project billing", description: "Invoice by project milestone with defined deliverables." },
-    { type: "Program billing", description: "Monthly invoicing for ongoing testing programs." },
-    { type: "Enterprise", description: "Custom billing aligned to quality agreements and schedules." },
-  ],
-  guarantee: "Service-level commitments defined in project scope.",
-  trial: "Sample feasibility reviews available upon request.",
-};

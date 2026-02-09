@@ -1,205 +1,130 @@
 ---
-import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
-import { siteData, teamMembers, history } from "../data/siteData";
+import Layout from '../layouts/Layout.astro';
+import SectionIntro from '../components/SectionIntro.astro';
+import IconCard from '../components/IconCard.astro';
+import CTA from '../components/CTA.astro';
+import { siteData, qualityCommitments, history, teamMembers } from '../data/siteData';
 ---
 
 <Layout
-  title={`About Us - ${siteData.name}`}
-  description="Learn about our mission, quality mindset, and the teams we support"
+  title={`Quality - ${siteData.name}`}
+  description="Learn how our quality system, leadership, and documentation deliver confidence in every report."
 >
-  <!-- Hero Section -->
-  <section
-    class="pt-32 pb-20 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900"
-  >
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-          About {siteData.name}
-        </h1>
-        <p class="text-xl text-gray-300">
-          A professional analytical laboratory focused on quality systems, clear data, and dependable timelines.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mission Section -->
-  <section class="py-20 bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl font-bold text-white mb-8 text-center">
-          Our Mission
-        </h2>
-        <div class="prose prose-invert max-w-none">
-          <p class="text-xl text-gray-300 mb-6">
-            BioChroma Analytical Labs delivers defensible analytical data for regulated products. We focus on documented methods, disciplined workflows, and transparent reporting so teams can make decisions with confidence.
+  <section class="section-spacing pt-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <p class="text-xs uppercase tracking-[0.3em] text-emerald-300">Quality &amp; trust</p>
+          <h1 class="mt-4 text-4xl font-semibold text-white sm:text-5xl">
+            Built for compliance, designed for confidence.
+          </h1>
+          <p class="mt-4 text-base text-slate-300 sm:text-lg">
+            Our quality system ensures every method, sample, and report is traceable, reviewed, and ready for audit.
+            We focus on predictable delivery so your teams can make fast, defensible decisions.
           </p>
-          <p class="text-lg text-gray-400 mb-6">
-            We support quality, regulatory, and R&amp;D teams with services that scale from single-method projects to long-term testing programs. Every engagement is scoped for clarity, compliance, and predictable delivery.
-          </p>
+        </div>
+        <div class="card-surface space-y-4">
+          <p class="text-sm font-semibold text-white">Quality system highlights</p>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <i class="ri-shield-check-line text-emerald-300 mt-0.5"></i>
+              Controlled procedures with documented change management.
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="ri-lock-line text-emerald-300 mt-0.5"></i>
+              Data integrity controls and secure reporting workflows.
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="ri-user-star-line text-emerald-300 mt-0.5"></i>
+              Dedicated project leads for consistent communication.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Values Section -->
-  <section class="py-20 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-white mb-12 text-center">
-        Our Quality Mindset
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <div
-          class="bg-slate-800 p-8 rounded-xl border border-slate-700 text-center hover:border-[#4db848] transition-all"
-        >
-          <div
-            class="w-20 h-20 bg-[#4db848]/10 rounded-lg flex items-center justify-center mx-auto mb-6"
-          >
-            <i class="ri-shield-check-line text-4xl text-[#4db848]"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Integrity</h3>
-          <p class="text-gray-400 leading-relaxed">
-            Data integrity and documented processes guide every test and report.
-          </p>
-        </div>
-        <div
-          class="bg-slate-800 p-8 rounded-xl border border-slate-700 text-center hover:border-[#4db848] transition-all"
-        >
-          <div
-            class="w-20 h-20 bg-[#4db848]/10 rounded-lg flex items-center justify-center mx-auto mb-6"
-          >
-            <i class="ri-flask-line text-4xl text-[#4db848]"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Technical rigor</h3>
-          <p class="text-gray-400 leading-relaxed">
-            Methods are developed, validated, and reviewed with precision and care.
-          </p>
-        </div>
-        <div
-          class="bg-slate-800 p-8 rounded-xl border border-slate-700 text-center hover:border-[#4db848] transition-all"
-        >
-          <div
-            class="w-20 h-20 bg-[#4db848]/10 rounded-lg flex items-center justify-center mx-auto mb-6"
-          >
-            <i class="ri-hand-heart-line text-4xl text-[#4db848]"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-white mb-3">Partnership</h3>
-          <p class="text-gray-400 leading-relaxed">
-            We collaborate closely with client teams to align on scope, timing, and reporting.
-          </p>
-        </div>
+  <section class="section-spacing bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Commitments"
+        title="Operational guardrails for regulated programs"
+        description="We combine process discipline with experienced analysts to keep data quality high and timelines clear."
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {qualityCommitments.map((item) => (
+          <IconCard icon={item.icon} title={item.title} description={item.description} />
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- History/Timeline Section -->
-  <section class="py-20 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-white mb-12 text-center">
-        Our Journey
-      </h2>
-      <div class="max-w-4xl mx-auto">
-        <div class="relative">
-          <!-- Timeline Line -->
-          <div
-            class="absolute left-8 top-0 bottom-0 w-0.5 bg-[#264177]/40 hidden md:block"
-          >
-          </div>
-
-          <div class="space-y-12">
-            {
-              history.map((milestone) => (
-                <div class="relative flex items-start gap-6">
-                  <div class="hidden md:block shrink-0">
-                    <div class="w-16 h-16 bg-[#264177] rounded-full flex items-center justify-center border-4 border-slate-900">
-                      <span class="text-white font-bold text-sm">
-                        {milestone.year}
-                      </span>
-                    </div>
-                  </div>
-                  <div class="flex-1 bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-[#4db848] transition-all">
-                    <div class="md:hidden mb-2">
-                      <span class="bg-[#264177] text-white px-3 py-1 rounded-full text-sm font-bold">
-                        {milestone.year}
-                      </span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">
-                      {milestone.title}
-                    </h3>
-                    <p class="text-gray-300 leading-relaxed">
-                      {milestone.description}
-                    </p>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team Section -->
-  <section class="py-20 bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-white mb-4 text-center">
-        Scientific Leadership
-      </h2>
-      <p class="text-xl text-gray-300 mb-12 text-center max-w-2xl mx-auto">
-        Meet the experts who guide method development, testing execution, and quality review.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-8">
-        {
-          teamMembers.map((member, index) => {
-            let className = "";
-            if (index + 1 == 4) {
-              className = "lg:col-start-2";
-            }
-            else if (index + 1 == 5) {
-              className = "md:col-start-2 lg:col-start-4";
-            }
-            return (
-              <div class={`bg-slate-900 p-8 rounded-xl border border-slate-700 hover:border-[#4db848] transition-all transform hover:scale-105 md:col-span-2 ${className}`}>
-                <div class="text-center mb-6">
-                  <div class="w-40 h-40 rounded-full mx-auto mb-4 overflow-hidden border-4 border-[#4db848]/20">
-                    <Image
-                      src={member.image}
-                      alt={`${member.name} - ${member.role}`}
-                      width={400}
-                      height={400}
-                      class="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <h3 class="text-xl font-bold text-white mb-2">
-                    {member.name}
-                  </h3>
-                  <p class="text-[#4db848] mb-1 font-semibold">
-                    {member.role}
-                  </p>
-                  <p class="text-gray-400 text-sm mb-3">
-                    {member.specialization}
-                  </p>
-                  <p class="text-gray-500 text-xs">
-                    {member.experience} experience
-                  </p>
-                </div>
-                <p class="text-gray-300 text-sm leading-relaxed mb-4 text-center">
-                  {member.bio}
-                </p>
-                <div class="flex flex-wrap gap-2 justify-center">
-                  {member.certifications.map((cert) => (
-                    <span class="bg-slate-800 text-gray-300 text-xs px-3 py-1 rounded-full border border-slate-700">
-                      {cert}
-                    </span>
-                  ))}
-                </div>
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Leadership"
+        title="Scientific leadership that supports every engagement"
+        description="Meet the experts responsible for method development, execution, and QA review."
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {teamMembers.map((member) => (
+          <article class="card-surface flex flex-col gap-4">
+            <div class="flex items-center gap-4">
+              <img
+                src={member.image}
+                alt={`${member.name} - ${member.role}`}
+                class="h-16 w-16 rounded-2xl object-cover"
+                loading="lazy"
+              />
+              <div>
+                <h3 class="text-lg font-semibold text-white">{member.name}</h3>
+                <p class="text-sm text-emerald-200">{member.role}</p>
+                <p class="text-xs text-slate-400">{member.specialization}</p>
               </div>
-            );
-          })
-        }
+            </div>
+            <p class="text-sm text-slate-300">{member.bio}</p>
+            <div class="flex flex-wrap gap-2">
+              {member.certifications.map((cert) => (
+                <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-200">
+                  {cert}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
+    </div>
+  </section>
+
+  <section class="section-spacing bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Timeline"
+        title="A laboratory built for long-term partnerships"
+        description="We have expanded capabilities and quality systems alongside our clients."
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {history.map((milestone) => (
+          <div class="card-surface">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">{milestone.year}</p>
+            <h3 class="mt-3 text-lg font-semibold text-white">{milestone.title}</h3>
+            <p class="mt-2 text-sm text-slate-300">{milestone.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <CTA
+        title="Want to align on quality expectations?"
+        description="We can provide quality agreements, documentation packages, and audit-ready reports built for your regulatory pathway."
+        primaryLabel="Talk to our team"
+        primaryHref="/contact"
+        secondaryLabel="Review capabilities"
+        secondaryHref="/services"
+      />
     </div>
   </section>
 </Layout>
