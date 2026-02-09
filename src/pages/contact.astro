@@ -1,194 +1,108 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import SectionIntro from '../components/SectionIntro.astro';
+import IconCard from '../components/IconCard.astro';
+import ProcessStep from '../components/ProcessStep.astro';
 import ContactForm from '../components/ContactForm.astro';
-import { siteData, socialLinks, contactInfo } from '../data/siteData';
-import MapImage from "@assets/lab-map.svg"
+import CTA from '../components/CTA.astro';
+import { siteData, socialLinks, contactInfo, processSteps } from '../data/siteData';
 ---
 
-<Layout title={`Contact Us - ${siteData.name}`} description="Request analytical testing or method support">
-  <!-- Hero Section -->
-  <section class="pt-32 pb-20 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto">
-        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Contact Us</h1>
-        <p class="text-xl text-gray-300">
-          Tell us about your testing needs and timelines. We'll follow up with next steps.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Info & Form -->
-  <section class="py-20 bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-        <!-- Contact Information -->
+<Layout title={`Contact - ${siteData.name}`} description="Request analytical testing or method support.">
+  <section class="section-spacing pt-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <h2 class="text-3xl font-bold text-white mb-8">Get In Touch</h2>
-          <div class="space-y-6">
-            {contactInfo.map((info) => (
-              <div class="flex items-start gap-4">
-                <div class="bg-[#4db848] p-4 rounded-lg shrink-0">
-                  <i class={`${info.icon} text-2xl text-white`}></i>
-                </div>
-                <div>
-                  <h3 class="text-xl font-semibold text-white mb-2">{info.title}</h3>
-                  {Array.isArray(info.content) ? (
-                    info.content.map((line) => (
-                      <p class="text-gray-400 leading-relaxed">{line}</p>
-                    ))
-                  ) : info.link ? (
-                    <a href={info.link} class="text-gray-400 hover:text-[#4db848] transition-colors">
-                      {info.content}
-                    </a>
-                  ) : (
-                    <p class="text-gray-400 leading-relaxed">{info.content}</p>
-                  )}
+          <p class="text-xs uppercase tracking-[0.3em] text-emerald-300">Contact</p>
+          <h1 class="mt-4 text-4xl font-semibold text-white sm:text-5xl">
+            Tell us about your program and timelines.
+          </h1>
+          <p class="mt-4 text-base text-slate-300 sm:text-lg">
+            Share sample details, testing goals, and delivery expectations. We respond with a scoped plan and clear next
+            steps.
+          </p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            {contactInfo.slice(0, 3).map((info) => (
+              <div class="card-surface">
+                <div class="flex items-start gap-3">
+                  <span class="h-10 w-10 rounded-2xl bg-emerald-500/10 text-emerald-300 flex items-center justify-center">
+                    <i class={`${info.icon} text-lg`}></i>
+                  </span>
+                  <div>
+                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">{info.title}</p>
+                    {info.link ? (
+                      <a class="mt-2 block text-sm text-white hover:text-emerald-200" href={info.link}>
+                        {info.content}
+                      </a>
+                    ) : (
+                      <p class="mt-2 text-sm text-white">{info.content}</p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-
-          <!-- Social Links -->
-          <div class="mt-10">
-            <h3 class="text-xl font-semibold text-white mb-4">Follow Us</h3>
-            <div class="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  href={siteData.social[social.name as keyof typeof siteData.social]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="w-12 h-12 bg-slate-700 hover:bg-[#4db848] rounded-lg flex items-center justify-center transition-all"
-                  aria-label={social.label}
-                >
-                  <i class={`${social.icon} text-xl text-white`}></i>
-                </a>
-              ))}
-            </div>
+          <div class="mt-6 flex items-center gap-3">
+            {socialLinks.map((social) => (
+              <a
+                href={siteData.social[social.name as keyof typeof siteData.social]}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="h-11 w-11 rounded-full border border-white/10 bg-white/5 text-slate-200 hover:border-emerald-400/50 hover:text-emerald-200 flex items-center justify-center"
+                aria-label={social.label}
+              >
+                <i class={`${social.icon} text-lg`}></i>
+              </a>
+            ))}
           </div>
         </div>
-
-        <!-- Contact Form -->
-        <div>
-          <ContactForm />
-        </div>
+        <ContactForm />
       </div>
     </div>
   </section>
 
-  <!-- Engagement Steps Section -->
-  <section class="py-20 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-4xl font-bold text-white mb-4 text-center">What Happens Next</h2>
-      <p class="text-xl text-gray-300 mb-12 text-center max-w-2xl mx-auto">
-        A straightforward path from inquiry to reporting.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
-        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 text-center hover:border-[#4db848] transition-all">
-          <div class="w-16 h-16 bg-[#4db848]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <i class="ri-file-list-3-line text-3xl text-[#4db848]"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Scope review</h3>
-          <p class="text-gray-300 text-sm leading-relaxed">
-            We confirm sample types, methods, and reporting requirements.
-          </p>
-        </div>
-        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 text-center hover:border-[#4db848] transition-all">
-          <div class="w-16 h-16 bg-[#4db848]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <i class="ri-flask-line text-3xl text-[#4db848]"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Testing plan</h3>
-          <p class="text-gray-300 text-sm leading-relaxed">
-            We outline timelines, deliverables, and chain-of-custody details.
-          </p>
-        </div>
-        <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 text-center hover:border-[#4db848] transition-all">
-          <div class="w-16 h-16 bg-[#4db848]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <i class="ri-file-check-line text-3xl text-[#4db848]"></i>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-3">Reporting</h3>
-          <p class="text-gray-300 text-sm leading-relaxed">
-            Results are reviewed and delivered in a clear, audit-ready report.
-          </p>
-        </div>
+  <section class="section-spacing bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="What happens next"
+        title="A clear path from intake to reporting"
+        description="We keep communication proactive and timelines predictable."
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {processSteps.map((step, index) => (
+          <ProcessStep index={index + 1} title={step.title} description={step.description} />
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Response Time Section -->
-  <section class="py-20 bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-slate-900 p-8 rounded-xl border border-slate-700">
-          <div class="flex items-start gap-6">
-            <div class="bg-[#4db848]/10 p-4 rounded-lg shrink-0">
-              <i class="ri-time-line text-4xl text-[#4db848]"></i>
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-white mb-3">Response Time</h3>
-              <p class="text-gray-300 mb-4 leading-relaxed">
-                We respond promptly during business hours with clear next steps.
-              </p>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3">
-                  <i class="ri-checkbox-circle-fill text-[#4db848] text-xl mt-0.5"></i>
-                  <div>
-                    <span class="text-white font-semibold">Email inquiries:</span>
-                    <span class="text-gray-300"> Response within 1 business day</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="ri-checkbox-circle-fill text-[#4db848] text-xl mt-0.5"></i>
-                  <div>
-                    <span class="text-white font-semibold">Phone calls:</span>
-                    <span class="text-gray-300"> Available Monday to Friday, 8 AM - 6 PM</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="ri-checkbox-circle-fill text-[#4db848] text-xl mt-0.5"></i>
-                  <div>
-                    <span class="text-white font-semibold">Form submissions:</span>
-                    <span class="text-gray-300"> Confirmation within 4 hours, full response within 1 business day</span>
-                  </div>
-                </li>
-                <li class="flex items-start gap-3">
-                  <i class="ri-checkbox-circle-fill text-[#4db848] text-xl mt-0.5"></i>
-                  <div>
-                    <span class="text-white font-semibold">Urgent matters:</span>
-                    <span class="text-gray-300"> Call to discuss expedited timelines</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-6 lg:grid-cols-2">
+        <IconCard
+          icon="ri-time-line"
+          title="Response expectations"
+          description="We reply within two business days with scope questions, timelines, and documentation requirements."
+        />
+        <IconCard
+          icon="ri-map-pin-line"
+          title="Sample receiving"
+          description="Sample receiving is by appointment. We confirm instructions, chain-of-custody needs, and storage requirements."
+        />
       </div>
     </div>
   </section>
 
-  <!-- Map Section (Placeholder) -->
-  <section class="py-20 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-white mb-12 text-center">Find Us</h2>
-      <div class="max-w-5xl mx-auto bg-slate-800 p-8 rounded-xl border border-slate-700">
-        <div class="aspect-video bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden relative">
-          <Image
-            src={MapImage}
-            alt="Laboratory location map"
-            width={1200}
-            height={600}
-            class="w-full h-full object-cover opacity-50"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 flex items-center justify-center text-center p-4">
-            <div>
-              <i class="ri-map-pin-line text-5xl text-[#4db848] mb-4"></i>
-              <p class="text-gray-300 text-lg">Map integration can be added here (Google Maps, etc.)</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <CTA
+        title="Need a fast consultation?"
+        description="Let us know your delivery window and we can discuss accelerated timelines."
+        primaryLabel="Email our team"
+        primaryHref={`mailto:${siteData.email}`}
+        secondaryLabel="Call now"
+        secondaryHref={`tel:${siteData.phone}`}
+      />
     </div>
   </section>
 </Layout>

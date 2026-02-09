@@ -1,0 +1,32 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  bullets?: string[];
+}
+
+const { icon, title, description, bullets } = Astro.props;
+---
+
+<article class="card-surface flex flex-col gap-4">
+  <div class="flex items-center justify-between">
+    <span class="h-12 w-12 rounded-2xl bg-emerald-500/10 text-emerald-300 flex items-center justify-center">
+      <i class={`${icon} text-2xl`}></i>
+    </span>
+    <span class="text-xs uppercase tracking-[0.3em] text-slate-500">Capability</span>
+  </div>
+  <div>
+    <h3 class="text-xl font-semibold text-white mb-2">{title}</h3>
+    <p class="text-sm text-slate-300">{description}</p>
+  </div>
+  {bullets && (
+    <ul class="flex flex-wrap gap-2 text-xs text-emerald-100">
+      {bullets.map((bullet) => (
+        <li class="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1">
+          {bullet}
+        </li>
+      ))}
+    </ul>
+  )}
+</article>

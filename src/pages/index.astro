@@ -1,62 +1,192 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
-import Services from '../components/Classes.astro';
-import { siteData } from '../data/siteData';
-
-const steps = [
-  { title: "Scope", description: "Define tests, timelines, and reporting needs." },
-  { title: "Receive", description: "Sample intake with documented chain of custody." },
-  { title: "Test", description: "Analytical execution with quality review." },
-  { title: "Report", description: "Clear, audit-ready results delivered securely." },
-];
+import SectionIntro from '../components/SectionIntro.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+import StatCard from '../components/StatCard.astro';
+import ProcessStep from '../components/ProcessStep.astro';
+import IconCard from '../components/IconCard.astro';
+import CTA from '../components/CTA.astro';
+import FaqList from '../components/FaqList.astro';
+import {
+  siteData,
+  heroStats,
+  capabilityHighlights,
+  industries,
+  processSteps,
+  testimonials,
+  faqs,
+} from '../data/siteData';
 ---
 
 <Layout title={`${siteData.name} - ${siteData.tagline}`} description={siteData.description}>
-  <Hero />
-  <Features />
-  <Services />
-
-  <!-- How It Works -->
-  <section class="py-20 bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">How it works</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-          A streamlined workflow that keeps projects on track.
+  <section class="section-spacing pt-28">
+    <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
+      <div class="space-y-6">
+        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
+          Trusted analytical programs
+        </div>
+        <h1 class="text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
+          Analytical clarity for regulated products and critical decisions.
+        </h1>
+        <p class="text-base text-slate-300 sm:text-lg">
+          BioChroma Analytical Labs partners with quality, regulatory, and R&amp;D teams to deliver defensible data,
+          compliant documentation, and transparent reporting across chemistry, microbiology, and stability programs.
         </p>
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <a class="btn-primary" href="/contact">
+            Start a project
+            <i class="ri-arrow-right-up-line"></i>
+          </a>
+          <a class="btn-secondary" href="/services">
+            View capabilities
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          {heroStats.map((stat) => (
+            <StatCard number={stat.number} label={stat.label} note={stat.note} />
+          ))}
+        </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-        {steps.map((step, index) => (
-          <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 text-center">
-            <div class="w-12 h-12 bg-[#4db848]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-[#4db848] font-bold">{index + 1}</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2">{step.title}</h3>
-            <p class="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+      <div class="relative">
+        <div class="absolute -inset-4 rounded-[32px] bg-gradient-to-br from-emerald-500/20 via-transparent to-indigo-500/20 blur-2xl"></div>
+        <div class="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 shadow-xl">
+          <img
+            src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&h=900&fit=crop&q=80"
+            alt="Laboratory analyst preparing chromatography samples"
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-slate-950/70 p-5">
+            <p class="text-sm text-white font-semibold">Regulatory-ready documentation</p>
+            <p class="text-xs text-slate-300 mt-2">
+              Chain-of-custody tracking, validated methods, and independent data review.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Capabilities"
+        title="Complete laboratory coverage, built for regulated delivery"
+        description="Our lab teams deliver chemistry, microbiology, and stability support with a single quality system and dedicated program management."
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {capabilityHighlights.map((capability) => (
+          <FeatureCard
+            icon={capability.icon}
+            title={capability.title}
+            description={capability.description}
+            bullets={capability.bullets}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Who we support"
+        title="Programs tailored to the teams that move regulated science forward"
+        description="We partner with regulated manufacturers and R&amp;D teams that need fast, accurate decisions without compromising compliance."
+      />
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {industries.map((industry) => (
+          <div class="card-surface flex items-center justify-between">
+            <span class="text-sm font-semibold text-white">{industry}</span>
+            <i class="ri-arrow-right-up-line text-emerald-300"></i>
           </div>
         ))}
       </div>
     </div>
   </section>
-  
-  <!-- CTA Section -->
-  <section class="py-20 bg-linear-to-r from-[#4db848] to-[#264177]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-        Ready to scope your testing?
-      </h2>
-      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Tell us about your samples and timelines. We'll respond with a clear plan.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center justify-center gap-3 bg-white text-[#4db848] hover:bg-slate-100 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
-      >
-        Request a Quote
-        <i class="ri-arrow-right-line"></i>
-      </a>
+
+  <section class="section-spacing bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Process"
+        title="Predictable delivery from scope to report"
+        description="Clear scoping, documented intake, and defined reporting cadence keep every project on track."
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {processSteps.map((step, index) => (
+          <ProcessStep index={index + 1} title={step.title} description={step.description} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Client feedback"
+        title="Trusted by quality and regulatory leaders"
+        description="We deliver clear data, credible documentation, and proactive communication at every stage."
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {testimonials.map((item) => (
+          <div class="card-surface flex flex-col gap-4">
+            <p class="text-sm text-slate-200">“{item.content}”</p>
+            <div>
+              <p class="text-sm font-semibold text-white">{item.name}</p>
+              <p class="text-xs text-slate-400">{item.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <SectionIntro
+            eyebrow="FAQ"
+            title="Fast answers for faster scoping"
+            description="Have questions? We keep our intake process straightforward and transparent."
+          />
+          <div class="mt-8">
+            <FaqList items={faqs} />
+          </div>
+        </div>
+        <div class="space-y-6">
+          <IconCard
+            icon="ri-shield-check-line"
+            title="Quality-first workflows"
+            description="Every project is executed under controlled procedures with independent data review."
+          />
+          <IconCard
+            icon="ri-time-line"
+            title="Status updates you can plan around"
+            description="We provide 48-hour cadence updates so stakeholders stay aligned."
+          />
+          <IconCard
+            icon="ri-file-paper-2-line"
+            title="Audit-ready reporting"
+            description="Clear tables, method references, and reviewer sign-off in every report."
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <CTA
+        title="Ready to scope your program?"
+        description="Tell us about your samples, timelines, and regulatory requirements. We'll respond with a scoped plan and clear next steps."
+        primaryLabel="Request a quote"
+        primaryHref="/contact"
+        secondaryLabel="Review capabilities"
+        secondaryHref="/services"
+      />
     </div>
   </section>
 </Layout>

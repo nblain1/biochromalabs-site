@@ -1,208 +1,91 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { siteData } from '../data/siteData';
-
-const serviceCategories = [
-  {
-    title: 'Analytical chemistry',
-    summary: 'Quantitative and qualitative analysis for regulated products and research programs.',
-    covers: ['Assays and identity testing', 'Impurities and degradation profiling', 'Raw material characterization'],
-    deliverables: ['Documented methods', 'Reviewed data tables', 'Clear conclusions and observations'],
-  },
-  {
-    title: 'Microbiology testing',
-    summary: 'Microbial quality and environmental support for manufacturing and development teams.',
-    covers: ['Bioburden and microbial limits', 'Environmental monitoring support', 'Microbial identification'],
-    deliverables: ['Sample handling records', 'Results summary with interpretations', 'QA-reviewed reports'],
-  },
-  {
-    title: 'Contaminant screening',
-    summary: 'Targeted screening for contaminants and residuals aligned to risk profiles.',
-    covers: ['Residual solvents and extractables', 'Metals and elemental impurities', 'Cross-contamination checks'],
-    deliverables: ['Scope-defined test plan', 'Traceable results tables', 'Deviation documentation when needed'],
-  },
-  {
-    title: 'Method development',
-    summary: 'Fit-for-purpose methods built for transfer, validation, or routine testing.',
-    covers: ['Method feasibility and optimization', 'Transfer package preparation', 'Validation planning support'],
-    deliverables: ['Method summaries and parameters', 'Development rationale', 'Data review notes'],
-  },
-  {
-    title: 'Stability programs',
-    summary: 'Program design, storage, and reporting to support product lifecycle decisions.',
-    covers: ['Protocol and pull schedule planning', 'Storage and tracking', 'Trend analysis support'],
-    deliverables: ['Stability reports', 'Change tracking logs', 'Program status updates'],
-  },
-];
-
-const deliveryHighlights = [
-  {
-    title: 'Chain-of-custody handling',
-    description: 'Samples are logged, tracked, and stored with documented custody controls.',
-    icon: 'ri-shield-check-line',
-  },
-  {
-    title: 'Documented methods',
-    description: 'Every test follows approved methods with clear version control.',
-    icon: 'ri-file-list-3-line',
-  },
-  {
-    title: 'Clear reporting',
-    description: 'Results are summarized with interpretations and reviewer sign-off.',
-    icon: 'ri-file-check-line',
-  },
-  {
-    title: 'Secure delivery',
-    description: 'Reports are shared through secure channels with controlled access.',
-    icon: 'ri-lock-line',
-  },
-];
-
-const scopingNeeds = [
-  {
-    title: 'Sample matrix',
-    description: 'What the material is and how it was produced or stored.',
-  },
-  {
-    title: 'Targets and priorities',
-    description: 'Analytes, contaminants, or microbial targets to include or exclude.',
-  },
-  {
-    title: 'Sample quantity',
-    description: 'Number of samples, replicates, and any retention needs.',
-  },
-  {
-    title: 'Timeline expectations',
-    description: 'Preferred delivery windows and any milestone dependencies.',
-  },
-  {
-    title: 'Reporting needs',
-    description: 'Format preferences, data tables, and audit-readiness requirements.',
-  },
-];
-
-const faqs = [
-  {
-    question: 'How do we start a new testing project?',
-    answer: 'Share your sample information and testing goals. We confirm scope, methods, and reporting requirements before intake.',
-  },
-  {
-    question: 'Do you provide chain-of-custody documentation?',
-    answer: 'Yes. Sample receipt, tracking, and storage are documented and included with project records.',
-  },
-  {
-    question: 'Can you support method transfer from another lab?',
-    answer: 'We can evaluate transfer packages and align on acceptance criteria before execution.',
-  },
-  {
-    question: 'What reporting formats are available?',
-    answer: 'Reports are delivered electronically with clear data tables, observations, and reviewer sign-off. Custom formats are available upon request.',
-  },
-  {
-    question: 'Do you handle stability program management?',
-    answer: 'We support protocol design, sample storage, testing pulls, and trend reporting based on your program needs.',
-  },
-  {
-    question: 'How do you handle out-of-spec or atypical results?',
-    answer: 'We document deviations, notify stakeholders, and include clear context in the final report.',
-  },
-  {
-    question: 'Can we request a project-specific quality agreement?',
-    answer: 'Yes. Quality agreements and documentation packages are available upon request during scoping.',
-  },
-];
+import SectionIntro from '../components/SectionIntro.astro';
+import IconCard from '../components/IconCard.astro';
+import ProcessStep from '../components/ProcessStep.astro';
+import CTA from '../components/CTA.astro';
+import FaqList from '../components/FaqList.astro';
+import {
+  siteData,
+  serviceLines,
+  serviceAssurance,
+  processSteps,
+  faqs,
+} from '../data/siteData';
 ---
 
-<Layout title={`Services - ${siteData.name}`} description="Analytical chemistry, microbiology testing, and stability support for regulated products.">
-  <section class="pt-32 pb-20 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-4xl">
-        <p class="text-sm uppercase tracking-[0.3em] text-[#4db848] mb-4">Lab Services</p>
-        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-          Defensible lab testing for regulated products and high-stakes decisions.
-        </h1>
-        <p class="text-xl text-gray-300 mb-10">
-          BioChroma Analytical Labs partners with founders, QA managers, and regulatory teams to deliver clear data, documented methods, and reliable reporting.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href="/contact"
-            class="bg-[#4db848] hover:bg-[#3ea942] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all inline-flex items-center justify-center gap-3"
-          >
-            Request a Quote
-            <i class="ri-arrow-right-line"></i>
-          </a>
-          <a
-            href="#service-categories"
-            class="border border-white/40 hover:border-white text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all inline-flex items-center justify-center gap-3"
-          >
-            Explore services
-            <i class="ri-arrow-down-line"></i>
-          </a>
+<Layout
+  title={`Capabilities - ${siteData.name}`}
+  description="Analytical chemistry, microbiology, stability, and method development delivered with regulatory-ready documentation."
+>
+  <section class="section-spacing pt-28">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+        <div>
+          <p class="text-xs uppercase tracking-[0.3em] text-emerald-300">Capabilities</p>
+          <h1 class="mt-4 text-4xl font-semibold text-white sm:text-5xl">
+            Defensible lab services for regulated teams.
+          </h1>
+          <p class="mt-4 text-base text-slate-300 sm:text-lg">
+            BioChroma delivers integrated chemistry, microbiology, stability, and method development support with a single
+            quality system, documented workflows, and consistent reporting.
+          </p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a class="btn-primary" href="/contact">
+              Start scoping
+              <i class="ri-arrow-right-up-line"></i>
+            </a>
+            <a class="btn-secondary" href="#service-lines">
+              Explore service lines
+            </a>
+          </div>
         </div>
-        <ul class="mt-10 space-y-3 text-gray-300">
-          <li class="flex items-start gap-3">
-            <i class="ri-check-line text-[#4db848] mt-1"></i>
-            Scoped testing plans aligned to your regulatory context.
-          </li>
-          <li class="flex items-start gap-3">
-            <i class="ri-check-line text-[#4db848] mt-1"></i>
-            Documentation-ready workflows and traceable sample handling.
-          </li>
-          <li class="flex items-start gap-3">
-            <i class="ri-check-line text-[#4db848] mt-1"></i>
-            Clear reporting designed for internal reviews and submissions.
-          </li>
-        </ul>
+        <div class="card-surface space-y-4">
+          <p class="text-sm font-semibold text-white">What you can expect</p>
+          <ul class="space-y-3 text-sm text-slate-300">
+            <li class="flex items-start gap-3">
+              <i class="ri-checkbox-circle-line text-emerald-300 mt-0.5"></i>
+              Scope-defined deliverables and documented chain of custody.
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="ri-checkbox-circle-line text-emerald-300 mt-0.5"></i>
+              Independent data review checkpoints to maintain quality.
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="ri-checkbox-circle-line text-emerald-300 mt-0.5"></i>
+              Reports structured for audits, submissions, and internal review.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="service-categories" class="py-20 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Service categories</h2>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-          Scalable capabilities built for regulated programs, from early development through commercial production.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {serviceCategories.map((service) => (
-          <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 flex flex-col gap-6">
+  <section id="service-lines" class="section-spacing bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Service lines"
+        title="Capabilities that scale from single projects to ongoing programs"
+        description="Choose a focused engagement or bundle services under a single quality umbrella."
+      />
+      <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        {serviceLines.map((line) => (
+          <div class="card-surface flex flex-col gap-5">
             <div>
-              <h3 class="text-2xl font-bold text-white mb-3">{service.title}</h3>
-              <p class="text-gray-300">{service.summary}</p>
+              <h3 class="text-xl font-semibold text-white">{line.title}</h3>
+              <p class="text-sm text-slate-300 mt-2">{line.description}</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <h4 class="text-sm uppercase tracking-[0.2em] text-gray-400 mb-3">What it covers</h4>
-                <ul class="space-y-2 text-gray-300">
-                  {service.covers.map((item) => (
-                    <li class="flex items-start gap-2">
-                      <i class="ri-arrow-right-s-line text-[#4db848] mt-1"></i>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h4 class="text-sm uppercase tracking-[0.2em] text-gray-400 mb-3">Typical deliverables</h4>
-                <ul class="space-y-2 text-gray-300">
-                  {service.deliverables.map((item) => (
-                    <li class="flex items-start gap-2">
-                      <i class="ri-checkbox-circle-line text-[#4db848] mt-1"></i>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <a
-              href={`/contact?service=${encodeURIComponent(service.title)}`}
-              class="text-[#4db848] hover:text-[#74d06f] font-semibold inline-flex items-center gap-2"
-            >
-              Discuss {service.title}
-              <i class="ri-arrow-right-line"></i>
+            <ul class="grid gap-2 text-sm text-slate-200 sm:grid-cols-2">
+              {line.services.map((service) => (
+                <li class="flex items-start gap-2">
+                  <i class="ri-arrow-right-s-line text-emerald-300 mt-0.5"></i>
+                  <span>{service}</span>
+                </li>
+              ))}
+            </ul>
+            <a class="text-sm font-semibold text-emerald-200" href="/contact">
+              Discuss {line.title}
+              <i class="ri-arrow-right-up-line"></i>
             </a>
           </div>
         ))}
@@ -210,88 +93,59 @@ const faqs = [
     </div>
   </section>
 
-  <section class="py-20 bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">What we deliver</h2>
-        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-          Consistent data quality and documentation that stands up to audits and internal review.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {deliveryHighlights.map((item) => (
-          <div class="bg-slate-900 border border-slate-700 rounded-xl p-6">
-            <div class="w-12 h-12 bg-[#4db848]/10 rounded-lg flex items-center justify-center mb-4">
-              <i class={`${item.icon} text-2xl text-[#4db848]`}></i>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">{item.title}</h3>
-            <p class="text-gray-400 leading-relaxed">{item.description}</p>
-          </div>
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Assurance"
+        title="Quality assurances built into every engagement"
+        description="Operational guardrails keep timelines clear and data defensible."
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        {serviceAssurance.map((item) => (
+          <IconCard icon={item.icon} title={item.title} description={item.description} />
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <div>
-          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">What we need to scope your project</h2>
-          <p class="text-xl text-gray-300 mb-8">
-            Share the essentials and we will align on scope, method fit, and reporting expectations.
-          </p>
-          <a
-            href="/contact"
-            class="bg-[#4db848] hover:bg-[#3ea942] text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2"
-          >
-            Send project details
-            <i class="ri-arrow-right-line"></i>
-          </a>
-        </div>
-        <div class="space-y-4">
-          {scopingNeeds.map((item) => (
-            <div class="bg-slate-800 border border-slate-700 rounded-xl p-5">
-              <h3 class="text-lg font-semibold text-white mb-2">{item.title}</h3>
-              <p class="text-gray-400">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">FAQ</h2>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-          Quick answers to keep scoping decisions moving.
-        </p>
-      </div>
-      <div class="max-w-4xl mx-auto space-y-6">
-        {faqs.map((faq) => (
-          <div class="bg-slate-900 rounded-xl border border-slate-700 p-6">
-            <h3 class="text-xl font-bold text-white mb-3">{faq.question}</h3>
-            <p class="text-gray-400 leading-relaxed">{faq.answer}</p>
-          </div>
+  <section class="section-spacing bg-slate-950">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="Engagement"
+        title="A streamlined path from scope to reporting"
+        description="Clear handoffs and documented controls keep your stakeholders aligned."
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {processSteps.map((step, index) => (
+          <ProcessStep index={index + 1} title={step.title} description={step.description} />
         ))}
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-linear-to-r from-[#4db848] to-[#264177]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Ready to request a quote?</h2>
-      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Tell us about your samples, timelines, and reporting needs. We will follow up with a clear scope and next steps.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center justify-center gap-3 bg-white text-[#4db848] hover:bg-slate-100 px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-lg"
-      >
-        Request a Quote
-        <i class="ri-arrow-right-line"></i>
-      </a>
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <SectionIntro
+        eyebrow="FAQ"
+        title="Answers for faster scoping"
+        description="Everything you need to align on scope, timelines, and documentation."
+      />
+      <div class="mt-8">
+        <FaqList items={faqs} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-spacing">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <CTA
+        title="Need a program roadmap?"
+        description="Share your sample matrix, regulatory context, and desired timelines. We'll align on a scoped plan."
+        primaryLabel="Request intake"
+        primaryHref="/contact"
+        secondaryLabel="View quality story"
+        secondaryHref="/about"
+      />
     </div>
   </section>
 </Layout>
