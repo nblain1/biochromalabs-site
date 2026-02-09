@@ -19,9 +19,9 @@ import {
 ---
 
 <Layout title={`${siteData.name} - ${siteData.tagline}`} description={siteData.description}>
-  <section class="section-spacing pt-28">
+  <section class="section-spacing pt-28 section-divider">
     <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-      <div class="space-y-6">
+      <div class="space-y-6 motion-fade-up">
         <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
           Trusted analytical programs
         </div>
@@ -33,24 +33,25 @@ import {
           regulatory support to guide products from inception to the marketplace.
         </p>
         <div class="flex flex-col gap-3 sm:flex-row">
-          <a class="btn-primary" href="/contact">
+          <a class="btn-primary btn-cta motion-sheen" href="/contact">
             Start a project
             <i class="ri-arrow-right-up-line"></i>
           </a>
-          <a class="btn-secondary" href="/capabilities">
+          <a class="btn-secondary btn-cta" href="/capabilities">
             View capabilities
             <i class="ri-arrow-right-line"></i>
           </a>
         </div>
-        <div class="grid gap-4 sm:grid-cols-3">
+        <div class="grid gap-4 sm:grid-cols-3 stagger-fade-up">
           {heroStats.map((stat) => (
             <StatCard number={stat.number} label={stat.label} note={stat.note} />
           ))}
         </div>
       </div>
-      <div class="relative">
+      <div class="relative motion-fade-in">
+        <div class="hero-accent"></div>
         <div class="absolute -inset-4 rounded-[32px] bg-gradient-to-br from-emerald-500/20 via-transparent to-indigo-500/20 blur-2xl"></div>
-        <div class="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 shadow-xl">
+        <div class="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 shadow-xl motion-float">
           <img
             src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&h=900&fit=crop&q=80"
             alt="Laboratory analyst preparing chromatography samples"
@@ -69,14 +70,14 @@ import {
     </div>
   </section>
 
-  <section class="section-spacing bg-slate-950">
+  <section class="section-spacing bg-slate-950 section-divider">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <SectionIntro
         eyebrow="Capabilities"
         title="Six capability areas that support product quality from concept to scale"
         description="We provide microbiology, chemistry, stability, laboratory studies, consulting, and product development support tailored to regulated consumer products."
       />
-      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3 stagger-fade-up">
         {capabilityHighlights.map((capability) => (
           <FeatureCard
             icon={capability.icon}
@@ -90,16 +91,16 @@ import {
     </div>
   </section>
 
-  <section class="section-spacing">
+  <section class="section-spacing section-divider">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <SectionIntro
         eyebrow="Who we support"
         title="Programs tailored to the teams that move regulated science forward"
         description="Our teams bring experience across R&amp;D, formulations, scale-up, testing, and quality support for diverse consumer products."
       />
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 flex flex-wrap gap-3">
         {industries.map((industry) => (
-          <a class="card-surface flex items-center justify-between hover:border-emerald-400/50" href="/capabilities">
+          <a class="support-chip motion-fade-up" href="/capabilities">
             <span class="text-sm font-semibold text-white">{industry}</span>
             <i class="ri-arrow-right-up-line text-emerald-300"></i>
           </a>
@@ -108,14 +109,14 @@ import {
     </div>
   </section>
 
-  <section class="section-spacing bg-slate-950">
+  <section class="section-spacing bg-slate-950 section-divider">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <SectionIntro
         eyebrow="Process"
         title="Product development stages from discovery to launch"
         description="We align consulting, testing, and formulation support to match each stage of the product journey."
       />
-      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 process-stepper stagger-fade-up">
         {processSteps.map((step, index) => (
           <ProcessStep index={index + 1} title={step.title} description={step.description} />
         ))}
@@ -123,16 +124,16 @@ import {
     </div>
   </section>
 
-  <section class="section-spacing">
+  <section class="section-spacing section-divider">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <SectionIntro
         eyebrow="Client feedback"
         title="Trusted by quality and regulatory leaders"
         description="We deliver clear data, credible documentation, and proactive communication at every stage."
       />
-      <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="mt-10 grid gap-6 md:grid-cols-3 stagger-fade-up">
         {testimonials.map((item) => (
-          <div class="card-surface flex flex-col gap-4">
+          <div class="testimonial-card flex flex-col gap-4">
             <p class="text-sm text-slate-200">“{item.content}”</p>
             <div>
               <p class="text-sm font-semibold text-white">{item.name}</p>
@@ -144,7 +145,7 @@ import {
     </div>
   </section>
 
-  <section class="section-spacing bg-slate-950">
+  <section class="section-spacing bg-slate-950 section-divider">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
@@ -178,7 +179,7 @@ import {
     </div>
   </section>
 
-  <section class="section-spacing">
+  <section class="section-spacing section-divider">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <CTA
         title="Ready to scope your program?"
