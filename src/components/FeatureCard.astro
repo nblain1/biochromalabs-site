@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { icon, title, description, bullets, href } = Astro.props;
-const containerClass = "card-surface flex flex-col gap-4 transition hover:-translate-y-1 hover:border-emerald-400/50";
+const containerClass = "card-surface surface-glow flex flex-col gap-4";
 ---
 
 {href ? (
@@ -34,7 +34,7 @@ const containerClass = "card-surface flex flex-col gap-4 transition hover:-trans
     )}
   </a>
 ) : (
-  <article class="card-surface flex flex-col gap-4">
+  <article class="card-surface surface-glow flex flex-col gap-4">
     <div class="flex items-center justify-between">
       <span class="h-12 w-12 rounded-2xl bg-emerald-500/10 text-emerald-300 flex items-center justify-center">
         <i class={`${icon} text-2xl`}></i>
