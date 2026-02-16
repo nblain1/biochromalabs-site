@@ -332,3 +332,11 @@ export const qseItems = [
   { title: 'Process Control', description: 'Controlled SOPs, change management, and deviation/CAPA workflows.', icon: 'ri-equalizer-line' },
   { title: 'Documents & Records', description: 'Version-controlled documentation, retention schedules, and audit-ready retrieval.', icon: 'ri-folders-line' },
 ];
+
+export const departmentEmails = [
+  { department: "Sales & Quotes", email: "sales@biochromalabs.com", description: "Need a quote or scoping plan?" },
+  { department: "Courier Services", email: "courierpickup@biochromalabs.com", description: "Schedule a sample pickup." },
+  { department: "Chemistry Dept.", email: "chemistryinfo@biochromalabs.com", description: "Technical chemistry questions." },
+  { department: "Microbiology Dept.", email: "microinfo@biochromalabs.com", description: "Technical microbiology questions." },
+  { department: "Careers & HR", email: "hr@biochromalabs.com", description: "Looking for career opportunities?" },
+];
