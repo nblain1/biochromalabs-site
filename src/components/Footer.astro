@@ -1,10 +1,11 @@
 ---
-import { siteData, navigation, socialLinks, contactInfo } from '../data/siteData';
+import { siteData, navigation, socialLinks } from '../data/siteData';
 ---
 
 <footer class="border-t border-white/10 bg-slate-950">
   <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid gap-10 lg:grid-cols-[2fr_1fr_1fr]">
+      
       <div class="space-y-4">
         <div class="flex items-center gap-3">
           <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-300">
@@ -46,26 +47,30 @@ import { siteData, navigation, socialLinks, contactInfo } from '../data/siteData
 
       <div>
         <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Contact</h3>
-        <ul class="mt-4 space-y-3 text-sm">
-          {contactInfo.slice(0, 3).map((info) => (
-            <li class="flex items-start gap-3 text-slate-200">
-              <i class={`${info.icon} text-emerald-300 mt-1`}></i>
-              {info.link ? (
-                <a class="hover:text-emerald-200" href={info.link}>
-                  {info.content}
-                </a>
-              ) : (
-                <span>{info.content}</span>
-              )}
-            </li>
-          ))}
+        <ul class="mt-4 space-y-4 text-sm">
+          <li class="flex items-start gap-3 text-slate-200">
+            <i class="ri-map-pin-2-line text-emerald-300 mt-1"></i>
+            <span>1309 Record Crossing Road<br/>Dallas, TX 75235</span>
+          </li>
+          <li class="flex items-start gap-3 text-slate-200">
+            <i class="ri-phone-line text-emerald-300 mt-1"></i>
+            <a class="hover:text-emerald-200" href={`tel:${siteData.phone}`}>{siteData.phone}</a>
+          </li>
+          <li class="flex items-start gap-3 text-slate-200">
+            <i class="ri-mail-send-line text-emerald-300 mt-1"></i>
+            <a class="hover:text-emerald-200" href={`mailto:${siteData.email}`}>{siteData.email}</a>
+          </li>
         </ul>
       </div>
     </div>
 
     <div class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
       <p>&copy; {new Date().getFullYear()} {siteData.name}. All rights reserved.</p>
-      <p>Built for regulated teams that need clarity and confidence.</p>
+      <div class="flex items-center gap-4">
+         <p>ISO 17025 Compliant Systems</p>
+         <span class="h-1 w-1 rounded-full bg-slate-700"></span>
+         <p>DFW Metroplex Facility</p>
+      </div>
     </div>
   </div>
 </footer>
