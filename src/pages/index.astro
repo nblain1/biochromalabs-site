@@ -1,209 +1,193 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SectionIntro from '../components/SectionIntro.astro';
-import FeatureCard from '../components/FeatureCard.astro';
-import StatCard from '../components/StatCard.astro';
-import ProcessStep from '../components/ProcessStep.astro';
-import IconCard from '../components/IconCard.astro';
 import CTA from '../components/CTA.astro';
-import FaqList from '../components/FaqList.astro';
 import {
   siteData,
-  heroStats,
   capabilityHighlights,
   industries,
   processSteps,
   testimonials,
   faqs,
 } from '../data/siteData';
+
+const heroHighlights = [
+  {
+    title: 'ISO 17025 quality alignment',
+    detail: 'Method controls and verification checkpoints built into every program.',
+    icon: 'ri-shield-check-line',
+  },
+  {
+    title: 'Compendial method coverage',
+    detail: 'Validated USP and related methods for chemistry and microbiology workflows.',
+    icon: 'ri-flask-line',
+  },
+  {
+    title: 'End-to-end support',
+    detail: 'From feasibility through launch with clear documentation and communication.',
+    icon: 'ri-route-line',
+  },
+];
 ---
 
 <Layout title={`${siteData.name} - ${siteData.tagline}`} description={siteData.description}>
-  <section class="section-spacing pt-28 relative overflow-hidden">
-    <div class="pointer-events-none absolute -top-40 right-10 h-72 w-72 rounded-full bg-emerald-500/20 blur-[120px] animate-float-slow"></div>
-    <div class="pointer-events-none absolute top-10 left-8 h-64 w-64 rounded-full bg-indigo-500/20 blur-[130px] animate-float"></div>
-    <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-      <div class="space-y-6">
-        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">
-          Trusted analytical programs
+  <section class="home-hero">
+    <div class="home-shell">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Trusted analytical programs</p>
+          <h1>BioChroma Analytical Labs LLC brings structure and confidence to regulated product development.</h1>
+          <p class="hero-lead">
+            Based in the DFW metroplex, we deliver analytical testing, consulting, and quality support that guides
+            products from early research through market-ready execution.
+          </p>
+          <div class="hero-cta-row">
+            <a class="btn-primary" href="/contact">Request a quote <i class="ri-arrow-right-up-line"></i></a>
+            <a class="btn-secondary" href="/services">View services <i class="ri-arrow-right-line"></i></a>
+          </div>
         </div>
-        <h1 class="text-4xl font-semibold text-white sm:text-5xl lg:text-6xl animate-fade-up">
-          <span class="text-gradient">BioChroma Analytical Labs LLC</span> bridges technical gaps in product development.
-        </h1>
-        <p class="text-base text-slate-300 sm:text-lg animate-fade-up" style="animation-delay: 0.1s">
-          Based in the DFW metroplex in the heart of Texas, we provide analytical testing, consulting, and quality or
-          regulatory support to guide products from inception to the marketplace.
-        </p>
-        <div class="flex flex-col gap-3 sm:flex-row animate-fade-up" style="animation-delay: 0.2s">
-          <a class="btn-primary" href="/contact">
-            Start a project
-            <i class="ri-arrow-right-up-line"></i>
-          </a>
-          <a class="btn-secondary" href="/capabilities">
-            View capabilities
-            <i class="ri-arrow-right-line"></i>
-          </a>
-        </div>
-        <div class="grid gap-4 sm:grid-cols-3">
-          {heroStats.map((stat, index) => (
-            <div class="animate-fade-up" style={`animation-delay: ${0.3 + index * 0.1}s`}>
-              <StatCard number={stat.number} label={stat.label} note={stat.note} />
-            </div>
-          ))}
-        </div>
-      </div>
-      <div class="relative">
-        <div class="absolute -inset-4 rounded-[32px] bg-gradient-to-br from-emerald-500/20 via-transparent to-indigo-500/20 blur-2xl"></div>
-        <div class="absolute -top-6 -right-6 h-24 w-24 rounded-full border border-emerald-400/40 bg-emerald-500/10 blur-sm animate-float"></div>
-        <div class="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/70 shadow-xl animate-fade-in">
+
+        <aside class="hero-media-frame" aria-label="Laboratory analyst at work">
           <img
             src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&h=900&fit=crop&q=80"
             alt="Laboratory analyst preparing chromatography samples"
-            class="h-full w-full object-cover"
-            loading="lazy"
+            loading="eager"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-slate-950/70 p-5">
-            <p class="text-sm text-white font-semibold">End-to-end product support</p>
-            <p class="text-xs text-slate-300 mt-2">
-              Analytical testing, consulting, and quality guidance from concept to market.
-            </p>
+          <div class="hero-media-caption">
+            <p>Data-integrity-first delivery</p>
+            <span>Audit-ready reports, chain-of-custody, and milestone communication.</span>
           </div>
-        </div>
+        </aside>
       </div>
-    </div>
-  </section>
 
-  <section class="section-spacing bg-slate-950 relative overflow-hidden">
-    <div class="pointer-events-none absolute -top-24 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-emerald-500/20 blur-[120px]"></div>
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="animate-fade-up">
-        <SectionIntro
-          eyebrow="Capabilities"
-          title="Six capability areas that support product quality from concept to scale"
-          description="We provide microbiology, chemistry, stability, laboratory studies, consulting, and product development support tailored to regulated consumer products."
-        />
-      </div>
-      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {capabilityHighlights.map((capability) => (
-          <FeatureCard
-            icon={capability.icon}
-            title={capability.title}
-            description={capability.description}
-            bullets={capability.bullets}
-            href="/capabilities"
-          />
+      <div class="hero-highlight-row">
+        {heroHighlights.map((item) => (
+          <article class="hero-highlight-card">
+            <i class={`${item.icon} hero-highlight-icon`}></i>
+            <h2>{item.title}</h2>
+            <p>{item.detail}</p>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section-spacing relative">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="animate-fade-up">
-        <SectionIntro
-          eyebrow="Who we support"
-          title="Programs tailored to the teams that move regulated science forward"
-          description="Our teams bring experience across R&amp;D, formulations, scale-up, testing, and quality support for diverse consumer products."
-        />
+  <section class="home-section capabilities-section">
+    <div class="home-shell">
+      <div class="section-heading">
+        <p>Capabilities</p>
+        <h2>Six capability areas supporting quality from concept to scale.</h2>
       </div>
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {industries.map((industry) => (
-          <a class="card-surface surface-glow flex items-center justify-between hover:border-emerald-400/50" href="/capabilities">
-            <span class="text-sm font-semibold text-white">{industry}</span>
-            <i class="ri-arrow-right-up-line text-emerald-300"></i>
+
+      <div class="capability-layout">
+        {capabilityHighlights.map((capability, index) => (
+          <article class={`capability-card ${index === 0 ? 'capability-card-featured' : ''}`}>
+            <div class="capability-head">
+              <span class="capability-icon"><i class={capability.icon}></i></span>
+              <span class="capability-label">Capability</span>
+            </div>
+            <h3>{capability.title}</h3>
+            <p>{capability.description}</p>
+            <ul>
+              {capability.bullets.map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section support-section">
+    <div class="home-shell support-layout">
+      <div class="section-heading">
+        <p>Who we support</p>
+        <h2>Programs tuned to the teams that move regulated science forward.</h2>
+      </div>
+      <div class="support-pills">
+        {industries.map((industry, index) => (
+          <a href="/services" class={`support-pill ${index % 2 === 0 ? 'support-pill-alt' : ''}`}>
+            <span>{industry}</span>
+            <i class="ri-arrow-right-up-line"></i>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section-spacing bg-slate-950 relative overflow-hidden">
-    <div class="pointer-events-none absolute top-12 right-12 h-44 w-44 rounded-full bg-indigo-500/20 blur-[110px] animate-float-slow"></div>
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="animate-fade-up">
-        <SectionIntro
-          eyebrow="Process"
-          title="Product development stages from discovery to launch"
-          description="We align consulting, testing, and formulation support to match each stage of the product journey."
-        />
+  <section class="home-section process-section">
+    <div class="home-shell">
+      <div class="section-heading section-heading-center">
+        <p>Process</p>
+        <h2>From discovery to launch with clear stage gates and transparent reporting.</h2>
       </div>
-      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+      <div class="process-timeline">
         {processSteps.map((step, index) => (
-          <ProcessStep index={index + 1} title={step.title} description={step.description} />
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section-spacing relative">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="animate-fade-up">
-        <SectionIntro
-          eyebrow="Client feedback"
-          title="Trusted by quality and regulatory leaders"
-          description="We deliver clear data, credible documentation, and proactive communication at every stage."
-        />
-      </div>
-      <div class="mt-10 grid gap-6 md:grid-cols-3">
-        {testimonials.map((item) => (
-          <div class="card-surface surface-glow flex flex-col gap-4">
-            <p class="text-sm text-slate-200">“{item.content}”</p>
-            <div>
-              <p class="text-sm font-semibold text-white">{item.name}</p>
-              <p class="text-xs text-slate-400">{item.role}</p>
+          <article class={`process-item ${index % 2 === 0 ? 'process-left' : 'process-right'}`}>
+            <div class="process-marker" aria-hidden="true">
+              <span>{index + 1}</span>
             </div>
-          </div>
+            <div class="process-content">
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section-spacing bg-slate-950 relative">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <div class="animate-fade-up">
-            <SectionIntro
-              eyebrow="FAQ"
-              title="Quick answers about BioChroma Analytical Labs LLC"
-              description="Learn how our testing, consulting, and product development support align to your goals."
-            />
-          </div>
-          <div class="mt-8">
-            <FaqList items={faqs} />
-          </div>
-        </div>
-        <div class="space-y-6">
-          <IconCard
-            icon="ri-shield-check-line"
-            title="Quality & regulatory advice"
-            description="Guidance on CFR expectations, quality program setup, and label do’s and don’ts."
-          />
-          <IconCard
-            icon="ri-store-2-line"
-            title="Manufacturing & packaging guidance"
-            description="Support for contract manufacturer selection, inspections, and container closure decisions."
-          />
-          <IconCard
-            icon="ri-flask-line"
-            title="Ingredient stability insight"
-            description="Advice on ingredient stability, formulation, and processing conditions that impact shelf life."
-          />
-        </div>
+  <section class="home-section testimonials-section">
+    <div class="home-shell">
+      <div class="section-heading">
+        <p>Client feedback</p>
+        <h2>Trusted by quality and regulatory leaders.</h2>
+      </div>
+      <div class="testimonial-row">
+        {testimonials.map((item) => (
+          <article class="testimonial-card">
+            <p>“{item.content}”</p>
+            <div>
+              <h3>{item.name}</h3>
+              <span>{item.role}</span>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section-spacing">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+  <section class="home-section faq-section">
+    <div class="home-shell faq-layout">
+      <div class="section-heading">
+        <p>FAQ</p>
+        <h2>Quick answers about BioChroma Analytical Labs LLC.</h2>
+      </div>
+
+      <div class="faq-stack">
+        {faqs.map((item) => (
+          <details class="faq-item">
+            <summary>
+              <span>{item.question}</span>
+              <i class="ri-add-line"></i>
+            </summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="home-shell">
       <CTA
         title="Ready to scope your program?"
-        description="Tell us about your samples, timelines, and regulatory requirements. We'll respond with a scoped plan and clear next steps."
+        description="Share sample scope, timelines, and regulatory context. We will return a scoped plan with clear next steps."
         primaryLabel="Request a quote"
         primaryHref="/contact"
-        secondaryLabel="Review capabilities"
-        secondaryHref="/capabilities"
+        secondaryLabel="Review services"
+        secondaryHref="/services"
       />
     </div>
   </section>
