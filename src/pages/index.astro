@@ -31,44 +31,35 @@ const heroHighlights = [
 
 <Layout title={`${siteData.name} - ${siteData.tagline}`} description={siteData.description}>
   <section class="home-hero">
-    <div class="home-shell">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="hero-eyebrow">ISO 17025 Accredited Laboratory</p>
-          <h1>Precision analytical testing and R&D for regulated products.</h1>
-          <p class="hero-lead">
-            Based in the DFW metroplex, BioChroma Analytical Labs provides specialized chemistry, microbiology, and consulting services. We deliver defensible data to guide cosmetics, supplements, and OTCs from early feasibility through market-ready execution.
-          </p>
-          <div class="hero-cta-row">
-            <a class="btn-primary" href="/contact">Request a quote <i class="ri-arrow-right-up-line"></i></a>
-            <a class="btn-secondary" href="/capabilities">View capabilities <i class="ri-arrow-right-line"></i></a>
-          </div>
+  <div class="home-shell">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">ISO 17025 Accredited Laboratory</p>
+        <h1>Precision analytical testing for regulated product development.</h1>
+        <p class="hero-lead">
+          Based in the DFW metroplex, BioChroma provides chemistry, microbiology, and stability testing. We deliver the defensible data required to move cosmetics, supplements, and OTC products from R&D to market.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn-primary" href="/contact">Request a quote <i class="ri-arrow-right-up-line"></i></a>
+          <a class="btn-secondary" href="/capabilities">View capabilities <i class="ri-arrow-right-line"></i></a>
         </div>
-
-        <aside class="hero-media-frame" aria-label="BioChroma Analytical Labs Facility">
-          <img
-            src="/images/hero-lab.jpg"
-            alt="BioChroma Analytical Labs testing facility and scientific equipment"
-            loading="eager"
-          />
-          <div class="hero-media-caption">
-            <p>DFW Metroplex Facility</p>
-            <span>Equipped for compendial testing, custom method development, and rigorous QA review.</span>
-          </div>
-        </aside>
       </div>
 
-      <div class="hero-highlight-row">
-        {heroHighlights.map((item) => (
-          <article class="hero-highlight-card">
-            <i class={`${item.icon} hero-highlight-icon`}></i>
-            <h2>{item.title}</h2>
-            <p>{item.detail}</p>
-          </article>
-        ))}
-      </div>
+      <aside class="hero-media-frame" aria-label="Laboratory Facility">
+        <img
+          src="/images/hero-lab.jpg" 
+          alt="BioChroma Analytical testing equipment"
+          loading="eager"
+        />
+        <div class="hero-media-caption">
+          <p>Analytical Excellence</p>
+          <span>Compendial testing and custom method development.</span>
+        </div>
+      </aside>
     </div>
-  </section>
+    
+    </div>
+</section>
 
   <section class="home-section capabilities-section">
     <div class="home-shell">
