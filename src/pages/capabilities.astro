@@ -4,59 +4,70 @@ import { siteData } from '../data/siteData';
 
 const capabilityLayers = [
   {
+    id: 'stability-testing',
     title: 'Stability Testing',
-    summary: 'Real-time, accelerated, and stress protocols that map product performance over shelf life.',
+    summary: 'ICH-aligned protocols (Q1A - Q1E) that map product performance over defined shelf-life intervals.',
     icon: 'ri-timer-line',
-    highlights: ['ICH-aligned protocols', 'Storage condition controls', 'Trend analysis and shelf-life recommendations'],
-    chapterTitle: 'Technical specifications',
+    highlights: ['Accelerated & Real-Time', 'Photostability (ICH Q1B)', 'Forced Degradation Studies'],
+    chapterTitle: 'Technical Specifications',
     details: [
-      'Study design: Real-time, accelerated, and forced degradation workflows based on matrix risk.',
-      'Testing windows: Pull points at protocol-defined intervals with trending dashboards and variance flagging.',
-      'Deliverables: Stability summaries, specification conformance, and recommended retest or expiry periods.',
+      'Climatic Zones: Capabilities for Zone I-IVa storage conditions with continuous 24/7 environmental monitoring.',
+      'Protocol Design: Custom pull-point scheduling with assay, preservative challenge, and organoleptic tracking.',
+      'Reporting: Comprehensive stability summaries including Arrhenius equation modeling for shelf-life projection.',
     ],
   },
   {
+    id: 'method-development',
     title: 'Method Development',
-    summary: 'Transfer-ready analytical methods optimized for robustness and routine QC execution.',
+    summary: 'Robust analytical method design and Phase-appropriate validation optimized for routine QC execution.',
     icon: 'ri-flask-line',
-    highlights: ['Fit-for-purpose method design', 'System suitability framework', 'Validation-ready documentation'],
-    chapterTitle: 'Development chapters',
+    highlights: ['Specificity & Linearity', 'LOD/LOQ Determination', 'Tech Transfer Packages'],
+    chapterTitle: 'Development Chapters',
     details: [
-      'Screening: Detection mode, mobile phase, and extraction conditions selected for matrix complexity.',
-      'Optimization: Precision, linearity, and specificity refined through DOE-informed experiments.',
-      'Transfer package: Method SOPs, validation plans, and acceptance criteria bundled for client laboratories.',
+      'Phase 1: Exploratory screening for detection modes (PDA, RI, ELSD) and mobile phase optimization.',
+      'Validation: Formal protocols following USP <1225> or ICH Q2(R1) guidelines for accuracy and precision.',
+      'Method Transfer: Documentation of system suitability and comparative testing for receiving laboratories.',
     ],
   },
   {
+    id: 'microbiology-programs',
     title: 'Microbiology Programs',
-    summary: 'Compendial microbiological testing that supports product safety, release, and monitoring.',
+    summary: 'Compendial microbiological testing (USP/BAM) to ensure safety, purity, and environmental control.',
     icon: 'ri-bug-line',
-    highlights: ['USP and FDA BAM coverage', 'Environmental monitoring support', 'Rapid deviation communication'],
-    chapterTitle: 'Program chapters',
+    highlights: ['USP <61> / <62> Analysis', 'Preservative Efficacy <51>', 'Environmental Monitoring'],
+    chapterTitle: 'Program Chapters',
     details: [
-      'Core tests: Bioburden, pathogen screening, preservative efficacy, and environmental monitoring.',
-      'Controls: Media qualification, growth promotion, and positive/negative control governance.',
-      'Reporting: Organism-level findings with action thresholds and remediation recommendations.',
+      'Pathogen Screening: Specialized detection for S. aureus, P. aeruginosa, E. coli, and Salmonella.',
+      'Preservative Challenge: Antimicrobial Effectiveness Testing (AET) to validate formula robustness.',
+      'Quality Control: Media growth promotion and sterility verification for every testing series.',
     ],
   },
   {
+    id: 'analytical-chemistry',
     title: 'Analytical Chemistry',
-    summary: 'Chemistry workflows for identity, assay, impurities, and compositional profiling.',
+    summary: 'Quantitative workflows for identity, assay, and impurity profiling of raw materials and finished goods.',
     icon: 'ri-test-tube-line',
-    highlights: ['Compendial and custom methods', 'Raw material through finished product', 'Audit-ready report packages'],
-    chapterTitle: 'Testing chapters',
+    highlights: ['HPLC/UPLC Assay', 'Raw Material ID', 'Vitamin & Active Assays'],
+    chapterTitle: 'Testing Chapters',
     details: [
-      'Techniques: HPLC/UPLC, spectrophotometry, titration, and targeted wet chemistry workflows.',
-      'Data controls: Instrument qualification checks and independent analyst review checkpoints.',
-      'Outputs: Certificates of analysis and technical interpretation for quality and regulatory teams.',
+      'Assay & Purity: Active ingredient quantification via validated HPLC/UPLC-based methodologies.',
+      'Raw Materials: Comprehensive identity testing and specification verification for incoming inventory.',
+      'Reporting: High-fidelity Certificates of Analysis (CoA) with independent data review and traceable results.',
     ],
   },
+];
+
+const instruments = [
+  { name: 'UPLC/HPLC Systems', detail: 'Equipped with PDA, RI, and ELSD detectors' },
+  { name: 'Stability Chambers', detail: 'ICH Zone-aligned temperature and humidity control' },
+  { name: 'Microbiology Suite', detail: 'Class II BSC and validated incubation capacity' },
+  { name: 'UV-Vis & FTIR', detail: 'Rapid identity and compositional screening' }
 ];
 ---
 
 <Layout
   title={`Capabilities - ${siteData.name}`}
-  description="Layered analytical capabilities with concise service overviews and expandable technical detail."
+  description="Deep-dive into our analytical chemistry, microbiology, and stability testing capabilities."
 >
   <section class="home-hero">
     <div class="home-shell">
@@ -67,16 +78,16 @@ const capabilityLayers = [
       </nav>
 
       <div class="section-heading" style="text-align: left; margin-bottom: 2rem;">
-        <p class="hero-eyebrow">Capabilities</p>
-        <h1 style="max-width: 800px;">Layered support for regulated programs from feasibility through release.</h1>
+        <p class="hero-eyebrow">Technical Capabilities</p>
+        <h1 style="max-width: 800px;">Precise analytical support for regulated development.</h1>
         <p class="hero-lead" style="max-width: 800px; margin-top: 1rem;">
-          Start with a fast scan of core services, then expand each chapter for deeper technical specifications and delivery details.
+          Our laboratory workflows are built to support the high-complexity data requirements of the cosmetics, supplement, and OTC industries.
         </p>
       </div>
 
       <div class="layer-grid">
         {capabilityLayers.map((capability) => (
-          <article class="layer-card">
+          <a href={`#${capability.id}`} class="layer-card">
             <div class="layer-head">
               <span class="layer-icon"><i class={capability.icon}></i></span>
               <h2>{capability.title}</h2>
@@ -87,22 +98,22 @@ const capabilityLayers = [
                 <li>{item}</li>
               ))}
             </ul>
-          </article>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="home-section chapter-section" style="margin-bottom: 4rem;">
+  <section class="home-section chapter-section">
     <div class="home-shell">
       <div class="section-heading">
-        <p>Deep Dive</p>
-        <h2>Technical chapters by service line.</h2>
+        <p>Technical Deep Dive</p>
+        <h2>Methodologies and Delivery Chapters</h2>
       </div>
 
       <div class="chapter-stack">
         {capabilityLayers.map((capability) => (
-          <details class="chapter-item">
+          <details id={capability.id} class="chapter-item">
             <summary>
               <div class="summary-content">
                 <strong>{capability.title}</strong>
@@ -127,196 +138,68 @@ const capabilityLayers = [
       </div>
     </div>
   </section>
+
+  <section class="home-section" style="background: rgba(255,255,255,0.02);">
+    <div class="home-shell">
+      <div class="section-heading">
+        <p>Instrumentation</p>
+        <h2>Qualified Equipment Inventory</h2>
+      </div>
+      <div class="instrument-grid">
+        {instruments.map(inst => (
+          <div class="instrument-card">
+            <h4>{inst.name}</h4>
+            <p>{inst.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
-  /* Breadcrumb Styling */
-  .breadcrumb {
-    font-size: 0.875rem;
-    margin-bottom: 2rem;
-    display: flex;
-    gap: 0.5rem;
-  }
-  
-  .breadcrumb a {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  
-  .breadcrumb a:hover {
-    color: #00e6a8;
-  }
+  /* Reuse standard breadcrumb/grid styles... */
+  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; }
+  .breadcrumb a:hover { color: #00e6a8; }
 
-  /* Grid Layout for Top Cards */
-  .layer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
+  .layer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .layer-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 2.5rem; border-radius: 12px; transition: 0.2s ease; text-decoration: none; color: inherit; }
+  .layer-card:hover { transform: translateY(-4px); border-color: rgba(0, 230, 168, 0.3); }
 
-  .layer-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 2.5rem;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-
-  .layer-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(0, 230, 168, 0.3);
-  }
-
-  .layer-head {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .layer-icon {
-    background: rgba(0, 230, 168, 0.1);
-    color: #00e6a8;
-    width: 48px;
-    height: 48px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-  }
-
-  .layer-head h2 {
-    font-size: 1.25rem;
-    color: #fff;
-    margin: 0;
-  }
-
-  .layer-summary {
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-
-  .highlight-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .highlight-list li {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-    position: relative;
-    padding-left: 1.25rem;
-  }
-
-  .highlight-list li::before {
-    content: '→';
-    color: #00e6a8;
-    position: absolute;
-    left: 0;
-  }
+  .layer-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+  .layer-icon { background: rgba(0, 230, 168, 0.1); color: #00e6a8; width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+  .layer-head h2 { font-size: 1.25rem; color: #fff; margin: 0; }
+  .layer-summary { color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 2rem; }
+  .highlight-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .highlight-list li { font-size: 0.875rem; color: rgba(255, 255, 255, 0.6); position: relative; padding-left: 1.25rem; }
+  .highlight-list li::before { content: '→'; color: #00e6a8; position: absolute; left: 0; }
 
   /* Accordion Styling */
-  .chapter-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 900px;
-  }
+  .chapter-stack { display: flex; flex-direction: column; gap: 1rem; max-width: 900px; }
+  .chapter-item { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px; overflow: hidden; }
+  .chapter-item summary { padding: 1.5rem 2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .summary-content { display: flex; flex-direction: column; gap: 0.25rem; }
+  .chapter-subtitle { font-size: 0.875rem; color: #00e6a8; text-transform: uppercase; letter-spacing: 0.05em; }
+  .toggle-icon { font-size: 1.5rem; color: rgba(255, 255, 255, 0.5); transition: 0.3s ease; }
+  .chapter-item[open] .toggle-icon { transform: rotate(45deg); color: #00e6a8; }
+  .details-content { padding: 1.5rem 2rem 2rem 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+  .technical-list { color: rgba(255, 255, 255, 0.7); line-height: 1.7; display: flex; flex-direction: column; gap: 1rem; }
 
-  .chapter-item {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .chapter-item summary {
-    padding: 1.5rem 2rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none; /* Removes default arrow */
-    user-select: none;
-  }
-
-  .chapter-item summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .summary-content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .summary-content strong {
-    font-size: 1.25rem;
-    color: #fff;
-  }
-
-  .chapter-subtitle {
-    font-size: 0.875rem;
-    color: #00e6a8;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .toggle-icon {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.5);
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  /* When accordion is open */
-  .chapter-item[open] {
-    border-color: rgba(0, 230, 168, 0.3);
-  }
-
-  .chapter-item[open] .toggle-icon {
-    transform: rotate(45deg);
-    color: #00e6a8;
-  }
-
-  .details-content {
-    padding: 0 2rem 2rem 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 1rem;
-    padding-top: 1.5rem;
-  }
-
-  .technical-list {
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.7;
-    padding-left: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+  /* Instrumentation Grid */
+  .instrument-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .instrument-card { border-left: 2px solid #00e6a8; padding-left: 1.5rem; }
+  .instrument-card h4 { color: #fff; margin-bottom: 0.5rem; }
+  .instrument-card p { font-size: 0.875rem; color: rgba(255,255,255,0.6); }
 </style>
 
 <script>
-  // Accordion Logic: Ensures only one opens at a time
   document.addEventListener('DOMContentLoaded', () => {
-    const detailsElements = document.querySelectorAll('.chapter-item');
-    
-    detailsElements.forEach((targetDetail) => {
+    const details = document.querySelectorAll('.chapter-item');
+    details.forEach((targetDetail) => {
       targetDetail.addEventListener('click', () => {
-        detailsElements.forEach((detail) => {
-          if (detail !== targetDetail) {
-            detail.removeAttribute('open');
-          }
+        details.forEach((detail) => {
+          if (detail !== targetDetail) { detail.removeAttribute('open'); }
         });
       });
     });
