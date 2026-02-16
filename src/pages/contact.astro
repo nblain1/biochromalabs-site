@@ -1,108 +1,55 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SectionIntro from '../components/SectionIntro.astro';
-import IconCard from '../components/IconCard.astro';
-import ProcessStep from '../components/ProcessStep.astro';
-import ContactForm from '../components/ContactForm.astro';
-import CTA from '../components/CTA.astro';
-import { siteData, socialLinks, contactInfo, processSteps } from '../data/siteData';
+import { siteData } from '../data/siteData';
 ---
 
-<Layout title={`Contact - ${siteData.name}`} description="Request analytical testing or method support.">
-  <section class="section-spacing pt-28">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <p class="text-xs uppercase tracking-[0.3em] text-emerald-300">Contact</p>
-          <h1 class="mt-4 text-4xl font-semibold text-white sm:text-5xl">
-            Tell us about your program and timelines.
-          </h1>
-          <p class="mt-4 text-base text-slate-300 sm:text-lg">
-            Share sample details, testing goals, and delivery expectations. We respond with a scoped plan and clear next
-            steps.
-          </p>
-          <div class="mt-6 grid gap-4 sm:grid-cols-2">
-            {contactInfo.slice(0, 3).map((info) => (
-              <div class="card-surface">
-                <div class="flex items-start gap-3">
-                  <span class="h-10 w-10 rounded-2xl bg-emerald-500/10 text-emerald-300 flex items-center justify-center">
-                    <i class={`${info.icon} text-lg`}></i>
-                  </span>
-                  <div>
-                    <p class="text-xs uppercase tracking-[0.2em] text-slate-400">{info.title}</p>
-                    {info.link ? (
-                      <a class="mt-2 block text-sm text-white hover:text-emerald-200" href={info.link}>
-                        {info.content}
-                      </a>
-                    ) : (
-                      <p class="mt-2 text-sm text-white">{info.content}</p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div class="mt-6 flex items-center gap-3">
-            {socialLinks.map((social) => (
-              <a
-                href={siteData.social[social.name as keyof typeof siteData.social]}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="h-11 w-11 rounded-full border border-white/10 bg-white/5 text-slate-200 hover:border-emerald-400/50 hover:text-emerald-200 flex items-center justify-center"
-                aria-label={social.label}
-              >
-                <i class={`${social.icon} text-lg`}></i>
-              </a>
-            ))}
-          </div>
-        </div>
-        <ContactForm />
-      </div>
-    </div>
-  </section>
+<Layout title={`Contact - ${siteData.name}`} description="Contact BioChroma Analytical Labs LLC for project scoping and support.">
+  <section class="home-section">
+    <div class="home-shell">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&gt;</span>
+        <span>Contact</span>
+      </nav>
 
-  <section class="section-spacing bg-slate-950">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <SectionIntro
-        eyebrow="What happens next"
-        title="A clear path from intake to reporting"
-        description="We keep communication proactive and timelines predictable."
-      />
-      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {processSteps.map((step, index) => (
-          <ProcessStep index={index + 1} title={step.title} description={step.description} />
-        ))}
+      <div class="section-heading">
+        <p>Contact</p>
+        <h1>Tell us how we can help your team.</h1>
       </div>
-    </div>
-  </section>
 
-  <section class="section-spacing">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-6 lg:grid-cols-2">
-        <IconCard
-          icon="ri-time-line"
-          title="Response expectations"
-          description="We reply within two business days with scope questions, timelines, and documentation requirements."
-        />
-        <IconCard
-          icon="ri-map-pin-line"
-          title="Sample receiving"
-          description="Sample receiving is by appointment. We confirm instructions, chain-of-custody needs, and storage requirements."
-        />
+      <div class="contact-layout">
+        <form class="card-surface contact-form" action="#" method="post">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@company.com" required />
+
+          <label for="message">How can we help?</label>
+          <textarea id="message" name="message" rows="6" placeholder="Share your testing scope, timeline, and key requirements." required></textarea>
+
+          <button type="submit" class="btn-primary">Send inquiry <i class="ri-send-plane-line"></i></button>
+        </form>
+
+        <aside class="card-surface contact-aside">
+          <h2>Direct contact</h2>
+          <ul>
+            <li>
+              <span>Email</span>
+              <a href={`mailto:${siteData.email}`}>{siteData.email}</a>
+            </li>
+            <li>
+              <span>Phone</span>
+              <a href={`tel:${siteData.phone}`}>{siteData.phone}</a>
+            </li>
+            <li>
+              <span>Office hours</span>
+              <p>Monday-Friday, 8:30 AM-5:30 PM CT</p>
+            </li>
+          </ul>
+          <p class="response-note"><i class="ri-time-line"></i> We typically respond within 24 hours.</p>
+        </aside>
       </div>
-    </div>
-  </section>
-
-  <section class="section-spacing">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <CTA
-        title="Need a fast consultation?"
-        description="Let us know your delivery window and we can discuss accelerated timelines."
-        primaryLabel="Email our team"
-        primaryHref={`mailto:${siteData.email}`}
-        secondaryLabel="Call now"
-        secondaryHref={`tel:${siteData.phone}`}
-      />
     </div>
   </section>
 </Layout>

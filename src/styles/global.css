@@ -677,3 +677,245 @@ body {
     text-align: left;
   }
 }
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.breadcrumb a {
+  color: var(--color-text-base);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-accent-300);
+}
+
+.section-heading h1 {
+  color: var(--color-text-strong);
+  font-size: clamp(1.9rem, 1.4rem + 2.1vw, 3.2rem);
+  line-height: 1.15;
+  max-width: 24ch;
+}
+
+.page-intro {
+  color: var(--color-text-base);
+  max-width: 68ch;
+  margin-bottom: var(--spacing-xl);
+}
+
+.layer-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.layer-card {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.layer-head {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.layer-icon {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(36, 199, 143, 0.14);
+  color: var(--color-accent-300);
+}
+
+.layer-card h2 {
+  font-size: var(--font-size-xl);
+}
+
+.layer-card p,
+.layer-card li,
+.chapter-item li,
+.qse-card p,
+.quality-doc p,
+.contact-aside p {
+  color: var(--color-text-base);
+}
+
+.layer-card ul,
+.chapter-item ol,
+.contact-aside ul {
+  display: grid;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+}
+
+.layer-card li,
+.chapter-item li {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.layer-card li::before,
+.chapter-item li::before {
+  content: '•';
+  color: var(--color-accent-300);
+}
+
+.chapter-section {
+  background: linear-gradient(180deg, rgba(13, 23, 38, 0.8), transparent);
+}
+
+.chapter-stack {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.chapter-item summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.chapter-item summary span {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.chapter-item summary strong,
+.qse-card h3,
+.contact-aside h2 {
+  color: var(--color-text-strong);
+}
+
+.chapter-item summary small,
+.quality-kicker {
+  color: var(--color-accent-300);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+}
+
+.chapter-item summary i {
+  color: var(--color-accent-300);
+  transition: transform 0.2s ease;
+}
+
+.chapter-item[open] summary i {
+  transform: rotate(45deg);
+}
+
+.quality-doc {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.quality-doc h1 {
+  font-size: clamp(1.7rem, 1.25rem + 1.7vw, 2.7rem);
+  line-height: 1.2;
+  color: var(--color-text-strong);
+  max-width: 25ch;
+}
+
+.iso-highlight {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--spacing-xs);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.iso-highlight span {
+  color: var(--color-accent-300);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.qse-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.contact-layout {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.contact-form {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.contact-form label {
+  color: var(--color-text-base);
+  font-size: var(--font-size-sm);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border-radius: 0.85rem;
+  border: 1px solid var(--border-subtle);
+  background: rgba(13, 23, 38, 0.8);
+  color: var(--color-text-strong);
+  padding: 0.75rem 0.9rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(36, 199, 143, 0.5);
+  outline-offset: 2px;
+}
+
+.contact-aside {
+  display: grid;
+  gap: var(--spacing-md);
+  align-content: start;
+}
+
+.contact-aside ul li {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.contact-aside span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--color-text-muted);
+}
+
+.contact-aside a {
+  color: var(--color-accent-300);
+}
+
+.response-note {
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--border-subtle);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+@media (min-width: 56rem) {
+  .contact-layout {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
