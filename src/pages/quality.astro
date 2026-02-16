@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const qseItems = [
+  { title: 'Organization', description: 'Defined quality responsibilities, escalation pathways, and management review cadence.' },
+  { title: 'Personnel', description: 'Role-based training plans, competency verification, and continuing qualification records.' },
+  { title: 'Equipment', description: 'Lifecycle controls for qualification, calibration, preventive maintenance, and service logs.' },
+  { title: 'Purchasing & Inventory', description: 'Approved supplier controls, incoming verification, and traceable material status.' },
+  { title: 'Process Control', description: 'Controlled SOPs, change management, and deviation/CAPA workflows.' },
+  { title: 'Documents & Records', description: 'Version-controlled documentation, retention schedules, and audit-ready retrieval.' },
+];
+---
+
+<Layout
+  title={`Quality & Compliance - ${siteData.name}`}
+  description="ISO 17025-focused quality and compliance systems supporting defensible analytical data."
+>
+  <section class="home-section">
+    <div class="home-shell">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&gt;</span>
+        <span>Quality</span>
+      </nav>
+
+      <div class="quality-doc card-surface">
+        <p class="quality-kicker">Quality & Compliance</p>
+        <h1>Documented systems built for defensible, inspection-ready data.</h1>
+        <p>
+          Our quality framework aligns with <strong>ISO 17025</strong> principles to support technical validity, data
+          integrity, and traceable reporting across analytical workflows.
+        </p>
+        <div class="iso-highlight">
+          <span><i class="ri-award-line"></i> ISO/IEC 17025 Alignment</span>
+          <a href="#" class="btn-secondary">Download Accreditation PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section chapter-section">
+    <div class="home-shell">
+      <div class="section-heading">
+        <p>Quality system elements</p>
+        <h2>Core QSE coverage across operations, methods, and records.</h2>
+      </div>
+      <div class="qse-grid">
+        {qseItems.map((item) => (
+          <article class="card-surface qse-card">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
