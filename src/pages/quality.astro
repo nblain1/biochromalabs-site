@@ -1,39 +1,35 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { siteData } from '../data/siteData';
-
-const qseItems = [
-  { title: 'Organization', description: 'Defined quality responsibilities, escalation pathways, and management review cadence.' },
-  { title: 'Personnel', description: 'Role-based training plans, competency verification, and continuing qualification records.' },
-  { title: 'Equipment', description: 'Lifecycle controls for qualification, calibration, preventive maintenance, and service logs.' },
-  { title: 'Purchasing & Inventory', description: 'Approved supplier controls, incoming verification, and traceable material status.' },
-  { title: 'Process Control', description: 'Controlled SOPs, change management, and deviation/CAPA workflows.' },
-  { title: 'Documents & Records', description: 'Version-controlled documentation, retention schedules, and audit-ready retrieval.' },
-];
+import CTA from '../components/CTA.astro';
+import { siteData, qseItems } from '../data/siteData';
 ---
 
 <Layout
   title={`Quality & Compliance - ${siteData.name}`}
   description="ISO 17025-focused quality and compliance systems supporting defensible analytical data."
 >
-  <section class="home-section">
+  <section class="home-hero">
     <div class="home-shell">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span aria-hidden="true">&gt;</span>
-        <span>Quality</span>
+        <span style="color: var(--teal); opacity: 0.8;">Quality</span>
       </nav>
 
       <div class="quality-doc card-surface">
-        <p class="quality-kicker">Quality & Compliance</p>
-        <h1>Documented systems built for defensible, inspection-ready data.</h1>
-        <p>
+        <p class="hero-eyebrow" style="margin-top: 2rem;">Quality & Compliance</p>
+        <h1 style="margin-bottom: 1.5rem;">Documented systems built for defensible, inspection-ready data.</h1>
+        <p class="hero-lead">
           Our quality framework aligns with <strong>ISO 17025</strong> principles to support technical validity, data
           integrity, and traceable reporting across analytical workflows.
         </p>
+        
         <div class="iso-highlight">
-          <span><i class="ri-award-line"></i> ISO/IEC 17025 Alignment</span>
-          <a href="#" class="btn-secondary">Download Accreditation PDF</a>
+          <div class="iso-title">
+            <i class="ri-award-line"></i>
+            <span>ISO/IEC 17025 Alignment</span>
+          </div>
+          <a href="#" class="btn-secondary">Download Accreditation PDF <i class="ri-download-2-line"></i></a>
         </div>
       </div>
     </div>
@@ -42,12 +38,16 @@ const qseItems = [
   <section class="home-section chapter-section">
     <div class="home-shell">
       <div class="section-heading">
-        <p>Quality system elements</p>
+        <p>Quality System Elements</p>
         <h2>Core QSE coverage across operations, methods, and records.</h2>
       </div>
+      
       <div class="qse-grid">
         {qseItems.map((item) => (
-          <article class="card-surface qse-card">
+          <article class="qse-card">
+            <div class="qse-icon-wrapper">
+              <i class={item.icon}></i>
+            </div>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </article>
@@ -55,4 +55,115 @@ const qseItems = [
       </div>
     </div>
   </section>
+
+  <section class="home-section">
+    <div class="home-shell">
+      <CTA
+        title="Need to verify our credentials?"
+        description="We are happy to provide our full ISO 17025 scope of accreditation, standard operating procedures overview, or sample submission guidelines."
+        primaryLabel="Contact Quality Team"
+        primaryHref="/contact"
+        secondaryLabel="View Testing Capabilities"
+        secondaryHref="/capabilities"
+      />
+    </div>
+  </section>
 </Layout>
+
+<style>
+  /* Hero & Breadcrumb Styling */
+  .breadcrumb {
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .breadcrumb a:hover {
+    color: #00e6a8; /* Teal */
+  }
+
+  .quality-doc {
+    max-width: 800px;
+  }
+
+  /* ISO 17025 Callout Box */
+  .iso-highlight {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    background: rgba(0, 230, 168, 0.05); /* Very faint teal background */
+    border: 1px solid rgba(0, 230, 168, 0.2);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+  }
+
+  .iso-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .iso-title i {
+    color: #00e6a8;
+    font-size: 1.5rem;
+  }
+
+  /* QSE Grid Decompression */
+  .qse-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .qse-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .qse-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 230, 168, 0.3); /* Teal border on hover */
+  }
+
+  .qse-icon-wrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .qse-icon-wrapper i {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.2s ease;
+  }
+
+  .qse-card:hover .qse-icon-wrapper i {
+    color: #00e6a8; /* Teal icon on hover */
+  }
+
+  .qse-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .qse-card p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>

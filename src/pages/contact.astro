@@ -4,52 +4,231 @@ import { siteData } from '../data/siteData';
 ---
 
 <Layout title={`Contact - ${siteData.name}`} description="Contact BioChroma Analytical Labs LLC for project scoping and support.">
-  <section class="home-section">
+  <section class="home-hero">
     <div class="home-shell">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span aria-hidden="true">&gt;</span>
-        <span>Contact</span>
+        <span style="color: var(--teal); opacity: 0.8;">Contact</span>
       </nav>
 
-      <div class="section-heading">
-        <p>Contact</p>
-        <h1>Tell us how we can help your team.</h1>
+      <div class="section-heading" style="text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <p class="hero-eyebrow" style="margin-top: 2rem;">Contact Us</p>
+        <h1>Let's scope your next analytical program.</h1>
+        <p class="hero-lead" style="margin-top: 1rem;">
+          Reach out directly to our scientific team. We typically respond to all technical inquiries and scoping requests within 24 hours.
+        </p>
       </div>
 
-      <div class="contact-layout">
-        <form class="card-surface contact-form" action="#" method="post">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+      <div class="contact-grid">
+        <a href={`mailto:${siteData.email}`} class="contact-card">
+          <div class="contact-icon"><i class="ri-mail-send-line"></i></div>
+          <h3>Email Us</h3>
+          <p class="contact-value">{siteData.email}</p>
+          <span class="action-text">Send an inquiry <i class="ri-arrow-right-line"></i></span>
+        </a>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@company.com" required />
+        <a href={`tel:${siteData.phone}`} class="contact-card">
+          <div class="contact-icon"><i class="ri-phone-line"></i></div>
+          <h3>Call the Lab</h3>
+          <p class="contact-value">{siteData.phone}</p>
+          <span class="action-text">Mon-Fri, 8:30am - 5:30pm CT</span>
+        </a>
 
-          <label for="message">How can we help?</label>
-          <textarea id="message" name="message" rows="6" placeholder="Share your testing scope, timeline, and key requirements." required></textarea>
+        <div class="contact-card location-card">
+          <div class="contact-icon"><i class="ri-map-pin-line"></i></div>
+          <h3>DFW Facility</h3>
+          <p class="contact-value">1309 Record Crossing Road<br />Dallas, TX 75235</p>
+        </div>
+      </div>
 
-          <button type="submit" class="btn-primary">Send inquiry <i class="ri-send-plane-line"></i></button>
-        </form>
-
-        <aside class="card-surface contact-aside">
-          <h2>Direct contact</h2>
+      <div class="scoping-guide">
+        <div class="guide-content">
+          <h2><i class="ri-file-list-3-line"></i> How to expedite your quote</h2>
+          <p>When emailing our team to scope a new program, please consider including the following details to help us route your request to the correct specialist:</p>
           <ul>
-            <li>
-              <span>Email</span>
-              <a href={`mailto:${siteData.email}`}>{siteData.email}</a>
-            </li>
-            <li>
-              <span>Phone</span>
-              <a href={`tel:${siteData.phone}`}>{siteData.phone}</a>
-            </li>
-            <li>
-              <span>Office hours</span>
-              <p>Monday-Friday, 8:30 AM-5:30 PM CT</p>
-            </li>
+            <li><strong>Product Type:</strong> (e.g., Cosmetics, Dietary Supplements, OTC)</li>
+            <li><strong>Required Testing:</strong> (e.g., Stability, Microbiology, Raw Material ID)</li>
+            <li><strong>Timeline:</strong> Your target completion date or submission deadline.</li>
+            <li><strong>Regulatory Context:</strong> Any specific compendial methods (USP, AOAC) required.</li>
           </ul>
-          <p class="response-note"><i class="ri-time-line"></i> We typically respond within 24 hours.</p>
-        </aside>
+        </div>
       </div>
+
     </div>
   </section>
 </Layout>
+
+<style>
+  /* Breadcrumb Styling */
+  .breadcrumb {
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .breadcrumb a:hover {
+    color: #00e6a8; /* Teal */
+  }
+
+  /* Contact Grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .contact-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  a.contact-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 230, 168, 0.3);
+    background: rgba(0, 230, 168, 0.02);
+  }
+
+  .contact-icon {
+    background: rgba(0, 230, 168, 0.1);
+    color: #00e6a8;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  a.contact-card:hover .contact-icon {
+    transform: scale(1.1);
+  }
+
+  .contact-card h3 {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .contact-value {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .action-text {
+    font-size: 0.875rem;
+    color: #00e6a8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .location-card .contact-value {
+    font-size: 1.25rem;
+  }
+
+  /* Scoping Guide */
+  .scoping-guide {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle Teal Accent Line */
+  .scoping-guide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #00e6a8;
+  }
+
+  .guide-content h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .guide-content h2 i {
+    color: #00e6a8;
+  }
+
+  .guide-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .guide-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .guide-content li {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .guide-content li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #00e6a8;
+  }
+
+  .guide-content strong {
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .scoping-guide {
+      padding: 2rem;
+    }
+    
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

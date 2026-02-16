@@ -296,3 +296,39 @@ export const history = [
     description: "Expanded stability chamber capacity with integrated protocol design and reporting.",
   },
 ];
+
+export const detailedCapabilities = [
+  {
+    category: "Chemistry Analysis",
+    summary: "Chemical testing using compendia methods for raw materials and active ingredients.",
+    icon: "ri-test-tube-line",
+    tests: ["Nutritional analysis", "Mineral analysis", "Vitamin analysis", "Preservative analysis", "Active Ingredient assay", "Allergen testing", "Raw material ID"]
+  },
+  {
+    category: "Microbiological Analysis",
+    summary: "Compendia microbiological testing to support shelf life, quality, and safety decisions.",
+    icon: "ri-microscope-line",
+    tests: ["General microbiology", "Pathogenic Bacteria", "Spoilage Organisms", "Preservative Efficacy", "Bacterial Challenge Studies", "In vitro Time-Kill Studies", "Antibiotic Studies", "Water Suitability"]
+  },
+  {
+    category: "R&D & Product Development",
+    summary: "Support from concept through launch with R&D, formulation, and scale-up planning.",
+    icon: "ri-flask-line",
+    tests: ["Skin/Body/Hair Care", "Dietary Supplements", "Transdermal Studies", "Antimicrobial Efficacy", "Prototype formulation", "Scale-up support"]
+  },
+  {
+    category: "Consulting & Quality",
+    summary: "Guidance on manufacturing, packaging, and regulatory planning to ensure market readiness.",
+    icon: "ri-team-line",
+    tests: ["Packaging & closures", "Manufacturing support", "Plant Inspections", "Ingredient Stability advice", "Container Closure", "Formulations", "Quality & Regulatory advice"]
+  }
+];
+
+export const qseItems = [
+  { title: 'Organization', description: 'Defined quality responsibilities, escalation pathways, and management review cadence.', icon: 'ri-node-tree' },
+  { title: 'Personnel', description: 'Role-based training plans, competency verification, and continuing qualification records.', icon: 'ri-team-line' },
+  { title: 'Equipment', description: 'Lifecycle controls for qualification, calibration, preventive maintenance, and service logs.', icon: 'ri-tools-line' },
+  { title: 'Purchasing & Inventory', description: 'Approved supplier controls, incoming verification, and traceable material status.', icon: 'ri-truck-line' },
+  { title: 'Process Control', description: 'Controlled SOPs, change management, and deviation/CAPA workflows.', icon: 'ri-equalizer-line' },
+  { title: 'Documents & Records', description: 'Version-controlled documentation, retention schedules, and audit-ready retrieval.', icon: 'ri-folders-line' },
+];
