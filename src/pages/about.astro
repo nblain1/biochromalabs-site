@@ -1,12 +1,74 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
-import { siteData, teamMembers, history } from '../data/siteData';
+import { siteData, history } from '../data/siteData';
+
+const founders = [
+  {
+    name: "Benny McKee",
+    role: "President & Cofounder",
+    image: "/images/benny-placeholder.jpg",
+    expertise: "General & Operations Management, Regulatory Compliance, GMP/ISO 17025 Auditing, Microbiology Applications.",
+    education: "BS Biology – Dallas Baptist University; Specialized training in HACCP, Low Acid Foods, and Microbiological Shelf Life.",
+    bio: "With over 20 years of executive service experience, Benny formerly served as Chief Scientific Officer at Coats Aloe International and spent nearly two decades helping scale Analytical Food Laboratories by over 10% through technical infrastructure and sales leadership."
+  },
+  {
+    name: "Dr. Cheri Turman",
+    role: "Vice President & Cofounder",
+    image: "/images/cheri-placeholder.jpg",
+    expertise: "Analytical Method Development, Process Engineering, Toxicology, and Quality/Regulatory Affairs.",
+    education: "PhD Biomedical Sciences – UT Health Science Center/MD Anderson; MS/BS Chemistry – Stephen F. Austin State University.",
+    bio: "A published researcher and former VP of Quality for Coats Aloe International, Dr. Turman currently serves as VP of Scientific Affairs for Provitas. She has held multiple adjunct professorships and is a recognized member of ACS, AOAC, IFT, and the Society of Cosmetic Chemists."
+  }
+];
+
+const departmentLeads = [
+  {
+    id: 'chem-lead',
+    dept: 'Chemistry',
+    focus: 'Organic, Inorganic, & Wet Chemistry',
+    responsibilities: [
+      'Instrumentation: Oversight of HPLC, GCMS, LCMS, and Ion Chromatography workflows.',
+      'Organic: Targeted analysis of vitamins, actives, and degradation products.',
+      'Inorganic/Wet: Heavy metals, minerals, titration, and compositional profiling (Protein/Nitrogen).'
+    ]
+  },
+  {
+    id: 'micro-lead',
+    dept: 'Microbiology',
+    focus: 'Safety & Efficacy',
+    responsibilities: [
+      'Pathogen Screening: Oversight of USP <61>/<62> and BAM protocols.',
+      'Challenge Studies: Lead scientist for Bacterial Challenge and AET/Preservative efficacy studies.',
+      'Environment: Governance of water suitability and facility environmental monitoring.'
+    ]
+  },
+  {
+    id: 'stability-lead',
+    dept: 'Stability',
+    focus: 'Shelf Life & Stress',
+    responsibilities: [
+      'ICH Compliance: Management of real-time and accelerated aging protocols.',
+      'Chamber Control: Oversight of 24/7 environmental monitoring and alert systems.',
+      'Data Modelling: Statistical shelf-life projection and Arrhenius equation modeling.'
+    ]
+  },
+  {
+    id: 'quality-lead',
+    dept: 'Quality Control',
+    focus: 'Compliance & Integrity',
+    responsibilities: [
+      'Data Integrity: Independent review of 100% of analytical raw data and final reports.',
+      'QMS Oversight: Maintenance of ISO 17025 alignment and version-controlled SOP systems.',
+      'Audit Coordination: Lead point of contact for client and regulatory facility inspections.'
+    ]
+  }
+];
 ---
 
 <Layout
-  title={`About Our Team - ${siteData.name}`}
-  description="Meet the scientific leadership and learn about the history of BioChroma Analytical Labs."
+  title={`About Our Leadership - ${siteData.name}`}
+  description="Meet the founders and scientific leads of BioChroma Analytical Labs."
 >
   <section class="home-hero">
     <div class="home-shell">
@@ -20,7 +82,7 @@ import { siteData, teamMembers, history } from '../data/siteData';
         <p class="hero-eyebrow">The BioChroma Mission</p>
         <h1 style="max-width: 850px;">Scientific leadership that supports every engagement.</h1>
         <p class="hero-lead" style="margin-top: 1.5rem; max-width: 800px;">
-          Based in the DFW metroplex, BioChroma Analytical Labs was established to bridge technical gaps in regulated product development. We combine rigorous process discipline with experienced analysts to keep data quality high and timelines clear.
+          BioChroma was established to bridge technical gaps in regulated product development. We combine rigorous process discipline with experienced analysts to keep data quality high and timelines clear.
         </p>
       </div>
     </div>
@@ -29,31 +91,28 @@ import { siteData, teamMembers, history } from '../data/siteData';
   <section class="home-section">
     <div class="home-shell">
       <div class="section-heading">
-        <p>Leadership</p>
-        <h2>Technical experts responsible for method execution and QA review.</h2>
+        <p>Executive Leadership</p>
+        <h2>The scientists and entrepreneurs behind the lab.</h2>
       </div>
 
-      <div class="team-grid">
-        {teamMembers.map((member) => (
-          <article class="team-card">
-            <div class="team-header">
-              <img
-                src={member.image}
-                alt={`${member.name} - ${member.role}`}
-                class="team-avatar"
-                loading="lazy"
-              />
-              <div class="team-titles">
-                <h3>{member.name}</h3>
-                <p class="team-role">{member.role}</p>
-                <p class="team-spec">{member.specialization}</p>
+      <div class="founder-stack">
+        {founders.map((founder) => (
+          <article class="founder-card">
+            <div class="founder-header">
+              <div class="founder-img-frame">
+                <img src={founder.image} alt={founder.name} class="founder-avatar" />
+              </div>
+              <div class="founder-info">
+                <p class="founder-role">{founder.role}</p>
+                <h3>{founder.name}</h3>
+                <ul class="founder-vitals">
+                  <li><strong>Expertise:</strong> {founder.expertise}</li>
+                  <li><strong>Education:</strong> {founder.education}</li>
+                </ul>
               </div>
             </div>
-            <p class="team-bio">{member.bio}</p>
-            <div class="cert-pills">
-              {member.certifications.map((cert) => (
-                <span class="cert-pill">{cert}</span>
-              ))}
+            <div class="founder-bio">
+              <p>{founder.bio}</p>
             </div>
           </article>
         ))}
@@ -62,6 +121,41 @@ import { siteData, teamMembers, history } from '../data/siteData';
   </section>
 
   <section class="home-section chapter-section">
+    <div class="home-shell">
+      <div class="section-heading">
+        <p>Operational Leadership</p>
+        <h2>Department Leads & Scientific Oversight</h2>
+      </div>
+
+      <div class="dept-lead-grid">
+        {departmentLeads.map((lead) => (
+          <details class="dept-lead-card">
+            <summary>
+              <div class="dept-summary-left">
+                <div class="blank-avatar"></div>
+                <div>
+                  <h4>{lead.dept}</h4>
+                  <span>{lead.focus}</span>
+                </div>
+              </div>
+              <i class="ri-add-line toggle-icon"></i>
+            </summary>
+            <div class="dept-details">
+              <h5>Core Responsibilities</h5>
+              <ul>
+                {lead.responsibilities.map((res) => {
+                  const [bold, ...rest] = res.split(': ');
+                  return <li><strong>{bold}:</strong> {rest.join(': ')}</li>
+                })}
+              </ul>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section">
     <div class="home-shell">
       <div class="section-heading">
         <p>Laboratory Timeline</p>
@@ -83,8 +177,8 @@ import { siteData, teamMembers, history } from '../data/siteData';
   <section class="home-section">
     <div class="home-shell">
       <CTA
-        title="Want to align on quality expectations?"
-        description="We can provide quality agreements, documentation packages, and audit-ready reports built for your regulatory pathway."
+        title="Ready to align on quality expectations?"
+        description="Our team is ready to discuss your regulatory pathway and technical requirements."
         primaryLabel="Talk to our team"
         primaryHref="/contact"
         secondaryLabel="Review capabilities"
@@ -96,69 +190,62 @@ import { siteData, teamMembers, history } from '../data/siteData';
 
 <style>
   .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
-  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s ease; }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; }
   .breadcrumb a:hover { color: var(--teal); }
 
-  /* Team Grid Alignment */
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+  /* Founders Stack */
+  .founder-stack { display: flex; flex-direction: column; gap: 3rem; margin-top: 3rem; }
+  .founder-card { 
+    background: rgba(255, 255, 255, 0.02); 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    padding: 3rem; border-radius: 12px; 
   }
 
-  .team-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 2.5rem;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    transition: transform 0.2s ease;
-  }
-  .team-card:hover { transform: translateY(-4px); border-color: rgba(0, 230, 168, 0.2); }
+  .founder-header { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; align-items: start; }
+  .founder-img-frame { width: 200px; height: 250px; background: #0a0e17; border-radius: 8px; overflow: hidden; border: 1px solid rgba(0, 230, 168, 0.2); }
+  .founder-avatar { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
 
-  .team-header { display: flex; align-items: center; gap: 1.25rem; }
-  .team-avatar {
-    width: 80px; height: 80px;
-    border-radius: 12px;
-    object-fit: cover;
-    border: 2px solid rgba(0, 230, 168, 0.2);
-  }
+  .founder-role { color: var(--teal); text-transform: uppercase; font-weight: 800; font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .founder-info h3 { font-size: 2rem; color: #fff; margin-bottom: 1.5rem; }
 
-  .team-titles h3 { font-size: 1.25rem; color: #fff; margin-bottom: 0.25rem; }
-  .team-role { color: var(--teal); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
-  .team-spec { color: rgba(255, 255, 255, 0.4); font-size: 0.8rem; }
+  .founder-vitals { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .founder-vitals li { font-size: 0.95rem; color: rgba(255, 255, 255, 0.7); line-height: 1.5; }
+  .founder-vitals strong { color: #fff; }
 
-  .team-bio { color: rgba(255, 255, 255, 0.7); line-height: 1.6; font-size: 0.95rem; }
+  .founder-bio { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+  .founder-bio p { line-height: 1.8; color: rgba(255, 255, 255, 0.8); font-size: 1.05rem; }
 
-  .cert-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
-  .cert-pill {
-    background: rgba(0, 230, 168, 0.05);
-    border: 1px solid rgba(0, 230, 168, 0.1);
-    color: var(--teal);
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.75rem;
-  }
+  /* Dept Lead Grid */
+  .dept-lead-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .dept-lead-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; }
+  .dept-lead-card summary { padding: 1.5rem 2rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; list-style: none; }
+  .dept-lead-card summary::-webkit-details-marker { display: none; }
+
+  .dept-summary-left { display: flex; align-items: center; gap: 1.5rem; }
+  .blank-avatar { width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+  
+  .dept-summary-left h4 { color: #fff; margin: 0; font-size: 1.1rem; }
+  .dept-summary-left span { font-size: 0.8rem; color: var(--teal); text-transform: uppercase; letter-spacing: 0.05em; }
+  .toggle-icon { font-size: 1.25rem; color: rgba(255,255,255,0.2); transition: 0.3s; }
+  .dept-lead-card[open] .toggle-icon { transform: rotate(45deg); color: var(--teal); }
+
+  .dept-details { padding: 0 2rem 2rem 6.5rem; }
+  .dept-details h5 { color: #fff; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; }
+  .dept-details ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .dept-details li { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.4; }
+  .dept-details strong { color: rgba(255,255,255,0.9); }
 
   /* History Grid */
-  .history-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
-  }
-
-  .history-card {
-    background: rgba(255, 255, 255, 0.02);
-    border-top: 3px solid var(--teal);
-    padding: 2rem;
-    border-radius: 0 0 12px 12px;
-  }
-
-  .history-year { color: var(--teal); font-size: 0.875rem; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .history-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .history-card { background: rgba(255, 255, 255, 0.02); border-top: 3px solid var(--teal); padding: 2rem; border-radius: 0 0 12px 12px; }
+  .history-year { color: var(--teal); font-size: 0.875rem; font-weight: 800; margin-bottom: 0.5rem; }
   .history-title { font-size: 1.15rem; color: #fff; margin-bottom: 0.75rem; }
-  .history-desc { color: rgba(255, 255, 255, 0.6); line-height: 1.6; font-size: 0.9rem; }
+  .history-desc { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .founder-header { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+    .founder-img-frame { margin: 0 auto; }
+    .dept-lead-grid { grid-template-columns: 1fr; }
+    .dept-details { padding-left: 2rem; }
+  }
 </style>
