@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteData } from '../data/siteData';
+
+const capabilityLayers = [
+  {
+    title: 'Stability Testing',
+    summary: 'Real-time, accelerated, and stress protocols that map product performance over shelf life.',
+    icon: 'ri-timer-line',
+    highlights: ['ICH-aligned protocols', 'Storage condition controls', 'Trend analysis and shelf-life recommendations'],
+    chapterTitle: 'Technical specifications',
+    details: [
+      'Study design: Real-time, accelerated, and forced degradation workflows based on matrix risk.',
+      'Testing windows: Pull points at protocol-defined intervals with trending dashboards and variance flagging.',
+      'Deliverables: Stability summaries, specification conformance, and recommended retest or expiry periods.',
+    ],
+  },
+  {
+    title: 'Method Development',
+    summary: 'Transfer-ready analytical methods optimized for robustness and routine QC execution.',
+    icon: 'ri-flask-line',
+    highlights: ['Fit-for-purpose method design', 'System suitability framework', 'Validation-ready documentation'],
+    chapterTitle: 'Development chapters',
+    details: [
+      'Screening: Detection mode, mobile phase, and extraction conditions selected for matrix complexity.',
+      'Optimization: Precision, linearity, and specificity refined through DOE-informed experiments.',
+      'Transfer package: Method SOPs, validation plans, and acceptance criteria bundled for client laboratories.',
+    ],
+  },
+  {
+    title: 'Microbiology Programs',
+    summary: 'Compendial microbiological testing that supports product safety, release, and monitoring.',
+    icon: 'ri-bug-line',
+    highlights: ['USP and FDA BAM coverage', 'Environmental monitoring support', 'Rapid deviation communication'],
+    chapterTitle: 'Program chapters',
+    details: [
+      'Core tests: Bioburden, pathogen screening, preservative efficacy, and environmental monitoring.',
+      'Controls: Media qualification, growth promotion, and positive/negative control governance.',
+      'Reporting: Organism-level findings with action thresholds and remediation recommendations.',
+    ],
+  },
+  {
+    title: 'Analytical Chemistry',
+    summary: 'Chemistry workflows for identity, assay, impurities, and compositional profiling.',
+    icon: 'ri-test-tube-line',
+    highlights: ['Compendial and custom methods', 'Raw material through finished product', 'Audit-ready report packages'],
+    chapterTitle: 'Testing chapters',
+    details: [
+      'Techniques: HPLC/UPLC, spectrophotometry, titration, and targeted wet chemistry workflows.',
+      'Data controls: Instrument qualification checks and independent analyst review checkpoints.',
+      'Outputs: Certificates of analysis and technical interpretation for quality and regulatory teams.',
+    ],
+  },
+];
+---
+
+<Layout
+  title={`Capabilities - ${siteData.name}`}
+  description="Layered analytical capabilities with concise service overviews and expandable technical detail."
+>
+  <section class="home-section">
+    <div class="home-shell">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&gt;</span>
+        <span>Capabilities</span>
+      </nav>
+
+      <div class="section-heading">
+        <p>Capabilities</p>
+        <h1>Layered support for regulated programs from feasibility through release.</h1>
+      </div>
+
+      <p class="page-intro">
+        Start with a fast scan of core services, then expand each chapter for deeper technical specifications and delivery
+        details.
+      </p>
+
+      <div class="layer-grid">
+        {capabilityLayers.map((capability) => (
+          <article class="card-surface layer-card surface-glow">
+            <div class="layer-head">
+              <span class="layer-icon"><i class={capability.icon}></i></span>
+              <h2>{capability.title}</h2>
+            </div>
+            <p>{capability.summary}</p>
+            <ul>
+              {capability.highlights.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section chapter-section">
+    <div class="home-shell">
+      <div class="section-heading">
+        <p>Deep dive</p>
+        <h2>Technical chapters by service line.</h2>
+      </div>
+
+      <div class="chapter-stack">
+        {capabilityLayers.map((capability) => (
+          <details class="chapter-item card-surface" open>
+            <summary>
+              <span>
+                <strong>{capability.title}</strong>
+                <small>{capability.chapterTitle}</small>
+              </span>
+              <i class="ri-add-line"></i>
+            </summary>
+            <ol>
+              {capability.details.map((detail) => (
+                <li>{detail}</li>
+              ))}
+            </ol>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
