@@ -61,32 +61,107 @@ const heroHighlights = [
     </div>
 </section>
 
-  <section class="home-section capabilities-section">
-    <div class="home-shell">
-      <div class="section-heading">
-        <p>Capabilities</p>
-        <h2>Six capability areas supporting quality from concept to scale.</h2>
-      </div>
-
-      <div class="capability-layout">
-        {capabilityHighlights.map((capability, index) => (
-          <article class={`capability-card ${index === 0 ? 'capability-card-featured' : ''}`}>
-            <div class="capability-head">
-              <span class="capability-icon"><i class={capability.icon}></i></span>
-              <span class="capability-label">Capability</span>
-            </div>
-            <h3>{capability.title}</h3>
-            <p>{capability.description}</p>
-            <ul>
-              {capability.bullets.map((bullet) => (
-                <li>{bullet}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
+<section class="home-section capabilities-section">
+  <div class="home-shell">
+    <div class="section-heading">
+      <p>Capabilities</p>
+      <h2>Six capability areas supporting quality from concept to scale.</h2>
     </div>
-  </section>
+
+    <div class="capability-grid">
+      {capabilityHighlights.map((capability) => (
+        <a href={`/capabilities#${capability.title.toLowerCase().replace(/\s+/g, '-')}`} class="capability-card">
+          <div class="capability-head">
+            <span class="capability-icon"><i class={capability.icon}></i></span>
+            </div>
+          <h3>{capability.title}</h3>
+          <p>{capability.description}</p>
+          <ul class="capability-pills">
+            {capability.bullets.map((bullet) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+          <div class="card-footer">
+            <span>Learn More</span>
+            <i class="ri-arrow-right-line"></i>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Uniform Grid Fix */
+  .capability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  /* Standardized Card Styling */
+  .capability-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-decoration: none; /* Make whole card clickable */
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover Effects */
+  .capability-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 230, 168, 0.3);
+    background: rgba(0, 230, 168, 0.02);
+    box-shadow: 0 10px 30px -10px rgba(0, 230, 168, 0.15);
+  }
+
+  /* Centered Pill Text Fix */
+  .capability-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .capability-pills li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.4rem 0.8rem; /* Adjusted for centering */
+    border-radius: 999px;
+    font-size: 0.825rem;
+    display: flex;
+    align-items: center; /* Vertical Center Fix */
+    justify-content: center;
+    line-height: 1;
+    color: var(--teal);
+  }
+
+  /* Visual Cue for Clickability */
+  .card-footer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--teal);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+  }
+
+  .capability-card:hover .card-footer {
+    opacity: 1;
+    transform: translateX(0);
+  }
+</style>
 
   <section class="home-section support-section">
     <div class="home-shell support-layout">
