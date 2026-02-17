@@ -10,6 +10,11 @@ import execBenny from '../assets/exec-benny.jpg';
 import execCheri from '../assets/exec-cheri.jpg';
 import execAmber from '../assets/exec-amber.jpg';
 
+// Import Department Lead Assets (Placeholder names - ensure these exist in src/assets/)
+// import leadOrganic from '../assets/lead-organic.jpg';
+// import leadInorganic from '../assets/lead-inorganic.jpg';
+// ... etc
+
 const executives = [
   {
     name: "Benny McKee",
@@ -39,19 +44,28 @@ const departmentGroups = [
     department: "Chemistry",
     leads: [
       { 
+        name: "Dr. Sarah Jenkins",
         role: "Organic Lead", 
+        education: "University of North Texas (PhD Organic Chemistry)",
+        image: null, // Replace with imported asset
         expertise: "Targeted analysis of vitamins, actives, and degradation products via LC-MS/MS and GC-MS.",
-        deepDive: "Our Organic Lead focuses on resolving peak co-elution in complex matrices. By optimizing mobile phase chemistry and utilizing high-resolution mass spectrometry, we ensure that trace-level actives are quantified with absolute specificity, even in botanical-heavy formulations."
+        deepDive: "Our Organic Lead focuses on resolving peak co-elution in complex matrices. By optimizing mobile phase chemistry and utilizing high-resolution mass spectrometry, we ensure that trace-level actives are quantified with absolute specificity."
       },
       { 
+        name: "Michael Chen",
         role: "Inorganic Lead", 
+        education: "UT Arlington (MS Analytical Chemistry)",
+        image: null, // Replace with imported asset
         expertise: "Mineral profiling, heavy metals screening, and ICP-MS analytical pathways.",
-        deepDive: "Specializing in USP <232>/<233> and California Prop 65 compliance. Our Inorganic team manages the digestion of complex samples—from powders to high-viscosity creams—ensuring that heavy metal detection (Pb, As, Cd, Hg) is accurate at the parts-per-billion level."
+        deepDive: "Specializing in USP <232>/<233> and California Prop 65 compliance. Our Inorganic team manages the digestion of complex samples—from powders to high-viscosity creams—ensuring detection is accurate at the parts-per-billion level."
       },
       { 
+        name: "Elena Rodriguez",
         role: "Wet Chemistry Lead", 
+        education: "Texas Woman's University (BS Chemistry)",
+        image: null, // Replace with imported asset
         expertise: "Titrations, physical testing, and compositional analysis (Protein/Nitrogen).",
-        deepDive: "The foundation of identity testing. Our Wet Chemistry lead oversees FTIR authentication for raw materials and compendial titrations for bulk material release. We provide the physical characterization data required for comprehensive Certificates of Analysis (COAs)."
+        deepDive: "The foundation of identity testing. Our Wet Chemistry lead oversees FTIR authentication for raw materials and compendial titrations for bulk material release, providing characterization data required for comprehensive COAs."
       }
     ]
   },
@@ -59,14 +73,20 @@ const departmentGroups = [
     department: "Microbiology",
     leads: [
       { 
+        name: "David Miller",
         role: "Safety & Pathogens Lead", 
+        education: "Texas Tech University (MS Microbiology)",
+        image: null, // Replace with imported asset
         expertise: "Oversight of USP <61>/<62> and BAM screening protocols.",
-        deepDive: "Ensuring zero-tolerance for pathogens. Our Safety lead manages enrichment protocols designed to detect low-level contaminants. We specialize in neutralizer efficacy studies to ensure your product's preservative system doesn't cause 'false-negative' results in safety screening."
+        deepDive: "Ensuring zero-tolerance for pathogens. Our Safety lead manages enrichment protocols designed to detect low-level contaminants, specializing in neutralizer efficacy studies to ensure accurate safety screening."
       },
       { 
+        name: "Dr. Linda Voss",
         role: "Efficacy & Challenge Lead", 
+        education: "Baylor University (PhD Microbiology)",
+        image: null, // Replace with imported asset
         expertise: "Specialized study design for Antimicrobial Effectiveness (AET) and Time-Kill studies.",
-        deepDive: "We help you prove your preservative system works. Following USP <51> guidelines, we inoculate products with specific strains to measure microbial reduction over a 28-day cycle, providing the data needed for multi-dose product validation."
+        deepDive: "We help you prove your preservative system works. Following USP <51> guidelines, we measure microbial reduction over a 28-day cycle, providing the data needed for multi-dose product validation."
       }
     ]
   },
@@ -74,14 +94,20 @@ const departmentGroups = [
     department: "Support Services",
     leads: [
       { 
+        name: "James Wilson",
         role: "Stability Lead", 
+        education: "Southern Methodist University (BS Biology)",
+        image: null, // Replace with imported asset
         expertise: "Management of ICH storage conditions and shelf-life data modeling.",
-        deepDive: "Stability is a marathon, not a sprint. Our Lead ensures that environmental chambers for Zones I-IV remain in constant calibration. We manage the pull-schedules and data trending required to defend your product's expiration dating during regulatory audits."
+        deepDive: "Stability is a marathon. Our Lead ensures that environmental chambers remain in constant calibration, managing the pull-schedules and data trending required to defend your product's expiration dating during audits."
       },
       { 
+        name: "Rachel Thorne",
         role: "Quality Control Lead", 
+        education: "UT Dallas (MS Quality Management)",
+        image: null, // Replace with imported asset
         expertise: "Independent data review and ALCOA+ data integrity oversight.",
-        deepDive: "The final gatekeeper. Our QC Lead performs a blind technical review of 100% of analytical datasets. By enforcing ALCOA+ principles and cryptographically secure audit trails, we ensure that the data you receive is fully defensible under FDA or third-party scrutiny."
+        deepDive: "The final gatekeeper. Our QC Lead performs a blind technical review of 100% of analytical datasets. By enforcing ALCOA+ principles, we ensure that the data you receive is fully defensible under regulatory scrutiny."
       }
     ]
   }
@@ -174,31 +200,47 @@ const departmentGroups = [
         <h2 class="text-white">Technical Department Leadership</h2>
       </div>
 
-      <div class="flex flex-col gap-16 mt-12">
+      <div class="flex flex-col gap-20 mt-12">
         {departmentGroups.map((group) => (
           <div class="scroll-mt-32">
-            <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-3">
-                <span class="w-1.5 h-6 bg-emerald-500 rounded-full"></span>
+            <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-3 uppercase tracking-wider">
+                <span class="w-2 h-6 bg-emerald-500 rounded-sm"></span>
                 {group.department} Department
             </h3>
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {group.leads.map((lead) => {
-                const modalId = `lead-modal-${lead.role.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`;
+                const modalId = `lead-modal-${lead.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`;
                 
                 return (
                   <>
                     <button
                       type="button"
-                      class="text-left bg-white/5 border border-white/10 p-6 rounded-xl hover:border-emerald-400/50 hover:bg-emerald-400/5 transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
+                      class="text-left bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-emerald-400/50 hover:bg-emerald-400/5 transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
                       onclick={`document.getElementById('${modalId}').showModal()`}
                     >
-                      <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-3 group-hover:border-emerald-400/30 transition-colors">
-                        <h4 class="text-white font-bold text-lg">{lead.role}</h4>
-                        <i class="ri-more-2-line text-slate-500 group-hover:text-emerald-400 transition-colors text-xl"></i>
+                      <div class="p-6 border-b border-white/5 flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl bg-slate-800 border border-white/10 overflow-hidden shrink-0 group-hover:border-emerald-500/30 transition-colors">
+                          {lead.image ? (
+                            <Image src={lead.image} alt={lead.name} class="w-full h-full object-cover" />
+                          ) : (
+                            <div class="w-full h-full flex items-center justify-center bg-emerald-500/5">
+                              <i class="ri-user-3-line text-2xl text-emerald-400/30"></i>
+                            </div>
+                          )}
+                        </div>
+                        <div>
+                          <h4 class="text-white font-bold text-lg leading-tight">{lead.name}</h4>
+                          <p class="text-emerald-400/80 text-[11px] font-bold uppercase tracking-widest mt-1">{lead.role}</p>
+                        </div>
                       </div>
-                      <p class="text-slate-400 text-sm leading-relaxed line-clamp-3 mb-2">{lead.expertise}</p>
-                      <div class="text-emerald-400/60 text-[10px] font-bold uppercase tracking-widest mt-4 flex items-center gap-1 group-hover:text-emerald-400 transition-colors">
-                        View Lead Profile <i class="ri-arrow-right-up-line"></i>
+                      
+                      <div class="p-6">
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-2 mb-4 italic">"{lead.expertise}"</p>
+                        <div class="flex items-center gap-2 text-white/40 text-[10px] font-bold uppercase tracking-tighter">
+                          <i class="ri-graduation-cap-fill text-emerald-400"></i>
+                          <span class="truncate">{lead.education}</span>
+                        </div>
                       </div>
                     </button>
 
@@ -208,13 +250,13 @@ const departmentGroups = [
                     >
                       <div class="p-8 md:p-10">
                         <div class="flex justify-between items-start mb-8">
-                          <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
-                                <i class="ri-user-settings-fill text-emerald-400 text-2xl"></i>
+                          <div class="flex items-center gap-5">
+                            <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-emerald-500/20 overflow-hidden">
+                              {lead.image && <Image src={lead.image} alt={lead.name} class="w-full h-full object-cover" />}
                             </div>
                             <div>
-                              <h4 class="text-2xl font-bold text-white">{lead.role}</h4>
-                              <p class="text-emerald-400/60 text-xs font-bold uppercase tracking-widest mt-1">{group.department} Department Lead</p>
+                              <h4 class="text-2xl font-bold text-white">{lead.name}</h4>
+                              <p class="text-emerald-400/60 text-xs font-bold uppercase tracking-widest mt-1">{lead.role} | {group.department}</p>
                             </div>
                           </div>
                           <button
@@ -228,9 +270,12 @@ const departmentGroups = [
                         
                         <div class="space-y-6">
                           <div class="bg-white/5 border border-white/10 p-6 rounded-xl">
-                            <h5 class="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">Core Expertise</h5>
+                            <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
+                              <i class="ri-graduation-cap-line"></i>
+                              Academic Foundation
+                            </div>
                             <p class="text-white text-lg font-medium leading-relaxed">
-                                {lead.expertise}
+                                {lead.education}
                             </p>
                           </div>
 
