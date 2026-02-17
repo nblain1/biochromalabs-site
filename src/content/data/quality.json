@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "title": "Quality & Compliance",
+    "description": "ISO/IEC 17025:2017 accredited quality systems (PJLA #L24-580-R1) and LabLynx LIMS data management."
+  },
+  "hero": {
+    "eyebrow": "PJLA Accredited • LabLynx Integrated",
+    "title": "Technical validity built on a foundation of rigor."
+  },
+  "qseDeepDive": [
+    {
+      "id": "governance",
+      "title": "Governance & Accreditation",
+      "subtitle": "Management Systems",
+      "icon": "ri-shield-check-line",
+      "summary": "ISO/IEC 17025:2017 management systems verified through independent PJLA oversight.",
+      "elements": [
+        {
+          "name": "PJLA ISO/IEC 17025:2017",
+          "implementation": "Active accreditation for Chemical and Biological testing through PJLA (Cert #L24-580-R1).",
+          "deepDive": "Our quality management system is rigorously audited through biennial on-site assessments and annual internal audits. This ensures our laboratory operations, from sample receipt to final reporting, meet the highest international standards for technical competence and impartial data generation."
+        },
+        {
+          "name": "Flexible Scope (F-Codes)",
+          "implementation": "F1-F5 Flexible Scope allowances enable rapid implementation and accreditation of new test methods.",
+          "deepDive": "BioChroma holds flexible scope designations (F1-F5), allowing for the rapid adaptation to newest revisions of standard methods or the introduction of new parameters. For clients, this means faster onboarding of custom testing programs without waiting for external accreditation cycles."
+        },
+        {
+          "name": "Closed-Loop CAPA System",
+          "implementation": "Proactive system variance remediation through formal Corrective and Preventive Action (CAPA).",
+          "deepDive": "We view anomalies as opportunities for system hardening. Any out-of-specification (OOS) result triggers a formal investigation and root-cause analysis. This guarantees that analytical challenges are documented, resolved, and permanently prevented from recurring."
+        }
+      ]
+    },
+    {
+      "id": "competency",
+      "title": "Technical Competency",
+      "subtitle": "Personnel & Proficiency",
+      "icon": "ri-user-star-line",
+      "summary": "Qualified analysts backed by Demonstration of Capability (DOC) and rigorous peer review.",
+      "elements": [
+        {
+          "name": "100% Peer Technical Review",
+          "implementation": "A multi-stage review protocol ensuring every dataset is verified by a second qualified scientist.",
+          "deepDive": "No data leaves the bench unverified. Our \"Review-at-the-Bench\" protocol requires a secondary scientist to verify all raw instrument data, dilution factors, and manual calculations. This eliminates transcription errors and ensures the Certificate of Analysis (COA) is completely defensible."
+        },
+        {
+          "name": "Matrix Suitability & Spiking",
+          "implementation": "Rigorous testing to ensure methods perform accurately on your specific product formulation.",
+          "deepDive": "A method that works on pure water might fail on a complex botanical or cosmetic cream. We perform matrix spiking and recovery studies to prove that our analytical methods are scientifically valid and free from interference for your specific product type."
+        },
+        {
+          "name": "Analyst Capability (DOC)",
+          "implementation": "Mandatory, quantified demonstration of technical proficiency (IDOC/CDOC) for every analyst.",
+          "deepDive": "Training is quantified. Before testing client samples, analysts must complete an Initial Demonstration of Capability (IDOC) by running blind replicates with acceptable precision. Competency is continuously monitored and re-verified annually within our LIMS."
+        }
+      ]
+    },
+    {
+      "id": "infrastructure",
+      "title": "Infrastructure & Metrology",
+      "subtitle": "Equipment & Calibration",
+      "icon": "ri-settings-5-line",
+      "summary": "Systematic control of analytical hardware through NIST-traceable calibration and validation.",
+      "elements": [
+        {
+          "name": "IQ/OQ/PQ Validation",
+          "implementation": "Comprehensive validation lifecycle for all high-complexity analytical instrumentation.",
+          "deepDive": "New instrumentation undergoes strict Installation (IQ), Operational (OQ), and Performance Qualification (PQ). This proves that highly sensitive systems (like GC-MS and HPLC) operate exactly within manufacturer specifications in our specific lab environment before touching a client sample."
+        },
+        {
+          "name": "NIST-Traceable Metrology",
+          "implementation": "Critical measurement tools are calibrated by accredited providers using traceable standards.",
+          "deepDive": "Exact measurement is the foundation of chemistry. Balances, pipettes, and timers are calibrated annually by third-party ISO 17025 metrology services. A centralized registry tracks all tools; if one falls out of tolerance, we immediately execute an impact analysis on affected data."
+        },
+        {
+          "name": "Environmental Monitoring",
+          "implementation": "24/7 automated monitoring of laboratory environments and stability chambers.",
+          "deepDive": "Environmental fluctuations can invalidate complex testing. We utilize automated, continuous monitoring systems with instant alarm protocols to track temperature and humidity across our facility, ensuring the physical integrity of your samples and stability studies is never compromised."
+        }
+      ]
+    },
+    {
+      "id": "integrity",
+      "title": "Digital Integrity",
+      "subtitle": "LIMS & Data Systems",
+      "icon": "ri-database-2-line",
+      "summary": "ALCOA+ data integrity principles powered by the LabLynx LIMS ecosystem.",
+      "elements": [
+        {
+          "name": "LabLynx Client Portal",
+          "implementation": "Secure, 24/7 access to our dedicated portal for real-time sample tracking and COA retrieval.",
+          "deepDive": "Transparency accelerates your workflow. Clients receive dedicated credentials to our secure LabLynx portal, providing a real-time window into the testing lifecycle. You can track sample status, download QA-released COAs instantly, and securely access your historical data anytime."
+        },
+        {
+          "name": "ALCOA+ Audit Trails",
+          "implementation": "Strict adherence to data integrity principles with cryptographically secure electronic audit trails.",
+          "deepDive": "Our digital ecosystem is built for regulatory scrutiny. Every digital action is timestamped, attributed to a specific user, and locked against unauthorized changes. This ensures data is 100% Attributable, Legible, Contemporaneous, Original, and Accurate."
+        },
+        {
+          "name": "Secure Archival & Retains",
+          "implementation": "Climate-controlled physical retain storage and redundant off-site digital backups.",
+          "deepDive": "We protect data for the long haul. Physical sample retains are securely archived for potential re-testing or audit inquiries. Digital project records and raw instrument data are backed up daily with off-site redundancy to ensure compliance with 5-year retention requirements."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ready to verify our credentials?",
+    "description": "Our quality team can provide full ISO 17025 scopes of accreditation, redacted SOP overviews, and sample submission guidelines for your QA team.",
+    "primaryLabel": "Speak with Quality Team",
+    "primaryHref": "/contact",
+    "secondaryLabel": "Review Capabilities",
+    "secondaryHref": "/capabilities"
+  },
+  "qseItems": [
+    {
+      "title": "Organization",
+      "description": "Defined quality responsibilities, escalation pathways, and management review cadence.",
+      "icon": "ri-node-tree"
+    },
+    {
+      "title": "Personnel",
+      "description": "Role-based training plans, competency verification, and continuing qualification records.",
+      "icon": "ri-team-line"
+    },
+    {
+      "title": "Equipment",
+      "description": "Lifecycle controls for qualification, calibration, preventive maintenance, and service logs.",
+      "icon": "ri-tools-line"
+    },
+    {
+      "title": "Purchasing & Inventory",
+      "description": "Approved supplier controls, incoming verification, and traceable material status.",
+      "icon": "ri-truck-line"
+    },
+    {
+      "title": "Process Control",
+      "description": "Controlled SOPs, change management, and deviation/CAPA workflows.",
+      "icon": "ri-equalizer-line"
+    },
+    {
+      "title": "Documents & Records",
+      "description": "Version-controlled documentation, retention schedules, and audit-ready retrieval.",
+      "icon": "ri-folders-line"
+    }
+  ],
+  "qualityCommitments": [
+    {
+      "title": "Documented quality system",
+      "description": "Controlled procedures, change management, and deviation tracking for every program.",
+      "icon": "ri-shield-check-line"
+    },
+    {
+      "title": "Data integrity focus",
+      "description": "Independent review and traceable datasets with secure reporting workflows.",
+      "icon": "ri-lock-line"
+    },
+    {
+      "title": "Regulatory alignment",
+      "description": "Fit-for-purpose validation plans mapped to client regulatory requirements.",
+      "icon": "ri-git-merge-line"
+    }
+  ]
+}

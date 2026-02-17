@@ -1,0 +1,23 @@
+{
+  "name": "BioChroma Analytical Labs LLC",
+  "tagline": "The Color of Life",
+  "description": "Based in the DFW metroplex in the heart of Texas, BioChroma Analytical Labs LLC fills technical gaps in new product development through analytical testing, consulting, and quality-focused support.",
+  "phone": "(972) 454-9166",
+  "email": "info@biochromalabs.com",
+  "social": {},
+  "address": {
+    "line1": "1309 Record Crossing Road",
+    "line2": "Dallas, TX 75235"
+  },
+  "hours": "Mon - Fri: 8:30 AM - 5:30 PM CT",
+  "header": {
+    "primaryCtaLabel": "Start a project",
+    "primaryCtaHref": "/contact"
+  },
+  "footer": {
+    "exploreTitle": "Explore",
+    "contactTitle": "Contact",
+    "complianceLabel": "ISO/IEC 17025-aligned Systems",
+    "facilityLabel": "DFW Metroplex Facility"
+  }
+}

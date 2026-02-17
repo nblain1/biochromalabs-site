@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "title": "About BioChroma - Scientific Leadership",
+    "description": "Meet the executive leadership and technical department leads of BioChroma Analytical Labs—your partners in precision testing."
+  },
+  "hero": {
+    "eyebrow": "The BioChroma Mission",
+    "title": "A technical extension of your R&D team.",
+    "lead": "Based in the DFW metroplex, BioChroma provides more than just data—we provide the scientific partnership required to navigate complex regulatory landscapes. Our leadership team is committed to the precision and defensibility of every result.",
+    "mediaCaptionTitle": "DFW Analytical Facility",
+    "mediaCaptionText": "ISO 17025 accredited instrumentation suite."
+  },
+  "executives": [
+    {
+      "name": "Benny McKee",
+      "role": "CEO & Cofounder",
+      "vitals": "Dallas Baptist University (BS Biology); HACCP & Food Safety Certified.",
+      "bio": "With nearly three decades of executive leadership in the laboratory sector, Benny drives the operational efficiency and customer-centric culture at BioChroma. He ensures that laboratory throughput never compromises the personalized service required by high-growth brands."
+    },
+    {
+      "name": "Dr. Cheri Turman-Ballard",
+      "role": "CSO & Cofounder",
+      "vitals": "PhD Biomedical Sciences (UT MD Anderson); MS/BS Chemistry (SFA).",
+      "bio": "A distinguished pharmaceutical scientist with over 25 years of cross-functional experience. Dr. Ballard provides the scientific stewardship for BioChroma, overseeing complex method development and ensuring all analytical pathways meet the highest peer-reviewed standards."
+    },
+    {
+      "name": "Amber Howeth",
+      "role": "CFO",
+      "vitals": "Texas A&M Commerce (BS Business & Psychology).",
+      "bio": "Amber brings over 20 years of expertise in financial management for the life sciences sector. She oversees fiscal precision, contract management, and sustainable growth strategies, ensuring BioChroma remains a stable, long-term partner for our clients."
+    }
+  ],
+  "departmentGroups": [
+    {
+      "department": "Chemistry",
+      "leads": [
+        {
+          "name": "Dr. Sarah Jenkins",
+          "role": "Organic Lead",
+          "education": "University of North Texas (PhD Organic Chemistry)",
+          "expertise": "Targeted analysis of vitamins, actives, and degradation products via LC-MS/MS and GC-MS.",
+          "deepDive": "Our Organic Lead focuses on resolving peak co-elution in complex matrices. By optimizing mobile phase chemistry and utilizing high-resolution mass spectrometry, we ensure that trace-level actives are quantified with absolute specificity."
+        },
+        {
+          "name": "Michael Chen",
+          "role": "Inorganic Lead",
+          "education": "UT Arlington (MS Analytical Chemistry)",
+          "expertise": "Mineral profiling, heavy metals screening, and ICP-MS analytical pathways.",
+          "deepDive": "Specializing in USP <232>/<233> and California Prop 65 compliance. Our Inorganic team manages the digestion of complex samples—from powders to high-viscosity creams—ensuring detection is accurate at the parts-per-billion level."
+        },
+        {
+          "name": "Elena Rodriguez",
+          "role": "Wet Chemistry Lead",
+          "education": "Texas Woman's University (BS Chemistry)",
+          "expertise": "Titrations, physical testing, and compositional analysis (Protein/Nitrogen).",
+          "deepDive": "The foundation of identity testing. Our Wet Chemistry lead oversees FTIR authentication for raw materials and compendial titrations for bulk material release, providing characterization data required for comprehensive COAs."
+        }
+      ]
+    },
+    {
+      "department": "Microbiology",
+      "leads": [
+        {
+          "name": "David Miller",
+          "role": "Safety & Pathogens Lead",
+          "education": "Texas Tech University (MS Microbiology)",
+          "expertise": "Oversight of USP <61>/<62> and BAM screening protocols.",
+          "deepDive": "Ensuring zero-tolerance for pathogens. Our Safety lead manages enrichment protocols designed to detect low-level contaminants, specializing in neutralizer efficacy studies to ensure accurate safety screening."
+        },
+        {
+          "name": "Dr. Linda Voss",
+          "role": "Efficacy & Challenge Lead",
+          "education": "Baylor University (PhD Microbiology)",
+          "expertise": "Specialized study design for Antimicrobial Effectiveness (AET) and Time-Kill studies.",
+          "deepDive": "We help you prove your preservative system works. Following USP <51> guidelines, we measure microbial reduction over a 28-day cycle, providing the data needed for multi-dose product validation."
+        }
+      ]
+    },
+    {
+      "department": "Support Services",
+      "leads": [
+        {
+          "name": "James Wilson",
+          "role": "Stability Lead",
+          "education": "Southern Methodist University (BS Biology)",
+          "expertise": "Management of ICH storage conditions and shelf-life data modeling.",
+          "deepDive": "Stability is a marathon. Our Lead ensures that environmental chambers remain in constant calibration, managing the pull-schedules and data trending required to defend your product's expiration dating during audits."
+        },
+        {
+          "name": "Rachel Thorne",
+          "role": "Quality Control Lead",
+          "education": "UT Dallas (MS Quality Management)",
+          "expertise": "Independent data review and ALCOA+ data integrity oversight.",
+          "deepDive": "The final gatekeeper. Our QC Lead performs a blind technical review of 100% of analytical datasets. By enforcing ALCOA+ principles, we ensure that the data you receive is fully defensible under regulatory scrutiny."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Connect with our Scientific Team",
+    "description": "Our department heads are available for direct project scoping and technical consultation on complex analytical challenges.",
+    "primaryLabel": "Inquire with the Lab",
+    "primaryHref": "/contact",
+    "secondaryLabel": "View Full Capabilities",
+    "secondaryHref": "/capabilities"
+  },
+  "teamMembers": [
+    {
+      "name": "Dr. Maya Patel",
+      "role": "Laboratory Director",
+      "specialization": "Analytical Chemistry & Quality Systems",
+      "experience": "12+ years",
+      "bio": "Maya oversees laboratory operations, method validation, and quality documentation to ensure defensible results.",
+      "image": "https://images.unsplash.com/photo-1581091012184-5c7a6c4d8e9f?w=500&h=500&fit=crop&q=80",
+      "certifications": [
+        "Ph.D. Chemistry",
+        "Quality Systems Lead",
+        "Method Validation"
+      ]
+    },
+    {
+      "name": "Jordan Lee",
+      "role": "Microbiology Lead",
+      "specialization": "Microbiology & Environmental Monitoring",
+      "experience": "10+ years",
+      "bio": "Jordan leads microbiology testing programs with a focus on compliance and risk-based monitoring.",
+      "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=500&h=500&fit=crop&q=80",
+      "certifications": [
+        "Microbiology Lead",
+        "EM Program Design",
+        "Sterility Testing"
+      ]
+    },
+    {
+      "name": "Elena Ruiz",
+      "role": "Method Development Manager",
+      "specialization": "Method Development & Transfer",
+      "experience": "9+ years",
+      "bio": "Elena manages complex method development and transfer projects with a focus on regulatory readiness.",
+      "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=500&h=500&fit=crop&q=80",
+      "certifications": [
+        "Method Development",
+        "Validation Planning",
+        "Tech Transfer"
+      ]
+    }
+  ],
+  "history": [
+    {
+      "year": "2013",
+      "title": "Founded",
+      "description": "BioChroma Analytical Labs launched to provide rigorous analytical testing for regulated products."
+    },
+    {
+      "year": "2018",
+      "title": "Quality System Expansion",
+      "description": "Formalized documentation controls, independent data review, and client reporting workflows."
+    },
+    {
+      "year": "2021",
+      "title": "Microbiology Suite",
+      "description": "Opened a dedicated microbiology lab to support sterility and environmental programs."
+    },
+    {
+      "year": "2024",
+      "title": "Stability Capacity",
+      "description": "Expanded stability chamber capacity with integrated protocol design and reporting."
+    }
+  ]
+}
