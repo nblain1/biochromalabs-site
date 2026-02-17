@@ -1,22 +1,17 @@
+import { navigation as contentNavigation, site as contentSite } from './content';
+
 export const siteData = {
-  name: "BioChroma Analytical Labs LLC",
-  tagline: "The Color of Life",
-  description:
-    "Based in the DFW metroplex in the heart of Texas, BioChroma Analytical Labs LLC fills technical gaps in new product development through analytical testing, consulting, and quality-focused support.",
-  phone: "(972) 454-9166",
-  email: "info@biochromalabs.com",
-  social: {},
+  name: contentSite.name,
+  tagline: contentSite.tagline,
+  description: contentSite.description,
+  phone: contentSite.phone,
+  email: contentSite.email,
+  social: contentSite.social,
 };
 
 export const socialLinks = [];
 
-export const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Capabilities", href: "/capabilities" },
-  { name: "Quality", href: "/quality" },
-  { name: 'About', href: '/about' },
-  { name: "Contact", href: "/contact" },
-];
+export const navigation = contentNavigation;
 
 export const heroStats = [
   { number: "ISO 17025", label: "Quality system experience", note: "Expertise in regulated testing programs." },

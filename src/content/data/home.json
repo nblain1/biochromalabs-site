@@ -1,0 +1,156 @@
+{
+  "heroStats": [
+    {
+      "number": "ISO 17025",
+      "label": "Quality system experience",
+      "note": "Expertise in regulated testing programs."
+    },
+    {
+      "number": "Compendia methods",
+      "label": "USP • AOAC • FDA BAM • USDA",
+      "note": "Microbiological and chemical testing."
+    },
+    {
+      "number": "End-to-end support",
+      "label": "Inception to marketplace",
+      "note": "Analytical testing, consulting, and quality guidance."
+    }
+  ],
+  "capabilityHighlights": [
+    {
+      "title": "Operational Safety & Pathogen Screening",
+      "description": "Defensible microbiological testing to support shelf life, facility hygiene, and consumer safety decisions.",
+      "icon": "ri-bug-line",
+      "bullets": [
+        "Shelf life studies",
+        "Pathogenic bacteria",
+        "Preservative efficacy",
+        "Environmental monitoring"
+      ]
+    },
+    {
+      "title": "Identity & Label Claim Verification",
+      "description": "Rigorous chemical analysis using compendial methods to verify raw material authenticity and active ingredient potency.",
+      "icon": "ri-flask-line",
+      "bullets": [
+        "Raw material ID",
+        "Active ingredient assay",
+        "Nutritional analysis",
+        "Allergen testing"
+      ]
+    },
+    {
+      "title": "Data-Driven Shelf Life Studies",
+      "description": "Custom stability programs designed to monitor and defend product performance across lifecycle storage conditions.",
+      "icon": "ri-timer-line",
+      "bullets": [
+        "Real time",
+        "Accelerated",
+        "Stress",
+        "Forced degradation"
+      ]
+    },
+    {
+      "title": "Functional Performance Validation",
+      "description": "Laboratory studies designed to objectively demonstrate and substantiate product performance claims.",
+      "icon": "ri-test-tube-line",
+      "bullets": [
+        "In vitro bioavailability",
+        "Skin permeability",
+        "Enzyme assays",
+        "Microbial kill studies"
+      ]
+    },
+    {
+      "title": "Strategic Quality Planning",
+      "description": "Expert guidance on manufacturing compliance, packaging decisions, and regulatory readiness.",
+      "icon": "ri-lightbulb-flash-line",
+      "bullets": [
+        "Ingredient stability advice",
+        "Packaging & closures",
+        "Contract manufacturer selection",
+        "Quality & regulatory advice"
+      ]
+    },
+    {
+      "title": "Concept-to-Market Commercialization",
+      "description": "Technical support from ideation through launch, including formulation feasibility and scale-up planning.",
+      "icon": "ri-rocket-2-line",
+      "bullets": [
+        "Skin/body/hair care",
+        "Dietary supplement development",
+        "Prototype formulation",
+        "Scale-up support"
+      ]
+    }
+  ],
+  "industries": [
+    "Cosmetics",
+    "Skin care",
+    "Topical & oral OTCs",
+    "Food & beverage",
+    "Dietary supplements",
+    "Household cleaners"
+  ],
+  "processSteps": [
+    {
+      "title": "Discovery",
+      "description": "Client-driven ideas shaped by market trends, buyer requests, and competitive insights."
+    },
+    {
+      "title": "Screening",
+      "description": "Consulting on technical merits, regulatory requirements, and early manufacturing plans."
+    },
+    {
+      "title": "Feasibility assessment",
+      "description": "Guidance on ingredient pricing, packaging choices, and logistics to define scope."
+    },
+    {
+      "title": "Development",
+      "description": "Ingredient research, prototype formulation, and planning for scale-up production."
+    },
+    {
+      "title": "Testing",
+      "description": "Chemical ID, stability, organoleptic, contamination, and active ingredient assays."
+    },
+    {
+      "title": "Launch",
+      "description": "Support as products move into distribution pipelines and market activation."
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Quality Director",
+      "role": "Nutraceutical manufacturer",
+      "content": "BioChroma’s documentation and data review made our audit preparation far more efficient."
+    },
+    {
+      "name": "Regulatory Affairs Lead",
+      "role": "Medical device company",
+      "content": "Their method transfer support aligned perfectly with our submission timeline."
+    },
+    {
+      "name": "Operations Manager",
+      "role": "Food producer",
+      "content": "Clear communication and dependable data quality helped us scale our program quickly."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Where is BioChroma Analytical Labs LLC based?",
+      "answer": "We are based out of the DFW metroplex in the heart of Texas."
+    },
+    {
+      "question": "What products do you support?",
+      "answer": "We bring experience across cosmetics, skin care, topical and oral OTCs, food, beverages, dietary supplements, and household cleaners."
+    },
+    {
+      "question": "What testing areas are available?",
+      "answer": "We provide microbiological and chemical testing using compendia methods, plus stability and laboratory studies to support product performance."
+    },
+    {
+      "question": "How do you support product development?",
+      "answer": "We assist through discovery, screening, feasibility, development, testing, and launch with consulting and technical guidance."
+    }
+  ]
+}

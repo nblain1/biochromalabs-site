@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "title": "Contact",
+    "description": "Direct access to BioChroma Analytical Labs for project scoping, sample submission, and technical support."
+  },
+  "hero": {
+    "eyebrow": "Contact & Support",
+    "title": "Direct access to our scientific team.",
+    "lead": "Whether you are initiating a new stability study or need to schedule a courier pickup, use the direct channels below to reach the appropriate department.",
+    "mediaCaptionTitle": "Technical Support",
+    "mediaCaptionText": "Direct access to lead scientists."
+  },
+  "actionCards": [
+    {
+      "title": "New Project Scoping",
+      "description": "Email our technical leads for quotes and testing plans.",
+      "email": "info@biochromalabs.com"
+    },
+    {
+      "title": "Sales & Quotes",
+      "description": "Send your scope, sample matrix, and timing needs for a tailored testing plan.",
+      "email": "sales@biochromalabs.com"
+    }
+  ],
+  "headquarters": {
+    "addressLines": [
+      "1309 Record Crossing Road",
+      "Dallas, TX 75235"
+    ],
+    "mapUrl": "https://maps.google.com/?q=1309+Record+Crossing+Road,+Dallas,+TX+75235",
+    "hours": "Mon - Fri: 8:30 AM - 5:30 PM CT",
+    "responseNote": "Technical inquiries are reviewed by staff scientists and typically receive a response within 24 business hours."
+  },
+  "departmentEmails": [
+    {
+      "department": "Sales & Quotes",
+      "email": "sales@biochromalabs.com",
+      "description": "Need a quote or scoping plan?"
+    },
+    {
+      "department": "Courier Services",
+      "email": "courierpickup@biochromalabs.com",
+      "description": "Schedule a sample pickup."
+    },
+    {
+      "department": "Chemistry Dept.",
+      "email": "chemistryinfo@biochromalabs.com",
+      "description": "Technical chemistry questions."
+    },
+    {
+      "department": "Microbiology Dept.",
+      "email": "microinfo@biochromalabs.com",
+      "description": "Technical microbiology questions."
+    },
+    {
+      "department": "Careers & HR",
+      "email": "hr@biochromalabs.com",
+      "description": "Looking for career opportunities?"
+    }
+  ],
+  "contactInfo": [
+    {
+      "icon": "ri-phone-line",
+      "title": "Phone",
+      "content": "(972) 454-9166",
+      "link": "tel:(972) 454-9166"
+    },
+    {
+      "icon": "ri-mail-line",
+      "title": "Email",
+      "content": "info@biochromalabs.com",
+      "link": "mailto:info@biochromalabs.com"
+    }
+  ]
+}
