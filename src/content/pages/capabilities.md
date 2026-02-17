@@ -16,4 +16,4 @@ ctaPrimaryHref: /contact
 ctaSecondaryLabel: Meet our Scientists
 ctaSecondaryHref: /about
 ---
-Capabilities page copy source for the current Astro implementation.
+Programs are structured to align method suitability, compliance needs, and reporting expectations with each product lifecycle stage.

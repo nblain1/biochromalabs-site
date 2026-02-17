@@ -15,4 +15,4 @@ ctaPrimaryHref: /contact
 ctaSecondaryLabel: Review Capabilities
 ctaSecondaryHref: /capabilities
 ---
-Quality page copy source for the current Astro implementation.
+Our quality framework is designed to protect data integrity, improve reproducibility, and support confidence during audits and regulatory review.

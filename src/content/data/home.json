@@ -7,7 +7,7 @@
     },
     {
       "number": "Compendia methods",
-      "label": "USP • AOAC • FDA BAM • USDA",
+      "label": "USP \u2022 AOAC \u2022 FDA BAM \u2022 USDA",
       "note": "Microbiological and chemical testing."
     },
     {
@@ -26,7 +26,9 @@
         "Pathogenic bacteria",
         "Preservative efficacy",
         "Environmental monitoring"
-      ]
+      ],
+      "id": "microbiology-programs",
+      "targetId": "microbiology-programs"
     },
     {
       "title": "Identity & Label Claim Verification",
@@ -37,7 +39,9 @@
         "Active ingredient assay",
         "Nutritional analysis",
         "Allergen testing"
-      ]
+      ],
+      "id": "analytical-chemistry",
+      "targetId": "analytical-chemistry"
     },
     {
       "title": "Data-Driven Shelf Life Studies",
@@ -48,7 +52,9 @@
         "Accelerated",
         "Stress",
         "Forced degradation"
-      ]
+      ],
+      "id": "stability-testing",
+      "targetId": "stability-testing"
     },
     {
       "title": "Functional Performance Validation",
@@ -59,7 +65,9 @@
         "Skin permeability",
         "Enzyme assays",
         "Microbial kill studies"
-      ]
+      ],
+      "id": "method-development-functional",
+      "targetId": "method-development"
     },
     {
       "title": "Strategic Quality Planning",
@@ -70,7 +78,9 @@
         "Packaging & closures",
         "Contract manufacturer selection",
         "Quality & regulatory advice"
-      ]
+      ],
+      "id": "method-development-strategy",
+      "targetId": "method-development"
     },
     {
       "title": "Concept-to-Market Commercialization",
@@ -81,7 +91,9 @@
         "Dietary supplement development",
         "Prototype formulation",
         "Scale-up support"
-      ]
+      ],
+      "id": "method-development-commercialization",
+      "targetId": "method-development"
     }
   ],
   "industries": [
@@ -122,7 +134,7 @@
     {
       "name": "Quality Director",
       "role": "Nutraceutical manufacturer",
-      "content": "BioChroma’s documentation and data review made our audit preparation far more efficient."
+      "content": "BioChroma\u2019s documentation and data review made our audit preparation far more efficient."
     },
     {
       "name": "Regulatory Affairs Lead",
