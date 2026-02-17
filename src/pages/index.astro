@@ -27,6 +27,15 @@ const heroHighlights = [
     icon: 'ri-route-line',
   },
 ];
+
+const capabilityAnchorMap: Record<string, string> = {
+  'Operational Safety & Pathogen Screening': 'microbiology-programs',
+  'Identity & Label Claim Verification': 'analytical-chemistry',
+  'Data-Driven Shelf Life Studies': 'stability-testing',
+  'Functional Performance Validation': 'method-development',
+  'Strategic Quality Planning': 'method-development',
+  'Concept-to-Market Commercialization': 'method-development',
+};
 ---
 
 <Layout title={`${siteData.name} - ${siteData.tagline}`} description={siteData.description}>
@@ -34,7 +43,7 @@ const heroHighlights = [
   <div class="home-shell">
     <div class="hero-grid">
       <div class="hero-copy">
-        <p class="hero-eyebrow">ISO 17025 Accredited Laboratory</p>
+        <p class="hero-eyebrow">ISO/IEC 17025-aligned laboratory systems</p>
         <h1>Precision analytical testing for regulated product development.</h1>
         <p class="hero-lead">
           Based in the DFW metroplex, BioChroma provides chemistry, microbiology, and stability testing. We deliver the defensible data required to move cosmetics, supplements, and OTC products from R&D to market.
@@ -70,7 +79,7 @@ const heroHighlights = [
 
     <div class="capability-grid">
       {capabilityHighlights.map((capability) => (
-        <a href={`/capabilities#${capability.title.toLowerCase().replace(/\s+/g, '-')}`} class="capability-card">
+        <a href={`/capabilities#${capabilityAnchorMap[capability.title] ?? 'analytical-chemistry'}`} class="capability-card">
           <div class="capability-head">
             <span class="capability-icon"><i class={capability.icon}></i></span>
             </div>
