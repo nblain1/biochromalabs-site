@@ -32,34 +32,35 @@ export const heroStats = [
   },
 ];
 
+/* PHASE 2: Outcome-First Messaging Applied Here */
 export const capabilityHighlights = [
   {
-    title: "Microbiology",
-    description: "Compendia microbiological testing to support shelf life, quality, and safety decisions.",
+    title: "Operational Safety & Pathogen Screening",
+    description: "Defensible microbiological testing to support shelf life, facility hygiene, and consumer safety decisions.",
     icon: "ri-bug-line",
     bullets: ["Shelf life studies", "Pathogenic bacteria", "Preservative efficacy", "Environmental monitoring"],
   },
   {
-    title: "Chemistry",
-    description: "Chemical testing using compendia methods for raw materials and active ingredients.",
+    title: "Identity & Label Claim Verification",
+    description: "Rigorous chemical analysis using compendial methods to verify raw material authenticity and active ingredient potency.",
     icon: "ri-flask-line",
     bullets: ["Raw material ID", "Active ingredient assay", "Nutritional analysis", "Allergen testing"],
   },
   {
-    title: "Stability",
-    description: "Stability studies designed to monitor performance across storage conditions.",
+    title: "Data-Driven Shelf Life Studies",
+    description: "Custom stability programs designed to monitor and defend product performance across lifecycle storage conditions.",
     icon: "ri-timer-line",
     bullets: ["Real time", "Accelerated", "Stress", "Forced degradation"],
   },
   {
-    title: "Laboratory studies",
-    description: "Functional studies to demonstrate product performance outside regulatory GMPs.",
+    title: "Functional Performance Validation",
+    description: "Laboratory studies designed to objectively demonstrate and substantiate product performance claims.",
     icon: "ri-test-tube-line",
     bullets: ["In vitro bioavailability", "Skin permeability", "Enzyme assays", "Microbial kill studies"],
   },
   {
-    title: "Consulting",
-    description: "Guidance on manufacturing, packaging, and quality or regulatory planning.",
+    title: "Strategic Quality Planning",
+    description: "Expert guidance on manufacturing compliance, packaging decisions, and regulatory readiness.",
     icon: "ri-lightbulb-flash-line",
     bullets: [
       "Ingredient stability advice",
@@ -69,8 +70,8 @@ export const capabilityHighlights = [
     ],
   },
   {
-    title: "Product development",
-    description: "Support from concept through launch with R&D, formulation, and scale-up planning.",
+    title: "Concept-to-Market Commercialization",
+    description: "Technical support from ideation through launch, including formulation feasibility and scale-up planning.",
     icon: "ri-rocket-2-line",
     bullets: [
       "Skin/body/hair care",
@@ -135,10 +136,11 @@ export const qualityCommitments = [
   },
 ];
 
+/* PHASE 2: Outcome-First Messaging Applied Here */
 export const serviceLines = [
   {
-    title: "Analytical chemistry",
-    description: "Quantitative and qualitative analysis for regulated products and intermediates.",
+    title: "Purity & Label Claim Verification",
+    description: "Quantitative and qualitative analysis ensuring compliance for regulated products and intermediates.",
     services: [
       "Assay + potency",
       "Impurity profiling",
@@ -148,8 +150,8 @@ export const serviceLines = [
     ],
   },
   {
-    title: "Microbiology",
-    description: "Risk-based microbiology programs designed for release and monitoring.",
+    title: "Product Safety & Facility Hygiene",
+    description: "Risk-based microbiology programs designed for secure product release and environmental monitoring.",
     services: [
       "Bioburden & endotoxin",
       "Sterility testing",
@@ -159,13 +161,13 @@ export const serviceLines = [
     ],
   },
   {
-    title: "Stability",
-    description: "Stability programs that scale from pilot studies to commercial lifecycle support.",
+    title: "Lifecycle & Degradation Studies",
+    description: "Stability programs that scale from pilot feasibility to commercial lifecycle defensibility.",
     services: ["Protocol design", "Stability pulls", "Trend analysis", "Storage monitoring"],
   },
   {
-    title: "Method development",
-    description: "Transfer-ready methods with full documentation and validation support.",
+    title: "Defensible Method Lifecycle",
+    description: "Transfer-ready analytical methods with complete documentation and validation support.",
     services: ["Method development", "Transfer packages", "Validation planning", "Tech transfer"],
   },
 ];
@@ -298,28 +300,29 @@ export const history = [
   },
 ];
 
+/* PHASE 2: Outcome-First Messaging Applied Here */
 export const detailedCapabilities = [
   {
-    category: "Chemistry Analysis",
-    summary: "Chemical testing using compendia methods for raw materials and active ingredients.",
+    category: "Identity & Purity Verification",
+    summary: "Chemical testing using compendial methods to ensure raw materials and final products meet specification.",
     icon: "ri-test-tube-line",
     tests: ["Nutritional analysis", "Mineral analysis", "Vitamin analysis", "Preservative analysis", "Active Ingredient assay", "Allergen testing", "Raw material ID"]
   },
   {
-    category: "Microbiological Analysis",
-    summary: "Compendia microbiological testing to support shelf life, quality, and safety decisions.",
+    category: "Safety & Spoilage Prevention",
+    summary: "Defensible microbiological testing to support shelf life, facility hygiene, and regulatory clearance.",
     icon: "ri-microscope-line",
     tests: ["General microbiology", "Pathogenic Bacteria", "Spoilage Organisms", "Preservative Efficacy", "Bacterial Challenge Studies", "In vitro Time-Kill Studies", "Antibiotic Studies", "Water Suitability"]
   },
   {
-    category: "R&D & Product Development",
-    summary: "Support from concept through launch with R&D, formulation, and scale-up planning.",
+    category: "Innovation to Commercialization",
+    summary: "Technical support from concept through launch, mitigating scale-up risks and formulation challenges.",
     icon: "ri-flask-line",
     tests: ["Skin/Body/Hair Care", "Dietary Supplements", "Transdermal Studies", "Antimicrobial Efficacy", "Prototype formulation", "Scale-up support"]
   },
   {
-    category: "Consulting & Quality",
-    summary: "Guidance on manufacturing, packaging, and regulatory planning to ensure market readiness.",
+    category: "Regulatory Readiness & Compliance",
+    summary: "Strategic guidance on manufacturing, packaging, and auditing to ensure uninterrupted market access.",
     icon: "ri-team-line",
     tests: ["Packaging & closures", "Manufacturing support", "Plant Inspections", "Ingredient Stability advice", "Container Closure", "Formulations", "Quality & Regulatory advice"]
   }
