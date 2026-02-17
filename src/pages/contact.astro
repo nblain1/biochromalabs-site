@@ -4,6 +4,7 @@ import { siteData, departmentEmails } from '../data/siteData';
 ---
 
 <Layout title={`Contact - ${siteData.name}`} description="Direct access to BioChroma Analytical Labs for project scoping, sample submission, and technical support.">
+  
   <section class="home-hero">
     <div class="home-shell">
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -12,7 +13,7 @@ import { siteData, departmentEmails } from '../data/siteData';
         <span class="text-emerald-400 opacity-80">Contact</span>
       </nav>
 
-      <div class="hero-grid mb-16">
+      <div class="hero-grid">
         <div class="hero-copy">
           <p class="hero-eyebrow">Contact & Support</p>
           <h1>Direct access to our scientific team.</h1>
@@ -33,7 +34,12 @@ import { siteData, departmentEmails } from '../data/siteData';
           </div>
         </aside>
       </div>
+    </div>
+  </section>
 
+  <section class="home-section border-t border-white/5">
+    <div class="home-shell">
+      
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         <a href={`mailto:${siteData.email}`} class="group block bg-white/5 border border-white/10 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/5 hover:shadow-[0_10px_30px_-10px_rgba(36,199,143,0.15)]">
           <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6">
@@ -88,16 +94,16 @@ import { siteData, departmentEmails } from '../data/siteData';
           <div class="bg-white/5 border border-white/10 p-8 rounded-xl">
             <h3 class="text-white mb-6 text-lg uppercase tracking-wider font-bold">Lab Headquarters</h3>
             
-            <div class="flex gap-4 mb-6">
+            <div class="flex gap-4 mb-6 group">
               <i class="ri-map-pin-2-line text-emerald-400 text-xl mt-1"></i>
-              <p class="text-slate-300 text-sm leading-relaxed">
+              <a href="https://maps.google.com/?q=1309+Record+Crossing+Road,+Dallas,+TX+75235" target="_blank" rel="noopener noreferrer" class="text-slate-300 text-sm leading-relaxed group-hover:text-emerald-400 transition-colors">
                 1309 Record Crossing Road<br/>Dallas, TX 75235
-              </p>
+              </a>
             </div>
             
-            <div class="flex gap-4 mb-6">
+            <div class="flex gap-4 mb-6 group">
               <i class="ri-phone-line text-emerald-400 text-xl"></i>
-              <a href={`tel:${siteData.phone}`} class="text-slate-300 text-sm hover:text-emerald-400 transition-colors">
+              <a href={`tel:${siteData.phone}`} class="text-slate-300 text-sm group-hover:text-emerald-400 transition-colors">
                 {siteData.phone}
               </a>
             </div>
@@ -120,3 +126,9 @@ import { siteData, departmentEmails } from '../data/siteData';
     </div>
   </section>
 </Layout>
+
+<style>
+  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+</style>
