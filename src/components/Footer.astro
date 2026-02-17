@@ -1,5 +1,6 @@
 ---
-import { siteData, navigation, socialLinks } from '../data/siteData';
+import { navigation, site } from '../data/content';
+import { socialLinks } from '../data/siteData';
 ---
 
 <footer class="border-t border-white/10 bg-slate-950">
@@ -12,15 +13,15 @@ import { siteData, navigation, socialLinks } from '../data/siteData';
             <i class="ri-flask-line text-xl"></i>
           </span>
           <div>
-            <p class="font-heading text-lg font-semibold text-white">{siteData.name}</p>
-            <p class="text-sm text-slate-400">{siteData.tagline}</p>
+            <p class="font-heading text-lg font-semibold text-white">{site.name}</p>
+            <p class="text-sm text-slate-400">{site.tagline}</p>
           </div>
         </div>
-        <p class="text-sm text-slate-300 max-w-md">{siteData.description}</p>
+        <p class="text-sm text-slate-300 max-w-md">{site.description}</p>
         <div class="flex items-center gap-3">
           {socialLinks.map((social) => (
             <a
-              href={siteData.social[social.name as keyof typeof siteData.social]}
+              href={site.social[social.name as keyof typeof site.social]}
               target="_blank"
               rel="noopener noreferrer"
               class="h-10 w-10 rounded-full border border-white/10 bg-white/5 text-slate-200 hover:border-emerald-400/50 hover:text-emerald-200 flex items-center justify-center"
@@ -33,7 +34,7 @@ import { siteData, navigation, socialLinks } from '../data/siteData';
       </div>
 
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Explore</h3>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">{site.footer.exploreTitle}</h3>
         <ul class="mt-4 space-y-3 text-sm">
           {navigation.map((item) => (
             <li>
@@ -46,30 +47,30 @@ import { siteData, navigation, socialLinks } from '../data/siteData';
       </div>
 
       <div>
-        <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Contact</h3>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">{site.footer.contactTitle}</h3>
         <ul class="mt-4 space-y-4 text-sm">
           <li class="flex items-start gap-3 text-slate-200">
             <i class="ri-map-pin-2-line text-emerald-300 mt-1"></i>
-            <span>1309 Record Crossing Road<br/>Dallas, TX 75235</span>
+            <span>{site.address.line1}<br/>{site.address.line2}</span>
           </li>
           <li class="flex items-start gap-3 text-slate-200">
             <i class="ri-phone-line text-emerald-300 mt-1"></i>
-            <a class="hover:text-emerald-200" href={`tel:${siteData.phone}`}>{siteData.phone}</a>
+            <a class="hover:text-emerald-200" href={`tel:${site.phone}`}>{site.phone}</a>
           </li>
           <li class="flex items-start gap-3 text-slate-200">
             <i class="ri-mail-send-line text-emerald-300 mt-1"></i>
-            <a class="hover:text-emerald-200" href={`mailto:${siteData.email}`}>{siteData.email}</a>
+            <a class="hover:text-emerald-200" href={`mailto:${site.email}`}>{site.email}</a>
           </li>
         </ul>
       </div>
     </div>
 
     <div class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-      <p>&copy; {new Date().getFullYear()} {siteData.name}. All rights reserved.</p>
+      <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
       <div class="flex items-center gap-4">
-         <p>ISO/IEC 17025-aligned Systems</p>
+         <p>{site.footer.complianceLabel}</p>
          <span class="h-1 w-1 rounded-full bg-slate-700"></span>
-         <p>DFW Metroplex Facility</p>
+         <p>{site.footer.facilityLabel}</p>
       </div>
     </div>
   </div>
