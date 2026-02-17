@@ -7,54 +7,101 @@ import { siteData } from '../data/siteData';
 // Import local hero asset
 import qualityHero from '../assets/quality-hero.jpg';
 
-// Restructured data for the "Spec Sheet" philosophy
 const qseDeepDive = [
   {
     id: 'governance',
-    title: 'Governance & Accountability',
-    subtitle: 'Organization',
-    icon: 'ri-organization-chart',
-    summary: 'Defined responsibilities and escalation pathways that ensure management commitment to quality.',
+    title: 'Governance & Accreditation',
+    subtitle: 'Management Systems',
+    icon: 'ri-shield-check-line',
+    summary: 'ISO/IEC 17025:2017 management systems verified through independent PJLA oversight.',
     elements: [
-      { name: 'Accountability', implementation: 'Designated Quality Manager with direct reporting lines to executive leadership, independent of production.' },
-      { name: 'Audit Readiness', implementation: 'Internal audit schedules and management review cycles to identify and remediate system variances proactively.' },
-      { name: 'Ethics & Impartiality', implementation: 'Strict policies governing the prevention of commercial or financial pressures on analytical results.' }
+      { 
+        name: 'PJLA ISO/IEC 17025:2017', 
+        implementation: 'Active accreditation for Chemical and Biological testing through PJLA (Cert #L24-580-R1).',
+        deepDive: 'Our quality management system is rigorously audited through biennial on-site assessments and annual internal audits. This ensures our laboratory operations, from sample receipt to final reporting, meet the highest international standards for technical competence and impartial data generation.'
+      },
+      { 
+        name: 'Flexible Scope (F-Codes)', 
+        implementation: 'F1-F5 Flexible Scope allowances enable rapid implementation and accreditation of new test methods.',
+        deepDive: 'BioChroma holds flexible scope designations (F1-F5), allowing for the rapid adaptation to newest revisions of standard methods or the introduction of new parameters. For clients, this means faster onboarding of custom testing programs without waiting for external accreditation cycles.'
+      },
+      { 
+        name: 'Closed-Loop CAPA System', 
+        implementation: 'Proactive system variance remediation through formal Corrective and Preventive Action (CAPA).',
+        deepDive: 'We view anomalies as opportunities for system hardening. Any out-of-specification (OOS) result triggers a formal investigation and root-cause analysis. This guarantees that analytical challenges are documented, resolved, and permanently prevented from recurring.'
+      }
     ]
   },
   {
     id: 'competency',
     title: 'Technical Competency',
-    subtitle: 'Personnel',
+    subtitle: 'Personnel & Proficiency',
     icon: 'ri-user-star-line',
-    summary: 'Role-based training and continuous qualification programs for every analyst in the lab.',
+    summary: 'Qualified analysts backed by Demonstration of Capability (DOC) and rigorous peer review.',
     elements: [
-      { name: 'Training Records', implementation: 'Centralized matrix tracking initial training, annual re-qualification, and method-specific competency.' },
-      { name: 'Technical Oversight', implementation: 'Peer-review system for 100% of raw data and final reports to ensure interpretation accuracy.' },
-      { name: 'Safety & Compliance', implementation: 'Standardized onboarding covering GLP/GMP principles and facility-specific safety protocols.' }
+      { 
+        name: '100% Peer Technical Review', 
+        implementation: 'A multi-stage review protocol ensuring every dataset is verified by a second qualified scientist.',
+        deepDive: 'No data leaves the bench unverified. Our "Review-at-the-Bench" protocol requires a secondary scientist to verify all raw instrument data, dilution factors, and manual calculations. This eliminates transcription errors and ensures the Certificate of Analysis (COA) is completely defensible.'
+      },
+      { 
+        name: 'Matrix Suitability & Spiking', 
+        implementation: 'Rigorous testing to ensure methods perform accurately on your specific product formulation.',
+        deepDive: 'A method that works on pure water might fail on a complex botanical or cosmetic cream. We perform matrix spiking and recovery studies to prove that our analytical methods are scientifically valid and free from interference for your specific product type.'
+      },
+      { 
+        name: 'Analyst Capability (DOC)', 
+        implementation: 'Mandatory, quantified demonstration of technical proficiency (IDOC/CDOC) for every analyst.',
+        deepDive: 'Training is quantified. Before testing client samples, analysts must complete an Initial Demonstration of Capability (IDOC) by running blind replicates with acceptable precision. Competency is continuously monitored and re-verified annually within our LIMS.'
+      }
     ]
   },
   {
     id: 'infrastructure',
-    title: 'Lifecycle Management',
-    subtitle: 'Equipment',
+    title: 'Infrastructure & Metrology',
+    subtitle: 'Equipment & Calibration',
     icon: 'ri-settings-5-line',
-    summary: 'Systematic controls for the qualification, calibration, and preventive maintenance of lab hardware.',
+    summary: 'Systematic control of analytical hardware through NIST-traceable calibration and validation.',
     elements: [
-      { name: 'IQ/OQ/PQ', implementation: 'Formal installation, operational, and performance qualification for all high-complexity instrumentation.' },
-      { name: 'Traceability', implementation: 'External calibration of critical measurement tools (balances, pipettes, timers) traceable to NIST standards.' },
-      { name: 'Maintenance', implementation: 'Automated scheduling for preventive maintenance to minimize downtime and prevent analytical drift.' }
+      { 
+        name: 'IQ/OQ/PQ Validation', 
+        implementation: 'Comprehensive validation lifecycle for all high-complexity analytical instrumentation.',
+        deepDive: 'New instrumentation undergoes strict Installation (IQ), Operational (OQ), and Performance Qualification (PQ). This proves that highly sensitive systems (like GC-MS and HPLC) operate exactly within manufacturer specifications in our specific lab environment before touching a client sample.'
+      },
+      { 
+        name: 'NIST-Traceable Metrology', 
+        implementation: 'Critical measurement tools are calibrated by accredited providers using traceable standards.',
+        deepDive: 'Exact measurement is the foundation of chemistry. Balances, pipettes, and timers are calibrated annually by third-party ISO 17025 metrology services. A centralized registry tracks all tools; if one falls out of tolerance, we immediately execute an impact analysis on affected data.'
+      },
+      { 
+        name: 'Environmental Monitoring', 
+        implementation: '24/7 automated monitoring of laboratory environments and stability chambers.',
+        deepDive: 'Environmental fluctuations can invalidate complex testing. We utilize automated, continuous monitoring systems with instant alarm protocols to track temperature and humidity across our facility, ensuring the physical integrity of your samples and stability studies is never compromised.'
+      }
     ]
   },
   {
-    id: 'traceability',
-    title: 'Knowledge Management',
-    subtitle: 'Documents & Records',
-    icon: 'ri-file-search-line',
-    summary: 'Version-controlled systems that ensure data is attributable, legible, and readily retrievable.',
+    id: 'integrity',
+    title: 'Digital Integrity',
+    subtitle: 'LIMS & Data Systems',
+    icon: 'ri-database-2-line',
+    summary: 'ALCOA+ data integrity principles powered by the LabLynx LIMS ecosystem.',
     elements: [
-      { name: 'Document Control', implementation: 'Standardized SOP workflows with formal change control, versioning, and archivist oversight.' },
-      { name: 'Data Integrity', implementation: 'ALCOA+ principles applied to all electronic and paper records to ensure permanent and accurate data.' },
-      { name: 'Retention', implementation: 'Managed archival system for samples and records following defined regulatory retention schedules.' }
+      { 
+        name: 'LabLynx Client Portal', 
+        implementation: 'Secure, 24/7 access to our dedicated portal for real-time sample tracking and COA retrieval.',
+        deepDive: 'Transparency accelerates your workflow. Clients receive dedicated credentials to our secure LabLynx portal, providing a real-time window into the testing lifecycle. You can track sample status, download QA-released COAs instantly, and securely access your historical data anytime.'
+      },
+      { 
+        name: 'ALCOA+ Audit Trails', 
+        implementation: 'Strict adherence to data integrity principles with cryptographically secure electronic audit trails.',
+        deepDive: 'Our digital ecosystem is built for regulatory scrutiny. Every digital action is timestamped, attributed to a specific user, and locked against unauthorized changes. This ensures data is 100% Attributable, Legible, Contemporaneous, Original, and Accurate.'
+      },
+      { 
+        name: 'Secure Archival & Retains', 
+        implementation: 'Climate-controlled physical retain storage and redundant off-site digital backups.',
+        deepDive: 'We protect data for the long haul. Physical sample retains are securely archived for potential re-testing or audit inquiries. Digital project records and raw instrument data are backed up daily with off-site redundancy to ensure compliance with 5-year retention requirements.'
+      }
     ]
   }
 ];
@@ -62,7 +109,7 @@ const qseDeepDive = [
 
 <Layout
   title={`Quality & Compliance - ${siteData.name}`}
-  description="ISO 17025-aligned quality systems supporting defensible, audit-ready analytical data."
+  description="ISO/IEC 17025:2017 accredited quality systems (PJLA #L24-580-R1) and LabLynx LIMS data management."
 >
   <section class="home-hero">
     <div class="home-shell">
@@ -74,22 +121,22 @@ const qseDeepDive = [
 
       <div class="hero-grid mb-16">
         <div class="hero-copy">
-          <p class="hero-eyebrow">Systems & Compliance</p>
-          <h1>Built for defensible, inspection-ready data.</h1>
+          <p class="hero-eyebrow">PJLA Accredited • LabLynx Integrated</p>
+          <h1>Technical validity built on a foundation of rigor.</h1>
           <p class="hero-lead">
-            Our quality framework aligns with <strong>ISO 17025</strong> principles. We provide the technical validity and traceable reporting required for complex regulatory submissions.
+            BioChroma operates under a strict <strong>ISO/IEC 17025:2017</strong> framework. Our Quality System Elements (QSE) are designed to produce defensible, inspection-ready data for regulated industries.
           </p>
           
           <div class="flex flex-col gap-6 bg-emerald-500/5 border border-emerald-500/20 p-8 rounded-xl mt-8 max-w-lg">
             <div class="flex items-center gap-5">
               <i class="ri-award-fill text-4xl text-emerald-400"></i>
               <div>
-                <strong class="block text-lg text-white">ISO/IEC 17025 Principles</strong>
-                <span class="text-sm text-slate-400">Quality Management Alignment</span>
+                <strong class="block text-lg text-white">PJLA Certificate #L24-580-R1</strong>
+                <span class="text-sm text-slate-400">Biological & Chemical Testing Scope</span>
               </div>
             </div>
             <a href="/documents/iso-cert.pdf" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-white/5 hover:bg-emerald-500/15 text-white hover:text-emerald-400 p-3 rounded-lg text-sm font-semibold transition-colors border border-white/5">
-              Download Scope PDF <i class="ri-download-2-line text-lg"></i>
+              View Scope of Accreditation <i class="ri-external-link-line text-lg"></i>
             </a>
           </div>
         </div>
@@ -97,13 +144,13 @@ const qseDeepDive = [
         <div class="hero-media-frame">
           <Image 
             src={qualityHero} 
-            alt="ISO 17025 Quality Control Data Review at BioChroma Analytical Labs" 
+            alt="BioChroma Quality Assurance Review and Data Analysis" 
             loading="eager" 
             class="w-full h-full object-cover rounded-2xl"
           />
           <div class="hero-media-caption">
             <p>Data Integrity Focus</p>
-            <span>100% peer-review on all analytical datasets.</span>
+            <span>ALCOA+ principles applied to every analytical dataset.</span>
           </div>
         </div>
       </div>
@@ -119,19 +166,18 @@ const qseDeepDive = [
             </div>
             <p class="text-slate-400 text-sm leading-relaxed mb-4">{item.summary}</p>
             <span class="text-emerald-400 text-sm font-semibold flex items-center gap-1 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-              View Guardrails <i class="ri-arrow-down-line"></i>
+              Examine Protocol <i class="ri-arrow-down-line"></i>
             </span>
           </a>
         ))}
       </div>
-
     </div>
   </section>
 
   <section class="home-section bg-slate-900/50 border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading">
-        <p>Operational Guardrails</p>
+        <p>Technical Guardrails</p>
         <h2>Quality System Elements (QSE)</h2>
       </div>
 
@@ -146,12 +192,10 @@ const qseDeepDive = [
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {item.elements.map((element) => {
-                // Generate a unique ID for the dialog
                 const modalId = `modal-${element.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`;
                 
                 return (
                   <>
-                    {/* Interactive Button Card */}
                     <button
                       type="button"
                       class="text-left bg-white/5 border border-white/10 rounded-lg p-5 hover:border-emerald-400/50 hover:bg-white/10 transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
@@ -164,22 +208,24 @@ const qseDeepDive = [
                       <p class="text-slate-400 text-sm leading-relaxed line-clamp-2">{element.implementation}</p>
                     </button>
 
-                    {/* Hidden Dialog Modal */}
                     <dialog
                       id={modalId}
-                      class="bg-slate-900 text-slate-300 border border-emerald-500/30 rounded-xl shadow-2xl shadow-emerald-900/20 w-[90%] max-w-lg p-0 m-auto backdrop:bg-slate-950/80 backdrop:backdrop-blur-sm"
+                      class="bg-slate-900 text-slate-300 border border-emerald-500/30 rounded-xl shadow-2xl shadow-emerald-900/20 w-[95%] max-w-xl p-0 m-auto backdrop:bg-slate-950/85 backdrop:backdrop-blur-sm"
                     >
-                      <div class="p-6 md:p-8">
-                        <div class="flex justify-between items-start mb-6">
-                          <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
-                                <i class={`${item.icon} text-emerald-400 text-xl`}></i>
+                      <div class="p-6 md:p-10">
+                        <div class="flex justify-between items-start mb-8">
+                          <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                                <i class={`${item.icon} text-emerald-400 text-2xl`}></i>
                             </div>
-                            <h4 class="text-2xl font-bold text-white">{element.name}</h4>
+                            <div>
+                              <h4 class="text-2xl font-bold text-white">{element.name}</h4>
+                              <p class="text-emerald-400/60 text-xs font-bold uppercase tracking-widest mt-1">Audit Trail Information</p>
+                            </div>
                           </div>
                           <button
                             type="button"
-                            class="text-slate-500 hover:text-emerald-400 transition-colors cursor-pointer p-1"
+                            class="text-slate-500 hover:text-white transition-colors cursor-pointer p-2 bg-white/5 rounded-lg border border-white/5"
                             onclick={`document.getElementById('${modalId}').close()`}
                             aria-label="Close details"
                           >
@@ -187,19 +233,33 @@ const qseDeepDive = [
                           </button>
                         </div>
                         
-                        <div class="space-y-4">
-                          <h5 class="text-emerald-400 text-sm font-semibold uppercase tracking-wider border-b border-emerald-400/20 pb-2">
-                            Implementation Protocol
-                          </h5>
-                          <p class="text-slate-300 leading-relaxed text-lg">
-                            {element.implementation}
-                          </p>
-                          
-                          <div class="bg-white/5 border border-white/10 rounded-lg p-4 mt-6">
-                            <p class="text-slate-400 text-sm italic flex gap-2 items-start">
-                              <i class="ri-information-line text-emerald-400 mt-0.5"></i>
-                              Extended documentation, SOPs, and historical data logs for this quality element are rigorously maintained and available for review during client audits.
+                        <div class="space-y-6">
+                          <div class="bg-emerald-500/5 border-l-4 border-emerald-500 p-5 rounded-r-lg">
+                            <h5 class="text-white text-sm font-bold uppercase tracking-widest mb-2">Core Implementation</h5>
+                            <p class="text-slate-300 leading-relaxed italic">
+                              "{element.implementation}"
                             </p>
+                          </div>
+
+                          <div class="space-y-4">
+                            <h5 class="text-emerald-400 text-sm font-semibold uppercase tracking-wider border-b border-emerald-400/20 pb-2">
+                              Technical Deep-Dive & Protocol
+                            </h5>
+                            <p class="text-slate-300 leading-relaxed text-lg">
+                              {element.deepDive}
+                            </p>
+                          </div>
+                          
+                          <div class="bg-slate-950 border border-white/5 rounded-lg p-5 mt-8">
+                            <div class="flex gap-3 items-start">
+                              <i class="ri-information-fill text-emerald-400 text-xl mt-0.5"></i>
+                              <div>
+                                <p class="text-white text-sm font-semibold mb-1">Audit Readiness Note</p>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                  Full SOPs, historical logs, and specific validation reports for this element are digitally stored in LabLynx and available for review during client site audits or regulatory inspections.
+                                </p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -217,12 +277,12 @@ const qseDeepDive = [
   <section class="home-section">
     <div class="home-shell">
       <CTA
-        title="Need to verify our credentials?"
-        description="We provide full ISO 17025 scopes of accreditation, SOP overviews, and sample submission guidelines for your QA team."
+        title="Ready to verify our credentials?"
+        description="Our quality team can provide full ISO 17025 scopes of accreditation, redacted SOP overviews, and sample submission guidelines for your QA team."
         primaryLabel="Contact Quality Team"
         primaryHref="/contact"
-        secondaryLabel="View Testing Capabilities"
-        secondaryHref="/capabilities"
+        secondaryLabel="View Testing Scope"
+        secondaryHref="/documents/iso-cert.pdf"
       />
     </div>
   </section>
@@ -233,18 +293,18 @@ const qseDeepDive = [
   .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
   .breadcrumb a:hover { color: var(--color-primary); }
   
-  /* Add smooth fade-in animation for the dialog opening */
   dialog[open] {
-    animation: fade-in 0.3s ease-out;
+    animation: zoom-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  @keyframes fade-in {
+
+  @keyframes zoom-in {
     from {
       opacity: 0;
-      transform: translateY(10px);
+      transform: scale(0.95) translateY(10px);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: scale(1) translateY(0);
     }
   }
 </style>
@@ -256,5 +316,23 @@ const qseDeepDive = [
     if (target.tagName === 'DIALOG') {
       (target as HTMLDialogElement).close();
     }
+  });
+
+  // Handle body scrolling lock
+  const dialogs = document.querySelectorAll('dialog');
+  dialogs.forEach(dialog => {
+    dialog.addEventListener('close', () => {
+      document.body.style.overflow = 'auto';
+    });
+    // Note: The showModal() method doesn't trigger a 'show' event automatically,
+    // so we handle the lock in the trigger buttons or a MutationObserver if needed.
+    // For simplicity here, we rely on the modal backdrop behavior.
+  });
+
+  // Simplified lock logic for the trigger buttons
+  document.querySelectorAll('button[onclick*="showModal"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.body.style.overflow = 'hidden';
+    });
   });
 </script>
