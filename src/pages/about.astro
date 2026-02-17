@@ -61,7 +61,7 @@ const departmentGroups = [
     <div class="home-shell">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
-        <span aria-hidden="true">&gt;</span>
+        <span aria-hidden="true">></span>
         <span class="text-emerald-400 opacity-80">About</span>
       </nav>
 
@@ -75,7 +75,7 @@ const departmentGroups = [
         </div>
 
         <div class="hero-media-frame">
-          <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=800&q=80" alt="BioChroma Laboratory Facility" />
+          <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=800&q=80" alt="BioChroma Laboratory Facility" loading="eager" />
           <div class="hero-media-caption">
             <p>DFW Analytical Facility</p>
             <span>State-of-the-art instrumentation suite.</span>
@@ -85,28 +85,28 @@ const departmentGroups = [
     </div>
   </section>
 
-  <section class="home-section">
+  <section class="home-section border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading">
         <p>Executive Suite</p>
         <h2>Strategic & Scientific Stewardship</h2>
       </div>
 
-      <div class="executive-triad">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
         {executives.map((exec) => (
-          <article class="exec-card">
-            <div class="exec-visual">
-              <div class="exec-img-frame">
-                 <img src={exec.image} alt={exec.name} />
+          <article class="group flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:shadow-[0_10px_30px_-10px_rgba(36,199,143,0.15)]">
+            <div class="p-8 border-b border-white/5 flex flex-col md:flex-row lg:flex-col items-center md:items-start lg:items-center text-center md:text-left lg:text-center gap-6">
+              <div class="w-24 h-24 lg:w-32 lg:h-32 rounded-full border border-emerald-400/20 bg-slate-900 overflow-hidden shrink-0">
+                 <img src={exec.image} alt={exec.name} class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
               </div>
-              <div class="exec-title-box">
-                <span class="exec-role">{exec.role}</span>
-                <h3>{exec.name}</h3>
+              <div>
+                <span class="block text-emerald-400 font-bold text-xs uppercase tracking-widest mb-1">{exec.role}</span>
+                <h3 class="text-white text-2xl font-bold">{exec.name}</h3>
               </div>
             </div>
-            <div class="exec-content">
-              <p class="exec-vitals"><strong>Background:</strong> {exec.vitals}</p>
-              <p class="exec-bio">{exec.bio}</p>
+            <div class="p-8 flex-grow flex flex-col bg-slate-900/50">
+              <p class="text-sm text-white italic opacity-90 mb-4 leading-relaxed"><strong>Background:</strong> {exec.vitals}</p>
+              <p class="text-sm text-slate-400 leading-relaxed">{exec.bio}</p>
             </div>
           </article>
         ))}
@@ -114,25 +114,27 @@ const departmentGroups = [
     </div>
   </section>
 
-  <section class="home-section chapter-section">
+  <section class="home-section bg-slate-900/50 border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading">
         <p>Operational Leadership</p>
         <h2>Technical Department Oversight</h2>
       </div>
 
-      <div class="dept-group-stack">
+      <div class="flex flex-col gap-16 mt-12">
         {departmentGroups.map((group) => (
-          <div class="dept-section">
-            <h3 class="dept-group-title">{group.department} Department</h3>
-            <div class="lead-sub-grid">
+          <div>
+            <h3 class="text-xl font-bold text-white mb-6 border-l-4 border-emerald-400 pl-4">{group.department} Department</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {group.leads.map((lead) => (
-                <div class="lead-mini-card">
-                  <div class="lead-head">
-                    <div class="lead-avatar-placeholder"></div>
-                    <h4>{lead.role}</h4>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-xl hover:border-emerald-400/30 hover:bg-emerald-400/5 transition-all duration-300 group">
+                  <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-emerald-400/30 transition-colors">
+                      <i class="ri-user-settings-line text-slate-400 group-hover:text-emerald-400 transition-colors"></i>
+                    </div>
+                    <h4 class="text-white font-semibold text-lg">{lead.role}</h4>
                   </div>
-                  <p>{lead.expertise}</p>
+                  <p class="text-slate-400 text-sm leading-relaxed">{lead.expertise}</p>
                 </div>
               ))}
             </div>
@@ -157,80 +159,7 @@ const departmentGroups = [
 </Layout>
 
 <style>
-  /* Executive Triad - Forced 3 Columns on Desktop */
-  .executive-triad {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  @media (min-width: 1024px) {
-    .executive-triad {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  .exec-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: 0.3s;
-  }
-  .exec-card:hover { border-color: rgba(36, 199, 143, 0.4); transform: translateY(-3px); }
-
-  /* Top-down layout for 3-column fit */
-  .exec-visual { 
-    padding: 2rem; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center;
-    gap: 1.5rem; 
-    border-bottom: 1px solid rgba(255,255,255,0.05); 
-  }
-  .exec-img-frame { width: 120px; height: 120px; border-radius: 50%; background: #080c14; border: 1px solid rgba(36, 199, 143, 0.2); overflow: hidden; }
-  .exec-img-frame img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
-  
-  .exec-role { color: var(--color-primary); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
-  .exec-title-box h3 { color: #fff; font-size: 1.35rem; margin-top: 0.25rem; }
-
-  .exec-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
-  .exec-vitals { font-size: 0.8rem; color: #fff; margin-bottom: 1rem; line-height: 1.4; font-style: italic; opacity: 0.9; }
-  .exec-bio { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-
-  /* Departmental Matrix */
-  .dept-group-stack { display: flex; flex-direction: column; gap: 4rem; margin-top: 4rem; }
-  .dept-group-title { 
-    color: #fff; font-size: 1.25rem; margin-bottom: 1.5rem; padding-left: 1rem; 
-    border-left: 3px solid var(--color-primary); 
-  }
-  
-  .lead-sub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .lead-mini-card {
-    background: rgba(255,255,255,0.01);
-    border: 1px solid rgba(255,255,255,0.05);
-    padding: 1.5rem;
-    border-radius: 8px;
-    transition: 0.2s;
-  }
-  .lead-mini-card:hover { border-color: rgba(36, 199, 143, 0.3); background: rgba(36, 199, 143, 0.02); }
-
-  .lead-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-  .lead-avatar-placeholder { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
-  .lead-head h4 { color: #fff; font-size: 1rem; margin: 0; }
-  .lead-mini-card p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.5; margin: 0; }
-
-  @media (max-width: 1023px) {
-    .exec-visual { flex-direction: row; text-align: left; }
-    .exec-img-frame { width: 80px; height: 80px; }
-  }
+  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
+  .breadcrumb a:hover { color: var(--color-primary); }
 </style>
