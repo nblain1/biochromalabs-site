@@ -1,96 +1,134 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
 import { siteData } from '../data/siteData';
 
-// 1. HIGH-LEVEL OVERVIEW (Used for the top routing cards)
-const capabilityLayers = [
-  {
-    id: 'analytical-chemistry',
-    title: 'Analytical Chemistry',
-    summary: 'Verification of product specifications, identity, and purity for raw materials and finished goods.',
-    icon: 'ri-test-tube-line',
-  },
-  {
-    id: 'microbiology-programs',
-    title: 'Microbiology Programs',
-    summary: 'Testing protocols designed to ensure product safety, microbiological stability, and facility hygiene.',
-    icon: 'ri-bug-line',
-  },
-  {
-    id: 'stability-testing',
-    title: 'Stability Testing',
-    summary: 'Data-driven shelf life studies to ensure product integrity remains intact from warehouse to consumer.',
-    icon: 'ri-timer-line',
-  },
-  {
-    id: 'method-development',
-    title: 'Method Development',
-    summary: 'Custom analytical protocols built for your specific matrix and regulatory pathway.',
-    icon: 'ri-flask-line',
-  }
-];
+// Import local assets (Ensure these exist in src/assets/)
+import capabilitiesHero from '../assets/capabilities-hero.jpg';
 
-// 2. THE TRUE DEEP DIVE (Structured for scannable, technical spec grids)
 const technicalSpecs = [
   {
     id: 'analytical-chemistry',
     title: 'Analytical Chemistry',
-    description: 'Quantitative and qualitative analysis utilizing compendial methods to ensure raw materials and final products meet strict regulatory specifications.',
+    subtitle: 'Identity & Potency',
+    icon: 'ri-test-tube-line',
+    description: 'Quantitative and qualitative analysis utilizing compendial methods to ensure raw materials and final products meet strict specifications.',
     tests: [
-      { name: 'Active Ingredient Assay', method: 'HPLC / UPLC / UV-Vis', application: 'Label claim verification and potency tracking.' },
-      { name: 'Residual Solvents', method: 'GC-MS / USP <467>', application: 'Screening for Class 1, 2, and 3 manufacturing solvents.' },
-      { name: 'Heavy Metals & Elementals', method: 'ICP-MS / USP <232>/<233>', application: 'Trace level detection of Pb, As, Cd, Hg, and others.' },
-      { name: 'Material Identification', method: 'FTIR / Wet Chemistry', application: 'Authenticity testing for incoming raw material release.' },
-      { name: 'Compositional Profiling', method: 'Protein Analyzer / Titration', application: 'Nutritional labeling and macro-component consistency.' }
+      { 
+        name: 'Potency & Label Claim', 
+        method: 'HPLC / UPLC / UV-Vis', 
+        application: 'Verification of vitamins, amino acids, and active markers.',
+        deepDive: 'We specialize in multi-component assays within complex matrices. Our UPLC workflows provide superior peak resolution and shorter run times, ensuring accurate quantification of label claims even in products with high botanical interference.'
+      },
+      { 
+        name: 'Heavy Metals (USP <2232>)', 
+        method: 'ICP-MS', 
+        application: 'Trace level detection of Pb, As, Cd, and Hg.',
+        deepDive: 'Utilizing collision cell technology, we eliminate polyatomic interferences to provide sub-ppb detection limits. This is critical for clients meeting Prop 65 or stringent heavy metal limits in botanical supplements.'
+      },
+      { 
+        name: 'Residual Solvents (<467>)', 
+        method: 'GC-MS / Headspace', 
+        application: 'Screening for Class 1, 2, and 3 manufacturing solvents.',
+        deepDive: 'Our headspace GC-MS protocols identify volatile organic impurities that may remain from the extraction or manufacturing process, ensuring compliance with USP <467> and ICH Q3C guidelines.'
+      }
     ]
   },
   {
     id: 'microbiology-programs',
     title: 'Microbiology Programs',
+    subtitle: 'Safety & Hygiene',
+    icon: 'ri-bug-line',
     description: 'Risk-based microbiology testing designed to protect consumer health and validate the hygiene of your manufacturing environment.',
     tests: [
-      { name: 'Microbial Enumeration', method: 'USP <61> / BAM', application: 'Total Aerobic Microbial Count (TAMC) and TYMC.' },
-      { name: 'Specified Pathogens', method: 'USP <62>', application: 'Absence testing for S. aureus, Salmonella, E. coli, P. aeruginosa.' },
-      { name: 'Antimicrobial Effectiveness', method: 'USP <51> (AET)', application: 'Preservative challenge testing for multi-dose formulations.' },
-      { name: 'Environmental Monitoring', method: 'Air / Surface Plates', application: 'Facility hygiene and cleanroom compliance testing.' },
-      { name: 'Water Suitability', method: 'Membrane Filtration', application: 'Verification of process water systems and TOC limits.' }
+      { 
+        name: 'Microbial Enumeration', 
+        method: 'USP <61> / BAM', 
+        application: 'Total Aerobic Microbial Count (TAMC) and TYMC.',
+        deepDive: 'Beyond simple counts, we perform suitability testing to ensure your product\'s inherent properties don\'t inhibit the growth of the microbes we are trying to detect, providing a truly accurate safety profile.'
+      },
+      { 
+        name: 'Pathogen Screening', 
+        method: 'USP <62>', 
+        application: 'Absence testing for S. aureus, Salmonella, and E. coli.',
+        deepDive: 'We utilize enrichment protocols to detect low-level pathogens. Our workflows are designed for zero cross-contamination, providing the "Absence-In" certification required for batch release.'
+      },
+      { 
+        name: 'Preservative Efficacy', 
+        method: 'USP <51> (AET)', 
+        application: 'Challenge testing for multi-dose formulations.',
+        deepDive: 'Essential for cosmetics and liquid supplements. We inoculate your product with five specific microorganisms and monitor the "kill rate" over 28 days to validate your preservative system\'s effectiveness.'
+      }
     ]
   },
   {
     id: 'stability-testing',
     title: 'Stability Testing',
+    subtitle: 'Shelf-Life Management',
+    icon: 'ri-timer-line',
     description: 'Comprehensive lifecycle management to establish and defend product expiration dates under various climatic conditions.',
     tests: [
-      { name: 'Accelerated Aging', method: '40°C / 75% RH', application: 'Rapid degradation assessment for early shelf-life estimates.' },
-      { name: 'Real-Time Storage', method: '25°C / 60% RH', application: 'Long-term baseline stability required for final regulatory filing.' },
-      { name: 'Photostability', method: 'ICH Q1B Options 1 & 2', application: 'Stress testing against UV and visible light exposure.' },
-      { name: 'Forced Degradation', method: 'Acid / Base / Heat / Oxidative', application: 'Identifying degradation pathways and stability-indicating markers.' }
+      { 
+        name: 'Accelerated Storage', 
+        method: '40°C / 75% RH', 
+        application: 'Rapid degradation assessment for early shelf-life estimates.',
+        deepDive: 'By stressing the product under high heat and humidity, we can predict 24 months of shelf stability in just 6 months. This allows for faster market entry while real-time studies continue.'
+      },
+      { 
+        name: 'ICH Climatic Zones I-IV', 
+        method: 'Continuous Monitoring', 
+        application: 'Standard and Tropical stability storage conditions.',
+        deepDive: 'Our walk-in and reach-in chambers are validated for ICH Zones I-IV. Whether your product is destined for temperate North America or tropical Southeast Asia, we have the validated environment to test it.'
+      },
+      { 
+        name: 'Photostability (Q1B)', 
+        method: 'ICH Option 1 & 2', 
+        application: 'Stress testing against UV and visible light exposure.',
+        deepDive: 'We determine if your packaging provides sufficient protection. Samples are exposed to a minimum of 1.2 million lux hours to identify light-sensitive degradation pathways.'
+      }
     ]
   },
   {
     id: 'method-development',
-    title: 'Method Development & Transfer',
+    title: 'Method Development',
+    subtitle: 'Custom Analytical Solutions',
+    icon: 'ri-flask-line',
     description: 'Translating complex analytical challenges into robust, validated, and transfer-ready standard operating procedures.',
     tests: [
-      { name: 'Matrix Optimization', method: 'Extraction & Recovery', application: 'Modifying compendial methods for complex or novel formulations.' },
-      { name: 'Formal Validation', method: 'USP <1225> / ICH Q2', application: 'Validating accuracy, precision, specificity, and linearity.' },
-      { name: 'Technology Transfer', method: 'Comparative Testing', application: 'Seamlessly moving methods from R&D to QA manufacturing labs.' },
-      { name: 'Failure Investigation', method: 'Root Cause Analysis', application: 'OOS (Out of Specification) investigations and troubleshooting.' }
+      { 
+        name: 'Formal Validation', 
+        method: 'USP <1225> / ICH Q2', 
+        application: 'Full validation of Accuracy, Precision, and Linearity.',
+        deepDive: 'When a compendial method doesn\'t exist for your unique formulation, we build one. Our validation packages are "Audit-Ready," including all raw data and statistical analysis required for regulatory filing.'
+      },
+      { 
+        name: 'Cleaning Validation', 
+        method: 'Swab & Rinse Analysis', 
+        application: 'Ensuring zero carryover in manufacturing equipment.',
+        deepDive: 'We develop ultra-sensitive methods to detect trace levels of actives or detergents, helping manufacturing teams validate their "Clean-in-Place" (CIP) protocols.'
+      },
+      { 
+        name: 'Extractables & Leachables', 
+        method: 'LC-MS / GC-MS Screening', 
+        application: 'Identifying chemicals migrating from packaging.',
+        deepDive: 'We investigate the interaction between your product and its container. This is vital for liquid formulations and long-term stability projects where packaging integrity is a variable.'
+      }
     ]
   }
 ];
 
 const instrumentRegistry = [
-  { category: "Chromatography", tools: ["UPLC / HPLC (PDA, RI, ELSD)", "Ion Chromatography (IC)", "Gas Chromatography (GC / FID)"] },
-  { category: "Mass Spectrometry", tools: ["LC-MS (Liquid / Mass Spec)", "GC-MS (Gas / Mass Spec)", "ICP-MS (Inductively Coupled Plasma)"] },
-  { category: "Spectroscopy", tools: ["FTIR (Fourier Transform Infrared)", "UV-Vis Spectrophotometry"] },
-  { category: "Specialized Analysis", tools: ["Protein Analyzer (Kjeldahl/Dumas)", "Stability Chambers (Zone I-IV)", "Class II Biosafety Enclosures"] }
+  { category: "Chromatography", tools: ["Waters UPLC-PDA-FLR", "Agilent 1260 HPLC (PDA/RI)", "Gas Chromatography (GC-FID/TCD)"] },
+  { category: "Mass Spectrometry", tools: ["ICP-MS (Agilent 7850)", "LC-MS/MS Triple Quad", "GC-MS Headspace"] },
+  { category: "Spectroscopy", tools: ["PerkinElmer FTIR", "UV-Vis Spectrophotometry", "Colorimetry (CIELAB)"] },
+  { category: "Specialized Analysis", tools: ["Stability Chambers (Zones I-IV)", "LabLynx LIMS Portal", "Automated Dissolution Testing"] }
 ];
 ---
 
 <Layout
   title={`Capabilities - ${siteData.name}`}
-  description="Comprehensive analytical testing outcomes including purity, label claim verification, and full instrument registry."
+  description="ISO 17025 accredited analytical outcomes including purity, label claim verification, and full stability lifecycle management."
 >
   <section class="home-hero">
     <div class="home-shell">
@@ -103,33 +141,38 @@ const instrumentRegistry = [
       <div class="hero-grid mb-16">
         <div class="hero-copy">
           <p class="hero-eyebrow">Service Capabilities</p>
-          <h1>Outcome-driven testing for regulated programs.</h1>
+          <h1>Technical solutions for complex formulations.</h1>
           <p class="hero-lead">
-            From raw material verification to complete stability lifecycle management, we provide the defensible analytical data required to confidently bring your products to market.
+            From raw material identification to complete stability lifecycle management, we provide the defensible analytical data required to confidently move your products from R&D to market release.
           </p>
         </div>
 
         <div class="hero-media-frame">
-          <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=800&q=80" alt="High Performance Liquid Chromatography (HPLC) instrumentation at BioChroma Labs" loading="eager" />
+          <Image 
+            src={capabilitiesHero} 
+            alt="Advanced Analytical Instrumentation at BioChroma Labs" 
+            loading="eager" 
+            class="w-full h-full object-cover rounded-2xl"
+          />
           <div class="hero-media-caption">
             <p>Analytical Precision</p>
-            <span>Traceable, compendial methodologies.</span>
+            <span>Traceable, compendial methodologies (USP, AOAC, ICH).</span>
           </div>
         </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {capabilityLayers.map((capability) => (
-          <a href={`#${capability.id}`} class="group bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-emerald-500/5 hover:border-emerald-400/30 transition-all duration-300">
+        {technicalSpecs.map((item) => (
+          <a href={`#${item.id}`} class="group bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-emerald-500/5 hover:border-emerald-400/30 transition-all duration-300">
             <div class="flex items-center gap-4 mb-4">
               <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 text-lg">
-                <i class={capability.icon}></i>
+                <i class={item.icon}></i>
               </span>
-              <h2 class="text-white font-bold text-lg group-hover:text-emerald-400 transition-colors">{capability.title}</h2>
+              <h2 class="text-white font-bold text-lg group-hover:text-emerald-400 transition-colors">{item.title}</h2>
             </div>
-            <p class="text-slate-400 text-sm leading-relaxed mb-4">{capability.summary}</p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">{item.description}</p>
             <span class="text-emerald-400 text-sm font-semibold flex items-center gap-1 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-              View Specs <i class="ri-arrow-down-line"></i>
+              View Detailed Specs <i class="ri-arrow-down-line"></i>
             </span>
           </a>
         ))}
@@ -139,35 +182,105 @@ const instrumentRegistry = [
 
   <section class="home-section bg-slate-900/50 border-t border-white/5">
     <div class="home-shell">
-      <div class="section-heading">
-        <p>Testing Methodologies</p>
-        <h2>Detailed Analytical Specifications</h2>
+      <div class="section-heading text-center max-w-3xl mx-auto mb-20">
+        <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">Scientific Outcomes</p>
+        <h2 class="text-4xl font-bold text-white">Full Analytical Specifications</h2>
+        <div class="h-1 w-20 bg-emerald-500 mx-auto mt-6"></div>
       </div>
 
       <div class="flex flex-col gap-24 mt-12">
         {technicalSpecs.map((spec) => (
           <div id={spec.id} class="scroll-mt-32">
-            <div class="mb-8 max-w-3xl">
-              <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">{spec.title}</h3>
+            <div class="mb-10 max-w-3xl">
+              <span class="text-emerald-400 font-semibold tracking-wider uppercase text-sm">{spec.subtitle}</span>
+              <h3 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">{spec.title}</h3>
               <p class="text-slate-300 text-lg leading-relaxed">{spec.description}</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {spec.tests.map((test) => (
-                <div class="bg-white/5 border border-white/10 rounded-lg p-5 hover:border-emerald-400/20 transition-colors">
-                  <h4 class="text-white font-bold mb-2">{test.name}</h4>
-                  <div class="flex flex-col gap-2 text-sm">
-                    <div class="flex items-start gap-2">
-                      <span class="text-emerald-400 font-semibold min-w-[70px]">Method:</span>
-                      <span class="text-slate-300">{test.method}</span>
-                    </div>
-                    <div class="flex items-start gap-2">
-                      <span class="text-emerald-400 font-semibold min-w-[70px]">App:</span>
-                      <span class="text-slate-400">{test.application}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {spec.tests.map((test) => {
+                const modalId = `cap-modal-${test.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`;
+                
+                return (
+                  <>
+                    <button
+                      type="button"
+                      class="text-left bg-white/5 border border-white/10 rounded-xl p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
+                      onclick={`document.getElementById('${modalId}').showModal()`}
+                    >
+                      <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-3 group-hover:border-emerald-400/30 transition-colors">
+                        <h4 class="text-white font-bold text-lg">{test.name}</h4>
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+                            <i class="ri-add-line text-slate-400 group-hover:text-emerald-400 group-hover:rotate-90 transition-all duration-300 text-lg"></i>
+                        </div>
+                      </div>
+                      <div class="space-y-3">
+                        <div class="flex items-start gap-2">
+                          <span class="text-emerald-400 font-bold text-xs uppercase tracking-tighter mt-1">Method:</span>
+                          <span class="text-slate-300 text-sm font-medium">{test.method}</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed line-clamp-2 italic">"{test.application}"</p>
+                      </div>
+                    </button>
+
+                    <dialog
+                      id={modalId}
+                      class="bg-slate-900 text-slate-300 border border-emerald-500/30 rounded-2xl shadow-2xl w-[95%] max-w-2xl p-0 m-auto backdrop:bg-slate-950/90 backdrop:backdrop-blur-md"
+                    >
+                      <div class="p-8 md:p-12">
+                        <div class="flex justify-between items-start mb-10">
+                          <div class="flex items-center gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                                <i class={`${spec.icon} text-emerald-400 text-3xl`}></i>
+                            </div>
+                            <div>
+                              <h4 class="text-3xl font-bold text-white">{test.name}</h4>
+                              <p class="text-emerald-400/60 text-xs font-bold uppercase tracking-widest mt-1">Analytical Outcome Sheet</p>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            class="text-slate-500 hover:text-white transition-colors cursor-pointer p-2 bg-white/5 rounded-xl border border-white/10"
+                            onclick={`document.getElementById('${modalId}').close()`}
+                            aria-label="Close"
+                          >
+                            <i class="ri-close-large-line text-2xl"></i>
+                          </button>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div class="bg-emerald-500/5 border-l-4 border-emerald-500 p-6 rounded-r-xl">
+                                    <h5 class="text-white text-xs font-bold uppercase tracking-widest mb-3">Primary Application</h5>
+                                    <p class="text-slate-300 leading-relaxed font-medium">
+                                    {test.application}
+                                    </p>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 p-6 rounded-xl">
+                                    <h5 class="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">Primary Methodology</h5>
+                                    <p class="text-white font-mono text-sm">{test.method}</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h5 class="text-emerald-400 text-sm font-semibold uppercase tracking-wider border-b border-emerald-400/20 pb-2">
+                                    Scientific Protocol Detail
+                                </h5>
+                                <p class="text-slate-300 leading-relaxed text-lg">
+                                    {test.deepDive}
+                                </p>
+                                <div class="pt-4">
+                                    <p class="text-slate-500 text-xs leading-relaxed italic border-t border-white/5 pt-4">
+                                        Testing is performed according to BioChroma SOPs which align with USP/NF, AOAC, or ICH guidelines as applicable. Full validation reports available upon request.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </dialog>
+                  </>
+                );
+              })}
             </div>
           </div>
         ))}
@@ -175,23 +288,23 @@ const instrumentRegistry = [
     </div>
   </section>
 
-  <section class="home-section instrument-registry-section bg-white/5 border-t border-white/10">
+  <section class="home-section instrument-registry-section bg-slate-950 border-t border-white/10">
     <div class="home-shell">
-      <div class="section-heading">
-        <p>Infrastructure</p>
-        <h2>Full Analytical Instrumentation Registry</h2>
+      <div class="section-heading mb-16">
+        <p class="text-emerald-400 uppercase tracking-widest font-bold text-sm">Infrastructure</p>
+        <h2 class="text-white">Analytical Instrumentation Registry</h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         {instrumentRegistry.map(item => (
-          <div>
-            <h4 class="text-emerald-400 text-sm font-bold uppercase tracking-wider border-b border-emerald-400/20 pb-2 mb-4">
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-emerald-500/5 transition-colors">
+            <h4 class="text-emerald-400 text-sm font-bold uppercase tracking-widest border-b border-emerald-400/20 pb-4 mb-6">
               {item.category}
             </h4>
-            <ul class="flex flex-col gap-3">
+            <ul class="flex flex-col gap-4">
               {item.tools.map(tool => (
-                <li class="text-slate-300 text-sm flex items-start gap-2">
-                  <i class="ri-checkbox-blank-circle-fill text-[8px] mt-1.5 text-white/20"></i>
+                <li class="text-slate-300 text-sm flex items-start gap-3">
+                  <i class="ri-flask-fill text-emerald-400/40 text-sm mt-0.5"></i>
                   {tool}
                 </li>
               ))}
@@ -201,4 +314,61 @@ const instrumentRegistry = [
       </div>
     </div>
   </section>
+
+  <section class="home-section">
+    <div class="home-shell">
+      <CTA
+        title="Ready to scope your analytical program?"
+        description="Share your matrix details and regulatory requirements. Our technical team will return a scoped plan and quote within 24 business hours."
+        primaryLabel="Request a Quote"
+        primaryHref="/contact"
+        secondaryLabel="Meet our Scientists"
+        secondaryHref="/about"
+      />
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  
+  dialog[open] {
+    animation: zoom-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes zoom-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // Close dialogs when clicking on the dark backdrop
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'DIALOG') {
+      (target as HTMLDialogElement).close();
+    }
+  });
+
+  // Body scroll lock
+  document.querySelectorAll('button[onclick*="showModal"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('close', () => {
+      document.body.style.overflow = 'auto';
+    });
+  });
+</script>
