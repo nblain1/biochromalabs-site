@@ -62,15 +62,25 @@ const departmentGroups = [
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span aria-hidden="true">&gt;</span>
-        <span style="color: var(--teal); opacity: 0.8;">About</span>
+        <span class="text-emerald-400 opacity-80">About</span>
       </nav>
 
-      <div class="section-heading" style="text-align: left; margin-bottom: 3rem;">
-        <p class="hero-eyebrow">The BioChroma Mission</p>
-        <h1 style="max-width: 850px;">Leadership committed to precision and excellence.</h1>
-        <p class="hero-lead" style="margin-top: 1.5rem; max-width: 800px;">
-          Based in the DFW metroplex, our team provides analytical solutions tailored precisely to client needs and regulatory demands.
-        </p>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">The BioChroma Mission</p>
+          <h1>Leadership committed to precision and excellence.</h1>
+          <p class="hero-lead">
+            Based in the DFW metroplex, our team provides analytical solutions tailored precisely to client needs and regulatory demands. We serve as a technical extension of your R&D team.
+          </p>
+        </div>
+
+        <div class="hero-media-frame">
+          <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?w=800&q=80" alt="BioChroma Laboratory Facility" />
+          <div class="hero-media-caption">
+            <p>DFW Analytical Facility</p>
+            <span>State-of-the-art instrumentation suite.</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -147,10 +157,6 @@ const departmentGroups = [
 </Layout>
 
 <style>
-  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
-  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
-  .breadcrumb a:hover { color: var(--teal); }
-
   /* Executive Triad - Forced 3 Columns on Desktop */
   .executive-triad {
     display: grid;
@@ -174,7 +180,7 @@ const departmentGroups = [
     flex-direction: column;
     transition: 0.3s;
   }
-  .exec-card:hover { border-color: rgba(0, 230, 168, 0.2); transform: translateY(-3px); }
+  .exec-card:hover { border-color: rgba(36, 199, 143, 0.4); transform: translateY(-3px); }
 
   /* Top-down layout for 3-column fit */
   .exec-visual { 
@@ -186,10 +192,10 @@ const departmentGroups = [
     gap: 1.5rem; 
     border-bottom: 1px solid rgba(255,255,255,0.05); 
   }
-  .exec-img-frame { width: 120px; height: 120px; border-radius: 50%; background: #080c14; border: 1px solid rgba(0,230,168,0.2); overflow: hidden; }
+  .exec-img-frame { width: 120px; height: 120px; border-radius: 50%; background: #080c14; border: 1px solid rgba(36, 199, 143, 0.2); overflow: hidden; }
   .exec-img-frame img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
   
-  .exec-role { color: var(--teal); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  .exec-role { color: var(--color-primary); font-weight: 800; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
   .exec-title-box h3 { color: #fff; font-size: 1.35rem; margin-top: 0.25rem; }
 
   .exec-content { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
@@ -200,7 +206,7 @@ const departmentGroups = [
   .dept-group-stack { display: flex; flex-direction: column; gap: 4rem; margin-top: 4rem; }
   .dept-group-title { 
     color: #fff; font-size: 1.25rem; margin-bottom: 1.5rem; padding-left: 1rem; 
-    border-left: 3px solid var(--teal); 
+    border-left: 3px solid var(--color-primary); 
   }
   
   .lead-sub-grid {
@@ -216,7 +222,7 @@ const departmentGroups = [
     border-radius: 8px;
     transition: 0.2s;
   }
-  .lead-mini-card:hover { border-color: rgba(0, 230, 168, 0.2); background: rgba(0, 230, 168, 0.02); }
+  .lead-mini-card:hover { border-color: rgba(36, 199, 143, 0.3); background: rgba(36, 199, 143, 0.02); }
 
   .lead-head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
   .lead-avatar-placeholder { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }

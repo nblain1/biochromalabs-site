@@ -40,137 +40,74 @@ const capabilityAnchorMap: Record<string, string> = {
 
 <Layout title={`${siteData.name} - ${siteData.tagline}`} description={siteData.description}>
   <section class="home-hero">
-  <div class="home-shell">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="hero-eyebrow">ISO/IEC 17025-aligned laboratory systems</p>
-        <h1>Precision analytical testing for regulated product development.</h1>
-        <p class="hero-lead">
-          Based in the DFW metroplex, BioChroma provides chemistry, microbiology, and stability testing. We deliver the defensible data required to move cosmetics, supplements, and OTC products from R&D to market.
-        </p>
-        <div class="hero-cta-row">
-          <a class="btn-primary" href="/contact">Request a quote <i class="ri-arrow-right-up-line"></i></a>
-          <a class="btn-secondary" href="/capabilities">View capabilities <i class="ri-arrow-right-line"></i></a>
+    <div class="home-shell">
+      
+      <div class="hero-grid mb-16">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">ISO/IEC 17025-aligned laboratory systems</p>
+          <h1>Precision analytical testing for regulated product development.</h1>
+          <p class="hero-lead">
+            Based in the DFW metroplex, BioChroma provides chemistry, microbiology, and stability testing. We deliver the defensible data required to move cosmetics, supplements, and OTC products from R&D to market.
+          </p>
+          <div class="hero-cta-row mt-6">
+            <a class="btn-primary" href="/contact">Request a quote <i class="ri-arrow-right-up-line"></i></a>
+            <a class="btn-secondary" href="/capabilities">View capabilities <i class="ri-arrow-right-line"></i></a>
+          </div>
         </div>
+
+        <aside class="hero-media-frame" aria-label="Laboratory Facility">
+          <img
+            src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800&q=80" 
+            alt="BioChroma Analytical testing equipment"
+            loading="eager"
+          />
+          [Image of a modern analytical laboratory featuring high-end chromatography equipment and scientists in PPE]
+          <div class="hero-media-caption">
+            <p>Analytical Excellence</p>
+            <span>Compendial testing and custom method development.</span>
+          </div>
+        </aside>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="home-section capabilities-section">
+    <div class="home-shell">
+      <div class="section-heading">
+        <p>Capabilities</p>
+        <h2>Six capability areas supporting quality from concept to scale.</h2>
       </div>
 
-      <aside class="hero-media-frame" aria-label="Laboratory Facility">
-        <img
-          src="/images/hero-lab.jpg" 
-          alt="BioChroma Analytical testing equipment"
-          loading="eager"
-        />
-        <div class="hero-media-caption">
-          <p>Analytical Excellence</p>
-          <span>Compendial testing and custom method development.</span>
-        </div>
-      </aside>
-    </div>
-    
-    </div>
-</section>
-
-<section class="home-section capabilities-section">
-  <div class="home-shell">
-    <div class="section-heading">
-      <p>Capabilities</p>
-      <h2>Six capability areas supporting quality from concept to scale.</h2>
-    </div>
-
-    <div class="capability-grid">
-      {capabilityHighlights.map((capability) => (
-        <a href={`/capabilities#${capabilityAnchorMap[capability.title] ?? 'analytical-chemistry'}`} class="capability-card">
-          <div class="capability-head">
-            <span class="capability-icon"><i class={capability.icon}></i></span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        {capabilityHighlights.map((capability) => (
+          <a href={`/capabilities#${capabilityAnchorMap[capability.title] ?? 'analytical-chemistry'}`} 
+             class="group block bg-white/2 border border-white/5 p-8 rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/5 hover:shadow-[0_10px_30px_-10px_rgba(36,199,143,0.15)]">
+            <div class="mb-4">
+              <span class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-emerald-500/10 text-emerald-400 text-xl mb-4">
+                <i class={capability.icon}></i>
+              </span>
+              <h3 class="text-xl font-bold text-white mb-2">{capability.title}</h3>
             </div>
-          <h3>{capability.title}</h3>
-          <p>{capability.description}</p>
-          <ul class="capability-pills">
-            {capability.bullets.map((bullet) => (
-              <li>{bullet}</li>
-            ))}
-          </ul>
-          <div class="card-footer">
-            <span>Learn More</span>
-            <i class="ri-arrow-right-line"></i>
-          </div>
-        </a>
-      ))}
+            <p class="text-slate-300 text-sm leading-relaxed flex-grow">{capability.description}</p>
+            
+            <ul class="flex flex-wrap gap-2 my-6">
+              {capability.bullets.map((bullet) => (
+                <li class="bg-white/5 px-3 py-1.5 rounded-full text-xs font-medium text-emerald-400 border border-white/5">
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+            
+            <div class="mt-auto flex items-center gap-2 text-sm font-semibold text-emerald-400 opacity-0 -translate-x-3 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+              <span>Learn More</span>
+              <i class="ri-arrow-right-line"></i>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
-  </div>
-</section>
-
-<style>
-  /* Uniform Grid Fix */
-  .capability-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  /* Standardized Card Styling */
-  .capability-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 2.5rem;
-    border-radius: 12px;
-    text-decoration: none; /* Make whole card clickable */
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-  }
-
-  /* Hover Effects */
-  .capability-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 230, 168, 0.3);
-    background: rgba(0, 230, 168, 0.02);
-    box-shadow: 0 10px 30px -10px rgba(0, 230, 168, 0.15);
-  }
-
-  /* Centered Pill Text Fix */
-  .capability-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-
-  .capability-pills li {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.4rem 0.8rem; /* Adjusted for centering */
-    border-radius: 999px;
-    font-size: 0.825rem;
-    display: flex;
-    align-items: center; /* Vertical Center Fix */
-    justify-content: center;
-    line-height: 1;
-    color: var(--teal);
-  }
-
-  /* Visual Cue for Clickability */
-  .card-footer {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--teal);
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: all 0.3s ease;
-  }
-
-  .capability-card:hover .card-footer {
-    opacity: 1;
-    transform: translateX(0);
-  }
-</style>
+  </section>
 
   <section class="home-section support-section">
     <div class="home-shell support-layout">
@@ -195,6 +132,8 @@ const capabilityAnchorMap: Record<string, string> = {
         <p>Process</p>
         <h2>From discovery to launch with clear stage gates and transparent reporting.</h2>
       </div>
+      
+      [Image of a stage-gate project management diagram showing the transition from R&D feasibility to analytical testing and final market launch]
 
       <div class="process-timeline">
         {processSteps.map((step, index) => (
@@ -222,9 +161,9 @@ const capabilityAnchorMap: Record<string, string> = {
         {testimonials.map((item) => (
           <article class="testimonial-card">
             <p>“{item.content}”</p>
-            <div>
-              <h3>{item.name}</h3>
-              <span>{item.role}</span>
+            <div class="mt-4 pt-4 border-t border-white/10">
+              <h3 class="text-white font-semibold text-sm">{item.name}</h3>
+              <span class="text-slate-400 text-xs uppercase tracking-wide">{item.role}</span>
             </div>
           </article>
         ))}
@@ -241,12 +180,12 @@ const capabilityAnchorMap: Record<string, string> = {
 
       <div class="faq-stack">
         {faqs.map((item) => (
-          <details class="faq-item">
-            <summary>
+          <details class="faq-item group">
+            <summary class="hover:text-emerald-400 transition-colors">
               <span>{item.question}</span>
-              <i class="ri-add-line"></i>
+              <i class="ri-add-line group-open:rotate-45 transition-transform duration-300"></i>
             </summary>
-            <p>{item.answer}</p>
+            <p class="pt-4">{item.answer}</p>
           </details>
         ))}
       </div>
@@ -267,44 +206,16 @@ const capabilityAnchorMap: Record<string, string> = {
   </section>
 </Layout>
 
-<style>
-  .capability-card ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
-    padding: 0;
-  }
-
-  .capability-card li {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.25rem 0.75rem;
-    border-radius: 999px;
-    font-size: 0.875rem;
-  }
-
-  @media (max-width: 768px) {
-    .process-timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .process-item,
-    .process-item.process-left,
-    .process-item.process-right {
-      width: 100%;
-      margin: 0;
-      padding-left: 3rem;
-      padding-right: 0;
-      justify-content: flex-start;
-      text-align: left;
-    }
-
-    .process-item .process-marker {
-      left: 0;
-      right: auto;
-      transform: none;
-    }
-  }
-</style>
+<script>
+  // Ensure only one FAQ is open at a time (matching the behavior from capabilities/quality)
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqs = document.querySelectorAll('.faq-item');
+    faqs.forEach((targetFaq) => {
+      targetFaq.addEventListener('click', () => {
+        faqs.forEach((faq) => {
+          if (faq !== targetFaq) { faq.removeAttribute('open'); }
+        });
+      });
+    });
+  });
+</script>
