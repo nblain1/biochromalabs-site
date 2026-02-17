@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
 import {
@@ -9,6 +10,9 @@ import {
   testimonials,
   faqs,
 } from '../data/siteData';
+
+// Import local hero asset (Ensure you have an index-hero.jpg in src/assets/)
+import indexHero from '../assets/index-hero.jpg';
 
 const capabilityAnchorMap: Record<string, string> = {
   'Operational Safety & Pathogen Screening': 'microbiology-programs',
@@ -25,8 +29,8 @@ const capabilityAnchorMap: Record<string, string> = {
   <section class="home-hero">
     <div class="home-shell">
       <div class="hero-grid mb-16">
-        <div class="hero-copy">
-          <p class="hero-eyebrow">ISO/IEC 17025-aligned laboratory systems</p>
+        <div class="hero-copy reveal-up">
+          <p class="hero-eyebrow">ISO/IEC 17025:2017 Accredited Laboratory</p>
           <h1>Precision analytical testing for regulated product development.</h1>
           <p class="hero-lead">
             Based in the DFW metroplex, BioChroma provides chemistry, microbiology, and stability testing. We deliver the defensible data required to move cosmetics, supplements, and OTC products from R&D to market.
@@ -37,13 +41,13 @@ const capabilityAnchorMap: Record<string, string> = {
           </div>
         </div>
 
-        <aside class="hero-media-frame" aria-label="Laboratory Facility">
-          <img
-            src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800&q=80" 
-            alt="BioChroma Analytical testing equipment"
-            loading="eager"
+        <aside class="hero-media-frame reveal-scale" style="transition-delay: 200ms;" aria-label="Laboratory Facility">
+          <Image 
+            src={indexHero} 
+            alt="BioChroma Analytical testing equipment" 
+            loading="eager" 
+            class="w-full h-full object-cover rounded-2xl" 
           />
-          
           <div class="hero-media-caption">
             <p>Analytical Excellence</p>
             <span>Compendial testing and custom method development.</span>
@@ -55,15 +59,16 @@ const capabilityAnchorMap: Record<string, string> = {
 
   <section class="home-section border-t border-white/5">
     <div class="home-shell">
-      <div class="section-heading">
+      <div class="section-heading reveal-up">
         <p>Capabilities</p>
         <h2>Six capability areas supporting quality from concept to scale.</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-        {capabilityHighlights.map((capability) => (
+        {capabilityHighlights.map((capability, index) => (
           <a href={`/capabilities#${capabilityAnchorMap[capability.title] ?? 'analytical-chemistry'}`} 
-             class="group block bg-white/5 border border-white/10 p-8 rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/5 hover:shadow-[0_10px_30px_-10px_rgba(36,199,143,0.15)]">
+             class="group block bg-white/5 border border-white/10 p-8 rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/5 hover:shadow-[0_10px_30px_-10px_rgba(36,199,143,0.15)] reveal-up"
+             style={`transition-delay: ${index * 100}ms;`}>
             <div class="mb-4">
               <span class="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-emerald-500/10 text-emerald-400 text-xl mb-4">
                 <i class={capability.icon}></i>
@@ -92,13 +97,15 @@ const capabilityAnchorMap: Record<string, string> = {
 
   <section class="home-section bg-slate-900/50 border-t border-white/5">
     <div class="home-shell text-center max-w-4xl mx-auto">
-      <div class="section-heading section-heading-center">
+      <div class="section-heading section-heading-center reveal-up">
         <p>Who we support</p>
         <h2>Programs tuned to the teams that move regulated science forward.</h2>
       </div>
       <div class="flex flex-wrap justify-center gap-4 mt-10">
-        {industries.map((industry) => (
-          <a href="/capabilities" class="flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2.5 rounded-full text-sm font-medium text-slate-300 hover:text-emerald-400 hover:border-emerald-400/30 hover:bg-emerald-500/5 transition-colors">
+        {industries.map((industry, index) => (
+          <a href="/capabilities" 
+             class="flex items-center gap-2 bg-white/5 border border-white/10 px-5 py-2.5 rounded-full text-sm font-medium text-slate-300 hover:text-emerald-400 hover:border-emerald-400/30 hover:bg-emerald-500/5 transition-colors reveal-scale"
+             style={`transition-delay: ${index * 50}ms;`}>
             <span>{industry}</span>
             <i class="ri-arrow-right-up-line opacity-50"></i>
           </a>
@@ -109,16 +116,14 @@ const capabilityAnchorMap: Record<string, string> = {
 
   <section class="home-section border-t border-white/5">
     <div class="home-shell max-w-5xl mx-auto">
-      <div class="section-heading">
+      <div class="section-heading reveal-up">
         <p>Process</p>
         <h2>From discovery to launch with clear stage gates and transparent reporting.</h2>
       </div>
       
-      
-
       <div class="relative border-l border-emerald-500/20 ml-6 md:ml-8 mt-16 space-y-12 pb-8">
         {processSteps.map((step, index) => (
-          <article class="relative pl-10 md:pl-16">
+          <article class="relative pl-10 md:pl-16 reveal-up" style={`transition-delay: ${index * 150}ms;`}>
             <div class="absolute -left-6 md:-left-8 top-0 w-12 h-12 md:w-16 md:h-16 bg-slate-950 border-2 border-emerald-400/30 text-emerald-400 rounded-full flex items-center justify-center font-bold text-lg md:text-xl shadow-[0_0_20px_rgba(36,199,143,0.1)]">
               {index + 1}
             </div>
@@ -134,14 +139,14 @@ const capabilityAnchorMap: Record<string, string> = {
 
   <section class="home-section bg-slate-900/50 border-t border-white/5">
     <div class="home-shell">
-      <div class="section-heading">
+      <div class="section-heading reveal-up">
         <p>Client feedback</p>
         <h2>Trusted by quality and regulatory leaders.</h2>
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-        {testimonials.map((item) => (
-          <article class="flex flex-col justify-between bg-white/5 border border-white/10 p-8 rounded-xl">
+        {testimonials.map((item, index) => (
+          <article class="flex flex-col justify-between bg-white/5 border border-white/10 p-8 rounded-xl reveal-up" style={`transition-delay: ${index * 150}ms;`}>
             <p class="text-slate-300 italic mb-8 leading-relaxed">“{item.content}”</p>
             <div class="pt-6 border-t border-white/10 flex items-center gap-4 mt-auto">
               <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
@@ -160,14 +165,14 @@ const capabilityAnchorMap: Record<string, string> = {
 
   <section class="home-section border-t border-white/5">
     <div class="home-shell max-w-4xl mx-auto">
-      <div class="section-heading section-heading-center">
+      <div class="section-heading section-heading-center reveal-up">
         <p>FAQ</p>
         <h2>Quick answers about BioChroma Analytical Labs.</h2>
       </div>
 
       <div class="flex flex-col gap-4 mt-12">
-        {faqs.map((item) => (
-          <details class="faq-item group bg-white/5 border border-white/10 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+        {faqs.map((item, index) => (
+          <details class="faq-item group bg-white/5 border border-white/10 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden reveal-up" style={`transition-delay: ${index * 50}ms;`}>
             <summary class="flex justify-between items-center p-6 cursor-pointer hover:bg-white/5 transition-colors">
               <span class="text-white font-semibold pr-8">{item.question}</span>
               <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-open:bg-emerald-500/10 group-open:text-emerald-400 transition-colors">
@@ -184,7 +189,7 @@ const capabilityAnchorMap: Record<string, string> = {
   </section>
 
   <section class="home-section border-t border-white/5">
-    <div class="home-shell">
+    <div class="home-shell reveal-up">
       <CTA
         title="Ready to scope your program?"
         description="Share sample scope, timelines, and regulatory context. We will return a scoped plan with clear next steps."
@@ -197,9 +202,33 @@ const capabilityAnchorMap: Record<string, string> = {
   </section>
 </Layout>
 
+<style>
+  /* --- Scroll Reveal Animations --- */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    
+    /* When the observer adds the 'active' class */
+    .reveal-up.active,
+    .reveal-scale.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
 <script>
-  // Ensure only one FAQ is open at a time for cleaner UX
   document.addEventListener('DOMContentLoaded', () => {
+    // --- FAQ Accordion Logic ---
+    // Ensure only one FAQ is open at a time for cleaner UX
     const faqs = document.querySelectorAll('.faq-item');
     faqs.forEach((targetFaq) => {
       targetFaq.addEventListener('click', () => {
@@ -208,5 +237,24 @@ const capabilityAnchorMap: Record<string, string> = {
         });
       });
     });
+
+    // --- Scroll Reveal Observer ---
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px', // Trigger slightly before it hits the bottom
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); // Unobserve to improve scroll performance
+        }
+      });
+    }, observerOptions);
+
+    const elementsToReveal = document.querySelectorAll('.reveal-up, .reveal-scale');
+    elementsToReveal.forEach(el => observer.observe(el));
   });
 </script>
