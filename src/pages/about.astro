@@ -14,23 +14,23 @@ const executives = [
   {
     name: "Benny McKee",
     role: "CEO & Cofounder",
-    image: execBenny, // Using imported asset object
+    image: execBenny,
     vitals: "Dallas Baptist University (BS Biology); HACCP & Food Safety Certified.",
-    bio: "With nearly three decades of executive leadership, Benny drives organizational efficiency and customer-focused service. His expertise spans strategic planning, operational management, and regulatory stewardship."
+    bio: "With nearly three decades of executive leadership in the laboratory sector, Benny drives the operational efficiency and customer-centric culture at BioChroma. He ensures that laboratory throughput never compromises the personalized service required by high-growth brands."
   },
   {
     name: "Dr. Cheri Turman-Ballard",
     role: "CSO & Cofounder",
-    image: execCheri, // Using imported asset object
+    image: execCheri,
     vitals: "PhD Biomedical Sciences (UT MD Anderson); MS/BS Chemistry (SFA).",
-    bio: "A distinguished pharmaceutical scientist with over 25 years of experience across dietary supplements and pharma. Her leadership ensures rigorous method development and robust quality standards."
+    bio: "A distinguished pharmaceutical scientist with over 25 years of cross-functional experience. Dr. Ballard provides the scientific stewardship for BioChroma, overseeing complex method development and ensuring all analytical pathways meet the highest peer-reviewed standards."
   },
   {
     name: "Amber Howeth",
     role: "CFO",
-    image: execAmber, // Using imported asset object
+    image: execAmber,
     vitals: "Texas A&M Commerce (BS Business & Psychology).",
-    bio: "Possessing over 20 years of expertise in accounting and financial management for the food and pharmaceutical sectors, Amber ensures fiscal precision and sustainable growth strategies."
+    bio: "Amber brings over 20 years of expertise in financial management for the life sciences sector. She oversees fiscal precision, contract management, and sustainable growth strategies, ensuring BioChroma remains a stable, long-term partner for our clients."
   }
 ];
 
@@ -38,31 +38,59 @@ const departmentGroups = [
   {
     department: "Chemistry",
     leads: [
-      { role: "Organic Lead", expertise: "Targeted analysis of vitamins, actives, and degradation products via LCMS/GCMS." },
-      { role: "Inorganic Lead", expertise: "Mineral profiling, heavy metals, and ICP-based analytical pathways." },
-      { role: "Wet Chemistry Lead", expertise: "Titrations, physical testing, and compositional analysis (Protein/Nitrogen)." }
+      { 
+        role: "Organic Lead", 
+        expertise: "Targeted analysis of vitamins, actives, and degradation products via LC-MS/MS and GC-MS.",
+        deepDive: "Our Organic Lead focuses on resolving peak co-elution in complex matrices. By optimizing mobile phase chemistry and utilizing high-resolution mass spectrometry, we ensure that trace-level actives are quantified with absolute specificity, even in botanical-heavy formulations."
+      },
+      { 
+        role: "Inorganic Lead", 
+        expertise: "Mineral profiling, heavy metals screening, and ICP-MS analytical pathways.",
+        deepDive: "Specializing in USP <232>/<233> and California Prop 65 compliance. Our Inorganic team manages the digestion of complex samples—from powders to high-viscosity creams—ensuring that heavy metal detection (Pb, As, Cd, Hg) is accurate at the parts-per-billion level."
+      },
+      { 
+        role: "Wet Chemistry Lead", 
+        expertise: "Titrations, physical testing, and compositional analysis (Protein/Nitrogen).",
+        deepDive: "The foundation of identity testing. Our Wet Chemistry lead oversees FTIR authentication for raw materials and compendial titrations for bulk material release. We provide the physical characterization data required for comprehensive Certificates of Analysis (COAs)."
+      }
     ]
   },
   {
     department: "Microbiology",
     leads: [
-      { role: "Safety & Pathogens Lead", expertise: "Oversight of USP <61>/<62> and BAM screening protocols." },
-      { role: "Efficacy & Challenge Lead", expertise: "Specialized study design for AET and Time-Kill studies." }
+      { 
+        role: "Safety & Pathogens Lead", 
+        expertise: "Oversight of USP <61>/<62> and BAM screening protocols.",
+        deepDive: "Ensuring zero-tolerance for pathogens. Our Safety lead manages enrichment protocols designed to detect low-level contaminants. We specialize in neutralizer efficacy studies to ensure your product's preservative system doesn't cause 'false-negative' results in safety screening."
+      },
+      { 
+        role: "Efficacy & Challenge Lead", 
+        expertise: "Specialized study design for Antimicrobial Effectiveness (AET) and Time-Kill studies.",
+        deepDive: "We help you prove your preservative system works. Following USP <51> guidelines, we inoculate products with specific strains to measure microbial reduction over a 28-day cycle, providing the data needed for multi-dose product validation."
+      }
     ]
   },
   {
     department: "Support Services",
     leads: [
-      { role: "Stability Lead", expertise: "Management of ICH storage conditions and shelf-life data modeling." },
-      { role: "Quality Control Lead", expertise: "Independent data review and QMS version control oversight." }
+      { 
+        role: "Stability Lead", 
+        expertise: "Management of ICH storage conditions and shelf-life data modeling.",
+        deepDive: "Stability is a marathon, not a sprint. Our Lead ensures that environmental chambers for Zones I-IV remain in constant calibration. We manage the pull-schedules and data trending required to defend your product's expiration dating during regulatory audits."
+      },
+      { 
+        role: "Quality Control Lead", 
+        expertise: "Independent data review and ALCOA+ data integrity oversight.",
+        deepDive: "The final gatekeeper. Our QC Lead performs a blind technical review of 100% of analytical datasets. By enforcing ALCOA+ principles and cryptographically secure audit trails, we ensure that the data you receive is fully defensible under FDA or third-party scrutiny."
+      }
     ]
   }
 ];
 ---
 
 <Layout
-  title={`Leadership - ${siteData.name}`}
-  description="Meet the executive leadership and technical department leads of BioChroma Analytical Labs."
+  title={`About BioChroma - Scientific Leadership`}
+  description="Meet the executive leadership and technical department leads of BioChroma Analytical Labs—your partners in precision testing."
 >
   <section class="home-hero">
     <div class="home-shell">
@@ -75,22 +103,22 @@ const departmentGroups = [
       <div class="hero-grid">
         <div class="hero-copy">
           <p class="hero-eyebrow">The BioChroma Mission</p>
-          <h1>Leadership committed to precision and excellence.</h1>
+          <h1>A technical extension of your R&D team.</h1>
           <p class="hero-lead">
-            Based in the DFW metroplex, our team provides analytical solutions tailored precisely to client needs and regulatory demands. We serve as a technical extension of your R&D team.
+            Based in the DFW metroplex, BioChroma provides more than just data—we provide the scientific partnership required to navigate complex regulatory landscapes. Our leadership team is committed to the precision and defensibility of every result.
           </p>
         </div>
 
         <div class="hero-media-frame">
           <Image 
             src={aboutHero} 
-            alt="BioChroma Laboratory Facility" 
+            alt="BioChroma Laboratory Facility in Dallas, Texas" 
             loading="eager"
             class="w-full h-full object-cover"
           />
           <div class="hero-media-caption">
             <p>DFW Analytical Facility</p>
-            <span>State-of-the-art instrumentation suite.</span>
+            <span>ISO 17025 accredited instrumentation suite.</span>
           </div>
         </div>
       </div>
@@ -99,21 +127,23 @@ const departmentGroups = [
 
   <section class="home-section border-t border-white/5">
     <div class="home-shell">
-      <div class="section-heading">
-        <p>Executive Suite</p>
-        <h2>Strategic & Scientific Stewardship</h2>
+      <div class="section-heading text-center mb-16">
+        <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">Executive Suite</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Scientific & Strategic Stewardship</h2>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {executives.map((exec) => (
-          <article class="group flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:shadow-[0_10px_30px_-10px_rgba(36,199,143,0.15)]">
-            <div class="p-8 border-b border-white/5 flex flex-col md:flex-row lg:flex-col items-center md:items-start lg:items-center text-center md:text-left lg:text-center gap-6">
-              <div class="w-24 h-24 lg:w-32 lg:h-32 rounded-full border border-emerald-400/20 bg-slate-900 overflow-hidden shrink-0">
-                 <Image 
-                  src={exec.image} 
-                  alt={exec.name} 
-                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" 
-                 />
+          <article class="group flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-emerald-400/30">
+            <div class="p-8 border-b border-white/5 flex flex-col items-center text-center gap-6">
+              <div class="relative w-32 h-32 rounded-full border-2 border-emerald-400/20 p-1 group-hover:border-emerald-400/50 transition-colors">
+                <div class="w-full h-full rounded-full bg-slate-900 overflow-hidden shadow-inner">
+                   <Image 
+                    src={exec.image} 
+                    alt={exec.name} 
+                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" 
+                   />
+                </div>
               </div>
               <div>
                 <span class="block text-emerald-400 font-bold text-xs uppercase tracking-widest mb-1">{exec.role}</span>
@@ -121,8 +151,15 @@ const departmentGroups = [
               </div>
             </div>
             <div class="p-8 flex-grow flex flex-col bg-slate-900/50">
-              <p class="text-sm text-white italic opacity-90 mb-4 leading-relaxed"><strong>Background:</strong> {exec.vitals}</p>
-              <p class="text-sm text-slate-400 leading-relaxed">{exec.bio}</p>
+              <div class="flex gap-3 mb-4 items-start">
+                <i class="ri-graduation-cap-line text-emerald-400 text-lg"></i>
+                <p class="text-xs text-white/70 font-medium leading-relaxed uppercase tracking-tight">
+                  {exec.vitals}
+                </p>
+              </div>
+              <p class="text-sm text-slate-400 leading-relaxed italic border-t border-white/5 pt-4">
+                {exec.bio}
+              </p>
             </div>
           </article>
         ))}
@@ -133,26 +170,91 @@ const departmentGroups = [
   <section class="home-section bg-slate-900/50 border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading">
-        <p>Operational Leadership</p>
-        <h2>Technical Department Oversight</h2>
+        <p class="text-emerald-400">Operational Excellence</p>
+        <h2 class="text-white">Technical Department Leadership</h2>
       </div>
 
       <div class="flex flex-col gap-16 mt-12">
         {departmentGroups.map((group) => (
-          <div>
-            <h3 class="text-xl font-bold text-white mb-6 border-l-4 border-emerald-400 pl-4">{group.department} Department</h3>
+          <div class="scroll-mt-32">
+            <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-3">
+                <span class="w-1.5 h-6 bg-emerald-500 rounded-full"></span>
+                {group.department} Department
+            </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {group.leads.map((lead) => (
-                <div class="bg-white/5 border border-white/10 p-6 rounded-xl hover:border-emerald-400/30 hover:bg-emerald-400/5 transition-all duration-300 group">
-                  <div class="flex items-center gap-4 mb-4">
-                    <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-emerald-400/30 transition-colors">
-                      <i class="ri-user-settings-line text-slate-400 group-hover:text-emerald-400 transition-colors"></i>
-                    </div>
-                    <h4 class="text-white font-semibold text-lg">{lead.role}</h4>
-                  </div>
-                  <p class="text-slate-400 text-sm leading-relaxed">{lead.expertise}</p>
-                </div>
-              ))}
+              {group.leads.map((lead) => {
+                const modalId = `lead-modal-${lead.role.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`;
+                
+                return (
+                  <>
+                    <button
+                      type="button"
+                      class="text-left bg-white/5 border border-white/10 p-6 rounded-xl hover:border-emerald-400/50 hover:bg-emerald-400/5 transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
+                      onclick={`document.getElementById('${modalId}').showModal()`}
+                    >
+                      <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-3 group-hover:border-emerald-400/30 transition-colors">
+                        <h4 class="text-white font-bold text-lg">{lead.role}</h4>
+                        <i class="ri-more-2-line text-slate-500 group-hover:text-emerald-400 transition-colors text-xl"></i>
+                      </div>
+                      <p class="text-slate-400 text-sm leading-relaxed line-clamp-3 mb-2">{lead.expertise}</p>
+                      <div class="text-emerald-400/60 text-[10px] font-bold uppercase tracking-widest mt-4 flex items-center gap-1 group-hover:text-emerald-400 transition-colors">
+                        View Lead Profile <i class="ri-arrow-right-up-line"></i>
+                      </div>
+                    </button>
+
+                    <dialog
+                      id={modalId}
+                      class="bg-slate-900 text-slate-300 border border-emerald-500/30 rounded-2xl shadow-2xl w-[95%] max-w-xl p-0 m-auto backdrop:bg-slate-950/90 backdrop:backdrop-blur-md"
+                    >
+                      <div class="p-8 md:p-10">
+                        <div class="flex justify-between items-start mb-8">
+                          <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                                <i class="ri-user-settings-fill text-emerald-400 text-2xl"></i>
+                            </div>
+                            <div>
+                              <h4 class="text-2xl font-bold text-white">{lead.role}</h4>
+                              <p class="text-emerald-400/60 text-xs font-bold uppercase tracking-widest mt-1">{group.department} Department Lead</p>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            class="text-slate-500 hover:text-white transition-colors cursor-pointer p-2 bg-white/5 rounded-lg"
+                            onclick={`document.getElementById('${modalId}').close()`}
+                          >
+                            <i class="ri-close-large-line text-xl"></i>
+                          </button>
+                        </div>
+                        
+                        <div class="space-y-6">
+                          <div class="bg-white/5 border border-white/10 p-6 rounded-xl">
+                            <h5 class="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">Core Expertise</h5>
+                            <p class="text-white text-lg font-medium leading-relaxed">
+                                {lead.expertise}
+                            </p>
+                          </div>
+
+                          <div class="space-y-4">
+                            <h5 class="text-emerald-400 text-sm font-semibold uppercase tracking-wider border-b border-emerald-400/20 pb-2">
+                                Analytical Mission & Oversight
+                            </h5>
+                            <p class="text-slate-300 leading-relaxed text-lg italic">
+                                "{lead.deepDive}"
+                            </p>
+                          </div>
+                          
+                          <div class="bg-slate-950/50 border border-white/5 rounded-lg p-5 mt-8">
+                            <p class="text-slate-500 text-xs leading-relaxed flex gap-2">
+                              <i class="ri-focus-3-line text-emerald-400"></i>
+                              All department leads oversee rigorous training matrices and the peer-review process for their specific analytical domains.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </dialog>
+                  </>
+                );
+              })}
             </div>
           </div>
         ))}
@@ -163,9 +265,9 @@ const departmentGroups = [
   <section class="home-section">
     <div class="home-shell">
       <CTA
-        title="Connect with our Technical Leads"
-        description="Our department heads are available to discuss specific method requirements and program scoping."
-        primaryLabel="Contact the Lab"
+        title="Connect with our Scientific Team"
+        description="Our department heads are available for direct project scoping and technical consultation on complex analytical challenges."
+        primaryLabel="Inquire with the Lab"
         primaryHref="/contact"
         secondaryLabel="View Full Capabilities"
         secondaryHref="/capabilities"
@@ -178,4 +280,36 @@ const departmentGroups = [
   .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
   .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
   .breadcrumb a:hover { color: var(--color-primary); }
+
+  dialog[open] {
+    animation: zoom-in 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes zoom-in {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
 </style>
+
+<script>
+  // Close dialogs when clicking on the backdrop
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'DIALOG') {
+      (target as HTMLDialogElement).close();
+    }
+  });
+
+  // Body scroll lock
+  document.querySelectorAll('button[onclick*="showModal"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  document.querySelectorAll('dialog').forEach(dialog => {
+    dialog.addEventListener('close', () => {
+      document.body.style.overflow = 'auto';
+    });
+  });
+</script>
