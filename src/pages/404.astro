@@ -3,29 +3,39 @@ import Layout from '../layouts/Layout.astro';
 import { siteData } from '../data/siteData';
 ---
 
-<Layout title={`404 - Page Not Found | ${siteData.name}`} description="Page not found">
-  <section class="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 pt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-9xl font-bold text-[#4db848] mb-4">404</h1>
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Page Not Found</h2>
-      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-        The page you're looking for doesn't exist or has been moved.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-        <a
-          href="/"
-          class="bg-[#4db848] hover:bg-[#3ea942] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 inline-flex items-center justify-center gap-3"
-        >
-          Return Home
-          <i class="ri-home-line"></i>
-        </a>
-        <a
-          href="/contact"
-          class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg font-bold text-lg transition-all inline-flex items-center justify-center gap-3"
-        >
-          Contact Us
-          <i class="ri-mail-line"></i>
-        </a>
+<Layout title={`404 - Endpoint Not Found | ${siteData.name}`} description="The requested page could not be found.">
+  <section class="home-hero min-h-[80vh] flex items-center">
+    <div class="home-shell w-full">
+      <div class="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
+        
+        <div class="w-20 h-20 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-4xl mb-8">
+          <i class="ri-route-line"></i>
+        </div>
+        
+        <h1 class="text-7xl font-bold text-white mb-2">404</h1>
+        <h2 class="text-lg md:text-xl font-semibold text-emerald-400 uppercase tracking-widest mb-6">System Pathway Not Found</h2>
+        
+        <p class="text-slate-400 text-lg mb-10 leading-relaxed">
+          The requested technical document or endpoint has been moved, renamed, or does not exist within the current directory.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <a
+            href="/"
+            class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-8 py-3.5 rounded-lg font-bold transition-all flex items-center justify-center gap-2"
+          >
+            Return to Operations
+            <i class="ri-home-5-line text-lg"></i>
+          </a>
+          <a
+            href="/contact"
+            class="bg-white/5 border border-white/10 hover:border-emerald-400/30 hover:bg-emerald-500/5 text-white px-8 py-3.5 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"
+          >
+            Contact Support
+            <i class="ri-mail-send-line text-lg"></i>
+          </a>
+        </div>
+        
       </div>
     </div>
   </section>
