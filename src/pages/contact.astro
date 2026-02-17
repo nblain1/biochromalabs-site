@@ -1,121 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { pageData, site } from '../data/content';
+import { pageCopy, pageData, site } from '../data/content';
 
-const contactData = pageData.contact;
+const copy = pageCopy.contact;
+const data = pageData.contact;
 const actionCardIcons = ['ri-flask-line', 'ri-mail-open-line'];
 ---
 
-<Layout title={`${contactData.meta.title} - ${site.name}`} description={contactData.meta.description}>
-  <section class="home-hero">
-    <div class="home-shell">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a>
-        <span aria-hidden="true">&gt;</span>
-        <span class="text-emerald-400 opacity-80">{contactData.meta.title}</span>
-      </nav>
-
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="hero-eyebrow">{contactData.hero.eyebrow}</p>
-          <h1>{contactData.hero.title}</h1>
-          <p class="hero-lead">{contactData.hero.lead}</p>
-        </div>
-
-        <aside class="hero-media-frame" aria-label="Client Support">
-          <img
-            src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80"
-            alt="BioChroma Client Consultation"
-            loading="eager"
-          />
-          <div class="hero-media-caption">
-            <p>{contactData.hero.mediaCaptionTitle}</p>
-            <span>{contactData.hero.mediaCaptionText}</span>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
+<Layout title={copy.frontmatter.layoutTitle} description={copy.frontmatter.layoutDescription}>
+  <section class="home-hero"><div class="home-shell"><div class="hero-grid"><div class="hero-copy"><p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p><h1>{copy.frontmatter.heroTitle}</h1><p class="hero-lead">{copy.frontmatter.heroLead}</p></div><aside class="hero-media-frame" aria-label="Client Support"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80" alt="BioChroma Client Consultation" loading="eager" /><div class="hero-media-caption"><p>{copy.frontmatter.heroMediaTitle}</p><span>{copy.frontmatter.heroMediaText}</span></div></aside></div></div></section>
+  <section class="home-section border-t border-white/5"><div class="home-shell prose prose-invert max-w-4xl"><copy.Content /></div></section>
 
   <section class="home-section border-t border-white/5">
     <div class="home-shell">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-        {contactData.actionCards.map((card, index) => (
-          <a href={`mailto:${card.email}`} class="group block bg-white/5 border border-white/10 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/5 hover:shadow-[0_10px_30px_-10px_rgba(36,199,143,0.15)]">
-            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6">
-              <i class={actionCardIcons[index] ?? 'ri-mail-send-line'}></i>
-            </div>
-            <div class="action-content">
-              <h3 class="text-xl font-bold text-white mb-2">{card.title}</h3>
-              <p class="text-slate-300 text-sm mb-4">{card.description}</p>
-              <span class="flex items-center gap-2 text-emerald-400 font-semibold text-sm">
-                {card.email}
-                <i class="ri-arrow-right-line group-hover:translate-x-1 transition-transform"></i>
-              </span>
-            </div>
+        {data.actionCards.map((card, index) => (
+          <a href={`mailto:${card.email}`} class="group block bg-white/5 border border-white/10 p-8 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-400/5">
+            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-2xl mb-6"><i class={actionCardIcons[index] ?? 'ri-mail-send-line'}></i></div>
+            <h2 class="text-xl font-bold text-white mb-2">{card.title}</h2>
+            <p class="text-slate-300 text-sm mb-4">{card.description}</p>
+            <span class="text-emerald-400 font-semibold text-sm">{card.email}</span>
           </a>
         ))}
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-        <div class="lg:col-span-2">
-          <h2 class="flex items-center gap-3 text-2xl font-bold text-white mb-8">
-            <i class="ri-node-tree text-emerald-400"></i> Department Directory
-          </h2>
-          <div class="flex flex-col gap-4">
-            {contactData.departmentEmails.map((dept) => (
-              <a href={`mailto:${dept.email}`} class="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-white/5 border border-white/10 rounded-xl hover:border-emerald-400/30 hover:bg-emerald-500/5 transition-all duration-300">
-                <div>
-                  <span class="block text-white font-semibold text-lg mb-1">{dept.department}</span>
-                  <span class="text-emerald-400 text-sm">{dept.email}</span>
-                </div>
-                <div class="flex items-center gap-4 mt-4 md:mt-0">
-                  <p class="text-slate-400 text-sm m-0">{dept.description}</p>
-                  <i class="ri-mail-send-line text-xl text-white/20 group-hover:text-emerald-400 transition-colors"></i>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <aside class="lg:col-span-1 flex flex-col gap-6">
-          <div class="bg-white/5 border border-white/10 p-8 rounded-xl">
-            <h3 class="text-white mb-6 text-lg uppercase tracking-wider font-bold">Lab Headquarters</h3>
-
-            <div class="flex gap-4 mb-6 group">
-              <i class="ri-map-pin-2-line text-emerald-400 text-xl mt-1"></i>
-              <a href={contactData.headquarters.mapUrl} target="_blank" rel="noopener noreferrer" class="text-slate-300 text-sm leading-relaxed group-hover:text-emerald-400 transition-colors">
-                {site.address.line1}<br />{site.address.line2}
-              </a>
-            </div>
-
-            <div class="flex gap-4 mb-6 group">
-              <i class="ri-phone-line text-emerald-400 text-xl"></i>
-              <a href={`tel:${site.phone}`} class="text-slate-300 text-sm group-hover:text-emerald-400 transition-colors">
-                {site.phone}
-              </a>
-            </div>
-
-            <div class="flex gap-4">
-              <i class="ri-time-line text-emerald-400 text-xl"></i>
-              <p class="text-slate-300 text-sm">{site.hours}</p>
-            </div>
-          </div>
-
-          <div class="flex gap-4 p-6 border-l-2 border-emerald-400 bg-emerald-500/5">
-            <i class="ri-flashlight-line text-emerald-400 text-xl"></i>
-            <p class="text-sm text-slate-400 leading-relaxed">
-              {contactData.headquarters.responseNote}
-            </p>
-          </div>
-        </aside>
+        <div class="lg:col-span-2"><h2 class="text-2xl font-bold text-white mb-8">{copy.frontmatter.directoryTitle}</h2><div class="flex flex-col gap-4">{data.departmentEmails.map((dept)=>(<a href={`mailto:${dept.email}`} class="group flex flex-col md:flex-row md:items-center justify-between p-6 bg-white/5 border border-white/10 rounded-xl"><div><span class="block text-white font-semibold text-lg mb-1">{dept.department}</span><span class="text-emerald-400 text-sm">{dept.email}</span></div><p class="text-slate-400 text-sm m-0 mt-3 md:mt-0">{dept.description}</p></a>))}</div></div>
+        <aside class="bg-white/5 border border-white/10 p-8 rounded-xl"><h3 class="text-white mb-6 text-lg uppercase tracking-wider font-bold">{copy.frontmatter.headquartersTitle}</h3><a href={data.headquarters.mapUrl} target="_blank" rel="noopener noreferrer" class="text-slate-300 text-sm leading-relaxed block mb-4">{data.headquarters.addressLines[0]}<br />{data.headquarters.addressLines[1]}</a><a href={`tel:${site.phone}`} class="text-slate-300 text-sm block mb-4">{site.phone}</a><p class="text-slate-300 text-sm">{data.headquarters.hours}</p><p class="text-sm text-slate-400 leading-relaxed mt-6">{data.headquarters.responseNote}</p></aside>
       </div>
     </div>
   </section>
 </Layout>
-
-<style>
-  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
-  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
-  .breadcrumb a:hover { color: var(--color-primary); }
-</style>

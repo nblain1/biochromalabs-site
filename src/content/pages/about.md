@@ -18,4 +18,4 @@ ctaPrimaryHref: /contact
 ctaSecondaryLabel: View Full Capabilities
 ctaSecondaryHref: /capabilities
 ---
-About page copy source for the current Astro implementation.
+Our team combines scientific depth, operational discipline, and cross-functional support to help clients move confidently from development through commercialization.

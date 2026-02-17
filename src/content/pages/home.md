@@ -22,7 +22,5 @@ ctaPrimaryLabel: Request a quote
 ctaPrimaryHref: /contact
 ctaSecondaryLabel: Review capabilities
 ctaSecondaryHref: /capabilities
-faqComponentTitle: FAQs
-faqComponentLead: Answers to common questions about our analytical services.
 ---
-Home page copy source for the current Astro implementation.
+BioChroma supports brands and manufacturers with end-to-end analytical programs designed for scientific rigor, practical timelines, and audit-ready documentation.

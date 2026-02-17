@@ -1,11 +1,11 @@
 import site from '../content/globals/site.json';
 import navigation from '../content/globals/navigation.json';
 
-import homeCopy from '../content/pages/home.md';
-import aboutCopy from '../content/pages/about.md';
-import capabilitiesCopy from '../content/pages/capabilities.md';
-import qualityCopy from '../content/pages/quality.md';
-import contactCopy from '../content/pages/contact.md';
+import * as homeCopy from '../content/pages/home.md';
+import * as aboutCopy from '../content/pages/about.md';
+import * as capabilitiesCopy from '../content/pages/capabilities.md';
+import * as qualityCopy from '../content/pages/quality.md';
+import * as contactCopy from '../content/pages/contact.md';
 
 import homeData from '../content/data/home.json';
 import aboutData from '../content/data/about.json';
