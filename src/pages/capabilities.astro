@@ -3,19 +3,306 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
 import { pageCopy, pageData } from '../data/content';
+
+// Import local assets
 import capabilitiesHero from '../assets/capabilities-hero.jpg';
 
 const copy = pageCopy.capabilities;
 const data = pageData.capabilities;
 ---
 
-<Layout title={copy.frontmatter.layoutTitle} description={copy.frontmatter.layoutDescription}>
-  <section class="home-hero"><div class="home-shell"><div class="hero-grid"><div class="hero-copy"><p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p><h1>{copy.frontmatter.heroTitle}</h1><p class="hero-lead">{copy.frontmatter.heroLead}</p></div><aside class="hero-media-frame" aria-label="Capabilities"><Image src={capabilitiesHero} alt="BioChroma capabilities" loading="eager" class="w-full h-full object-cover rounded-2xl" /></aside></div></div></section>
-  <section class="home-section border-t border-white/5"><div class="home-shell prose prose-invert max-w-4xl"><copy.Content /></div></section>
+<Layout
+  title={copy.frontmatter.layoutTitle}
+  description={copy.frontmatter.layoutDescription}
+>
+  <section class="home-hero">
+    <div class="home-shell">
+      <nav class="breadcrumb reveal-up" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&gt;</span>
+        <span class="text-emerald-400 opacity-80">Capabilities</span>
+      </nav>
 
-  <section class="home-section border-t border-white/5"><div class="home-shell"><div class="section-heading"><p>{copy.frontmatter.overviewEyebrow}</p><h2>{copy.frontmatter.overviewTitle}</h2></div><div class="space-y-8 mt-10">{data.technicalSpecs.map((spec)=>(<article id={spec.id} class="bg-white/5 border border-white/10 rounded-xl p-6"><h3 class="text-white text-2xl">{spec.title}</h3><p class="text-emerald-400 text-sm">{spec.subtitle}</p><p class="text-slate-300 mt-3">{spec.description}</p><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">{spec.tests.map((test)=>(<div class="bg-slate-900/70 border border-white/5 rounded-lg p-4"><h4 class="text-white">{test.name}</h4><p class="text-emerald-400 text-xs">{test.method}</p><p class="text-slate-300 text-sm mt-2">{test.application}</p><p class="text-slate-400 text-sm mt-3">{test.deepDive}</p></div>))}</div></article>))}</div></div></section>
+      <div class="hero-grid mb-16">
+        <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
+          <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
+          <h1>{copy.frontmatter.heroTitle}</h1>
+          <p class="hero-lead">{copy.frontmatter.heroLead}</p>
+        </div>
 
-  <section class="home-section border-t border-white/5"><div class="home-shell"><div class="section-heading"><p>{copy.frontmatter.registryEyebrow}</p><h2>{copy.frontmatter.registryTitle}</h2></div><div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">{data.instrumentRegistry.map((group)=>(<article class="bg-white/5 border border-white/10 rounded-xl p-6"><h3 class="text-white text-xl mb-3">{group.category}</h3><ul class="space-y-2">{group.tools.map((tool)=><li class="text-slate-300 text-sm">{tool}</li>)}</ul></article>))}</div></div></section>
+        <div class="hero-media-frame reveal-scale" style="transition-delay: 200ms;">
+          <Image 
+            src={capabilitiesHero} 
+            alt="Advanced Analytical Instrumentation at BioChroma Labs" 
+            loading="eager" 
+            class="w-full h-full object-cover rounded-2xl"
+          />
+          <div class="hero-media-caption">
+            <p>Analytical Precision</p>
+            <span>Traceable, compendial methodologies (USP, AOAC, ICH).</span>
+          </div>
+        </div>
+      </div>
 
-  <section class="home-section"><div class="home-shell"><CTA {...data.cta} /></div></section>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {data.technicalSpecs.map((item, index) => (
+          <a 
+            href={`#${item.id}`} 
+            class="group bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-emerald-500/5 hover:border-emerald-400/30 transition-all duration-300 reveal-up" 
+            style={`transition-delay: ${(index * 100) + 300}ms;`}
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center justify-center w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 text-lg">
+                <i class={item.icon}></i>
+              </span>
+              <h2 class="text-white font-bold text-lg group-hover:text-emerald-400 transition-colors">{item.title}</h2>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">{item.description}</p>
+            <span class="text-emerald-400 text-sm font-semibold flex items-center gap-1 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+              View Detailed Specs <i class="ri-arrow-down-line"></i>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {copy.Content && (
+    <section class="home-section border-t border-white/5 bg-slate-900/20">
+      <div class="home-shell">
+        <div class="prose prose-invert prose-emerald max-w-4xl mx-auto text-center text-lg leading-relaxed text-slate-300 reveal-up">
+          <copy.Content />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="home-section bg-slate-900/50 border-t border-white/5">
+    <div class="home-shell">
+      <div class="section-heading text-center max-w-3xl mx-auto mb-20 reveal-up">
+        <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">{copy.frontmatter.overviewEyebrow}</p>
+        <h2 class="text-4xl font-bold text-white">{copy.frontmatter.overviewTitle}</h2>
+        <div class="h-1 w-20 bg-emerald-500 mx-auto mt-6"></div>
+      </div>
+
+      <div class="flex flex-col gap-24 mt-12">
+        {data.technicalSpecs.map((spec) => (
+          <div id={spec.id} class="scroll-mt-32">
+            <div class="mb-10 max-w-3xl reveal-up">
+              <span class="text-emerald-400 font-semibold tracking-wider uppercase text-sm">{spec.subtitle}</span>
+              <h3 class="text-3xl md:text-4xl font-bold text-white mt-2 mb-4">{spec.title}</h3>
+              <p class="text-slate-300 text-lg leading-relaxed">{spec.description}</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {spec.tests.map((test, index) => {
+                // Generate stable ID for the modal
+                const modalId = `cap-modal-${test.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`;
+                
+                return (
+                  <>
+                    <button
+                      type="button"
+                      class="text-left bg-white/5 border border-white/10 rounded-xl p-6 hover:border-emerald-400/50 hover:bg-white/10 transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50 reveal-up"
+                      style={`transition-delay: ${index * 150}ms;`}
+                      onclick={`document.getElementById('${modalId}').showModal()`}
+                    >
+                      <div class="flex justify-between items-center mb-4 border-b border-white/10 pb-3 group-hover:border-emerald-400/30 transition-colors">
+                        <h4 class="text-white font-bold text-lg">{test.name}</h4>
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+                            <i class="ri-add-line text-slate-400 group-hover:text-emerald-400 group-hover:rotate-90 transition-all duration-300 text-lg"></i>
+                        </div>
+                      </div>
+                      <div class="space-y-3">
+                        <div class="flex items-start gap-2">
+                          <span class="text-emerald-400 font-bold text-xs uppercase tracking-tighter mt-1">Method:</span>
+                          <span class="text-slate-300 text-sm font-medium">{test.method}</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed line-clamp-2 italic">"{test.application}"</p>
+                      </div>
+                    </button>
+
+                    <dialog
+                      id={modalId}
+                      class="bg-slate-900 text-slate-300 border border-emerald-500/30 rounded-2xl shadow-2xl w-[95%] max-w-2xl p-0 m-auto backdrop:bg-slate-950/90 backdrop:backdrop-blur-md"
+                    >
+                      <div class="p-8 md:p-12">
+                        <div class="flex justify-between items-start mb-10">
+                          <div class="flex items-center gap-5">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                                <i class={`${spec.icon} text-emerald-400 text-3xl`}></i>
+                            </div>
+                            <div>
+                              <h4 class="text-3xl font-bold text-white">{test.name}</h4>
+                              <p class="text-emerald-400/60 text-xs font-bold uppercase tracking-widest mt-1">Analytical Outcome Sheet</p>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            class="text-slate-500 hover:text-white transition-colors cursor-pointer p-2 bg-white/5 rounded-xl border border-white/10"
+                            onclick={`document.getElementById('${modalId}').close()`}
+                            aria-label="Close"
+                          >
+                            <i class="ri-close-large-line text-2xl"></i>
+                          </button>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-6">
+                                <div class="bg-emerald-500/5 border-l-4 border-emerald-500 p-6 rounded-r-xl">
+                                    <h5 class="text-white text-xs font-bold uppercase tracking-widest mb-3">Primary Application</h5>
+                                    <p class="text-slate-300 leading-relaxed font-medium">
+                                    {test.application}
+                                    </p>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 p-6 rounded-xl">
+                                    <h5 class="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">Primary Methodology</h5>
+                                    <p class="text-white font-mono text-sm">{test.method}</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <h5 class="text-emerald-400 text-sm font-semibold uppercase tracking-wider border-b border-emerald-400/20 pb-2">
+                                    Scientific Protocol Detail
+                                </h5>
+                                <p class="text-slate-300 leading-relaxed text-lg">
+                                    {test.deepDive}
+                                </p>
+                                <div class="pt-4">
+                                    <p class="text-slate-500 text-xs leading-relaxed italic border-t border-white/5 pt-4">
+                                        Testing is performed according to BioChroma SOPs which align with USP/NF, AOAC, or ICH guidelines as applicable. Full validation reports available upon request.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </dialog>
+                  </>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section instrument-registry-section bg-slate-950 border-t border-white/10">
+    <div class="home-shell">
+      <div class="section-heading mb-16 reveal-up">
+        <p class="text-emerald-400 uppercase tracking-widest font-bold text-sm">{copy.frontmatter.registryEyebrow}</p>
+        <h2 class="text-white">{copy.frontmatter.registryTitle}</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        {data.instrumentRegistry.map((item, index) => (
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-emerald-500/5 transition-colors reveal-up" style={`transition-delay: ${index * 150}ms;`}>
+            <h4 class="text-emerald-400 text-sm font-bold uppercase tracking-widest border-b border-emerald-400/20 pb-4 mb-6">
+              {item.category}
+            </h4>
+            <ul class="flex flex-col gap-4">
+              {item.tools.map(tool => (
+                <li class="text-slate-300 text-sm flex items-start gap-3">
+                  <i class="ri-flask-fill text-emerald-400/40 text-sm mt-0.5"></i>
+                  {tool}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="home-shell reveal-up">
+      <CTA
+        title={copy.frontmatter.ctaTitle}
+        description={copy.frontmatter.ctaDescription}
+        primaryLabel={copy.frontmatter.ctaPrimaryLabel}
+        primaryHref={copy.frontmatter.ctaPrimaryHref}
+        secondaryLabel={copy.frontmatter.ctaSecondaryLabel}
+        secondaryHref={copy.frontmatter.ctaSecondaryHref}
+      />
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+  
+  /* --- Native Dialog Animations --- */
+  dialog[open] {
+    animation: zoom-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes zoom-in {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  /* --- Scroll Reveal Animations --- */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    
+    .reveal-up.active,
+    .reveal-scale.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- Dialog Management ---
+    document.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement;
+      if (target.tagName === 'DIALOG') {
+        (target as HTMLDialogElement).close();
+      }
+    });
+
+    document.querySelectorAll('button[onclick*="showModal"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    document.querySelectorAll('dialog').forEach(dialog => {
+      dialog.addEventListener('close', () => {
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // --- Scroll Reveal Observer ---
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px', 
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, observerOptions);
+
+    const elementsToReveal = document.querySelectorAll('.reveal-up, .reveal-scale');
+    elementsToReveal.forEach(el => observer.observe(el));
+  });
+</script>

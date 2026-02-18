@@ -3,6 +3,8 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
 import { pageCopy, pageData } from '../data/content';
+
+// Import local assets
 import aboutHero from '../assets/about-hero.jpg';
 import execBenny from '../assets/exec-benny.jpg';
 import execCheri from '../assets/exec-cheri.jpg';
@@ -10,16 +12,300 @@ import execAmber from '../assets/exec-amber.jpg';
 
 const copy = pageCopy.about;
 const data = pageData.about;
+
+// Mapping local imported images to the executive array from JSON
 const executiveImages = [execBenny, execCheri, execAmber];
 ---
 
-<Layout title={copy.frontmatter.layoutTitle} description={copy.frontmatter.layoutDescription}>
-  <section class="home-hero"><div class="home-shell"><div class="hero-grid"><div class="hero-copy"><p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p><h1>{copy.frontmatter.heroTitle}</h1><p class="hero-lead">{copy.frontmatter.heroLead}</p></div><aside class="hero-media-frame" aria-label="Leadership"><Image src={aboutHero} alt="BioChroma leadership" loading="eager" class="w-full h-full object-cover rounded-2xl" /><div class="hero-media-caption"><p>{copy.frontmatter.heroMediaTitle}</p><span>{copy.frontmatter.heroMediaText}</span></div></aside></div></div></section>
-  <section class="home-section border-t border-white/5"><div class="home-shell prose prose-invert max-w-4xl"><copy.Content /></div></section>
+<Layout
+  title={copy.frontmatter.layoutTitle}
+  description={copy.frontmatter.layoutDescription}
+>
+  <section class="home-hero">
+    <div class="home-shell">
+      <nav class="breadcrumb reveal-up" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&gt;</span>
+        <span class="text-emerald-400 opacity-80">About</span>
+      </nav>
 
-  <section class="home-section border-t border-white/5"><div class="home-shell"><div class="section-heading"><p>{copy.frontmatter.executiveSectionEyebrow}</p><h2>{copy.frontmatter.executiveSectionTitle}</h2></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">{data.executives.map((exec,index)=>(<article class="bg-white/5 border border-white/10 rounded-xl p-6"><Image src={executiveImages[index]} alt={exec.name} class="w-full h-56 object-cover rounded-lg mb-4" /><h3 class="text-white text-xl">{exec.name}</h3><p class="text-emerald-400 text-sm">{exec.role}</p><p class="text-slate-400 text-sm mt-2">{exec.vitals}</p><p class="text-slate-300 text-sm mt-3">{exec.bio}</p></article>))}</div></div></section>
+      <div class="hero-grid">
+        <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
+          <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
+          <h1>{copy.frontmatter.heroTitle}</h1>
+          <p class="hero-lead">{copy.frontmatter.heroLead}</p>
+        </div>
 
-  <section class="home-section border-t border-white/5"><div class="home-shell"><div class="section-heading"><p>{copy.frontmatter.departmentSectionEyebrow}</p><h2>{copy.frontmatter.departmentSectionTitle}</h2></div><div class="space-y-8 mt-10">{data.departmentGroups.map((group)=>(<div class="bg-white/5 border border-white/10 rounded-xl p-6"><h3 class="text-white text-2xl mb-4">{group.department}</h3><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">{group.leads.map((lead)=>(<article class="bg-slate-900/60 border border-white/5 rounded-lg p-4"><h4 class="text-white">{lead.name}</h4><p class="text-emerald-400 text-sm">{lead.role}</p><p class="text-slate-400 text-xs mt-1">{lead.education}</p><p class="text-slate-300 text-sm mt-3">{lead.expertise}</p><p class="text-slate-400 text-sm mt-3">{lead.deepDive}</p></article>))}</div></div>))}</div></div></section>
+        <div class="hero-media-frame reveal-scale" style="transition-delay: 200ms;">
+          <Image 
+            src={aboutHero} 
+            alt="BioChroma Laboratory Facility in Dallas, Texas" 
+            loading="eager"
+            class="w-full h-full object-cover rounded-2xl"
+          />
+          <div class="hero-media-caption">
+            <p>{copy.frontmatter.heroMediaTitle}</p>
+            <span>{copy.frontmatter.heroMediaText}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section class="home-section"><div class="home-shell"><CTA {...data.cta} /></div></section>
+  {copy.Content && (
+    <section class="home-section border-t border-white/5 bg-slate-900/20">
+      <div class="home-shell">
+        <div class="prose prose-invert prose-emerald max-w-4xl mx-auto text-center text-lg leading-relaxed text-slate-300 reveal-up">
+          <copy.Content />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="home-section border-t border-white/5">
+    <div class="home-shell">
+      <div class="section-heading text-center mb-16 reveal-up">
+        <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">{copy.frontmatter.executiveSectionEyebrow}</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">{copy.frontmatter.executiveSectionTitle}</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {data.executives.map((exec, index) => (
+          <article class="group flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-emerald-400/30 reveal-up" style={`transition-delay: ${index * 150}ms;`}>
+            <div class="p-8 border-b border-white/5 flex flex-col items-center text-center gap-6">
+              <div class="relative w-32 h-32 rounded-full border-2 border-emerald-400/20 p-1 group-hover:border-emerald-400/50 transition-colors">
+                <div class="w-full h-full rounded-full bg-slate-900 overflow-hidden shadow-inner">
+                   <Image 
+                    src={executiveImages[index]} 
+                    alt={exec.name} 
+                    class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" 
+                   />
+                </div>
+              </div>
+              <div>
+                <span class="block text-emerald-400 font-bold text-xs uppercase tracking-widest mb-1">{exec.role}</span>
+                <h3 class="text-white text-2xl font-bold">{exec.name}</h3>
+              </div>
+            </div>
+            <div class="p-8 flex-grow flex flex-col bg-slate-900/50">
+              <div class="flex gap-3 mb-4 items-start">
+                <i class="ri-graduation-cap-line text-emerald-400 text-lg"></i>
+                <p class="text-xs text-white/70 font-medium leading-relaxed uppercase tracking-tight">
+                  {exec.vitals}
+                </p>
+              </div>
+              <p class="text-sm text-slate-400 leading-relaxed italic border-t border-white/5 pt-4">
+                {exec.bio}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section bg-slate-900/50 border-t border-white/5">
+    <div class="home-shell">
+      <div class="section-heading reveal-up">
+        <p class="text-emerald-400">{copy.frontmatter.departmentSectionEyebrow}</p>
+        <h2 class="text-white">{copy.frontmatter.departmentSectionTitle}</h2>
+      </div>
+
+      <div class="flex flex-col gap-20 mt-12">
+        {data.departmentGroups.map((group, groupIndex) => (
+          <div class="scroll-mt-32">
+            <h3 class="text-xl font-bold text-white mb-8 flex items-center gap-3 uppercase tracking-wider reveal-up" style={`transition-delay: ${groupIndex * 100}ms;`}>
+                <span class="w-2 h-6 bg-emerald-500 rounded-sm"></span>
+                {group.department} Department
+            </h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {group.leads.map((lead, leadIndex) => {
+                // Ensure ID is stable and valid for HTML
+                const modalId = `lead-modal-${lead.name.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()}`;
+                
+                return (
+                  <>
+                    <button
+                      type="button"
+                      class="text-left bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-emerald-400/50 hover:bg-emerald-400/5 transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50 reveal-up"
+                      style={`transition-delay: ${(leadIndex * 150) + 100}ms;`}
+                      onclick={`document.getElementById('${modalId}').showModal()`}
+                    >
+                      <div class="p-6 border-b border-white/5 flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-xl bg-slate-800 border border-white/10 overflow-hidden shrink-0 group-hover:border-emerald-500/30 transition-colors">
+                          <div class="w-full h-full flex items-center justify-center bg-emerald-500/5">
+                            <i class="ri-user-3-line text-2xl text-emerald-400/30 group-hover:text-emerald-400/60 transition-colors"></i>
+                          </div>
+                        </div>
+                        <div>
+                          <h4 class="text-white font-bold text-lg leading-tight">{lead.name}</h4>
+                          <p class="text-emerald-400/80 text-[11px] font-bold uppercase tracking-widest mt-1">{lead.role}</p>
+                        </div>
+                      </div>
+                      
+                      <div class="p-6">
+                        <p class="text-slate-400 text-xs leading-relaxed line-clamp-2 mb-4 italic">"{lead.expertise}"</p>
+                        <div class="flex items-center gap-2 text-white/40 text-[10px] font-bold uppercase tracking-tighter group-hover:text-emerald-400 transition-colors">
+                          <i class="ri-graduation-cap-fill"></i>
+                          <span class="truncate">{lead.education}</span>
+                        </div>
+                      </div>
+                    </button>
+
+                    <dialog
+                      id={modalId}
+                      class="bg-slate-900 text-slate-300 border border-emerald-500/30 rounded-2xl shadow-2xl w-[95%] max-w-xl p-0 m-auto backdrop:bg-slate-950/90 backdrop:backdrop-blur-md"
+                    >
+                      <div class="p-8 md:p-10">
+                        <div class="flex justify-between items-start mb-8">
+                          <div class="flex items-center gap-5">
+                            <div class="w-20 h-20 rounded-2xl bg-slate-800 border border-emerald-500/20 flex items-center justify-center shrink-0">
+                              <i class="ri-user-settings-fill text-emerald-400 text-3xl"></i>
+                            </div>
+                            <div>
+                              <h4 class="text-2xl font-bold text-white">{lead.name}</h4>
+                              <p class="text-emerald-400/60 text-xs font-bold uppercase tracking-widest mt-1">{lead.role} | {group.department}</p>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            class="text-slate-500 hover:text-white transition-colors cursor-pointer p-2 bg-white/5 rounded-lg"
+                            onclick={`document.getElementById('${modalId}').close()`}
+                          >
+                            <i class="ri-close-large-line text-xl"></i>
+                          </button>
+                        </div>
+                        
+                        <div class="space-y-6">
+                          <div class="bg-white/5 border border-white/10 p-6 rounded-xl">
+                            <div class="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
+                              <i class="ri-graduation-cap-line"></i>
+                              Academic Foundation
+                            </div>
+                            <p class="text-white text-lg font-medium leading-relaxed">
+                                {lead.education}
+                            </p>
+                          </div>
+
+                          <div class="space-y-4">
+                            <h5 class="text-emerald-400 text-sm font-semibold uppercase tracking-wider border-b border-emerald-400/20 pb-2">
+                                Analytical Mission & Oversight
+                            </h5>
+                            <p class="text-slate-300 leading-relaxed text-lg italic">
+                                "{lead.deepDive}"
+                            </p>
+                          </div>
+                          
+                          <div class="bg-slate-950/50 border border-white/5 rounded-lg p-5 mt-8">
+                            <p class="text-slate-500 text-xs leading-relaxed flex gap-2">
+                              <i class="ri-focus-3-line text-emerald-400"></i>
+                              All department leads oversee rigorous training matrices and the peer-review process for their specific analytical domains.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </dialog>
+                  </>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section border-t border-white/5">
+    <div class="home-shell reveal-up">
+      <CTA
+        title={copy.frontmatter.ctaTitle}
+        description={copy.frontmatter.ctaDescription}
+        primaryLabel={copy.frontmatter.ctaPrimaryLabel}
+        primaryHref={copy.frontmatter.ctaPrimaryHref}
+        secondaryLabel={copy.frontmatter.ctaSecondaryLabel}
+        secondaryHref={copy.frontmatter.ctaSecondaryHref}
+      />
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+
+  /* --- Native Dialog Animations --- */
+  dialog[open] {
+    animation: zoom-in 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes zoom-in {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  /* --- Scroll Reveal Animations --- */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    
+    .reveal-up.active,
+    .reveal-scale.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- Dialog Management ---
+    document.addEventListener('click', (event) => {
+      const target = event.target as HTMLElement;
+      if (target.tagName === 'DIALOG') {
+        (target as HTMLDialogElement).close();
+      }
+    });
+
+    // Body scroll lock
+    document.querySelectorAll('button[onclick*="showModal"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    
+    document.querySelectorAll('dialog').forEach(dialog => {
+      dialog.addEventListener('close', () => {
+        document.body.style.overflow = 'auto';
+      });
+    });
+
+    // --- Scroll Reveal Observer ---
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px', 
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, observerOptions);
+
+    const elementsToReveal = document.querySelectorAll('.reveal-up, .reveal-scale');
+    elementsToReveal.forEach(el => observer.observe(el));
+  });
+</script>
