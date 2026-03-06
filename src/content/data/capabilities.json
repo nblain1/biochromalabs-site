@@ -1,27 +1,27 @@
 {
   "meta": {
     "title": "Testing Services",
-    "description": "Testing services for analytical chemistry, microbiology, and stability support to help teams release with confidence."
+    "description": "Testing support for product release and quality decisions."
   },
   "hero": {
     "eyebrow": "Testing Services",
-    "title": "Clear testing pathways for regulated products."
+    "title": "Testing support for product release and quality decisions."
   },
   "orientation": {
     "title": "What this page covers",
-    "description": "BioChroma Labs supports teams with practical testing programs that align with release timelines, quality goals, and regulatory expectations.",
+    "description": "BioChroma Labs supports release, investigation, and shelf-life work across chemistry, microbiology, and stability.",
     "points": [
-      "Analytical testing for identity, potency, and contamination risk",
-      "Microbiology testing for product safety and manufacturing hygiene",
-      "Stability support for shelf-life claims and storage decisions"
+      "Analytical testing for identity, potency, and chemistry-related quality questions",
+      "Microbiology testing for safety, contamination risk, and hygiene support",
+      "Stability support for shelf-life and storage decisions"
     ]
   },
   "serviceLines": [
     {
       "id": "analytical-testing",
       "title": "Analytical Testing",
-      "subtitle": "Identity, potency, and chemistry performance",
-      "description": "Compendial and fit-for-purpose chemistry testing to verify materials and finished product quality.",
+      "subtitle": "Identity, potency, and chemistry support",
+      "description": "Use analytical testing to verify product composition, support release, and investigate chemistry-related questions.",
       "icon": "ri-test-tube-line",
       "services": [
         "Potency and label claim verification",
@@ -33,8 +33,8 @@
     {
       "id": "microbiology-testing",
       "title": "Microbiology Testing",
-      "subtitle": "Safety, contamination control, and release support",
-      "description": "Risk-based microbiology programs that support batch release, quality investigations, and ongoing controls.",
+      "subtitle": "Safety and contamination control",
+      "description": "Use microbiology testing to support product safety, batch release, and contamination-related investigations.",
       "icon": "ri-microscope-line",
       "services": [
         "Microbial limits and enumeration",
@@ -46,8 +46,8 @@
     {
       "id": "stability-support",
       "title": "Stability Support",
-      "subtitle": "Shelf-life confidence and lifecycle monitoring",
-      "description": "Stability strategy and execution support to establish defensible expiry and storage decisions.",
+      "subtitle": "Shelf-life and storage decisions",
+      "description": "Use stability support to plan pull schedules, monitor trends, and support defensible expiry and storage decisions.",
       "icon": "ri-timer-line",
       "services": [
         "Protocol planning and pull schedule design",
@@ -58,27 +58,27 @@
     }
   ],
   "customerFit": {
-    "title": "Who we support",
+    "title": "Who this page is for",
     "segments": [
-      "Founders and brand teams preparing first commercial launches",
-      "Manufacturers and operations leaders managing release timelines",
-      "QA/QC and regulatory teams preparing for audits and submissions"
+      "Founders and brand teams preparing products for market",
+      "Manufacturers and operations teams managing release timelines",
+      "QA/QC and regulatory teams preparing for review or audit"
     ]
   },
   "serviceAssurance": [
     {
-      "title": "Defined scope and turnaround",
-      "description": "Each engagement starts with a clear test scope, timelines, and reporting plan.",
+      "title": "Clear scope and turnaround",
+      "description": "Each project starts with an agreed scope, timing, and reporting plan.",
       "icon": "ri-calendar-check-line"
     },
     {
-      "title": "Regulatory-aligned reporting",
-      "description": "Deliverables are structured to support partner review, audits, and filings.",
+      "title": "Reporting built for review",
+      "description": "Deliverables are structured for customer review, release decisions, and documentation needs.",
       "icon": "ri-file-paper-2-line"
     },
     {
-      "title": "Single technical point of contact",
-      "description": "A designated lead coordinates updates, clarifications, and next steps.",
+      "title": "Direct technical contact",
+      "description": "A designated contact coordinates updates and next steps.",
       "icon": "ri-user-star-line"
     }
   ],
@@ -110,16 +110,16 @@
   ],
   "relatedPathway": {
     "title": "Need formulation or scale-up support?",
-    "description": "For concept, formulation, and commercialization planning, visit our dedicated Product Development pathway.",
+    "description": "For formulation help, troubleshooting, and commercialization planning, use our Product Development pathway.",
     "label": "Explore Product Development",
     "href": "/product-development"
   },
   "cta": {
-    "title": "Need a testing plan for your next release?",
-    "description": "Share your matrix, timeline, and quality priorities. Our team will provide a scoped testing approach and next steps.",
+    "title": "Need a testing plan?",
+    "description": "Share your product type, timeline, and quality priorities. We will connect you to the right team.",
     "primaryLabel": "Contact BioChroma",
     "primaryHref": "/contact",
-    "secondaryLabel": "View Quality Standards",
+    "secondaryLabel": "View quality standards",
     "secondaryHref": "/quality"
   }
 }

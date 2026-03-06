@@ -1,33 +1,33 @@
 {
   "supportAreas": [
     {
-      "title": "Formulation and troubleshooting guidance",
-      "description": "Work through stability, compatibility, and performance issues with practical recommendations tied to product goals.",
+      "title": "Formulation and troubleshooting",
+      "description": "Work through stability, compatibility, and performance issues with practical next-step guidance.",
       "icon": "ri-flask-line"
     },
     {
       "title": "Development testing strategy",
-      "description": "Define fit-for-purpose analytical and microbiology checks to guide decisions during development and pre-launch planning.",
+      "description": "Define chemistry and microbiology checks that inform development decisions before launch.",
       "icon": "ri-microscope-line"
     },
     {
-      "title": "Market readiness planning",
-      "description": "Organize key development checkpoints, documentation expectations, and handoff considerations for commercial readiness.",
+      "title": "Readiness planning",
+      "description": "Prepare for scale-up, documentation, and handoff into commercial testing.",
       "icon": "ri-clipboard-line"
     }
   ],
   "engagementModes": [
     {
       "title": "Early-stage brands",
-      "description": "Support for teams shaping first products and building a clear path from concept to credible testing plans."
+      "description": "Support for first products and a clearer path from concept to testing."
     },
     {
-      "title": "Growing product companies",
-      "description": "Guidance to refine existing formulas, investigate performance issues, and prepare updates for broader distribution."
+      "title": "Growing product lines",
+      "description": "Guidance on reformulation, investigation, and development-stage verification."
     },
     {
       "title": "Established manufacturers",
-      "description": "Collaborative technical support for product improvement projects, reformulation initiatives, and launch timelines."
+      "description": "Targeted technical support for improvement projects and launch preparation."
     }
   ],
   "lifecycleStages": [
@@ -44,20 +44,20 @@
       "label": "sales@biochromalabs.com"
     },
     {
-      "title": "Speak directly with the lab",
+      "title": "Speak with the lab",
       "description": "Call during business hours for urgent project coordination.",
-      "href": "tel:(972)454-9166",
+      "href": "tel:9724549166",
       "label": "(972) 454-9166"
     },
     {
-      "title": "Use the contact directory",
-      "description": "Route to the right department for technical or operational follow-up.",
+      "title": "Use the contact page",
+      "description": "Use the contact page for department-specific routing.",
       "href": "/contact",
       "label": "Open contact page"
     },
     {
       "title": "Sample submission resource",
-      "description": "Download the official submission form for incoming sample logistics.",
+      "description": "Download the submission form for incoming sample logistics.",
       "href": "/documents/submission-form.pdf",
       "label": "Download submission form"
     }

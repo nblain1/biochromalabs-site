@@ -13,8 +13,7 @@ import { socialLinks } from '../data/siteData';
             <i class="ri-flask-line text-xl"></i>
           </span>
           <div>
-            <p class="font-heading text-lg font-semibold text-white">{site.name}</p>
-            <p class="text-sm text-slate-400">{site.tagline}</p>
+            <p class="font-heading text-lg font-semibold text-white">{site.legalName}</p>
           </div>
         </div>
         <p class="text-sm text-slate-300 max-w-md">{site.description}</p>
@@ -66,12 +65,7 @@ import { socialLinks } from '../data/siteData';
     </div>
 
     <div class="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-      <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-      <div class="flex items-center gap-4">
-         <p>{site.footer.complianceLabel}</p>
-         <span class="h-1 w-1 rounded-full bg-slate-700"></span>
-         <p>{site.footer.facilityLabel}</p>
-      </div>
+      <p>&copy; {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
     </div>
   </div>
 </footer>

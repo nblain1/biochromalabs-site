@@ -1,24 +1,24 @@
 ---
 title: Home
-layoutTitle: BioChroma Labs | Analytical & Microbiology Testing Support
+layoutTitle: BioChroma Labs | Testing and Development Support
 heroEyebrow: BioChroma Labs
-heroTitle: Testing and development support for products that need reliable data.
-heroLead: We help entrepreneurs, manufacturers, and quality teams move products forward with analytical testing, microbiology testing, and practical product development support.
-heroMediaTitle: ISO/IEC 17025:2017 Accredited Laboratory
-heroMediaText: Defensible results for finished products and formulation decisions.
+heroTitle: Testing and development support for consumer products.
+heroLead: BioChroma Labs provides analytical testing, microbiology testing, stability support, and product development support for finished consumer products.
+heroMediaTitle: BioChroma Labs
+heroMediaText: Testing and development support for finished consumer products.
 routesTitle: Start with what you need
-routesLead: Choose the path that matches your project and connect with the right team quickly.
+routesLead: Choose the path that fits your project.
 trustTitle: Why teams work with BioChroma Labs
-trustLead: Clear communication, audit-ready documentation, and practical support from scope through reporting.
+trustLead: Clear communication and practical support from scope through reporting.
 scopeTitle: Product categories we commonly support
-scopeLead: We work across consumer product categories where testing quality and speed both matter.
-actionsTitle: Ready to move your project forward?
+scopeLead: We work across consumer product categories.
+actionsTitle: Ready to move forward?
 actionsLead: Use direct channels for quotes, sample submissions, and technical questions.
-ctaTitle: Need help selecting the right testing path?
-ctaDescription: Share your product type, timeline, and key goals. We will point you to the right department and next steps.
+ctaTitle: Need help choosing the right path?
+ctaDescription: Tell us what you are working on and we will point you to the right team.
 ctaPrimaryLabel: Contact the lab
 ctaPrimaryHref: /contact
 ctaSecondaryLabel: View testing services
 ctaSecondaryHref: /capabilities
 ---
-BioChroma Labs provides route-first support so decision-makers can quickly choose testing services, product development support, or quality documentation resources.
+Use the pathways below to reach the right team for testing, development support, sample submission, or quality information.

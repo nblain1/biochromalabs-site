@@ -37,8 +37,8 @@ const data = pageData.capabilities;
             class="w-full h-full object-cover rounded-2xl"
           />
           <div class="hero-media-caption">
-            <p>Testing Services</p>
-            <span>Analytical, microbiology, and stability support in one clear pathway.</span>
+            <p>{copy.frontmatter.heroMediaTitle}</p>
+            <span>{copy.frontmatter.heroMediaText}</span>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ const data = pageData.capabilities;
             <p class="text-slate-300 text-sm mb-2">{item.subtitle}</p>
             <p class="text-slate-400 text-sm leading-relaxed mb-4">{item.description}</p>
             <span class="text-emerald-400 text-sm font-semibold flex items-center gap-1 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-              View Services <i class="ri-arrow-down-line"></i>
+              View services <i class="ri-arrow-down-line"></i>
             </span>
           </a>
         ))}

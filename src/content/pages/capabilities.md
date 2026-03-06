@@ -1,22 +1,24 @@
 ---
 title: Testing Services
 layoutTitle: Testing Services - BioChroma Labs
-layoutDescription: Analytical testing, microbiology testing, and stability support for regulated product teams.
+layoutDescription: Testing support for product release and quality decisions.
 heroEyebrow: Testing Services
-heroTitle: Practical testing support for quality-focused teams.
-heroLead: Navigate BioChroma's testing pathways for analytical, microbiology, and stability programs.
-overviewEyebrow: Service Pathways
-overviewTitle: Choose the testing track that fits your release goals
-registryEyebrow: Technical Infrastructure
-registryTitle: Core Testing Infrastructure
-customerFitEyebrow: Customer Fit
-customerFitTitle: Built for teams responsible for release quality
-relatedPathwayEyebrow: Related Pathway
-ctaTitle: Need a testing plan for your next release?
-ctaDescription: Share your matrix, timeline, and quality priorities. Our team will provide a scoped testing approach and next steps.
+heroTitle: Testing support for product release and quality decisions.
+heroLead: Use this page to find the right pathway for analytical testing, microbiology testing, and stability support.
+heroMediaTitle: Testing Services
+heroMediaText: Analytical, microbiology, and stability support.
+overviewEyebrow: Service pathways
+overviewTitle: Choose the testing track that fits your project.
+registryEyebrow: Technical infrastructure
+registryTitle: Core testing infrastructure
+customerFitEyebrow: Customer fit
+customerFitTitle: Who this page is for
+relatedPathwayEyebrow: Related pathway
+ctaTitle: Need a testing plan?
+ctaDescription: Share your product type, timeline, and quality priorities. We will connect you to the right team.
 ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
-ctaSecondaryLabel: View Quality Standards
+ctaSecondaryLabel: View quality standards
 ctaSecondaryHref: /quality
 ---
-Use this page to identify the right testing pathway for your product stage, risk profile, and compliance requirements.
+Use this page to identify the testing pathway that best fits your product, timeline, and quality questions.
