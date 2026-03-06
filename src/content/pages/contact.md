@@ -1,14 +1,15 @@
 ---
 title: Contact
 layoutTitle: Contact - BioChroma Analytical Labs LLC
-layoutDescription: Direct access to BioChroma Analytical Labs for project scoping, sample submission, and technical support.
-heroEyebrow: Contact & Support
-heroTitle: Direct access to our scientific team.
-heroLead: Whether you are initiating a new stability study or need to schedule a courier pickup, use the direct channels below to reach the appropriate department.
-heroMediaTitle: Technical Support
-heroMediaText: Direct access to lead scientists.
-directoryTitle: Department Directory
-headquartersTitle: Lab Headquarters
-responseNote: Technical inquiries are reviewed by staff scientists and typically receive a response within 24 business hours.
+layoutDescription: "Operational contact routing for BioChroma Labs: department email, phone, and sample submission resources."
+heroEyebrow: Contact & Operational Routing
+heroTitle: Choose the fastest path to the right lab team.
+heroLead: Use the contact routes below for analytical testing, microbiology testing, product development support, and sample logistics. No forms—just direct channels.
+heroMediaTitle: Operational Response
+heroMediaText: Direct department routing for faster coordination.
+routingTitle: How to route your request
+directoryTitle: Department contact pathways
+headquartersTitle: Main Office
+sampleResourcesTitle: Sample submission resources
 ---
-Use the channels below for scoping, submissions, and operational support so your request reaches the right technical team quickly.
+Select the route that matches your task so your request reaches the right team on the first pass.
