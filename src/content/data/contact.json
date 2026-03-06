@@ -1,75 +1,89 @@
 {
   "meta": {
     "title": "Contact",
-    "description": "Direct access to BioChroma Analytical Labs for project scoping, sample submission, and technical support."
+    "description": "Operational contact routing for BioChroma Labs: department email, phone, and sample submission resources."
   },
   "hero": {
-    "eyebrow": "Contact & Support",
-    "title": "Direct access to our scientific team.",
-    "lead": "Whether you are initiating a new stability study or need to schedule a courier pickup, use the direct channels below to reach the appropriate department.",
-    "mediaCaptionTitle": "Technical Support",
-    "mediaCaptionText": "Direct access to lead scientists."
+    "eyebrow": "Contact & Operational Routing",
+    "title": "Choose the fastest path to the right lab team.",
+    "lead": "Use the contact routes below for analytical testing, microbiology testing, product development support, and sample logistics. No forms—just direct channels.",
+    "mediaCaptionTitle": "Operational Response",
+    "mediaCaptionText": "Direct department routing for faster coordination."
   },
-  "actionCards": [
+  "routingSteps": [
+    "Choose your primary need (analytical, microbiology, product development, or operations).",
+    "Use the listed department email for technical requests and documentation.",
+    "For urgent coordination, call the main office line during business hours."
+  ],
+  "pathways": [
     {
-      "title": "New Project Scoping",
-      "description": "Email our technical leads for quotes and testing plans.",
-      "email": "info@biochromalabs.com"
+      "title": "Analytical / Chemistry Inquiries",
+      "audience": "Founders, manufacturers, and QA teams needing chemistry testing support.",
+      "description": "Route assay planning, test menu questions, and chemistry method discussions directly to the chemistry team.",
+      "email": "chemistryinfo@biochromalabs.com",
+      "serviceHref": "/capabilities",
+      "serviceLabel": "View Testing Services"
     },
     {
-      "title": "Sales & Quotes",
-      "description": "Send your scope, sample matrix, and timing needs for a tailored testing plan.",
-      "email": "sales@biochromalabs.com"
+      "title": "Microbiology Inquiries",
+      "audience": "Teams planning microbiology testing and contamination-risk evaluations.",
+      "description": "Send microbiology scope details and sample context directly to the microbiology group.",
+      "email": "microinfo@biochromalabs.com",
+      "serviceHref": "/capabilities",
+      "serviceLabel": "View Testing Services"
+    },
+    {
+      "title": "Product Development Support",
+      "audience": "Operators and formulators developing or optimizing products.",
+      "description": "Use this route for development planning, feasibility discussions, and integrated testing support.",
+      "email": "sales@biochromalabs.com",
+      "serviceHref": "/product-development",
+      "serviceLabel": "View Product Development"
+    },
+    {
+      "title": "Sample Submission / Courier Coordination",
+      "audience": "Existing and new clients shipping or coordinating sample logistics.",
+      "description": "Coordinate pickups, receiving windows, and shipping details with operations.",
+      "email": "courierpickup@biochromalabs.com",
+      "serviceHref": "/documents/submission-form.pdf",
+      "serviceLabel": "Download Submission Form"
     }
   ],
   "headquarters": {
     "addressLines": [
-      "1309 Record Crossing Road",
+      "1420 Viceroy Dr",
       "Dallas, TX 75235"
     ],
-    "mapUrl": "https://maps.google.com/?q=1309+Record+Crossing+Road,+Dallas,+TX+75235",
+    "mapUrl": "https://maps.google.com/?q=1420+Viceroy+Dr,+Dallas,+TX+75235",
     "hours": "Mon - Fri: 8:30 AM - 5:30 PM CT",
-    "responseNote": "Technical inquiries are reviewed by staff scientists and typically receive a response within 24 business hours."
+    "responseNote": "Department emails are monitored by operational and technical staff. Include project context, sample matrix, timeline, and required reporting needs for faster routing."
   },
-  "departmentEmails": [
+  "sampleResources": [
     {
-      "department": "Sales & Quotes",
-      "email": "sales@biochromalabs.com",
-      "description": "Need a quote or scoping plan?"
+      "title": "Sample Submission Form",
+      "description": "Use the official submission document for incoming sample logistics and chain-of-custody details.",
+      "href": "/documents/submission-form.pdf",
+      "label": "Download submission form"
     },
     {
-      "department": "Courier Services",
-      "email": "courierpickup@biochromalabs.com",
-      "description": "Schedule a sample pickup."
-    },
-    {
-      "department": "Chemistry Dept.",
-      "email": "chemistryinfo@biochromalabs.com",
-      "description": "Technical chemistry questions."
-    },
-    {
-      "department": "Microbiology Dept.",
-      "email": "microinfo@biochromalabs.com",
-      "description": "Technical microbiology questions."
-    },
-    {
-      "department": "Careers & HR",
-      "email": "hr@biochromalabs.com",
-      "description": "Looking for career opportunities?"
+      "title": "Courier Scheduling",
+      "description": "For pickup coordination and delivery timing, contact courier operations directly.",
+      "href": "mailto:courierpickup@biochromalabs.com",
+      "label": "Email courier operations"
     }
   ],
-  "contactInfo": [
-    {
-      "icon": "ri-phone-line",
-      "title": "Phone",
-      "content": "(972) 454-9166",
-      "link": "tel:(972) 454-9166"
-    },
-    {
-      "icon": "ri-mail-line",
-      "title": "Email",
-      "content": "info@biochromalabs.com",
-      "link": "mailto:info@biochromalabs.com"
-    }
-  ]
+  "existingClients": {
+    "title": "Returning clients",
+    "description": "For repeat work, include your previous project name or sample ID in the subject line so your request can be matched quickly.",
+    "actions": [
+      {
+        "label": "Call main office",
+        "href": "tel:(972)454-9166"
+      },
+      {
+        "label": "Email sales & quotes",
+        "href": "mailto:sales@biochromalabs.com"
+      }
+    ]
+  }
 }
