@@ -1,6 +1,6 @@
 [
-  { "name": "Home", "href": "/" },
-  { "name": "Capabilities", "href": "/capabilities" },
+  { "name": "Testing Services", "href": "/capabilities" },
+  { "name": "Product Development", "href": "/capabilities#method-development" },
   { "name": "Quality", "href": "/quality" },
   { "name": "About", "href": "/about" },
   { "name": "Contact", "href": "/contact" }

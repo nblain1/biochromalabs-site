@@ -1,168 +1,86 @@
 {
-  "heroStats": [
+  "routeCards": [
     {
-      "number": "ISO 17025",
-      "label": "Quality system experience",
-      "note": "Expertise in regulated testing programs."
+      "title": "Analytical Testing",
+      "description": "Review chemistry-focused testing for identity, potency, and stability-related decisions.",
+      "href": "/capabilities#analytical-chemistry",
+      "icon": "ri-test-tube-line",
+      "linkLabel": "Go to analytical testing"
     },
     {
-      "number": "Compendia methods",
-      "label": "USP \u2022 AOAC \u2022 FDA BAM \u2022 USDA",
-      "note": "Microbiological and chemical testing."
+      "title": "Microbiology Testing",
+      "description": "Access microbiology services for contamination risk, hygiene verification, and product safety.",
+      "href": "/capabilities#microbiology-programs",
+      "icon": "ri-microscope-line",
+      "linkLabel": "Go to microbiology testing"
     },
     {
-      "number": "End-to-end support",
-      "label": "Inception to marketplace",
-      "note": "Analytical testing, consulting, and quality guidance."
+      "title": "Product Development",
+      "description": "Explore method development and practical guidance for formulation, stability, and launch planning.",
+      "href": "/capabilities#method-development",
+      "icon": "ri-flask-line",
+      "linkLabel": "Go to product development"
+    },
+    {
+      "title": "Existing Clients / Sample Submission",
+      "description": "Download the submission form and route samples or operational requests to the appropriate contacts.",
+      "href": "/documents/submission-form.pdf",
+      "icon": "ri-file-download-line",
+      "linkLabel": "Download sample submission form"
+    },
+    {
+      "title": "Quality & Compliance",
+      "description": "Review quality systems, documentation expectations, and readiness support details.",
+      "href": "/quality",
+      "icon": "ri-shield-check-line",
+      "linkLabel": "Go to quality"
     }
   ],
-  "capabilityHighlights": [
+  "trustPoints": [
     {
-      "title": "Operational Safety & Pathogen Screening",
-      "description": "Defensible microbiological testing to support shelf life, facility hygiene, and consumer safety decisions.",
-      "icon": "ri-bug-line",
-      "bullets": [
-        "Shelf life studies",
-        "Pathogenic bacteria",
-        "Preservative efficacy",
-        "Environmental monitoring"
-      ],
-      "id": "microbiology-programs",
-      "targetId": "microbiology-programs"
+      "title": "ISO/IEC 17025:2017 accredited",
+      "description": "Testing programs aligned to documented methods, controlled processes, and defensible reporting."
     },
     {
-      "title": "Identity & Label Claim Verification",
-      "description": "Rigorous chemical analysis using compendial methods to verify raw material authenticity and active ingredient potency.",
-      "icon": "ri-flask-line",
-      "bullets": [
-        "Raw material ID",
-        "Active ingredient assay",
-        "Nutritional analysis",
-        "Allergen testing"
-      ],
-      "id": "analytical-chemistry",
-      "targetId": "analytical-chemistry"
+      "title": "Direct scientist communication",
+      "description": "Reach the appropriate department by email or phone without waiting on form workflows."
     },
     {
-      "title": "Data-Driven Shelf Life Studies",
-      "description": "Custom stability programs designed to monitor and defend product performance across lifecycle storage conditions.",
-      "icon": "ri-timer-line",
-      "bullets": [
-        "Real time",
-        "Accelerated",
-        "Stress",
-        "Forced degradation"
-      ],
-      "id": "stability-testing",
-      "targetId": "stability-testing"
-    },
-    {
-      "title": "Functional Performance Validation",
-      "description": "Laboratory studies designed to objectively demonstrate and substantiate product performance claims.",
-      "icon": "ri-test-tube-line",
-      "bullets": [
-        "In vitro bioavailability",
-        "Skin permeability",
-        "Enzyme assays",
-        "Microbial kill studies"
-      ],
-      "id": "method-development-functional",
-      "targetId": "method-development"
-    },
-    {
-      "title": "Strategic Quality Planning",
-      "description": "Expert guidance on manufacturing compliance, packaging decisions, and regulatory readiness.",
-      "icon": "ri-lightbulb-flash-line",
-      "bullets": [
-        "Ingredient stability advice",
-        "Packaging & closures",
-        "Contract manufacturer selection",
-        "Quality & regulatory advice"
-      ],
-      "id": "method-development-strategy",
-      "targetId": "method-development"
-    },
-    {
-      "title": "Concept-to-Market Commercialization",
-      "description": "Technical support from ideation through launch, including formulation feasibility and scale-up planning.",
-      "icon": "ri-rocket-2-line",
-      "bullets": [
-        "Skin/body/hair care",
-        "Dietary supplement development",
-        "Prototype formulation",
-        "Scale-up support"
-      ],
-      "id": "method-development-commercialization",
-      "targetId": "method-development"
+      "title": "Clear, practical deliverables",
+      "description": "Data packages and recommendations designed for quality, operations, and leadership decisions."
     }
   ],
   "industries": [
-    "Cosmetics",
-    "Skin care",
-    "Topical & oral OTCs",
-    "Food & beverage",
+    "Cosmetics and skin care",
+    "Topical and oral OTC products",
     "Dietary supplements",
-    "Household cleaners"
+    "Food and beverage",
+    "Household and consumer care products"
   ],
-  "processSteps": [
+  "actionCards": [
     {
-      "title": "Discovery",
-      "description": "Client-driven ideas shaped by market trends, buyer requests, and competitive insights."
+      "title": "New testing projects",
+      "description": "For project scoping, timelines, and quote requests.",
+      "href": "mailto:sales@biochromalabs.com",
+      "label": "Email Sales & Quotes"
     },
     {
-      "title": "Screening",
-      "description": "Consulting on technical merits, regulatory requirements, and early manufacturing plans."
+      "title": "Technical department support",
+      "description": "Route directly to chemistry or microbiology for service-specific questions.",
+      "href": "/contact",
+      "label": "Open contact directory"
     },
     {
-      "title": "Feasibility assessment",
-      "description": "Guidance on ingredient pricing, packaging choices, and logistics to define scope."
+      "title": "Sample submission resources",
+      "description": "Use the official submission document for incoming sample logistics.",
+      "href": "/documents/submission-form.pdf",
+      "label": "Download submission form"
     },
     {
-      "title": "Development",
-      "description": "Ingredient research, prototype formulation, and planning for scale-up production."
-    },
-    {
-      "title": "Testing",
-      "description": "Chemical ID, stability, organoleptic, contamination, and active ingredient assays."
-    },
-    {
-      "title": "Launch",
-      "description": "Support as products move into distribution pipelines and market activation."
-    }
-  ],
-  "testimonials": [
-    {
-      "name": "Quality Director",
-      "role": "Nutraceutical manufacturer",
-      "content": "BioChroma\u2019s documentation and data review made our audit preparation far more efficient."
-    },
-    {
-      "name": "Regulatory Affairs Lead",
-      "role": "Medical device company",
-      "content": "Their method transfer support aligned perfectly with our submission timeline."
-    },
-    {
-      "name": "Operations Manager",
-      "role": "Food producer",
-      "content": "Clear communication and dependable data quality helped us scale our program quickly."
-    }
-  ],
-  "faqs": [
-    {
-      "question": "Where is BioChroma Analytical Labs LLC based?",
-      "answer": "We are based out of the DFW metroplex in the heart of Texas."
-    },
-    {
-      "question": "What products do you support?",
-      "answer": "We bring experience across cosmetics, skin care, topical and oral OTCs, food, beverages, dietary supplements, and household cleaners."
-    },
-    {
-      "question": "What testing areas are available?",
-      "answer": "We provide microbiological and chemical testing using compendia methods, plus stability and laboratory studies to support product performance."
-    },
-    {
-      "question": "How do you support product development?",
-      "answer": "We assist through discovery, screening, feasibility, development, testing, and launch with consulting and technical guidance."
+      "title": "Call BioChroma Labs",
+      "description": "Speak with the lab for urgent coordination during business hours.",
+      "href": "tel:(972)454-9166",
+      "label": "(972) 454-9166"
     }
   ]
 }
