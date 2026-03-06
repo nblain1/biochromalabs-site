@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { siteData } from '../data/siteData';
+import { site } from '../data/content';
 ---
 
-<Layout title={`404 - Endpoint Not Found | ${siteData.name}`} description="The requested page could not be found.">
+<Layout title={`404 - Endpoint Not Found | ${site.name}`} description="The requested page could not be found.">
   <section class="home-hero min-h-[80vh] flex items-center">
     <div class="home-shell w-full">
       <div class="flex flex-col items-center justify-center text-center max-w-2xl mx-auto">
