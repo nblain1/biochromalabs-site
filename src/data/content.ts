@@ -6,12 +6,14 @@ import * as aboutCopy from '../content/pages/about.md';
 import * as capabilitiesCopy from '../content/pages/capabilities.md';
 import * as qualityCopy from '../content/pages/quality.md';
 import * as contactCopy from '../content/pages/contact.md';
+import * as productDevelopmentCopy from '../content/pages/product-development.md';
 
 import homeData from '../content/data/home.json';
 import aboutData from '../content/data/about.json';
 import capabilitiesData from '../content/data/capabilities.json';
 import qualityData from '../content/data/quality.json';
 import contactData from '../content/data/contact.json';
+import productDevelopmentData from '../content/data/product-development.json';
 
 export { site, navigation };
 
@@ -21,6 +23,7 @@ export const pageCopy = {
   capabilities: capabilitiesCopy,
   quality: qualityCopy,
   contact: contactCopy,
+  productDevelopment: productDevelopmentCopy,
 };
 
 export const pageData = {
@@ -29,4 +32,5 @@ export const pageData = {
   capabilities: capabilitiesData,
   quality: qualityData,
   contact: contactData,
+  productDevelopment: productDevelopmentData,
 };
