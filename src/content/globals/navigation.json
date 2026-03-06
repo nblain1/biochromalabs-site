@@ -1,7 +1,22 @@
 [
-  { "name": "Testing Services", "href": "/capabilities" },
-  { "name": "Product Development", "href": "/capabilities#method-development" },
-  { "name": "Quality", "href": "/quality" },
-  { "name": "About", "href": "/about" },
-  { "name": "Contact", "href": "/contact" }
+  {
+    "name": "Testing Services",
+    "href": "/capabilities"
+  },
+  {
+    "name": "Product Development",
+    "href": "/product-development"
+  },
+  {
+    "name": "Quality",
+    "href": "/quality"
+  },
+  {
+    "name": "About",
+    "href": "/about"
+  },
+  {
+    "name": "Contact",
+    "href": "/contact"
+  }
 ]

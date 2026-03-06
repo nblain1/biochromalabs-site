@@ -1,0 +1,65 @@
+{
+  "supportAreas": [
+    {
+      "title": "Formulation and troubleshooting guidance",
+      "description": "Work through stability, compatibility, and performance issues with practical recommendations tied to product goals.",
+      "icon": "ri-flask-line"
+    },
+    {
+      "title": "Development testing strategy",
+      "description": "Define fit-for-purpose analytical and microbiology checks to guide decisions during development and pre-launch planning.",
+      "icon": "ri-microscope-line"
+    },
+    {
+      "title": "Market readiness planning",
+      "description": "Organize key development checkpoints, documentation expectations, and handoff considerations for commercial readiness.",
+      "icon": "ri-clipboard-line"
+    }
+  ],
+  "engagementModes": [
+    {
+      "title": "Early-stage brands",
+      "description": "Support for teams shaping first products and building a clear path from concept to credible testing plans."
+    },
+    {
+      "title": "Growing product companies",
+      "description": "Guidance to refine existing formulas, investigate performance issues, and prepare updates for broader distribution."
+    },
+    {
+      "title": "Established manufacturers",
+      "description": "Collaborative technical support for product improvement projects, reformulation initiatives, and launch timelines."
+    }
+  ],
+  "lifecycleStages": [
+    "Concept and formulation planning",
+    "Bench and pilot refinement",
+    "Verification and risk reduction",
+    "Pre-launch readiness and documentation"
+  ],
+  "actionCards": [
+    {
+      "title": "Email for project scoping",
+      "description": "Share your product type and current challenge with our team.",
+      "href": "mailto:sales@biochromalabs.com",
+      "label": "sales@biochromalabs.com"
+    },
+    {
+      "title": "Speak directly with the lab",
+      "description": "Call during business hours for urgent project coordination.",
+      "href": "tel:(972)454-9166",
+      "label": "(972) 454-9166"
+    },
+    {
+      "title": "Use the contact directory",
+      "description": "Route to the right department for technical or operational follow-up.",
+      "href": "/contact",
+      "label": "Open contact page"
+    },
+    {
+      "title": "Sample submission resource",
+      "description": "Download the official submission form for incoming sample logistics.",
+      "href": "/documents/submission-form.pdf",
+      "label": "Download submission form"
+    }
+  ]
+}

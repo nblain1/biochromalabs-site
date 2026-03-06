@@ -1,0 +1,191 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import CTA from '../components/CTA.astro';
+import { pageCopy, pageData } from '../data/content';
+
+import indexHero from '../assets/index-hero.jpg';
+
+const copy = pageCopy.productDevelopment;
+const data = pageData.productDevelopment;
+---
+
+<Layout title={copy.frontmatter.layoutTitle} description={copy.frontmatter.layoutDescription}>
+  <section class="home-hero">
+    <div class="home-shell">
+      <nav class="breadcrumb reveal-up" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&gt;</span>
+        <span class="text-emerald-400 opacity-80">Product Development</span>
+      </nav>
+
+      <div class="hero-grid mb-16">
+        <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
+          <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
+          <h1>{copy.frontmatter.heroTitle}</h1>
+          <p class="hero-lead">{copy.frontmatter.heroLead}</p>
+        </div>
+
+        <aside class="hero-media-frame reveal-scale" style="transition-delay: 200ms;" aria-label="Product Development">
+          <Image
+            src={indexHero}
+            alt="BioChroma Labs scientists reviewing product development data"
+            loading="eager"
+            class="h-full w-full rounded-2xl object-cover"
+          />
+          <div class="hero-media-caption">
+            <p>{copy.frontmatter.heroMediaTitle}</p>
+            <span>{copy.frontmatter.heroMediaText}</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  {copy.Content && (
+    <section class="home-section border-t border-white/5 bg-slate-900/20">
+      <div class="home-shell">
+        <div class="prose prose-invert prose-emerald mx-auto max-w-4xl text-center text-lg leading-relaxed text-slate-300 reveal-up">
+          <copy.Content />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="home-section border-t border-white/5">
+    <div class="home-shell">
+      <div class="section-heading reveal-up">
+        <p>{copy.frontmatter.overviewTitle}</p>
+        <h2>{copy.frontmatter.overviewLead}</h2>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {data.supportAreas.map((item, index) => (
+          <article class="rounded-xl border border-white/10 bg-white/5 p-6 reveal-up" style={`transition-delay: ${index * 80}ms;`}>
+            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
+              <i class={`${item.icon} text-xl`}></i>
+            </span>
+            <h3 class="text-lg font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-300">{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section border-t border-white/5 bg-slate-900/40">
+    <div class="home-shell">
+      <div class="section-heading reveal-up">
+        <p>{copy.frontmatter.areasTitle}</p>
+        <h2>{copy.frontmatter.areasLead}</h2>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {data.engagementModes.map((mode, index) => (
+          <article class="rounded-xl border border-white/10 bg-white/5 p-6 reveal-up" style={`transition-delay: ${index * 100}ms;`}>
+            <h3 class="text-base font-semibold text-white">{mode.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-300">{mode.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section border-t border-white/5">
+    <div class="home-shell max-w-4xl">
+      <div class="section-heading reveal-up">
+        <p>{copy.frontmatter.fitTitle}</p>
+        <h2>{copy.frontmatter.fitLead}</h2>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        {data.lifecycleStages.map((stage, index) => (
+          <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 reveal-scale" style={`transition-delay: ${index * 70}ms;`}>
+            {stage}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section border-t border-white/5 bg-slate-900/50">
+    <div class="home-shell">
+      <div class="section-heading reveal-up">
+        <p>Direct actions</p>
+        <h2>Connect with the right team for next steps.</h2>
+      </div>
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {data.actionCards.map((action, index) => (
+          <a href={action.href} class="rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-emerald-400/30 hover:bg-emerald-500/5 reveal-up" style={`transition-delay: ${index * 100}ms;`}>
+            <h3 class="text-lg font-semibold text-white">{action.title}</h3>
+            <p class="mt-2 text-sm text-slate-300">{action.description}</p>
+            <span class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-300">
+              {action.label}
+              <i class="ri-arrow-right-up-line"></i>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section border-t border-white/5">
+    <div class="home-shell reveal-up">
+      <CTA
+        title={copy.frontmatter.ctaTitle}
+        description={copy.frontmatter.ctaDescription}
+        primaryLabel={copy.frontmatter.ctaPrimaryLabel}
+        primaryHref={copy.frontmatter.ctaPrimaryHref}
+        secondaryLabel={copy.frontmatter.ctaSecondaryLabel}
+        secondaryHref={copy.frontmatter.ctaSecondaryHref}
+      />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
+  .breadcrumb a:hover { color: var(--color-primary); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .reveal-up.active,
+    .reveal-scale.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observerRef) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observerRef.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const elementsToReveal = document.querySelectorAll('.reveal-up, .reveal-scale');
+    elementsToReveal.forEach((el) => observer.observe(el));
+  });
+</script>
