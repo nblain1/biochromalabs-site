@@ -1,19 +1,22 @@
 ---
-title: Capabilities
-layoutTitle: Capabilities - BioChroma Analytical Labs LLC
-layoutDescription: ISO 17025 accredited analytical outcomes including purity, label claim verification, and full stability lifecycle management.
-heroEyebrow: Service Capabilities
-heroTitle: Technical solutions for complex formulations.
-heroLead: From compendial chemistry workflows to custom method development, BioChroma delivers regulated analytical support for product lifecycle execution.
-overviewEyebrow: Scientific Outcomes
-overviewTitle: Full Analytical Specifications
-registryEyebrow: Infrastructure
-registryTitle: Analytical Instrumentation Registry
-ctaTitle: Ready to scope your analytical program?
-ctaDescription: Share your matrix details and regulatory requirements. Our technical team will return a scoped plan and quote within 24 business hours.
-ctaPrimaryLabel: Request a Quote
+title: Testing Services
+layoutTitle: Testing Services - BioChroma Labs
+layoutDescription: Analytical testing, microbiology testing, and stability support for regulated product teams.
+heroEyebrow: Testing Services
+heroTitle: Practical testing support for quality-focused teams.
+heroLead: Navigate BioChroma's testing pathways for analytical, microbiology, and stability programs.
+overviewEyebrow: Service Pathways
+overviewTitle: Choose the testing track that fits your release goals
+registryEyebrow: Technical Infrastructure
+registryTitle: Core Testing Infrastructure
+customerFitEyebrow: Customer Fit
+customerFitTitle: Built for teams responsible for release quality
+relatedPathwayEyebrow: Related Pathway
+ctaTitle: Need a testing plan for your next release?
+ctaDescription: Share your matrix, timeline, and quality priorities. Our team will provide a scoped testing approach and next steps.
+ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
-ctaSecondaryLabel: Meet our Scientists
-ctaSecondaryHref: /about
+ctaSecondaryLabel: View Quality Standards
+ctaSecondaryHref: /quality
 ---
-Programs are structured to align method suitability, compliance needs, and reporting expectations with each product lifecycle stage.
+Use this page to identify the right testing pathway for your product stage, risk profile, and compliance requirements.
