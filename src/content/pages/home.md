@@ -1,26 +1,24 @@
 ---
 title: Home
-layoutTitle: BioChroma Analytical Labs LLC - The Color of Life
-heroEyebrow: ISO/IEC 17025:2017 Accredited Laboratory
-heroTitle: Precision analytical testing for regulated product development.
-heroLead: Based in the DFW metroplex, BioChroma provides chemistry, microbiology, and stability testing. We deliver the defensible data required to move cosmetics, supplements, and OTC products from R&D to market.
-heroMediaTitle: Analytical Excellence
-heroMediaText: Compendial testing and custom method development.
-sectionCapabilitiesTitle: Capabilities
-sectionCapabilitiesLead: Six capability areas supporting quality from concept to scale.
-sectionIndustriesTitle: Who we support
-sectionIndustriesLead: Programs tuned to the teams that move regulated science forward.
-sectionProcessTitle: Process
-sectionProcessLead: From discovery to launch with clear stage gates and transparent reporting.
-sectionTestimonialsTitle: Client feedback
-sectionTestimonialsLead: Trusted by quality and regulatory leaders.
-sectionFaqTitle: FAQ
-sectionFaqLead: Quick answers about BioChroma Analytical Labs.
-ctaTitle: Ready to scope your program?
-ctaDescription: Share sample scope, timelines, and regulatory context. We will return a scoped plan with clear next steps.
-ctaPrimaryLabel: Request a quote
+layoutTitle: BioChroma Labs | Analytical & Microbiology Testing Support
+heroEyebrow: BioChroma Labs
+heroTitle: Testing and development support for products that need reliable data.
+heroLead: We help entrepreneurs, manufacturers, and quality teams move products forward with analytical testing, microbiology testing, and practical product development support.
+heroMediaTitle: ISO/IEC 17025:2017 Accredited Laboratory
+heroMediaText: Defensible results for finished products and formulation decisions.
+routesTitle: Start with what you need
+routesLead: Choose the path that matches your project and connect with the right team quickly.
+trustTitle: Why teams work with BioChroma Labs
+trustLead: Clear communication, audit-ready documentation, and practical support from scope through reporting.
+scopeTitle: Product categories we commonly support
+scopeLead: We work across consumer product categories where testing quality and speed both matter.
+actionsTitle: Ready to move your project forward?
+actionsLead: Use direct channels for quotes, sample submissions, and technical questions.
+ctaTitle: Need help selecting the right testing path?
+ctaDescription: Share your product type, timeline, and key goals. We will point you to the right department and next steps.
+ctaPrimaryLabel: Contact the lab
 ctaPrimaryHref: /contact
-ctaSecondaryLabel: Review capabilities
+ctaSecondaryLabel: View testing services
 ctaSecondaryHref: /capabilities
 ---
-BioChroma supports brands and manufacturers with end-to-end analytical programs designed for scientific rigor, practical timelines, and audit-ready documentation.
+BioChroma Labs provides route-first support so decision-makers can quickly choose testing services, product development support, or quality documentation resources.
