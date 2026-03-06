@@ -1,49 +1,54 @@
 {
   "meta": {
     "title": "Contact",
-    "description": "Operational contact routing for BioChroma Labs: department email, phone, and sample submission resources."
+    "description": "Contact routes for analytical testing, microbiology testing, product development support, and sample logistics."
   },
   "hero": {
-    "eyebrow": "Contact & Operational Routing",
-    "title": "Choose the fastest path to the right lab team.",
-    "lead": "Use the contact routes below for analytical testing, microbiology testing, product development support, and sample logistics. No forms—just direct channels.",
-    "mediaCaptionTitle": "Operational Response",
-    "mediaCaptionText": "Direct department routing for faster coordination."
+    "eyebrow": "Contact & operational routing",
+    "title": "Choose the right contact path.",
+    "lead": "Use the routes below for analytical testing, microbiology testing, product development support, and sample logistics. No forms. Just direct contact.",
+    "mediaCaptionTitle": "Operational routing",
+    "mediaCaptionText": "Direct department contact for faster coordination."
   },
   "routingSteps": [
-    "Choose your primary need (analytical, microbiology, product development, or operations).",
-    "Use the listed department email for technical requests and documentation.",
-    "For urgent coordination, call the main office line during business hours."
+    {
+      "label": "Step 1",
+      "text": "Choose the area that best matches your need."
+    },
+    {
+      "label": "Step 2",
+      "text": "Email the department directly with your product type, timeline, and question."
+    },
+    {
+      "label": "Step 3",
+      "text": "Call the main office for urgent coordination."
+    }
   ],
   "pathways": [
     {
       "title": "Analytical / Chemistry Inquiries",
-      "audience": "Founders, manufacturers, and QA teams needing chemistry testing support.",
-      "description": "Route assay planning, test menu questions, and chemistry method discussions directly to the chemistry team.",
+      "description": "Use this route for chemistry testing questions, methods, quotes, and project scoping.",
       "email": "chemistryinfo@biochromalabs.com",
       "serviceHref": "/capabilities",
       "serviceLabel": "View Testing Services"
     },
     {
       "title": "Microbiology Inquiries",
-      "audience": "Teams planning microbiology testing and contamination-risk evaluations.",
-      "description": "Send microbiology scope details and sample context directly to the microbiology group.",
+      "description": "Use this route for microbiology testing questions, sample context, and related documentation.",
       "email": "microinfo@biochromalabs.com",
       "serviceHref": "/capabilities",
       "serviceLabel": "View Testing Services"
     },
     {
       "title": "Product Development Support",
-      "audience": "Operators and formulators developing or optimizing products.",
-      "description": "Use this route for development planning, feasibility discussions, and integrated testing support.",
+      "description": "Use this route for formulation, troubleshooting, development planning, and launch-readiness support.",
       "email": "sales@biochromalabs.com",
       "serviceHref": "/product-development",
       "serviceLabel": "View Product Development"
     },
     {
       "title": "Sample Submission / Courier Coordination",
-      "audience": "Existing and new clients shipping or coordinating sample logistics.",
-      "description": "Coordinate pickups, receiving windows, and shipping details with operations.",
+      "description": "Use this route for sample logistics, pickups, receiving windows, and shipping coordination.",
       "email": "courierpickup@biochromalabs.com",
       "serviceHref": "/documents/submission-form.pdf",
       "serviceLabel": "Download Submission Form"
@@ -55,30 +60,29 @@
       "Dallas, TX 75235"
     ],
     "mapUrl": "https://maps.google.com/?q=1420+Viceroy+Dr,+Dallas,+TX+75235",
-    "hours": "Mon - Fri: 8:30 AM - 5:30 PM CT",
-    "responseNote": "Department emails are monitored by operational and technical staff. Include project context, sample matrix, timeline, and required reporting needs for faster routing."
+    "responseNote": "For faster routing, include your product type, sample matrix, timeline, and reporting need."
   },
   "sampleResources": [
     {
       "title": "Sample Submission Form",
-      "description": "Use the official submission document for incoming sample logistics and chain-of-custody details.",
+      "description": "Download the official submission form for incoming samples.",
       "href": "/documents/submission-form.pdf",
       "label": "Download submission form"
     },
     {
       "title": "Courier Scheduling",
-      "description": "For pickup coordination and delivery timing, contact courier operations directly.",
+      "description": "Email operations for pickup and delivery coordination.",
       "href": "mailto:courierpickup@biochromalabs.com",
       "label": "Email courier operations"
     }
   ],
   "existingClients": {
     "title": "Returning clients",
-    "description": "For repeat work, include your previous project name or sample ID in the subject line so your request can be matched quickly.",
+    "description": "If you are following up on existing work, include a prior project name or sample ID when you contact the lab.",
     "actions": [
       {
         "label": "Call main office",
-        "href": "tel:(972)454-9166"
+        "href": "tel:9724549166"
       },
       {
         "label": "Email sales & quotes",

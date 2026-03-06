@@ -1,23 +1,24 @@
 ---
 title: Product Development
 layoutTitle: Product Development Support | BioChroma Labs
-layoutDescription: Practical product development and formulation support informed by BioChroma Labs analytical and microbiology testing capabilities.
+layoutDescription: Product development support for products moving toward market.
 heroEyebrow: Product Development Support
-heroTitle: Practical development support for products moving toward market.
-heroLead: We partner with founders, product teams, and manufacturers to solve formulation challenges, define testing plans, and move products toward launch readiness with confidence.
-heroMediaTitle: Development Informed by Lab Data
-heroMediaText: Align R&D decisions with analytical and microbiology insight.
+heroTitle: Product development support for products moving toward market.
+heroLead: Work with BioChroma on formulation support, development testing plans, and launch readiness.
+heroMediaTitle: Development support
+heroMediaText: Development decisions informed by lab data.
 overviewTitle: How we help
-overviewLead: Our team supports focused development work that reduces avoidable rework and improves launch readiness.
-areasTitle: Practical support areas
-areasLead: Engage BioChroma for targeted help across development, verification, and readiness planning.
-fitTitle: Where this fits in your lifecycle
-fitLead: We support projects from early concept work through late-stage optimization and scale-up planning.
-ctaTitle: Ready to discuss your product development priorities?
-ctaDescription: Share your product category, current stage, and timeline. We can recommend the best next steps and connect you with the right team.
+overviewLead: Support that reduces avoidable rework.
+areasTitle: Where we can help
+areasLead: Use BioChroma for focused development support.
+fitTitle: Where this fits in your process
+fitLead: We support work from early concept through late-stage readiness.
+actionsTitle: Direct actions
+actionsLead: Connect with the right team.
+ctaTitle: Ready to discuss product development priorities?
+ctaDescription: Share your product category, current stage, and timeline. We will route you to the right team.
 ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
 ctaSecondaryLabel: Review testing services
 ctaSecondaryHref: /capabilities
 ---
-BioChroma Labs combines practical product development support with in-house testing capability so teams can make faster, better-informed decisions.

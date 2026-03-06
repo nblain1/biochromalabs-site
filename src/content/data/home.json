@@ -2,84 +2,84 @@
   "routeCards": [
     {
       "title": "Analytical Testing",
-      "description": "Review chemistry-focused testing for identity, potency, and stability-related decisions.",
-      "href": "/capabilities#analytical-chemistry",
+      "description": "Chemistry testing for identity, potency, and related quality questions.",
+      "href": "/capabilities#analytical-testing",
       "icon": "ri-test-tube-line",
-      "linkLabel": "Go to analytical testing"
+      "linkLabel": "View analytical testing"
     },
     {
       "title": "Microbiology Testing",
-      "description": "Access microbiology services for contamination risk, hygiene verification, and product safety.",
-      "href": "/capabilities#microbiology-programs",
+      "description": "Microbiology testing for contamination risk, hygiene verification, and product safety.",
+      "href": "/capabilities#microbiology-testing",
       "icon": "ri-microscope-line",
-      "linkLabel": "Go to microbiology testing"
+      "linkLabel": "View microbiology testing"
     },
     {
       "title": "Product Development",
-      "description": "Explore method development and practical guidance for formulation, stability, and launch planning.",
+      "description": "Development support for formulation, troubleshooting, and launch planning.",
       "href": "/product-development",
       "icon": "ri-flask-line",
-      "linkLabel": "Go to product development support"
+      "linkLabel": "View product development"
     },
     {
       "title": "Existing Clients / Sample Submission",
-      "description": "Download the submission form and route samples or operational requests to the appropriate contacts.",
+      "description": "Download the submission form and route sample logistics correctly.",
       "href": "/documents/submission-form.pdf",
       "icon": "ri-file-download-line",
-      "linkLabel": "Download sample submission form"
+      "linkLabel": "Download submission form"
     },
     {
-      "title": "Quality & Compliance",
-      "description": "Review quality systems, documentation expectations, and readiness support details.",
+      "title": "Quality",
+      "description": "Review accreditation and quality-system information.",
       "href": "/quality",
       "icon": "ri-shield-check-line",
-      "linkLabel": "Go to quality"
+      "linkLabel": "View quality information"
     }
   ],
   "trustPoints": [
     {
-      "title": "ISO/IEC 17025:2017 accredited",
-      "description": "Testing programs aligned to documented methods, controlled processes, and defensible reporting."
+      "title": "Accredited laboratory foundation",
+      "description": "Testing is supported by documented methods, controlled processes, and defensible reporting."
     },
     {
-      "title": "Direct scientist communication",
-      "description": "Reach the appropriate department by email or phone without waiting on form workflows."
+      "title": "Direct contact paths",
+      "description": "Reach the right department by email or phone without relying on form workflows."
     },
     {
-      "title": "Clear, practical deliverables",
-      "description": "Data packages and recommendations designed for quality, operations, and leadership decisions."
+      "title": "Useful deliverables",
+      "description": "Reports and documentation are built for review, release, and operational decisions."
     }
   ],
   "industries": [
-    "Cosmetics and skin care",
-    "Topical and oral OTC products",
+    "Cosmetics and personal care",
+    "Topical products",
     "Dietary supplements",
     "Food and beverage",
-    "Household and consumer care products"
+    "Household and consumer care"
   ],
   "actionCards": [
     {
       "title": "New testing projects",
-      "description": "For project scoping, timelines, and quote requests.",
+      "description": "Email sales for project scoping, timelines, and quote requests.",
       "href": "mailto:sales@biochromalabs.com",
-      "label": "Email Sales & Quotes"
+      "label": "Email sales & quotes"
     },
     {
       "title": "Technical department support",
-      "description": "Route directly to chemistry or microbiology for service-specific questions.",
+      "description": "Use the contact page to reach chemistry, microbiology, product development, or operations.",
       "href": "/contact",
-      "label": "Open contact directory"
+      "label": "Open contact page"
     },
     {
       "title": "Sample submission resources",
-      "description": "Use the official submission document for incoming sample logistics.",
+      "description": "Download the submission form for incoming sample logistics.",
       "href": "/documents/submission-form.pdf",
       "label": "Download submission form"
     },
     {
       "title": "Call BioChroma Labs",
-      "description": "Speak with the lab for urgent coordination during business hours.",
-      "href": "tel:(972)454-9166",
+      "description": "Call the lab during business hours for urgent coordination.",
+      "href": "tel:9724549166",
       "label": "(972) 454-9166"
     }
   ]
