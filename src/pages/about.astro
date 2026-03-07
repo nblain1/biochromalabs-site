@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
-import { pageCopy, pageData } from '../data/content';
+import { getPageCopy, getPageData } from '../content/queries';
 
 // Import local assets
 import aboutHero from '../assets/about-hero.jpg';
@@ -10,16 +10,16 @@ import execBenny from '../assets/exec-benny.jpg';
 import execCheri from '../assets/exec-cheri.jpg';
 import execAmber from '../assets/exec-amber.jpg';
 
-const copy = pageCopy.about;
-const data = pageData.about;
+const copy = await getPageCopy('about');
+const data = await getPageData('aboutData', 'about');
 
 // Mapping local imported images to the executive array from JSON
 const executiveImages = [execBenny, execCheri, execAmber];
 ---
 
 <Layout
-  title={copy.frontmatter.layoutTitle}
-  description={copy.frontmatter.layoutDescription}
+  title={copy.data.layoutTitle}
+  description={copy.data.layoutDescription}
 >
   <section class="home-hero">
     <div class="home-shell">
@@ -31,9 +31,9 @@ const executiveImages = [execBenny, execCheri, execAmber];
 
       <div class="hero-grid">
         <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
-          <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
-          <h1>{copy.frontmatter.heroTitle}</h1>
-          <p class="hero-lead">{copy.frontmatter.heroLead}</p>
+          <p class="hero-eyebrow">{copy.data.heroEyebrow}</p>
+          <h1>{copy.data.heroTitle}</h1>
+          <p class="hero-lead">{copy.data.heroLead}</p>
         </div>
 
         <div class="hero-media-frame reveal-scale" style="transition-delay: 200ms;">
@@ -44,8 +44,8 @@ const executiveImages = [execBenny, execCheri, execAmber];
             class="w-full h-full object-cover rounded-2xl"
           />
           <div class="hero-media-caption">
-            <p>{copy.frontmatter.heroMediaTitle}</p>
-            <span>{copy.frontmatter.heroMediaText}</span>
+            <p>{copy.data.heroMediaTitle}</p>
+            <span>{copy.data.heroMediaText}</span>
           </div>
         </div>
       </div>
@@ -65,8 +65,8 @@ const executiveImages = [execBenny, execCheri, execAmber];
   <section class="home-section border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading text-center mb-16 reveal-up">
-        <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">{copy.frontmatter.executiveSectionEyebrow}</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">{copy.frontmatter.executiveSectionTitle}</h2>
+        <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">{copy.data.executiveSectionEyebrow}</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">{copy.data.executiveSectionTitle}</h2>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -107,8 +107,8 @@ const executiveImages = [execBenny, execCheri, execAmber];
   <section class="home-section bg-slate-900/50 border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading reveal-up">
-        <p class="text-emerald-400">{copy.frontmatter.departmentSectionEyebrow}</p>
-        <h2 class="text-white">{copy.frontmatter.departmentSectionTitle}</h2>
+        <p class="text-emerald-400">{copy.data.departmentSectionEyebrow}</p>
+        <h2 class="text-white">{copy.data.departmentSectionTitle}</h2>
       </div>
 
       <div class="flex flex-col gap-20 mt-12">
@@ -219,12 +219,12 @@ const executiveImages = [execBenny, execCheri, execAmber];
   <section class="home-section border-t border-white/5">
     <div class="home-shell reveal-up">
       <CTA
-        title={copy.frontmatter.ctaTitle}
-        description={copy.frontmatter.ctaDescription}
-        primaryLabel={copy.frontmatter.ctaPrimaryLabel}
-        primaryHref={copy.frontmatter.ctaPrimaryHref}
-        secondaryLabel={copy.frontmatter.ctaSecondaryLabel}
-        secondaryHref={copy.frontmatter.ctaSecondaryHref}
+        title={copy.data.ctaTitle}
+        description={copy.data.ctaDescription}
+        primaryLabel={copy.data.ctaPrimaryLabel}
+        primaryHref={copy.data.ctaPrimaryHref}
+        secondaryLabel={copy.data.ctaSecondaryLabel}
+        secondaryHref={copy.data.ctaSecondaryHref}
       />
     </div>
   </section>

@@ -19,11 +19,12 @@ All human-editable copy now has a mirrored content layer under `src/content/**` 
   - `src/content/data/capabilities.json`
   - `src/content/data/quality.json`
   - `src/content/data/contact.json`
+  - `src/content/data/product-development.json`
 
-## Adapter and compatibility layers
+## Content loading
 
-- `src/data/content.ts` exports normalized content objects for future page/component migrations.
-- `src/data/siteData.ts` remains the compatibility source used by current pages/components.
+- Astro collections are defined in `src/content.config.ts`.
+- Route/layout/component files read content through `src/content/queries.ts`.
 
 ## Important
 

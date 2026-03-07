@@ -1,6 +1,8 @@
 ---
-import { navigation, site } from '../data/content';
+import { getSiteContent } from '../content/queries';
 import { socialLinks } from '../data/siteData';
+
+const { site, navigation } = await getSiteContent();
 ---
 
 <footer class="border-t border-white/10 bg-slate-950">

@@ -4,29 +4,41 @@
 Keep business copy and editable page content separate from implementation code so non-technical editors can update the website with minimal risk.
 
 ## Target rule
-All editable site content should live under `src/content/**`.
+All editable site content should live under `src/content/**` and be loaded through explicit Astro content collections.
 
-## Preferred structure
+## Current authoritative structure
 ```text
 src/content/
   globals/
-    site.yaml
-    navigation.yaml
-    footer.yaml
-    contact.yaml
+    site.json
+    navigation.json
   pages/
-    home.yaml
-    capabilities.yaml
-    product-development.yaml
-    quality.yaml
-    about.yaml
-    contact.yaml
-  services/
-    service-name.md
+    home.md
+    capabilities.md
+    product-development.md
+    quality.md
+    about.md
+    contact.md
+  data/
+    home.json
+    capabilities.json
+    product-development.json
+    quality.json
+    about.json
+    contact.json
+src/content.config.ts
 ```
+
+## Collection model
+- `pages` collection: page-level editable copy and markdown body content.
+- `site` collection: global organization metadata and shared contact details.
+- `navigation` collection: global route navigation labels and hrefs.
+- page data collections (`homeData`, `capabilitiesData`, `productDevelopmentData`, `qualityData`, `aboutData`, `contactData`): structured repeatable section content.
 
 ## File responsibilities
 - `src/content/**` = editable content and structured page data
+- `src/content.config.ts` = explicit collection typing and validation
+- `src/content/queries.ts` = content loading helpers (not a copy authority)
 - `src/pages/**` = route files
 - `src/components/**` = reusable UI sections and patterns
 - `src/layouts/**` = layout shells
@@ -36,7 +48,7 @@ src/content/
 Customer-facing text should not be buried in:
 - component markup
 - TypeScript helper files
-- scattered JSON and adapter layers
+- scattered adapter layers
 
 ## Non-technical editing goal
 A non-technical editor should be able to update:
@@ -54,9 +66,3 @@ without editing component code.
 - `src/pages/quality.astro`
 - `src/pages/about.astro`
 - `src/pages/contact.astro`
-
-## Migration guidance
-During refactors:
-- reduce duplicate content authorities
-- avoid keeping the same business copy in multiple file types
-- prefer one authoritative content source per page or shared content block

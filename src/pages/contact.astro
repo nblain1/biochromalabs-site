@@ -5,16 +5,17 @@ import SectionHeading from '../components/sections/SectionHeading.astro';
 import ProcessStrip from '../components/sections/ProcessStrip.astro';
 import UtilitySidecard from '../components/sections/UtilitySidecard.astro';
 import ActionBand from '../components/sections/ActionBand.astro';
-import { pageCopy, pageData, site } from '../data/content';
+import { getPageCopy, getPageData, getSiteContent } from '../content/queries';
 import contactHero from '../assets/contact-hero.jpg';
 
-const copy = pageCopy.contact;
-const data = pageData.contact;
+const copy = await getPageCopy('contact');
+const data = await getPageData('contactData', 'contact');
+const { site } = await getSiteContent();
 ---
 
 <Layout
-  title={copy.frontmatter.layoutTitle}
-  description={copy.frontmatter.layoutDescription}
+  title={copy.data.layoutTitle}
+  description={copy.data.layoutDescription}
 >
   <section class="home-hero">
     <div class="home-shell">
@@ -26,9 +27,9 @@ const data = pageData.contact;
 
       <div class="hero-grid">
         <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
-          <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
-          <h1>{copy.frontmatter.heroTitle}</h1>
-          <p class="hero-lead">{copy.frontmatter.heroLead}</p>
+          <p class="hero-eyebrow">{copy.data.heroEyebrow}</p>
+          <h1>{copy.data.heroTitle}</h1>
+          <p class="hero-lead">{copy.data.heroLead}</p>
         </div>
 
         <aside class="hero-media-frame reveal-scale" style="transition-delay: 200ms;" aria-label="Client Support">
@@ -39,8 +40,8 @@ const data = pageData.contact;
             class="w-full h-full object-cover rounded-2xl"
           />
           <div class="hero-media-caption">
-            <p>{copy.frontmatter.heroMediaTitle}</p>
-            <span>{copy.frontmatter.heroMediaText}</span>
+            <p>{copy.data.heroMediaTitle}</p>
+            <span>{copy.data.heroMediaText}</span>
           </div>
         </aside>
       </div>
@@ -60,13 +61,13 @@ const data = pageData.contact;
   <section class="home-section border-t border-white/5">
     <div class="home-shell">
       <div class="mb-16 reveal-up">
-        <SectionHeading title={copy.frontmatter.routingTitle} compact className="mb-6" />
+        <SectionHeading title={copy.data.routingTitle} compact className="mb-6" />
         <ProcessStrip steps={data.routingSteps} compact />
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         <div class="lg:col-span-2 reveal-up">
-          <SectionHeading title={copy.frontmatter.directoryTitle} compact className="mb-8" />
+          <SectionHeading title={copy.data.directoryTitle} compact className="mb-8" />
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             {data.pathways.map((path, index) => (
               <article
@@ -90,7 +91,7 @@ const data = pageData.contact;
 
         <div class="reveal-up" style="transition-delay: 300ms;">
           <UtilitySidecard
-            title={copy.frontmatter.headquartersTitle}
+            title={copy.data.headquartersTitle}
             items={[
               {
                 icon: 'ri-map-pin-line',
@@ -117,7 +118,7 @@ const data = pageData.contact;
     <div class="home-shell">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         <ActionBand
-          title={copy.frontmatter.sampleResourcesTitle}
+          title={copy.data.sampleResourcesTitle}
           actions={data.sampleResources.map((resource) => ({
             label: resource.title,
             detail: resource.description,

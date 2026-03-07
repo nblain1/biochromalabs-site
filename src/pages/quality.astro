@@ -2,18 +2,18 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
-import { pageCopy, pageData } from '../data/content';
+import { getPageCopy, getPageData } from '../content/queries';
 
 // Import local hero asset
 import qualityHero from '../assets/quality-hero.jpg';
 
-const copy = pageCopy.quality;
-const data = pageData.quality;
+const copy = await getPageCopy('quality');
+const data = await getPageData('qualityData', 'quality');
 ---
 
 <Layout
-  title={copy.frontmatter.layoutTitle}
-  description={copy.frontmatter.layoutDescription}
+  title={copy.data.layoutTitle}
+  description={copy.data.layoutDescription}
 >
   <section class="home-hero">
     <div class="home-shell">
@@ -25,9 +25,9 @@ const data = pageData.quality;
 
       <div class="hero-grid mb-16">
         <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
-          <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
-          <h1>{copy.frontmatter.heroTitle}</h1>
-          <p class="hero-lead">{copy.frontmatter.heroLead}</p>
+          <p class="hero-eyebrow">{copy.data.heroEyebrow}</p>
+          <h1>{copy.data.heroTitle}</h1>
+          <p class="hero-lead">{copy.data.heroLead}</p>
           
           <div class="flex flex-col gap-6 bg-emerald-500/5 border border-emerald-500/20 p-8 rounded-xl mt-8 max-w-lg">
             <div class="flex items-center gap-5">
@@ -93,8 +93,8 @@ const data = pageData.quality;
   <section class="home-section bg-slate-900/50 border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading reveal-up">
-        <p>{copy.frontmatter.sectionSystemEyebrow}</p>
-        <h2>{copy.frontmatter.sectionSystemTitle}</h2>
+        <p>{copy.data.sectionSystemEyebrow}</p>
+        <h2>{copy.data.sectionSystemTitle}</h2>
       </div>
 
       <div class="flex flex-col gap-24 mt-12">
@@ -194,12 +194,12 @@ const data = pageData.quality;
   <section class="home-section">
     <div class="home-shell reveal-up">
       <CTA
-        title={copy.frontmatter.ctaTitle}
-        description={copy.frontmatter.ctaDescription}
-        primaryLabel={copy.frontmatter.ctaPrimaryLabel}
-        primaryHref={copy.frontmatter.ctaPrimaryHref}
-        secondaryLabel={copy.frontmatter.ctaSecondaryLabel}
-        secondaryHref={copy.frontmatter.ctaSecondaryHref}
+        title={copy.data.ctaTitle}
+        description={copy.data.ctaDescription}
+        primaryLabel={copy.data.ctaPrimaryLabel}
+        primaryHref={copy.data.ctaPrimaryHref}
+        secondaryLabel={copy.data.ctaSecondaryLabel}
+        secondaryHref={copy.data.ctaSecondaryHref}
       />
     </div>
   </section>
