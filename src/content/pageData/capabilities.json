@@ -1,12 +1,4 @@
 {
-  "meta": {
-    "title": "Testing Services",
-    "description": "Testing support for product release and quality decisions."
-  },
-  "hero": {
-    "eyebrow": "Testing Services",
-    "title": "Testing support for product release and quality decisions."
-  },
   "orientation": {
     "title": "What this page covers",
     "description": "BioChroma Labs supports release, investigation, and shelf-life work across chemistry, microbiology, and stability.",
@@ -57,31 +49,6 @@
       ]
     }
   ],
-  "customerFit": {
-    "title": "Who this page is for",
-    "segments": [
-      "Founders and brand teams preparing products for market",
-      "Manufacturers and operations teams managing release timelines",
-      "QA/QC and regulatory teams preparing for review or audit"
-    ]
-  },
-  "serviceAssurance": [
-    {
-      "title": "Clear scope and turnaround",
-      "description": "Each project starts with an agreed scope, timing, and reporting plan.",
-      "icon": "ri-calendar-check-line"
-    },
-    {
-      "title": "Reporting built for review",
-      "description": "Deliverables are structured for customer review, release decisions, and documentation needs.",
-      "icon": "ri-file-paper-2-line"
-    },
-    {
-      "title": "Direct technical contact",
-      "description": "A designated contact coordinates updates and next steps.",
-      "icon": "ri-user-star-line"
-    }
-  ],
   "instrumentRegistry": [
     {
       "category": "Chromatography",
@@ -108,18 +75,35 @@
       ]
     }
   ],
+  "serviceAssurance": [
+    {
+      "title": "Clear scope and turnaround",
+      "description": "Each project starts with an agreed scope, timing, and reporting plan.",
+      "icon": "ri-calendar-check-line"
+    },
+    {
+      "title": "Reporting built for review",
+      "description": "Deliverables are structured for customer review, release decisions, and documentation needs.",
+      "icon": "ri-file-paper-2-line"
+    },
+    {
+      "title": "Direct technical contact",
+      "description": "A designated contact coordinates updates and next steps.",
+      "icon": "ri-user-star-line"
+    }
+  ],
+  "customerFit": {
+    "title": "Who this page is for",
+    "segments": [
+      "Founders and brand teams preparing products for market",
+      "Manufacturers and operations teams managing release timelines",
+      "QA/QC and regulatory teams preparing for review or audit"
+    ]
+  },
   "relatedPathway": {
     "title": "Need formulation or scale-up support?",
     "description": "For formulation help, troubleshooting, and commercialization planning, use our Product Development pathway.",
     "label": "Explore Product Development",
     "href": "/product-development"
-  },
-  "cta": {
-    "title": "Need a testing plan?",
-    "description": "Share your product type, timeline, and quality priorities. We will connect you to the right team.",
-    "primaryLabel": "Contact BioChroma",
-    "primaryHref": "/contact",
-    "secondaryLabel": "View quality standards",
-    "secondaryHref": "/quality"
   }
 }

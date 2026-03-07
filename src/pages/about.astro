@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
-import { pageCopy, pageData } from '../data/content';
+import { getPageContent } from '../content/queries';
 
 // Import local assets
 import aboutHero from '../assets/about-hero.jpg';
@@ -10,16 +10,15 @@ import execBenny from '../assets/exec-benny.jpg';
 import execCheri from '../assets/exec-cheri.jpg';
 import execAmber from '../assets/exec-amber.jpg';
 
-const copy = pageCopy.about;
-const data = pageData.about;
+const { copy, data, Content } = await getPageContent('about');
 
 // Mapping local imported images to the executive array from JSON
 const executiveImages = [execBenny, execCheri, execAmber];
 ---
 
 <Layout
-  title={copy.frontmatter.layoutTitle}
-  description={copy.frontmatter.layoutDescription}
+  title={copy.layoutTitle}
+  description={copy.layoutDescription}
 >
   <section class="home-hero">
     <div class="home-shell">
@@ -31,9 +30,9 @@ const executiveImages = [execBenny, execCheri, execAmber];
 
       <div class="hero-grid">
         <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
-          <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
-          <h1>{copy.frontmatter.heroTitle}</h1>
-          <p class="hero-lead">{copy.frontmatter.heroLead}</p>
+          <p class="hero-eyebrow">{copy.heroEyebrow}</p>
+          <h1>{copy.heroTitle}</h1>
+          <p class="hero-lead">{copy.heroLead}</p>
         </div>
 
         <div class="hero-media-frame reveal-scale" style="transition-delay: 200ms;">
@@ -44,19 +43,19 @@ const executiveImages = [execBenny, execCheri, execAmber];
             class="w-full h-full object-cover rounded-2xl"
           />
           <div class="hero-media-caption">
-            <p>{copy.frontmatter.heroMediaTitle}</p>
-            <span>{copy.frontmatter.heroMediaText}</span>
+            <p>{copy.heroMediaTitle}</p>
+            <span>{copy.heroMediaText}</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  {copy.Content && (
+  {Content && (
     <section class="home-section border-t border-white/5 bg-slate-900/20">
       <div class="home-shell">
         <div class="prose prose-invert prose-emerald max-w-4xl mx-auto text-center text-lg leading-relaxed text-slate-300 reveal-up">
-          <copy.Content />
+          <Content />
         </div>
       </div>
     </section>
@@ -65,8 +64,8 @@ const executiveImages = [execBenny, execCheri, execAmber];
   <section class="home-section border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading text-center mb-16 reveal-up">
-        <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">{copy.frontmatter.executiveSectionEyebrow}</p>
-        <h2 class="text-3xl md:text-4xl font-bold text-white">{copy.frontmatter.executiveSectionTitle}</h2>
+        <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">{copy.executiveSectionEyebrow}</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">{copy.executiveSectionTitle}</h2>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -107,8 +106,8 @@ const executiveImages = [execBenny, execCheri, execAmber];
   <section class="home-section bg-slate-900/50 border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading reveal-up">
-        <p class="text-emerald-400">{copy.frontmatter.departmentSectionEyebrow}</p>
-        <h2 class="text-white">{copy.frontmatter.departmentSectionTitle}</h2>
+        <p class="text-emerald-400">{copy.departmentSectionEyebrow}</p>
+        <h2 class="text-white">{copy.departmentSectionTitle}</h2>
       </div>
 
       <div class="flex flex-col gap-20 mt-12">
@@ -219,12 +218,12 @@ const executiveImages = [execBenny, execCheri, execAmber];
   <section class="home-section border-t border-white/5">
     <div class="home-shell reveal-up">
       <CTA
-        title={copy.frontmatter.ctaTitle}
-        description={copy.frontmatter.ctaDescription}
-        primaryLabel={copy.frontmatter.ctaPrimaryLabel}
-        primaryHref={copy.frontmatter.ctaPrimaryHref}
-        secondaryLabel={copy.frontmatter.ctaSecondaryLabel}
-        secondaryHref={copy.frontmatter.ctaSecondaryHref}
+        title={copy.ctaTitle}
+        description={copy.ctaDescription}
+        primaryLabel={copy.ctaPrimaryLabel}
+        primaryHref={copy.ctaPrimaryHref}
+        secondaryLabel={copy.ctaSecondaryLabel}
+        secondaryHref={copy.ctaSecondaryHref}
       />
     </div>
   </section>

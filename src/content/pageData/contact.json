@@ -1,15 +1,4 @@
 {
-  "meta": {
-    "title": "Contact",
-    "description": "Contact routes for analytical testing, microbiology testing, product development support, and sample logistics."
-  },
-  "hero": {
-    "eyebrow": "Contact & operational routing",
-    "title": "Choose the right contact path.",
-    "lead": "Use the routes below for analytical testing, microbiology testing, product development support, and sample logistics. No forms. Just direct contact.",
-    "mediaCaptionTitle": "Operational routing",
-    "mediaCaptionText": "Direct department contact for faster coordination."
-  },
   "routingSteps": [
     {
       "label": "Step 1",
