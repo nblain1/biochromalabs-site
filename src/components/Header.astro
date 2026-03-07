@@ -1,5 +1,8 @@
 ---
-import { navigation, site } from '../data/content';
+import { getNavigation, getSite } from '../content/loaders';
+
+const site = await getSite();
+const navigation = await getNavigation();
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isActive = (href: string) => {

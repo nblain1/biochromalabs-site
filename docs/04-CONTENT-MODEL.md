@@ -6,24 +6,34 @@ Keep business copy and editable page content separate from implementation code s
 ## Target rule
 All editable site content should live under `src/content/**`.
 
-## Preferred structure
+## Active architecture
 ```text
+src/content.config.ts
 src/content/
   globals/
-    site.yaml
-    navigation.yaml
-    footer.yaml
-    contact.yaml
+    site.json
+    navigation.json
   pages/
-    home.yaml
-    capabilities.yaml
-    product-development.yaml
-    quality.yaml
-    about.yaml
-    contact.yaml
-  services/
-    service-name.md
+    home.md
+    capabilities.md
+    product-development.md
+    quality.md
+    about.md
+    contact.md
+  data/
+    home.json
+    capabilities.json
+    product-development.json
+    quality.json
+    about.json
+    contact.json
 ```
+
+## Astro collection map
+- `pages` (Markdown content collection): page-level copy and section headings.
+- `site` (JSON data collection): shared brand/contact/footer/header config.
+- `navigation` (JSON data collection): primary route navigation.
+- `homeData`, `capabilitiesData`, `productDevelopmentData`, `qualityData`, `aboutData`, `contactData` (JSON data collections): structured per-page arrays/cards/metadata.
 
 ## File responsibilities
 - `src/content/**` = editable content and structured page data

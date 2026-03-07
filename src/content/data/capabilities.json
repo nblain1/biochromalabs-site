@@ -1,12 +1,4 @@
 {
-  "meta": {
-    "title": "Testing Services",
-    "description": "Testing support for product release and quality decisions."
-  },
-  "hero": {
-    "eyebrow": "Testing Services",
-    "title": "Testing support for product release and quality decisions."
-  },
   "orientation": {
     "title": "What this page covers",
     "description": "BioChroma Labs supports release, investigation, and shelf-life work across chemistry, microbiology, and stability.",
@@ -113,13 +105,5 @@
     "description": "For formulation help, troubleshooting, and commercialization planning, use our Product Development pathway.",
     "label": "Explore Product Development",
     "href": "/product-development"
-  },
-  "cta": {
-    "title": "Need a testing plan?",
-    "description": "Share your product type, timeline, and quality priorities. We will connect you to the right team.",
-    "primaryLabel": "Contact BioChroma",
-    "primaryHref": "/contact",
-    "secondaryLabel": "View quality standards",
-    "secondaryHref": "/quality"
   }
 }

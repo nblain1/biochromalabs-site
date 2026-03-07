@@ -2,15 +2,18 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
-import { pageCopy, pageData } from '../data/content';
+import { render } from 'astro:content';
+import { getProductDevelopmentData, getPage } from '../content/loaders';
 
 import indexHero from '../assets/index-hero.jpg';
 
-const copy = pageCopy.productDevelopment;
-const data = pageData.productDevelopment;
+const page = await getPage('product-development');
+const data = await getProductDevelopmentData();
+const { Content } = await render(page);
+const copy = page.data;
 ---
 
-<Layout title={copy.frontmatter.layoutTitle} description={copy.frontmatter.layoutDescription}>
+<Layout title={copy.layoutTitle} description={copy.layoutDescription}>
   <section class="home-hero">
     <div class="home-shell">
       <nav class="breadcrumb reveal-up" aria-label="Breadcrumb">
@@ -21,9 +24,9 @@ const data = pageData.productDevelopment;
 
       <div class="hero-grid mb-16">
         <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
-          <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
-          <h1>{copy.frontmatter.heroTitle}</h1>
-          <p class="hero-lead">{copy.frontmatter.heroLead}</p>
+          <p class="hero-eyebrow">{copy.heroEyebrow}</p>
+          <h1>{copy.heroTitle}</h1>
+          <p class="hero-lead">{copy.heroLead}</p>
         </div>
 
         <aside class="hero-media-frame reveal-scale" style="transition-delay: 200ms;" aria-label="Product Development">
@@ -34,19 +37,19 @@ const data = pageData.productDevelopment;
             class="h-full w-full rounded-2xl object-cover"
           />
           <div class="hero-media-caption">
-            <p>{copy.frontmatter.heroMediaTitle}</p>
-            <span>{copy.frontmatter.heroMediaText}</span>
+            <p>{copy.heroMediaTitle}</p>
+            <span>{copy.heroMediaText}</span>
           </div>
         </aside>
       </div>
     </div>
   </section>
 
-  {copy.Content && (
+  {Content && (
     <section class="home-section border-t border-white/5 bg-slate-900/20">
       <div class="home-shell">
         <div class="prose prose-invert prose-emerald mx-auto max-w-4xl text-center text-lg leading-relaxed text-slate-300 reveal-up">
-          <copy.Content />
+          <Content />
         </div>
       </div>
     </section>
@@ -55,8 +58,8 @@ const data = pageData.productDevelopment;
   <section class="home-section border-t border-white/5">
     <div class="home-shell">
       <div class="section-heading reveal-up">
-        <p>{copy.frontmatter.overviewTitle}</p>
-        <h2>{copy.frontmatter.overviewLead}</h2>
+        <p>{copy.overviewTitle}</p>
+        <h2>{copy.overviewLead}</h2>
       </div>
 
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -76,8 +79,8 @@ const data = pageData.productDevelopment;
   <section class="home-section border-t border-white/5 bg-slate-900/40">
     <div class="home-shell">
       <div class="section-heading reveal-up">
-        <p>{copy.frontmatter.areasTitle}</p>
-        <h2>{copy.frontmatter.areasLead}</h2>
+        <p>{copy.areasTitle}</p>
+        <h2>{copy.areasLead}</h2>
       </div>
 
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -94,8 +97,8 @@ const data = pageData.productDevelopment;
   <section class="home-section border-t border-white/5">
     <div class="home-shell max-w-4xl">
       <div class="section-heading reveal-up">
-        <p>{copy.frontmatter.fitTitle}</p>
-        <h2>{copy.frontmatter.fitLead}</h2>
+        <p>{copy.fitTitle}</p>
+        <h2>{copy.fitLead}</h2>
       </div>
       <div class="mt-8 flex flex-wrap gap-3">
         {data.lifecycleStages.map((stage, index) => (
@@ -110,8 +113,8 @@ const data = pageData.productDevelopment;
   <section class="home-section border-t border-white/5 bg-slate-900/50">
     <div class="home-shell">
       <div class="section-heading reveal-up">
-        <p>{copy.frontmatter.actionsTitle}</p>
-        <h2>{copy.frontmatter.actionsLead}</h2>
+        <p>{copy.actionsTitle}</p>
+        <h2>{copy.actionsLead}</h2>
       </div>
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
         {data.actionCards.map((action, index) => (
@@ -131,12 +134,12 @@ const data = pageData.productDevelopment;
   <section class="home-section border-t border-white/5">
     <div class="home-shell reveal-up">
       <CTA
-        title={copy.frontmatter.ctaTitle}
-        description={copy.frontmatter.ctaDescription}
-        primaryLabel={copy.frontmatter.ctaPrimaryLabel}
-        primaryHref={copy.frontmatter.ctaPrimaryHref}
-        secondaryLabel={copy.frontmatter.ctaSecondaryLabel}
-        secondaryHref={copy.frontmatter.ctaSecondaryHref}
+        title={copy.ctaTitle}
+        description={copy.ctaDescription}
+        primaryLabel={copy.ctaPrimaryLabel}
+        primaryHref={copy.ctaPrimaryHref}
+        secondaryLabel={copy.ctaSecondaryLabel}
+        secondaryHref={copy.ctaSecondaryHref}
       />
     </div>
   </section>

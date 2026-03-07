@@ -1,12 +1,4 @@
 {
-  "meta": {
-    "title": "Quality & Compliance",
-    "description": "ISO/IEC 17025:2017 accredited quality systems (PJLA #L24-580-R1) and LabLynx LIMS data management."
-  },
-  "hero": {
-    "eyebrow": "PJLA Accredited • LabLynx Integrated",
-    "title": "Technical validity built on a foundation of rigor."
-  },
   "qseDeepDive": [
     {
       "id": "governance",
@@ -105,14 +97,6 @@
       ]
     }
   ],
-  "cta": {
-    "title": "Ready to verify our credentials?",
-    "description": "Our quality team can provide full ISO 17025 scopes of accreditation, redacted SOP overviews, and sample submission guidelines for your QA team.",
-    "primaryLabel": "Speak with Quality Team",
-    "primaryHref": "/contact",
-    "secondaryLabel": "Review Capabilities",
-    "secondaryHref": "/capabilities"
-  },
   "qseItems": [
     {
       "title": "Organization",
