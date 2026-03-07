@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Placeholder Leadership Name",
+    "title": "Chief Executive Officer",
+    "bio": "Leadership profile placeholder. Replace with approved team biography.",
+    "department": "Leadership",
+    "placeholder": true,
+    "imageKey": "exec-benny"
+  },
+  {
+    "name": "Placeholder Leadership Name",
+    "title": "Chief Scientific Officer",
+    "bio": "Leadership profile placeholder. Replace with approved team biography.",
+    "department": "Leadership",
+    "placeholder": true,
+    "imageKey": "exec-cheri"
+  },
+  {
+    "name": "Placeholder Leadership Name",
+    "title": "Chief Financial Officer",
+    "bio": "Leadership profile placeholder. Replace with approved team biography.",
+    "department": "Leadership",
+    "placeholder": true,
+    "imageKey": "exec-amber"
+  },
+  {
+    "name": "Placeholder Department Lead",
+    "title": "Department Lead",
+    "bio": "Profile placeholder. Replace with department lead information.",
+    "department": "Chemistry Department",
+    "placeholder": true
+  },
+  {
+    "name": "Placeholder Department Lead",
+    "title": "Department Lead",
+    "bio": "Profile placeholder. Replace with department lead information.",
+    "department": "Chemistry Department",
+    "placeholder": true
+  },
+  {
+    "name": "Placeholder Department Lead",
+    "title": "Department Lead",
+    "bio": "Profile placeholder. Replace with department lead information.",
+    "department": "Microbiology Department",
+    "placeholder": true
+  },
+  {
+    "name": "Placeholder Department Lead",
+    "title": "Department Lead",
+    "bio": "Profile placeholder. Replace with department lead information.",
+    "department": "Microbiology Department",
+    "placeholder": true
+  },
+  {
+    "name": "Placeholder Department Lead",
+    "title": "Department Lead",
+    "bio": "Profile placeholder. Replace with department lead information.",
+    "department": "Support Services Department",
+    "placeholder": true
+  },
+  {
+    "name": "Placeholder Department Lead",
+    "title": "Department Lead",
+    "bio": "Profile placeholder. Replace with department lead information.",
+    "department": "Support Services Department",
+    "placeholder": true
+  }
+]
