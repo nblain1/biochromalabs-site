@@ -42,7 +42,7 @@ const { copy, data, Content } = await getPageContent('quality');
           </div>
         </div>
 
-        <aside class="hero-media-frame reveal-scale" style="transition-delay: 200ms;" aria-label="Quality assurance operations">
+        <aside class="hero-media-frame" aria-label="Quality assurance operations">
           <Image 
             src={qualityHero} 
             alt="BioChroma Quality Assurance Review" 
@@ -50,8 +50,8 @@ const { copy, data, Content } = await getPageContent('quality');
             class="w-full h-full object-cover rounded-2xl"
           />
           <div class="hero-media-caption">
-            <p>{copy.heroMediaTitle}</p>
-            <span>{copy.heroMediaText}</span>
+            <p>{copy.heroMediaTitle ?? 'Data Integrity Focus'}</p>
+            <span>{copy.heroMediaText ?? 'ALCOA+ principles applied to every analytical dataset.'}</span>
           </div>
         </aside>
       </div>
@@ -96,10 +96,10 @@ const { copy, data, Content } = await getPageContent('quality');
         <h2>{copy.sectionSystemTitle}</h2>
       </div>
 
-      <div class="flex flex-col gap-24 mt-12">
+      <div class="flex flex-col gap-16 mt-12">
         {data.qseDeepDive.map((item) => (
           <div id={item.id} class="scroll-mt-32">
-            <div class="mb-8 max-w-3xl reveal-up">
+            <div class="mb-8 max-w-3xl">
               <span class="text-emerald-400 font-semibold tracking-wider uppercase text-sm">{item.subtitle}</span>
               <h3 class="text-2xl md:text-3xl font-bold text-white mt-2 mb-4">{item.title}</h3>
               <p class="text-slate-300 text-lg leading-relaxed">{item.summary}</p>
@@ -113,8 +113,7 @@ const { copy, data, Content } = await getPageContent('quality');
                   <>
                     <button
                       type="button"
-                      class="text-left bg-white/5 border border-white/10 rounded-lg p-5 hover:border-emerald-400/50 hover:bg-white/10 transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50 reveal-up"
-                      style={`transition-delay: ${index * 150}ms;`}
+                      class="text-left bg-white/5 border border-white/10 rounded-lg p-5 hover:border-emerald-400/50 hover:bg-white/10 transition-all duration-300 group cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400/50"
                       onclick={`document.getElementById('${modalId}').showModal()`}
                     >
                       <div class="flex justify-between items-center mb-3 border-b border-white/10 pb-2 group-hover:border-emerald-400/30 transition-colors">
