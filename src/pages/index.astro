@@ -13,7 +13,7 @@ const data = pageData.home;
 <Layout title={copy.frontmatter.layoutTitle} description={site.description}>
   <section class="home-hero">
     <div class="home-shell">
-      <div class="hero-grid mb-16">
+      <div class="hero-grid">
         <div class="hero-copy reveal-up">
           <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
           <h1>{copy.frontmatter.heroTitle}</h1>
@@ -45,35 +45,39 @@ const data = pageData.home;
   </section>
 
   {copy.Content && (
-    <section class="home-section border-t border-white/5 bg-slate-900/20">
+    <section class="home-section section-band section-band-bridge">
       <div class="home-shell">
-        <div class="prose prose-invert prose-emerald mx-auto max-w-4xl text-center text-lg leading-relaxed text-slate-300 reveal-up">
+        <div class="prose prose-invert prose-emerald mx-auto max-w-4xl text-center text-lg leading-relaxed text-slate-300 reveal-up bridge-copy">
           <copy.Content />
         </div>
       </div>
     </section>
   )}
 
-  <section class="home-section border-t border-white/5">
+  <section class="home-section section-band section-band-routes">
     <div class="home-shell">
       <div class="section-heading reveal-up">
         <p>{copy.frontmatter.routesTitle}</p>
         <h2>{copy.frontmatter.routesLead}</h2>
       </div>
 
-      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="pathway-grid mt-10">
         {data.routeCards.map((item, index) => (
           <a
             href={item.href}
-            class="group flex h-full flex-col rounded-xl border border-white/10 bg-white/5 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-emerald-400/30 hover:bg-emerald-500/5"
+            class:list={[
+              'home-card pathway-card group reveal-up',
+              index === 3 && 'pathway-card-left',
+              index === 4 && 'pathway-card-right'
+            ]}
             style={`transition-delay: ${index * 80}ms;`}
           >
-            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
+            <span class="pathway-icon mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg text-emerald-300">
               <i class={`${item.icon} text-xl`}></i>
             </span>
             <h3 class="mb-2 text-xl font-bold text-white">{item.title}</h3>
             <p class="flex-grow text-sm leading-relaxed text-slate-300">{item.description}</p>
-            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-300 group-hover:text-emerald-200">
+            <span class="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-300 transition-colors group-hover:text-emerald-200">
               {item.linkLabel}
               <i class="ri-arrow-right-line"></i>
             </span>
@@ -83,7 +87,7 @@ const data = pageData.home;
     </div>
   </section>
 
-  <section class="home-section border-t border-white/5 bg-slate-900/50">
+  <section class="home-section section-band section-band-soft">
     <div class="home-shell">
       <div class="section-heading reveal-up">
         <p>{copy.frontmatter.trustTitle}</p>
@@ -92,7 +96,7 @@ const data = pageData.home;
 
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
         {data.trustPoints.map((point, index) => (
-          <article class="rounded-xl border border-white/10 bg-white/5 p-6 reveal-up" style={`transition-delay: ${index * 100}ms;`}>
+          <article class="home-card reveal-up" style={`transition-delay: ${index * 100}ms;`}>
             <h3 class="text-base font-semibold text-white">{point.title}</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate-300">{point.description}</p>
           </article>
@@ -101,7 +105,7 @@ const data = pageData.home;
     </div>
   </section>
 
-  <section class="home-section border-t border-white/5">
+  <section class="home-section section-band">
     <div class="home-shell max-w-4xl">
       <div class="section-heading reveal-up">
         <p>{copy.frontmatter.scopeTitle}</p>
@@ -109,7 +113,7 @@ const data = pageData.home;
       </div>
       <div class="mt-8 flex flex-wrap gap-3">
         {data.industries.map((industry, index) => (
-          <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 reveal-scale" style={`transition-delay: ${index * 70}ms;`}>
+          <span class="category-pill reveal-scale" style={`transition-delay: ${index * 70}ms;`}>
             {industry}
           </span>
         ))}
@@ -117,7 +121,7 @@ const data = pageData.home;
     </div>
   </section>
 
-  <section class="home-section border-t border-white/5 bg-slate-900/50">
+  <section class="home-section section-band section-band-soft">
     <div class="home-shell">
       <div class="section-heading reveal-up">
         <p>{copy.frontmatter.actionsTitle}</p>
@@ -125,7 +129,7 @@ const data = pageData.home;
       </div>
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
         {data.actionCards.map((action, index) => (
-          <a href={action.href} class="rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-emerald-400/30 hover:bg-emerald-500/5 reveal-up" style={`transition-delay: ${index * 100}ms;`}>
+          <a href={action.href} class="home-card reveal-up" style={`transition-delay: ${index * 100}ms;`}>
             <h3 class="text-lg font-semibold text-white">{action.title}</h3>
             <p class="mt-2 text-sm text-slate-300">{action.description}</p>
             <span class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-300">
@@ -138,7 +142,7 @@ const data = pageData.home;
     </div>
   </section>
 
-  <section class="home-section border-t border-white/5">
+  <section class="home-section section-band">
     <div class="home-shell reveal-up">
       <CTA
         title={copy.frontmatter.ctaTitle}
