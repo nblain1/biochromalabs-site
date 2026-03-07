@@ -1,6 +1,9 @@
 ---
-import { navigation, site } from '../data/content';
+import { getNavigationData, getSiteData } from '../content/queries';
 import { socialLinks } from '../data/siteData';
+
+const site = await getSiteData();
+const navigation = await getNavigationData();
 ---
 
 <footer class="border-t border-white/10 bg-slate-950">

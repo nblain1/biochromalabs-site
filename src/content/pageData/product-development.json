@@ -16,6 +16,12 @@
       "icon": "ri-clipboard-line"
     }
   ],
+  "lifecycleStages": [
+    "Concept and formulation planning",
+    "Bench and pilot refinement",
+    "Verification and risk reduction",
+    "Pre-launch readiness and documentation"
+  ],
   "engagementModes": [
     {
       "title": "Early-stage brands",
@@ -29,12 +35,6 @@
       "title": "Established manufacturers",
       "description": "Targeted technical support for improvement projects and launch preparation."
     }
-  ],
-  "lifecycleStages": [
-    "Concept and formulation planning",
-    "Bench and pilot refinement",
-    "Verification and risk reduction",
-    "Pre-launch readiness and documentation"
   ],
   "actionCards": [
     {

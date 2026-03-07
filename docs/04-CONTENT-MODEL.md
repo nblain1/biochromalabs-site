@@ -4,29 +4,42 @@
 Keep business copy and editable page content separate from implementation code so non-technical editors can update the website with minimal risk.
 
 ## Target rule
-All editable site content should live under `src/content/**`.
+All editable site content lives under `src/content/**` and is loaded through explicit Astro content collections.
 
-## Preferred structure
+## Current authoritative structure
 ```text
 src/content/
-  globals/
-    site.yaml
-    navigation.yaml
-    footer.yaml
-    contact.yaml
+  content.config.ts (at src/content.config.ts)
+  site/
+    site.json
+  navigation/
+    navigation.json
   pages/
-    home.yaml
-    capabilities.yaml
-    product-development.yaml
-    quality.yaml
-    about.yaml
-    contact.yaml
-  services/
-    service-name.md
+    home.md
+    capabilities.md
+    product-development.md
+    quality.md
+    about.md
+    contact.md
+  pageData/
+    home.json
+    capabilities.json
+    product-development.json
+    quality.json
+    about.json
+    contact.json
 ```
+
+## Collection responsibilities
+- `site` collection (`site/site.json`) = business identity, contact details, shared SEO/business metadata
+- `navigation` collection (`navigation/navigation.json`) = global route links and labels
+- `pages` collection (`pages/*.md`) = page-level editable copy and markdown body content
+- `pageData` collection (`pageData/*.json`) = structured section data arrays/objects used by page components
 
 ## File responsibilities
 - `src/content/**` = editable content and structured page data
+- `src/content.config.ts` = schema and explicit collection definitions
+- `src/content/queries.ts` = content lookup helpers (not copy authority)
 - `src/pages/**` = route files
 - `src/components/**` = reusable UI sections and patterns
 - `src/layouts/**` = layout shells
@@ -36,7 +49,7 @@ src/content/
 Customer-facing text should not be buried in:
 - component markup
 - TypeScript helper files
-- scattered JSON and adapter layers
+- scattered adapter layers outside `src/content/**`
 
 ## Non-technical editing goal
 A non-technical editor should be able to update:
@@ -47,7 +60,7 @@ A non-technical editor should be able to update:
 - service descriptions
 without editing component code.
 
-## Current route targets
+## Route targets
 - `src/pages/index.astro`
 - `src/pages/capabilities.astro`
 - `src/pages/product-development.astro`
@@ -55,8 +68,9 @@ without editing component code.
 - `src/pages/about.astro`
 - `src/pages/contact.astro`
 
-## Migration guidance
-During refactors:
-- reduce duplicate content authorities
-- avoid keeping the same business copy in multiple file types
-- prefer one authoritative content source per page or shared content block
+## Architecture guardrails
+- Keep one authoritative content source per page slug:
+  - `src/content/pages/{slug}.md` for page copy
+  - `src/content/pageData/{slug}.json` for structured section data
+- Avoid creating duplicate content authorities in `src/data/**`.
+- If new editable global content is needed, add it under an explicit `src/content/{collection}/**` folder and register/update schema in `src/content.config.ts`.

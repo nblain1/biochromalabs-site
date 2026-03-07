@@ -1,12 +1,4 @@
 {
-  "meta": {
-    "title": "Quality & Compliance",
-    "description": "ISO/IEC 17025:2017 accredited quality systems (PJLA #L24-580-R1) and LabLynx LIMS data management."
-  },
-  "hero": {
-    "eyebrow": "PJLA Accredited • LabLynx Integrated",
-    "title": "Technical validity built on a foundation of rigor."
-  },
   "qseDeepDive": [
     {
       "id": "governance",
@@ -103,63 +95,6 @@
           "deepDive": "We protect data for the long haul. Physical sample retains are securely archived for potential re-testing or audit inquiries. Digital project records and raw instrument data are backed up daily with off-site redundancy to ensure compliance with 5-year retention requirements."
         }
       ]
-    }
-  ],
-  "cta": {
-    "title": "Ready to verify our credentials?",
-    "description": "Our quality team can provide full ISO 17025 scopes of accreditation, redacted SOP overviews, and sample submission guidelines for your QA team.",
-    "primaryLabel": "Speak with Quality Team",
-    "primaryHref": "/contact",
-    "secondaryLabel": "Review Capabilities",
-    "secondaryHref": "/capabilities"
-  },
-  "qseItems": [
-    {
-      "title": "Organization",
-      "description": "Defined quality responsibilities, escalation pathways, and management review cadence.",
-      "icon": "ri-node-tree"
-    },
-    {
-      "title": "Personnel",
-      "description": "Role-based training plans, competency verification, and continuing qualification records.",
-      "icon": "ri-team-line"
-    },
-    {
-      "title": "Equipment",
-      "description": "Lifecycle controls for qualification, calibration, preventive maintenance, and service logs.",
-      "icon": "ri-tools-line"
-    },
-    {
-      "title": "Purchasing & Inventory",
-      "description": "Approved supplier controls, incoming verification, and traceable material status.",
-      "icon": "ri-truck-line"
-    },
-    {
-      "title": "Process Control",
-      "description": "Controlled SOPs, change management, and deviation/CAPA workflows.",
-      "icon": "ri-equalizer-line"
-    },
-    {
-      "title": "Documents & Records",
-      "description": "Version-controlled documentation, retention schedules, and audit-ready retrieval.",
-      "icon": "ri-folders-line"
-    }
-  ],
-  "qualityCommitments": [
-    {
-      "title": "Documented quality system",
-      "description": "Controlled procedures, change management, and deviation tracking for every program.",
-      "icon": "ri-shield-check-line"
-    },
-    {
-      "title": "Data integrity focus",
-      "description": "Independent review and traceable datasets with secure reporting workflows.",
-      "icon": "ri-lock-line"
-    },
-    {
-      "title": "Regulatory alignment",
-      "description": "Fit-for-purpose validation plans mapped to client regulatory requirements.",
-      "icon": "ri-git-merge-line"
     }
   ]
 }
