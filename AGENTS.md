@@ -55,3 +55,12 @@ Run these before considering work complete:
 - Keep diffs focused
 - Summarize structural, visual, and content changes separately
 - If content architecture is changed, update `docs/04-CONTENT-MODEL.md`
+
+## PR execution guardrails
+- PRs are the unit of work; keep each PR narrowly scoped and reviewable.
+- Base and target branch for delivery is `main` unless explicitly told otherwise.
+- Preserve the explicit Astro content collection model merged in PR #38 (collections, query layer, and authoritative content locations).
+- Avoid duplicate content authority: customer-facing copy and data must remain authoritative in `src/content/**`.
+- Do not perform broad design-system rewrites unless explicitly requested for that task.
+- Run verification (`npm run build`, `npm run check:dist`, `npm run check:seo`) before proposing a PR.
+- Report exactly what changed and why, including any uncertainties or follow-up items.
