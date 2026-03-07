@@ -1,0 +1,56 @@
+---
+interface DisclosureItem {
+  title: string;
+  summary: string;
+  details: string;
+  icon?: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  items: DisclosureItem[];
+  columns?: 1 | 2;
+  compact?: boolean;
+  className?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  items = [],
+  columns = 2,
+  compact = false,
+  className = '',
+} = Astro.props;
+---
+
+<section class:list={['disclosure-grid', compact && 'disclosure-grid--compact', className]}>
+  {(eyebrow || title || description) && (
+    <header class="disclosure-grid__head">
+      {eyebrow && <p class="disclosure-grid__eyebrow">{eyebrow}</p>}
+      {title && <h3 class="disclosure-grid__title">{title}</h3>}
+      {description && <p class="disclosure-grid__description">{description}</p>}
+    </header>
+  )}
+
+  <div class:list={['disclosure-grid__items', columns === 1 ? 'disclosure-grid__items--single' : '']}>
+    {items.map((item) => (
+      <details class="disclosure-grid__item">
+        <summary>
+          <span class="disclosure-grid__summary-main">
+            {item.icon && <i class={item.icon} aria-hidden="true"></i>}
+            <span class="disclosure-grid__summary-copy">
+              <span class="disclosure-grid__item-title">{item.title}</span>
+              <span class="disclosure-grid__item-summary">{item.summary}</span>
+            </span>
+          </span>
+          <i class="ri-add-line disclosure-grid__toggle" aria-hidden="true"></i>
+        </summary>
+        <p>{item.details}</p>
+      </details>
+    ))}
+  </div>
+</section>

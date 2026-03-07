@@ -1,0 +1,43 @@
+---
+interface ActionItem {
+  label: string;
+  href: string;
+  detail?: string;
+  icon?: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  actions: ActionItem[];
+  compact?: boolean;
+  className?: string;
+}
+
+const {
+  title,
+  description,
+  actions = [],
+  compact = false,
+  className = '',
+} = Astro.props;
+---
+
+<section class:list={['action-band', compact && 'action-band--compact', className]} aria-label={title}>
+  <header class="action-band__head">
+    <h3 class="action-band__title">{title}</h3>
+    {description && <p class="action-band__description">{description}</p>}
+  </header>
+
+  <div class="action-band__grid">
+    {actions.map((action) => (
+      <a href={action.href} class="action-band__item">
+        <div>
+          <p class="action-band__label">{action.label}</p>
+          {action.detail && <p class="action-band__detail">{action.detail}</p>}
+        </div>
+        <i class:list={['action-band__icon', action.icon || 'ri-arrow-right-up-line']} aria-hidden="true"></i>
+      </a>
+    ))}
+  </div>
+</section>

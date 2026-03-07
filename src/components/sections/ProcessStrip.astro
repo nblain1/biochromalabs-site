@@ -1,0 +1,32 @@
+---
+interface ProcessStep {
+  label: string;
+  text: string;
+}
+
+interface Props {
+  title?: string;
+  steps: ProcessStep[];
+  compact?: boolean;
+  className?: string;
+}
+
+const {
+  title,
+  steps = [],
+  compact = false,
+  className = '',
+} = Astro.props;
+---
+
+<section class:list={['process-strip', compact && 'process-strip--compact', className]} aria-label={title || 'Process steps'}>
+  {title && <h3 class="process-strip__title">{title}</h3>}
+  <ol class="process-strip__grid">
+    {steps.map((step, index) => (
+      <li class="process-strip__item">
+        <span class="process-strip__step">{step.label || `Step ${index + 1}`}</span>
+        <p class="process-strip__text">{step.text}</p>
+      </li>
+    ))}
+  </ol>
+</section>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  align?: 'left' | 'center';
+  compact?: boolean;
+  className?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  align = 'left',
+  compact = false,
+  className = '',
+} = Astro.props;
+
+const alignmentClass = align === 'center' ? 'section-heading--center' : 'section-heading--left';
+const compactClass = compact ? 'section-heading--compact' : '';
+---
+
+<header class:list={['section-heading-kit', alignmentClass, compactClass, className]}>
+  {eyebrow && <p class="section-heading-kit__eyebrow">{eyebrow}</p>}
+  <h2 class="section-heading-kit__title">{title}</h2>
+  {description && <p class="section-heading-kit__description">{description}</p>}
+</header>

@@ -1,0 +1,77 @@
+---
+interface UtilityItem {
+  icon?: string;
+  label: string;
+  text?: string;
+  href?: string;
+  target?: string;
+}
+
+interface UtilityAction {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  items?: UtilityItem[];
+  note?: string;
+  actions?: UtilityAction[];
+  className?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  items = [],
+  note,
+  actions = [],
+  className = '',
+} = Astro.props;
+---
+
+<aside class:list={['utility-sidecard', className]}>
+  <header class="utility-sidecard__head">
+    {eyebrow && <p class="utility-sidecard__eyebrow">{eyebrow}</p>}
+    <h3 class="utility-sidecard__title">{title}</h3>
+    {description && <p class="utility-sidecard__description">{description}</p>}
+  </header>
+
+  {items.length > 0 && (
+    <ul class="utility-sidecard__items">
+      {items.map((item) => (
+        <li class="utility-sidecard__item">
+          {item.icon && <i class:list={['utility-sidecard__icon', item.icon]} aria-hidden="true"></i>}
+          <div class="utility-sidecard__content">
+            <p class="utility-sidecard__item-label">{item.label}</p>
+            {item.href ? (
+              <a href={item.href} target={item.target} rel={item.target === '_blank' ? 'noopener noreferrer' : undefined} class="utility-sidecard__item-link">
+                {item.text}
+              </a>
+            ) : (
+              <p class="utility-sidecard__item-text">{item.text}</p>
+            )}
+          </div>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  {note && (
+    <div class="utility-sidecard__note">
+      <i class="ri-information-line" aria-hidden="true"></i>
+      <p>{note}</p>
+    </div>
+  )}
+
+  {actions.length > 0 && (
+    <div class="utility-sidecard__actions">
+      {actions.map((action) => (
+        <a href={action.href} class="utility-sidecard__action">{action.label}</a>
+      ))}
+    </div>
+  )}
+</aside>
