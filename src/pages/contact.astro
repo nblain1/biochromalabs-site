@@ -29,6 +29,11 @@ const site = await getSiteData();
           <p class="hero-eyebrow">{copy.heroEyebrow}</p>
           <h1>{copy.heroTitle}</h1>
           <p class="hero-lead">{copy.heroLead}</p>
+          <div class="hero-cta-row">
+            <a class="btn-primary" href={site.header.primaryCtaHref}>
+              {site.header.primaryCtaLabel} <i class="ri-arrow-right-up-line"></i>
+            </a>
+          </div>
         </div>
 
         <aside class="hero-media-frame reveal-scale" style="transition-delay: 200ms;" aria-label="Client Support">
@@ -142,8 +147,3 @@ const site = await getSiteData();
   </section>
 </Layout>
 
-<style>
-  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
-  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
-  .breadcrumb a:hover { color: var(--color-primary); }
-</style>

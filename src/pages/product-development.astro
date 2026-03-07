@@ -18,11 +18,19 @@ const { copy, data, Content } = await getPageContent('product-development');
         <span class="text-emerald-400 opacity-80">Product Development</span>
       </nav>
 
-      <div class="hero-grid mb-16">
+      <div class="hero-grid hero-grid--stacked-actions">
         <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
           <p class="hero-eyebrow">{copy.heroEyebrow}</p>
           <h1>{copy.heroTitle}</h1>
           <p class="hero-lead">{copy.heroLead}</p>
+          <div class="hero-cta-row">
+            <a class="btn-primary" href={copy.ctaPrimaryHref}>
+              {copy.ctaPrimaryLabel} <i class="ri-arrow-right-up-line"></i>
+            </a>
+            <a class="btn-secondary" href={copy.ctaSecondaryHref}>
+              {copy.ctaSecondaryLabel} <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
         </div>
 
         <aside class="hero-media-frame reveal-scale" style="transition-delay: 200ms;" aria-label="Product Development">
@@ -60,7 +68,7 @@ const { copy, data, Content } = await getPageContent('product-development');
 
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
         {data.supportAreas.map((item, index) => (
-          <article class="rounded-xl border border-white/10 bg-white/5 p-6 reveal-up" style={`transition-delay: ${index * 80}ms;`}>
+          <article class="rounded-xl border border-white/10 bg-white/5 p-6 reveal-up stack-card" style={`transition-delay: ${index * 80}ms;`}>
             <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
               <i class={`${item.icon} text-xl`}></i>
             </span>
@@ -81,7 +89,7 @@ const { copy, data, Content } = await getPageContent('product-development');
 
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
         {data.engagementModes.map((mode, index) => (
-          <article class="rounded-xl border border-white/10 bg-white/5 p-6 reveal-up" style={`transition-delay: ${index * 100}ms;`}>
+          <article class="rounded-xl border border-white/10 bg-white/5 p-6 reveal-up stack-card" style={`transition-delay: ${index * 100}ms;`}>
             <h3 class="text-base font-semibold text-white">{mode.title}</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate-300">{mode.description}</p>
           </article>
@@ -114,10 +122,10 @@ const { copy, data, Content } = await getPageContent('product-development');
       </div>
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
         {data.actionCards.map((action, index) => (
-          <a href={action.href} class="rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-emerald-400/30 hover:bg-emerald-500/5 reveal-up" style={`transition-delay: ${index * 100}ms;`}>
+          <a href={action.href} class="rounded-xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-emerald-400/30 hover:bg-emerald-500/5 reveal-up stack-card" style={`transition-delay: ${index * 100}ms;`}>
             <h3 class="text-lg font-semibold text-white">{action.title}</h3>
             <p class="mt-2 text-sm text-slate-300">{action.description}</p>
-            <span class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-300">
+            <span class="card-link-row inline-flex items-center gap-2 text-sm font-medium text-emerald-300">
               {action.label}
               <i class="ri-arrow-right-up-line"></i>
             </span>
@@ -141,8 +149,3 @@ const { copy, data, Content } = await getPageContent('product-development');
   </section>
 </Layout>
 
-<style>
-  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
-  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
-  .breadcrumb a:hover { color: var(--color-primary); }
-</style>

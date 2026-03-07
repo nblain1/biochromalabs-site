@@ -33,6 +33,14 @@ const executiveImages = [execBenny, execCheri, execAmber];
           <p class="hero-eyebrow">{copy.heroEyebrow}</p>
           <h1>{copy.heroTitle}</h1>
           <p class="hero-lead">{copy.heroLead}</p>
+          <div class="hero-cta-row">
+            <a class="btn-primary" href={copy.ctaPrimaryHref}>
+              {copy.ctaPrimaryLabel} <i class="ri-arrow-right-up-line"></i>
+            </a>
+            <a class="btn-secondary" href={copy.ctaSecondaryHref}>
+              {copy.ctaSecondaryLabel} <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
         </div>
 
         <div class="hero-media-frame reveal-scale" style="transition-delay: 200ms;">
@@ -230,10 +238,6 @@ const executiveImages = [execBenny, execCheri, execAmber];
 </Layout>
 
 <style>
-  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
-  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
-  .breadcrumb a:hover { color: var(--color-primary); }
-
   /* --- Native Dialog Animations --- */
   dialog[open] {
     animation: zoom-in 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);

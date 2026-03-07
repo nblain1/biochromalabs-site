@@ -339,6 +339,10 @@ body {
   gap: clamp(1.5rem, 2.5vw, 2.8rem);
 }
 
+.hero-grid--stacked-actions {
+  margin-bottom: clamp(2rem, 4vw, 4rem);
+}
+
 .bridge-copy > p {
   font-size: clamp(1rem, 0.96rem + 0.3vw, 1.16rem);
 }
@@ -433,6 +437,22 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-sm);
+}
+
+.hero-cta-row .btn-primary,
+.hero-cta-row .btn-secondary {
+  min-height: 2.9rem;
+}
+
+.stack-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.stack-card .card-link-row {
+  margin-top: auto;
+  padding-top: 1rem;
 }
 
 .hero-media-frame {

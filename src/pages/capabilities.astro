@@ -21,11 +21,19 @@ const { copy, data, Content } = await getPageContent('capabilities');
         <span class="text-emerald-400 opacity-80">Testing Services</span>
       </nav>
 
-      <div class="hero-grid mb-16">
+      <div class="hero-grid hero-grid--stacked-actions">
         <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
           <p class="hero-eyebrow">{copy.heroEyebrow}</p>
           <h1>{copy.heroTitle}</h1>
           <p class="hero-lead">{copy.heroLead}</p>
+          <div class="hero-cta-row">
+            <a class="btn-primary" href={copy.ctaPrimaryHref}>
+              {copy.ctaPrimaryLabel} <i class="ri-arrow-right-up-line"></i>
+            </a>
+            <a class="btn-secondary" href={copy.ctaSecondaryHref}>
+              {copy.ctaSecondaryLabel} <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
         </div>
 
         <div class="hero-media-frame reveal-scale" style="transition-delay: 200ms;">
@@ -212,8 +220,3 @@ const { copy, data, Content } = await getPageContent('capabilities');
   </section>
 </Layout>
 
-<style>
-  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
-  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
-  .breadcrumb a:hover { color: var(--color-primary); }
-</style>

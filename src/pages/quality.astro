@@ -22,13 +22,21 @@ const { copy, data, Content } = await getPageContent('quality');
         <span class="text-emerald-400 opacity-80">Quality</span>
       </nav>
 
-      <div class="hero-grid mb-16">
+      <div class="hero-grid hero-grid--stacked-actions">
         <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
           <p class="hero-eyebrow">{copy.heroEyebrow}</p>
           <h1>{copy.heroTitle}</h1>
           <p class="hero-lead">{copy.heroLead}</p>
-          
-          <div class="flex flex-col gap-6 bg-emerald-500/5 border border-emerald-500/20 p-8 rounded-xl mt-8 max-w-lg">
+          <div class="hero-cta-row">
+            <a class="btn-primary" href={copy.ctaPrimaryHref}>
+              {copy.ctaPrimaryLabel} <i class="ri-arrow-right-up-line"></i>
+            </a>
+            <a class="btn-secondary" href={copy.ctaSecondaryHref}>
+              {copy.ctaSecondaryLabel} <i class="ri-arrow-right-line"></i>
+            </a>
+          </div>
+
+          <div class="flex flex-col gap-6 bg-emerald-500/5 border border-emerald-500/20 p-8 rounded-xl mt-2 max-w-lg">
             <div class="flex items-center gap-5">
               <i class="ri-award-fill text-4xl text-emerald-400"></i>
               <div>
@@ -60,7 +68,7 @@ const { copy, data, Content } = await getPageContent('quality');
         {data.qseDeepDive.map((item, index) => (
           <a 
             href={`#${item.id}`} 
-            class="group bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-emerald-500/5 hover:border-emerald-400/30 transition-all duration-300 reveal-up"
+            class="group bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-emerald-500/5 hover:border-emerald-400/30 transition-all duration-300 reveal-up stack-card"
             style={`transition-delay: ${(index * 100) + 300}ms;`}
           >
             <div class="flex items-center gap-4 mb-4">
@@ -70,7 +78,7 @@ const { copy, data, Content } = await getPageContent('quality');
               <h2 class="text-white font-bold text-lg group-hover:text-emerald-400 transition-colors">{item.subtitle}</h2>
             </div>
             <p class="text-slate-400 text-sm leading-relaxed mb-4">{item.summary}</p>
-            <span class="text-emerald-400 text-sm font-semibold flex items-center gap-1 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
+            <span class="card-link-row text-emerald-400 text-sm font-semibold flex items-center gap-1 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
               Examine Protocol <i class="ri-arrow-down-line"></i>
             </span>
           </a>
