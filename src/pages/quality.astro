@@ -42,7 +42,7 @@ const { copy, data, Content } = await getPageContent('quality');
           </div>
         </div>
 
-        <div class="hero-media-frame reveal-scale" style="transition-delay: 200ms;">
+        <aside class="hero-media-frame reveal-scale" style="transition-delay: 200ms;" aria-label="Quality assurance operations">
           <Image 
             src={qualityHero} 
             alt="BioChroma Quality Assurance Review" 
@@ -50,10 +50,10 @@ const { copy, data, Content } = await getPageContent('quality');
             class="w-full h-full object-cover rounded-2xl"
           />
           <div class="hero-media-caption">
-            <p>Data Integrity Focus</p>
-            <span>ALCOA+ principles applied to every analytical dataset.</span>
+            <p>{copy.heroMediaTitle}</p>
+            <span>{copy.heroMediaText}</span>
           </div>
-        </div>
+        </aside>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -205,10 +205,6 @@ const { copy, data, Content } = await getPageContent('quality');
 </Layout>
 
 <style>
-  .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
-  .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
-  .breadcrumb a:hover { color: var(--color-primary); }
-  
   /* --- Native Dialog Animations --- */
   dialog[open] {
     animation: zoom-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
