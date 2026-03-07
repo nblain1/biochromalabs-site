@@ -1,5 +1,15 @@
 ---
-import { navigation, site } from '../data/content';
+import { getEntry } from 'astro:content';
+
+const siteEntry = await getEntry('globalSite', 'site');
+const navigationEntry = await getEntry('globalNavigation', 'navigation');
+
+if (!siteEntry || !navigationEntry) {
+  throw new Error('Missing global content for header.');
+}
+
+const site = siteEntry.data as any;
+const navigation = navigationEntry.data.items as any[];
 
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 const isActive = (href: string) => {

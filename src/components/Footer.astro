@@ -1,6 +1,16 @@
 ---
-import { navigation, site } from '../data/content';
+import { getEntry } from 'astro:content';
 import { socialLinks } from '../data/siteData';
+
+const siteEntry = await getEntry('globalSite', 'site');
+const navigationEntry = await getEntry('globalNavigation', 'navigation');
+
+if (!siteEntry || !navigationEntry) {
+  throw new Error('Missing global content for footer.');
+}
+
+const site = siteEntry.data as any;
+const navigation = navigationEntry.data.items as any[];
 ---
 
 <footer class="border-t border-white/10 bg-slate-950">

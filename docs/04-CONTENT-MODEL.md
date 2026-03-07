@@ -4,29 +4,44 @@
 Keep business copy and editable page content separate from implementation code so non-technical editors can update the website with minimal risk.
 
 ## Target rule
-All editable site content should live under `src/content/**`.
+All editable site content should live under `src/content/**` and be loaded through explicit Astro content collections.
 
-## Preferred structure
+## Active structure
 ```text
 src/content/
-  globals/
-    site.yaml
-    navigation.yaml
-    footer.yaml
-    contact.yaml
+  globalSite/
+    site.json
+  globalNavigation/
+    navigation.json
   pages/
-    home.yaml
-    capabilities.yaml
-    product-development.yaml
-    quality.yaml
-    about.yaml
-    contact.yaml
-  services/
-    service-name.md
+    home.md
+    capabilities.md
+    product-development.md
+    quality.md
+    about.md
+    contact.md
+  pageData/
+    home.json
+    capabilities.json
+    product-development.json
+    quality.json
+    about.json
+    contact.json
+src/content.config.ts
 ```
+
+## Collection model
+`src/content.config.ts` is the single content contract for the site:
+- `pages` (markdown body + typed frontmatter)
+- `pageData` (structured JSON per page)
+- `globalSite` (shared site identity/contact/meta data)
+- `globalNavigation` (shared navigation links)
+
+Routes and reusable components should read from these collections using `astro:content` APIs.
 
 ## File responsibilities
 - `src/content/**` = editable content and structured page data
+- `src/content.config.ts` = content collection definitions and schemas
 - `src/pages/**` = route files
 - `src/components/**` = reusable UI sections and patterns
 - `src/layouts/**` = layout shells

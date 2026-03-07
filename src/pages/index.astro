@@ -2,28 +2,38 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import CTA from '../components/CTA.astro';
-import { pageCopy, pageData, site } from '../data/content';
+import { getEntry } from 'astro:content';
 
 import indexHero from '../assets/index-hero.jpg';
 
-const copy = pageCopy.home;
-const data = pageData.home;
+const siteEntry = await getEntry('globalSite', 'site');
+const copyEntry = await getEntry('pages', 'home');
+const dataEntry = await getEntry('pageData', 'home');
+
+if (!siteEntry || !copyEntry || !dataEntry) {
+  throw new Error('Missing content entry for home page.');
+}
+
+const site = siteEntry.data as any;
+const copy = copyEntry.data as any;
+const data = dataEntry.data as any;
+const { Content } = await copyEntry.render();
 ---
 
-<Layout title={copy.frontmatter.layoutTitle} description={site.description}>
+<Layout title={copy.layoutTitle} description={site.description}>
   <section class="home-hero">
     <div class="home-shell">
       <div class="hero-grid">
         <div class="hero-copy reveal-up">
-          <p class="hero-eyebrow">{copy.frontmatter.heroEyebrow}</p>
-          <h1>{copy.frontmatter.heroTitle}</h1>
-          <p class="hero-lead">{copy.frontmatter.heroLead}</p>
+          <p class="hero-eyebrow">{copy.heroEyebrow}</p>
+          <h1>{copy.heroTitle}</h1>
+          <p class="hero-lead">{copy.heroLead}</p>
           <div class="hero-cta-row mt-6">
-            <a class="btn-primary" href={copy.frontmatter.ctaPrimaryHref}>
-              {copy.frontmatter.ctaPrimaryLabel} <i class="ri-arrow-right-up-line"></i>
+            <a class="btn-primary" href={copy.ctaPrimaryHref}>
+              {copy.ctaPrimaryLabel} <i class="ri-arrow-right-up-line"></i>
             </a>
-            <a class="btn-secondary" href={copy.frontmatter.ctaSecondaryHref}>
-              {copy.frontmatter.ctaSecondaryLabel} <i class="ri-arrow-right-line"></i>
+            <a class="btn-secondary" href={copy.ctaSecondaryHref}>
+              {copy.ctaSecondaryLabel} <i class="ri-arrow-right-line"></i>
             </a>
           </div>
         </div>
@@ -36,19 +46,19 @@ const data = pageData.home;
             class="h-full w-full rounded-2xl object-cover"
           />
           <div class="hero-media-caption">
-            <p>{copy.frontmatter.heroMediaTitle}</p>
-            <span>{copy.frontmatter.heroMediaText}</span>
+            <p>{copy.heroMediaTitle}</p>
+            <span>{copy.heroMediaText}</span>
           </div>
         </aside>
       </div>
     </div>
   </section>
 
-  {copy.Content && (
+  {Content && (
     <section class="home-section section-band section-band-bridge">
       <div class="home-shell">
         <div class="prose prose-invert prose-emerald mx-auto max-w-4xl text-center text-lg leading-relaxed text-slate-300 reveal-up bridge-copy">
-          <copy.Content />
+          <Content />
         </div>
       </div>
     </section>
@@ -57,8 +67,8 @@ const data = pageData.home;
   <section class="home-section section-band section-band-routes">
     <div class="home-shell">
       <div class="section-heading reveal-up">
-        <p>{copy.frontmatter.routesTitle}</p>
-        <h2>{copy.frontmatter.routesLead}</h2>
+        <p>{copy.routesTitle}</p>
+        <h2>{copy.routesLead}</h2>
       </div>
 
       <div class="pathway-grid mt-10">
@@ -90,8 +100,8 @@ const data = pageData.home;
   <section class="home-section section-band section-band-soft">
     <div class="home-shell">
       <div class="section-heading reveal-up">
-        <p>{copy.frontmatter.trustTitle}</p>
-        <h2>{copy.frontmatter.trustLead}</h2>
+        <p>{copy.trustTitle}</p>
+        <h2>{copy.trustLead}</h2>
       </div>
 
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -108,8 +118,8 @@ const data = pageData.home;
   <section class="home-section section-band">
     <div class="home-shell max-w-4xl">
       <div class="section-heading reveal-up">
-        <p>{copy.frontmatter.scopeTitle}</p>
-        <h2>{copy.frontmatter.scopeLead}</h2>
+        <p>{copy.scopeTitle}</p>
+        <h2>{copy.scopeLead}</h2>
       </div>
       <div class="mt-8 flex flex-wrap gap-3">
         {data.industries.map((industry, index) => (
@@ -124,8 +134,8 @@ const data = pageData.home;
   <section class="home-section section-band section-band-soft">
     <div class="home-shell">
       <div class="section-heading reveal-up">
-        <p>{copy.frontmatter.actionsTitle}</p>
-        <h2>{copy.frontmatter.actionsLead}</h2>
+        <p>{copy.actionsTitle}</p>
+        <h2>{copy.actionsLead}</h2>
       </div>
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
         {data.actionCards.map((action, index) => (
@@ -145,12 +155,12 @@ const data = pageData.home;
   <section class="home-section section-band">
     <div class="home-shell reveal-up">
       <CTA
-        title={copy.frontmatter.ctaTitle}
-        description={copy.frontmatter.ctaDescription}
-        primaryLabel={copy.frontmatter.ctaPrimaryLabel}
-        primaryHref={copy.frontmatter.ctaPrimaryHref}
-        secondaryLabel={copy.frontmatter.ctaSecondaryLabel}
-        secondaryHref={copy.frontmatter.ctaSecondaryHref}
+        title={copy.ctaTitle}
+        description={copy.ctaDescription}
+        primaryLabel={copy.ctaPrimaryLabel}
+        primaryHref={copy.ctaPrimaryHref}
+        secondaryLabel={copy.ctaSecondaryLabel}
+        secondaryHref={copy.ctaSecondaryHref}
       />
     </div>
   </section>
