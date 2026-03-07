@@ -1,6 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import SectionHeading from '../components/sections/SectionHeading.astro';
+import ProcessStrip from '../components/sections/ProcessStrip.astro';
+import UtilitySidecard from '../components/sections/UtilitySidecard.astro';
+import ActionBand from '../components/sections/ActionBand.astro';
 import { pageCopy, pageData, site } from '../data/content';
 import contactHero from '../assets/contact-hero.jpg';
 
@@ -56,20 +60,13 @@ const data = pageData.contact;
   <section class="home-section border-t border-white/5">
     <div class="home-shell">
       <div class="mb-16 reveal-up">
-        <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-emerald-500 pl-4">{copy.frontmatter.routingTitle}</h2>
-        <ol class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-slate-300">
-          {data.routingSteps.map((step) => (
-            <li class="p-5 rounded-xl border border-white/10 bg-white/5">
-              <span class="text-emerald-400 font-semibold block mb-2">{step.label}</span>
-              {step.text}
-            </li>
-          ))}
-        </ol>
+        <SectionHeading title={copy.frontmatter.routingTitle} compact className="mb-6" />
+        <ProcessStrip steps={data.routingSteps} compact />
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         <div class="lg:col-span-2 reveal-up">
-          <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-emerald-500 pl-4">{copy.frontmatter.directoryTitle}</h2>
+          <SectionHeading title={copy.frontmatter.directoryTitle} compact className="mb-8" />
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
             {data.pathways.map((path, index) => (
               <article
@@ -91,74 +88,55 @@ const data = pageData.contact;
           </div>
         </div>
 
-        <aside class="bg-slate-900/50 border border-white/10 p-8 rounded-xl reveal-up" style="transition-delay: 300ms;">
-          <h3 class="text-white mb-6 text-sm uppercase tracking-widest font-bold border-b border-white/10 pb-4">{copy.frontmatter.headquartersTitle}</h3>
-
-          <div class="space-y-6">
-            <div class="flex gap-4 group">
-              <i class="ri-map-pin-line text-emerald-400 text-xl mt-1"></i>
-              <a
-                href={data.headquarters.mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-slate-300 text-sm leading-relaxed group-hover:text-white transition-colors"
-              >
-                {data.headquarters.addressLines.map((line) => (
-                  <span class="block">{line}</span>
-                ))}
-              </a>
-            </div>
-
-            <div class="flex gap-4 group">
-              <i class="ri-phone-line text-emerald-400 text-xl mt-1"></i>
-              <a
-                href={`tel:${site.phone.replace(/[^\d+]/g, '')}`}
-                class="text-slate-300 text-sm group-hover:text-white transition-colors"
-              >
-                {site.phone}
-              </a>
-            </div>
-
-          </div>
-
-          <div class="mt-8 pt-6 border-t border-white/10 flex gap-4 bg-emerald-500/5 p-4 rounded-lg">
-            <i class="ri-information-line text-emerald-400 text-xl"></i>
-            <p class="text-xs text-slate-400 leading-relaxed">{data.headquarters.responseNote}</p>
-          </div>
-        </aside>
+        <div class="reveal-up" style="transition-delay: 300ms;">
+          <UtilitySidecard
+            title={copy.frontmatter.headquartersTitle}
+            items={[
+              {
+                icon: 'ri-map-pin-line',
+                label: 'Address',
+                text: data.headquarters.addressLines.join(', '),
+                href: data.headquarters.mapUrl,
+                target: '_blank'
+              },
+              {
+                icon: 'ri-phone-line',
+                label: 'Main office',
+                text: site.phone,
+                href: `tel:${site.phone.replace(/[^\d+]/g, '')}`
+              }
+            ]}
+            note={data.headquarters.responseNote}
+          />
+        </div>
       </div>
     </div>
   </section>
 
   <section class="home-section border-t border-white/5 bg-slate-900/20">
     <div class="home-shell">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div class="reveal-up">
-          <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-emerald-500 pl-4">{copy.frontmatter.sampleResourcesTitle}</h2>
-          <div class="space-y-4">
-            {data.sampleResources.map((resource) => (
-              <a href={resource.href} class="block p-5 rounded-xl border border-white/10 bg-white/5 hover:border-emerald-400/30 transition-colors">
-                <p class="text-white font-semibold mb-1">{resource.title}</p>
-                <p class="text-slate-400 text-sm mb-3">{resource.description}</p>
-                <span class="text-emerald-400 text-sm font-semibold inline-flex items-center gap-2">{resource.label}<i class="ri-download-line"></i></span>
-              </a>
-            ))}
-          </div>
-        </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <ActionBand
+          title={copy.frontmatter.sampleResourcesTitle}
+          actions={data.sampleResources.map((resource) => ({
+            label: resource.title,
+            detail: resource.description,
+            href: resource.href,
+            icon: resource.href.endsWith('.pdf') ? 'ri-download-line' : 'ri-mail-line'
+          }))}
+          className="reveal-up"
+        />
 
-        <div class="reveal-up" style="transition-delay: 120ms;">
-          <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-emerald-500 pl-4">{data.existingClients.title}</h2>
-          <div class="p-6 rounded-xl border border-white/10 bg-white/5">
-            <p class="text-slate-300 mb-4">{data.existingClients.description}</p>
-            <div class="flex flex-wrap gap-3">
-              {data.existingClients.actions.map((action) => (
-                <a href={action.href} class="px-4 py-2 rounded-lg bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-sm font-semibold hover:bg-emerald-500/20 transition-colors">
-                  {action.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+        <ActionBand
+          title={data.existingClients.title}
+          description={data.existingClients.description}
+          actions={data.existingClients.actions.map((action) => ({
+            ...action,
+            icon: action.href.startsWith('tel:') ? 'ri-phone-line' : 'ri-mail-line'
+          }))}
+          compact
+          className="reveal-up"
+        />
       </div>
     </div>
   </section>
@@ -168,45 +146,4 @@ const data = pageData.contact;
   .breadcrumb { font-size: 0.875rem; margin-bottom: 2rem; display: flex; gap: 0.5rem; }
   .breadcrumb a { color: rgba(255, 255, 255, 0.6); text-decoration: none; transition: 0.2s; }
   .breadcrumb a:hover { color: var(--color-primary); }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .reveal-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-    .reveal-scale {
-      opacity: 0;
-      transform: scale(0.95);
-      transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    .reveal-up.active,
-    .reveal-scale.active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
 </style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px 0px -50px 0px',
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    const elementsToReveal = document.querySelectorAll('.reveal-up, .reveal-scale');
-    elementsToReveal.forEach(el => observer.observe(el));
-  });
-</script>
