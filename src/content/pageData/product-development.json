@@ -16,6 +16,41 @@
       "icon": "ri-clipboard-line"
     }
   ],
+  "engagementSignals": [
+    {
+      "title": "Recurring formulation issues",
+      "description": "You are seeing drift in appearance, pH, odor, viscosity, or preservative performance and need a structured troubleshooting path.",
+      "icon": "ri-error-warning-line"
+    },
+    {
+      "title": "Pre-launch uncertainty",
+      "description": "You need development-stage testing plans and checkpoints before locking labels, claims, or release timelines.",
+      "icon": "ri-road-map-line"
+    },
+    {
+      "title": "Transition to routine testing",
+      "description": "You are preparing to move from R&D work into repeatable analytical, microbiology, or stability testing support.",
+      "icon": "ri-repeat-2-line"
+    }
+  ],
+  "supportOutputs": [
+    {
+      "title": "Development support summary",
+      "description": "A practical record of issues observed, actions taken, and next-step options for your internal team."
+    },
+    {
+      "title": "Testing roadmap",
+      "description": "Recommended chemistry, microbiology, and stability checkpoints aligned to your current development stage."
+    },
+    {
+      "title": "Readiness checklist",
+      "description": "A focused list of technical and documentation priorities to address before commercial release testing."
+    },
+    {
+      "title": "Handoff coordination",
+      "description": "Defined scope notes that make the shift into Testing Services faster and easier to execute."
+    }
+  ],
   "lifecycleStages": [
     "Concept and formulation planning",
     "Bench and pilot refinement",
@@ -36,6 +71,19 @@
       "description": "Targeted technical support for improvement projects and launch preparation."
     }
   ],
+  "testingConnection": {
+    "summary": "Product Development helps define what to test and when; Testing Services executes those plans for release, investigation, and ongoing quality support.",
+    "steps": [
+      "Define development objectives and known risks",
+      "Select priority analytical, microbiology, and stability checks",
+      "Run development-stage testing and review results",
+      "Finalize scope for routine or release-focused Testing Services"
+    ],
+    "primaryAction": {
+      "label": "Explore Testing Services",
+      "href": "/capabilities"
+    }
+  },
   "actionCards": [
     {
       "title": "Email for project scoping",
