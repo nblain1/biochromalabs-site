@@ -1,21 +1,25 @@
 ---
 title: About
-layoutTitle: About BioChroma - Scientific Leadership
-layoutDescription: Meet the executive leadership and technical department leads of BioChroma Analytical Labs—your partners in precision testing.
+layoutTitle: About BioChroma | Scientific Partnership
+layoutDescription: Learn how BioChroma combines scientific leadership, cross-functional execution, and clear collaboration to support analytical projects.
 heroEyebrow: The BioChroma Mission
-heroTitle: A technical extension of your R&D team.
-heroLead: Based in the DFW metroplex, BioChroma provides more than just data—we provide the scientific partnership required to navigate complex regulatory landscapes. Our leadership team is committed to the precision and defensibility of every result.
-heroMediaTitle: DFW Analytical Facility
-heroMediaText: ISO 17025 accredited instrumentation suite.
-executiveSectionEyebrow: Executive Suite
-executiveSectionTitle: Scientific & Strategic Stewardship
-departmentSectionEyebrow: Operational Excellence
-departmentSectionTitle: Technical Department Leadership
-ctaTitle: Connect with our Scientific Team
-ctaDescription: Our department heads are available for direct project scoping and technical consultation on complex analytical challenges.
-ctaPrimaryLabel: Inquire with the Lab
+heroTitle: A scientific partner built for practical execution.
+heroLead: BioChroma supports teams that need clear analytical answers, coordinated project delivery, and direct communication from the people doing the work.
+heroMediaTitle: BioChroma Laboratory
+heroMediaText: Scientific and operational teams working in coordination.
+sectionSystemEyebrow: How We Work
+sectionSystemTitle: Built for trust, clarity, and execution
+areasTitle: How BioChroma supports client teams
+outputsTitle: What engagement looks like in practice
+executiveSectionEyebrow: Leadership Team
+executiveSectionTitle: Scientific & Strategic Leadership
+departmentSectionEyebrow: Department Leadership
+departmentSectionTitle: Cross-Functional Technical Leads
+ctaTitle: Start a technical conversation
+ctaDescription: Share your scope, timeline, and priorities. We will connect you with the right scientific and operational leads for practical next steps.
+ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
-ctaSecondaryLabel: View Full Capabilities
+ctaSecondaryLabel: Explore Capabilities
 ctaSecondaryHref: /capabilities
 ---
-Our team combines scientific depth, operational discipline, and cross-functional support to help clients move confidently from development through commercialization.
+BioChroma is structured to help clients make confident decisions with disciplined science, clear project ownership, and consistent communication from kickoff through final reporting.

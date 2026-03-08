@@ -61,18 +61,76 @@ const executiveImages = [execBenny, execCheri, execAmber];
     </section>
   )}
 
+  {data.supportAreas && (
+    <section class="home-section border-t border-white/5">
+      <div class="home-shell">
+        <div class="section-heading text-center mb-14 reveal-up">
+          <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">{copy.sectionSystemEyebrow}</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-white">{copy.sectionSystemTitle}</h2>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+          {data.supportAreas.map((area, index) => (
+            <article class="rounded-2xl border border-white/10 bg-white/5 p-7 reveal-up" style={`transition-delay: ${index * 120}ms;`}>
+              <i class={`${area.icon} text-emerald-400 text-2xl`}></i>
+              <h3 class="text-lg font-semibold text-white mt-5 mb-3">{area.title}</h3>
+              <p class="text-sm leading-relaxed text-slate-300">{area.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {data.engagementModes && data.supportOutputs && (
+    <section class="home-section border-t border-white/5 bg-slate-900/40">
+      <div class="home-shell grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <div class="reveal-up">
+          <p class="uppercase tracking-widest text-emerald-400 font-bold text-xs mb-4">{copy.outputsTitle}</p>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">{copy.areasTitle}</h2>
+          <div class="space-y-4">
+            {data.engagementModes.map((mode, index) => (
+              <article class="rounded-xl border border-white/10 bg-slate-950/40 p-5" style={`transition-delay: ${index * 120}ms;`}>
+                <h3 class="text-white font-semibold text-base mb-2">{mode.title}</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">{mode.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <aside class="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-7 reveal-up" style="transition-delay: 150ms;">
+          <h3 class="text-white text-lg font-semibold mb-5">What clients can expect</h3>
+          <ul class="space-y-4">
+            {data.supportOutputs.map((output) => (
+              <li class="flex items-start gap-3">
+                <i class="ri-checkbox-circle-line text-emerald-400 mt-0.5"></i>
+                <div>
+                  <p class="text-sm font-semibold text-white">{output.title}</p>
+                  <p class="text-sm text-slate-300 leading-relaxed mt-1">{output.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      </div>
+    </section>
+  )}
+
   <section class="home-section border-t border-white/5">
     <div class="home-shell">
-      <div class="section-heading text-center mb-16 reveal-up">
+      <div class="section-heading text-center mb-10 reveal-up">
         <p class="uppercase tracking-widest text-emerald-400 font-bold text-sm mb-4">{copy.executiveSectionEyebrow}</p>
         <h2 class="text-3xl md:text-4xl font-bold text-white">{copy.executiveSectionTitle}</h2>
+        <p class="mt-4 mx-auto max-w-3xl text-slate-300 text-sm md:text-base leading-relaxed">
+          Leadership profiles are shown for context, but project work is delivered through coordinated teams across scientific and operational functions.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {data.executives.map((exec, index) => (
           <article class="group flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-emerald-400/30 reveal-up" style={`transition-delay: ${index * 150}ms;`}>
-            <div class="p-8 border-b border-white/5 flex flex-col items-center text-center gap-6">
-              <div class="relative w-32 h-32 rounded-full border-2 border-emerald-400/20 p-1 group-hover:border-emerald-400/50 transition-colors">
+            <div class="p-6 border-b border-white/5 flex flex-col items-center text-center gap-4">
+              <div class="relative w-24 h-24 rounded-full border-2 border-emerald-400/20 p-1 group-hover:border-emerald-400/50 transition-colors">
                 <div class="w-full h-full rounded-full bg-slate-900 overflow-hidden shadow-inner">
                    <Image 
                     src={executiveImages[index]} 
@@ -83,17 +141,17 @@ const executiveImages = [execBenny, execCheri, execAmber];
               </div>
               <div>
                 <span class="block text-emerald-400 font-bold text-xs uppercase tracking-widest mb-1">{exec.role}</span>
-                <h3 class="text-white text-2xl font-bold">{exec.name}</h3>
+                <h3 class="text-white text-xl font-bold">{exec.name}</h3>
               </div>
             </div>
-            <div class="p-8 flex-grow flex flex-col bg-slate-900/50">
-              <div class="flex gap-3 mb-4 items-start">
+            <div class="p-6 flex-grow flex flex-col bg-slate-900/50">
+              <div class="flex gap-3 mb-3 items-start">
                 <i class="ri-graduation-cap-line text-emerald-400 text-lg"></i>
                 <p class="text-xs text-white/70 font-medium leading-relaxed uppercase tracking-tight">
                   {exec.vitals}
                 </p>
               </div>
-              <p class="text-sm text-slate-400 leading-relaxed italic border-t border-white/5 pt-4">
+              <p class="text-sm text-slate-400 leading-relaxed italic border-t border-white/5 pt-3 line-clamp-4">
                 {exec.bio}
               </p>
             </div>
