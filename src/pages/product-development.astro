@@ -18,7 +18,7 @@ const { copy, data, Content } = await getPageContent('product-development');
         <span class="text-emerald-400 opacity-80">Product Development</span>
       </nav>
 
-      <div class="hero-grid mb-16">
+      <div class="hero-grid mb-14">
         <div class="hero-copy reveal-up" style="transition-delay: 100ms;">
           <p class="hero-eyebrow">{copy.heroEyebrow}</p>
           <h1>{copy.heroTitle}</h1>
@@ -75,6 +75,44 @@ const { copy, data, Content } = await getPageContent('product-development');
   <section class="home-section border-t border-white/5 bg-slate-900/40">
     <div class="home-shell">
       <div class="section-heading reveal-up">
+        <p>{copy.signalsTitle}</p>
+        <h2>{copy.signalsLead}</h2>
+      </div>
+
+      <div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+        {data.engagementSignals.map((signal, index) => (
+          <article class="rounded-xl border border-white/10 bg-white/5 p-6 reveal-up" style={`transition-delay: ${index * 80}ms;`}>
+            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
+              <i class={`${signal.icon} text-xl`}></i>
+            </span>
+            <h3 class="text-lg font-semibold text-white">{signal.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-300">{signal.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section border-t border-white/5">
+    <div class="home-shell">
+      <div class="section-heading reveal-up">
+        <p>{copy.outputsTitle}</p>
+        <h2>{copy.outputsLead}</h2>
+      </div>
+      <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+        {data.supportOutputs.map((output, index) => (
+          <article class="rounded-xl border border-white/10 bg-white/5 p-6 reveal-up" style={`transition-delay: ${index * 90}ms;`}>
+            <h3 class="text-base font-semibold text-white">{output.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-300">{output.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section border-t border-white/5 bg-slate-900/40">
+    <div class="home-shell">
+      <div class="section-heading reveal-up">
         <p>{copy.areasTitle}</p>
         <h2>{copy.areasLead}</h2>
       </div>
@@ -102,6 +140,34 @@ const { copy, data, Content } = await getPageContent('product-development');
             {stage}
           </span>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section border-t border-white/5 bg-slate-900/50">
+    <div class="home-shell">
+      <div class="section-heading reveal-up">
+        <p>{copy.connectionTitle}</p>
+        <h2>{copy.connectionLead}</h2>
+      </div>
+
+      <div class="mt-10 rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 reveal-up">
+        <p class="text-sm leading-relaxed text-slate-300">{data.testingConnection.summary}</p>
+        <ol class="mt-6 grid gap-3 text-sm text-slate-200 md:grid-cols-2">
+          {data.testingConnection.steps.map((step, index) => (
+            <li class="flex items-start gap-3 rounded-lg border border-white/10 bg-slate-950/20 px-4 py-3" style={`transition-delay: ${index * 80}ms;`}>
+              <span class="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/15 text-xs font-semibold text-emerald-300">{index + 1}</span>
+              <span>{step}</span>
+            </li>
+          ))}
+        </ol>
+        <a
+          href={data.testingConnection.primaryAction.href}
+          class="mt-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-300 transition-colors hover:text-emerald-200"
+        >
+          {data.testingConnection.primaryAction.label}
+          <i class="ri-arrow-right-up-line"></i>
+        </a>
       </div>
     </div>
   </section>
