@@ -9,7 +9,7 @@ heroMediaTitle: BioChroma Laboratory
 heroMediaText: Scientific and operational teams working in coordination.
 sectionSystemEyebrow: How We Work
 sectionSystemTitle: Built for trust, clarity, and execution
-areasTitle: How BioChroma supports client teams
+areasTitle: Client support model
 outputsTitle: What engagement looks like in practice
 executiveSectionEyebrow: Leadership Team
 executiveSectionTitle: Scientific & Strategic Leadership
