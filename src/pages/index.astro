@@ -14,7 +14,7 @@ const site = await getSiteData();
   <section class="home-hero">
     <div class="home-shell">
       <div class="hero-grid">
-        <div class="hero-copy reveal-up">
+        <div class="hero-copy">
           <p class="hero-eyebrow">{copy.heroEyebrow}</p>
           <h1>{copy.heroTitle}</h1>
           <p class="hero-lead">{copy.heroLead}</p>
@@ -28,7 +28,7 @@ const site = await getSiteData();
           </div>
         </div>
 
-        <aside class="hero-media-frame reveal-scale" style="transition-delay: 200ms;" aria-label="Laboratory Facility">
+        <aside class="hero-media-frame" aria-label="Laboratory Facility">
           <Image
             src={indexHero}
             alt="BioChroma laboratory testing equipment"
@@ -56,7 +56,7 @@ const site = await getSiteData();
 
   <section class="home-section section-band section-band-routes">
     <div class="home-shell">
-      <div class="section-heading reveal-up">
+      <div class="section-heading">
         <p>{copy.routesTitle}</p>
         <h2>{copy.routesLead}</h2>
       </div>
@@ -66,11 +66,10 @@ const site = await getSiteData();
           <a
             href={item.href}
             class:list={[
-              'home-card pathway-card group reveal-up',
+              'home-card pathway-card group',
               index === 3 && 'pathway-card-left',
               index === 4 && 'pathway-card-right'
             ]}
-            style={`transition-delay: ${index * 80}ms;`}
           >
             <span class="pathway-icon mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg text-emerald-300">
               <i class={`${item.icon} text-xl`}></i>
@@ -89,14 +88,14 @@ const site = await getSiteData();
 
   <section class="home-section section-band section-band-soft">
     <div class="home-shell">
-      <div class="section-heading reveal-up">
+      <div class="section-heading">
         <p>{copy.trustTitle}</p>
         <h2>{copy.trustLead}</h2>
       </div>
 
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-        {data.trustPoints.map((point, index) => (
-          <article class="home-card reveal-up" style={`transition-delay: ${index * 100}ms;`}>
+        {data.trustPoints.map((point) => (
+          <article class="home-card">
             <h3 class="text-base font-semibold text-white">{point.title}</h3>
             <p class="mt-2 text-sm leading-relaxed text-slate-300">{point.description}</p>
           </article>
@@ -107,13 +106,13 @@ const site = await getSiteData();
 
   <section class="home-section section-band">
     <div class="home-shell max-w-4xl">
-      <div class="section-heading reveal-up">
+      <div class="section-heading">
         <p>{copy.scopeTitle}</p>
         <h2>{copy.scopeLead}</h2>
       </div>
       <div class="mt-8 flex flex-wrap gap-3">
-        {data.industries.map((industry, index) => (
-          <span class="category-pill reveal-scale" style={`transition-delay: ${index * 70}ms;`}>
+        {data.industries.map((industry) => (
+          <span class="category-pill">
             {industry}
           </span>
         ))}
@@ -123,13 +122,13 @@ const site = await getSiteData();
 
   <section class="home-section section-band section-band-soft">
     <div class="home-shell">
-      <div class="section-heading reveal-up">
+      <div class="section-heading">
         <p>{copy.actionsTitle}</p>
         <h2>{copy.actionsLead}</h2>
       </div>
       <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-        {data.actionCards.map((action, index) => (
-          <a href={action.href} class="home-card reveal-up" style={`transition-delay: ${index * 100}ms;`}>
+        {data.actionCards.map((action) => (
+          <a href={action.href} class="home-card">
             <h3 class="text-lg font-semibold text-white">{action.title}</h3>
             <p class="mt-2 text-sm text-slate-300">{action.description}</p>
             <span class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-emerald-300">
@@ -143,7 +142,7 @@ const site = await getSiteData();
   </section>
 
   <section class="home-section section-band">
-    <div class="home-shell reveal-up">
+    <div class="home-shell">
       <CTA
         title={copy.ctaTitle}
         description={copy.ctaDescription}
