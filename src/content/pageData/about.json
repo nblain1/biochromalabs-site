@@ -84,5 +84,50 @@
         }
       ]
     }
+  ],
+  "supportAreas": [
+    {
+      "title": "Client support model",
+      "description": "Each project is scoped with clear goals, required deliverables, and a practical communication path so teams know who to contact and what comes next.",
+      "icon": "ri-customer-service-2-line"
+    },
+    {
+      "title": "Scientific leadership in execution",
+      "description": "Scientific leadership stays involved beyond kickoff by guiding method strategy, resolving technical questions, and aligning decisions with project priorities.",
+      "icon": "ri-microscope-line"
+    },
+    {
+      "title": "Cross-functional coordination",
+      "description": "Chemistry, microbiology, quality, and support functions coordinate through shared planning and handoffs to keep work moving without losing context.",
+      "icon": "ri-git-merge-line"
+    }
+  ],
+  "engagementModes": [
+    {
+      "title": "1. Scope and alignment",
+      "description": "The team reviews your objectives, matrices, and expected outputs to shape a working plan that is understandable for technical and non-technical stakeholders."
+    },
+    {
+      "title": "2. Active project coordination",
+      "description": "Department leads coordinate scheduling, dependencies, and communication so progress remains visible and decisions are made quickly when priorities change."
+    },
+    {
+      "title": "3. Review and next-step planning",
+      "description": "Results are delivered with context, discussion of open questions, and recommendations for follow-on work when needed."
+    }
+  ],
+  "supportOutputs": [
+    {
+      "title": "Direct access to decision-makers",
+      "description": "Clients communicate with people who can answer technical questions and resolve blockers without excessive escalation layers."
+    },
+    {
+      "title": "Shared understanding across teams",
+      "description": "Project communication is designed to keep founders, QA leaders, and product teams aligned on status, risk, and upcoming decisions."
+    },
+    {
+      "title": "Defensible, practical deliverables",
+      "description": "Deliverables are organized for real use in product development and quality workflows, not just as isolated data handoffs."
+    }
   ]
 }
