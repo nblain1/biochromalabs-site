@@ -92,19 +92,13 @@
       "label": "sales@biochromalabs.com"
     },
     {
-      "title": "Speak with the lab",
-      "description": "Call during business hours for urgent project coordination.",
-      "href": "tel:9724549166",
-      "label": "(972) 454-9166"
-    },
-    {
       "title": "Department routing",
       "description": "Use the contact page for department-specific routing.",
       "href": "/contact",
       "label": "Open Contact Page"
     },
     {
-      "title": "Sample submission resource",
+      "title": "Download Submission Form",
       "description": "Download the submission form for incoming sample logistics.",
       "href": "/documents/submission-form.pdf",
       "label": "Download Submission Form"
