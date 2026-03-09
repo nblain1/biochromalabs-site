@@ -16,9 +16,9 @@ actionsTitle: Ready to move forward?
 actionsLead: Use direct channels for quotes, sample submissions, and technical questions.
 ctaTitle: Need help choosing the right path?
 ctaDescription: Tell us what you are working on and we will point you to the right team.
-ctaPrimaryLabel: Contact the lab
+ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
-ctaSecondaryLabel: View testing services
+ctaSecondaryLabel: Explore Testing Services
 ctaSecondaryHref: /capabilities
 ---
 Use the pathways below to reach the right team for testing, development support, sample submission, or quality information.

@@ -5,35 +5,35 @@
       "description": "Chemistry testing for identity, potency, and related quality questions.",
       "href": "/capabilities#analytical-testing",
       "icon": "ri-test-tube-line",
-      "linkLabel": "View analytical testing"
+      "linkLabel": "Explore Analytical Testing"
     },
     {
       "title": "Microbiology Testing",
       "description": "Microbiology testing for contamination risk, hygiene verification, and product safety.",
       "href": "/capabilities#microbiology-testing",
       "icon": "ri-microscope-line",
-      "linkLabel": "View microbiology testing"
+      "linkLabel": "Explore Microbiology Testing"
     },
     {
       "title": "Product Development",
       "description": "Development support for formulation, troubleshooting, and launch planning.",
       "href": "/product-development",
       "icon": "ri-flask-line",
-      "linkLabel": "View product development"
+      "linkLabel": "Explore Product Development"
     },
     {
-      "title": "Existing Clients / Sample Submission",
+      "title": "Sample Submission & Existing Clients",
       "description": "Download the submission form and route sample logistics correctly.",
       "href": "/documents/submission-form.pdf",
       "icon": "ri-file-download-line",
-      "linkLabel": "Download submission form"
+      "linkLabel": "Download Submission Form"
     },
     {
       "title": "Quality",
       "description": "Review accreditation and quality-system information.",
       "href": "/quality",
       "icon": "ri-shield-check-line",
-      "linkLabel": "View quality information"
+      "linkLabel": "Explore Quality Systems"
     }
   ],
   "trustPoints": [
@@ -68,7 +68,7 @@
       "title": "Technical department support",
       "description": "Use the contact page to reach chemistry, microbiology, product development, or operations.",
       "href": "/contact",
-      "label": "Open contact page"
+      "label": "Open Contact Page"
     },
     {
       "title": "Sample submission resources",

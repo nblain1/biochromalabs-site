@@ -25,7 +25,7 @@ ctaTitle: Ready to discuss product development priorities?
 ctaDescription: Share your product category, current stage, and timeline. We will route you to the right team.
 ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
-ctaSecondaryLabel: Review testing services
+ctaSecondaryLabel: Explore Testing Services
 ctaSecondaryHref: /capabilities
 ---
 Use this pathway when your team needs practical support to move a product toward market with better technical clarity.

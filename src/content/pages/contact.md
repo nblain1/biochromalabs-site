@@ -2,7 +2,7 @@
 title: Contact
 layoutTitle: Contact - BioChroma Labs
 layoutDescription: Contact routes for analytical testing, microbiology testing, product development support, and sample logistics.
-heroEyebrow: Contact & operational routing
+heroEyebrow: Contact & Operational Routing
 heroTitle: Choose the right contact path.
 heroLead: Use the routes below for analytical testing, microbiology testing, product development support, and sample logistics. No forms. Just direct contact.
 heroMediaTitle: Operational routing

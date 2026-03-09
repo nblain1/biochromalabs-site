@@ -13,7 +13,7 @@ ctaTitle: Need quality documentation for review?
 ctaDescription: Share your documentation, quality, or accreditation question and we will connect you with the right quality or technical contact.
 ctaPrimaryLabel: Speak with Quality Team
 ctaPrimaryHref: /contact
-ctaSecondaryLabel: Review Capabilities
+ctaSecondaryLabel: Explore Testing Services
 ctaSecondaryHref: /capabilities
 ---
 Our quality framework is designed to support consistent execution, traceable data, and clear review practices throughout each project.
