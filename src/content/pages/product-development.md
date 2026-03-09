@@ -20,9 +20,9 @@ fitLead: We support work from early concept through late-stage readiness.
 connectionTitle: How Product Development connects to Testing Services
 connectionLead: Move from planning and troubleshooting into routine testing with clearer scope and fewer handoff gaps.
 actionsTitle: Direct actions
-actionsLead: Connect with the right team.
+actionsLead: Choose the fastest path for scoping, department routing, sample logistics, or urgent coordination.
 ctaTitle: Ready to discuss product development priorities?
-ctaDescription: Share your product category, current stage, and timeline. We will route you to the right team.
+ctaDescription: Share your product category, current stage, and timeline. We will route you to the right team for practical next steps.
 ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
 ctaSecondaryLabel: Explore Testing Services

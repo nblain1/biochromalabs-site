@@ -86,8 +86,8 @@
   },
   "actionCards": [
     {
-      "title": "Email for project scoping",
-      "description": "Share your product type and current challenge with our team.",
+      "title": "Sales & project scoping",
+      "description": "Email your product type, current challenge, and timeline to start the conversation.",
       "href": "mailto:sales@biochromalabs.com",
       "label": "sales@biochromalabs.com"
     },
@@ -98,7 +98,7 @@
       "label": "(972) 454-9166"
     },
     {
-      "title": "Use the contact page",
+      "title": "Department routing",
       "description": "Use the contact page for department-specific routing.",
       "href": "/contact",
       "label": "Open Contact Page"
@@ -107,7 +107,7 @@
       "title": "Sample submission resource",
       "description": "Download the submission form for incoming sample logistics.",
       "href": "/documents/submission-form.pdf",
-      "label": "Download submission form"
+      "label": "Download Submission Form"
     }
   ]
 }

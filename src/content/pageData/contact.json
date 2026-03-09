@@ -36,7 +36,7 @@
       "serviceLabel": "Explore Product Development"
     },
     {
-      "title": "Sample Submission / Courier Coordination",
+      "title": "Sample Logistics / Courier Coordination",
       "description": "Use this route for sample logistics, pickups, receiving windows, and shipping coordination.",
       "email": "courierpickup@biochromalabs.com",
       "serviceHref": "/documents/submission-form.pdf",
@@ -66,8 +66,8 @@
     }
   ],
   "existingClients": {
-    "title": "Returning clients",
-    "description": "If you are following up on existing work, include a prior project name or sample ID when you contact the lab.",
+    "title": "Existing Clients",
+    "description": "If you are following up on current or prior work, include a project name or sample ID so we can route you faster.",
     "actions": [
       {
         "label": "Call main office",
