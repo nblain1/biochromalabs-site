@@ -2,97 +2,177 @@
   "qseDeepDive": [
     {
       "id": "governance",
-      "title": "Governance & Accreditation",
-      "subtitle": "Management Systems",
+      "title": "Governance & Quality Oversight",
+      "subtitle": "Management System",
       "icon": "ri-shield-check-line",
-      "summary": "ISO/IEC 17025:2017 management systems verified through independent PJLA oversight.",
+      "summary": "Quality oversight starts with documented procedures, scope discipline, and clear follow-through when something needs correction.",
+      "heroSummary": "Documented procedures, change control, and issue follow-through support consistent project execution.",
+      "heroLinkLabel": "View detail",
       "elements": [
         {
-          "name": "PJLA ISO/IEC 17025:2017",
-          "implementation": "Active accreditation for Chemical and Biological testing through PJLA (Cert #L24-580-R1).",
-          "deepDive": "Our quality management system is rigorously audited through biennial on-site assessments and annual internal audits. This ensures our laboratory operations, from sample receipt to final reporting, meet the highest international standards for technical competence and impartial data generation."
+          "name": "Documented Procedures",
+          "implementation": "Controlled procedures define how work is performed, reviewed, revised, and retained.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Documented procedures create consistency before, during, and after project execution.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "BioChroma uses controlled procedures for intake, testing activities, review, deviations, and record handling. The purpose is practical consistency: work should be performed the same way, updates should be intentional, and decisions should remain traceable when questions arise.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "Clients benefit from clearer expectations, more consistent execution, and easier traceability when issues need review."
         },
         {
-          "name": "Flexible Scope (F-Codes)",
-          "implementation": "F1-F5 Flexible Scope allowances enable rapid implementation and accreditation of new test methods.",
-          "deepDive": "BioChroma holds flexible scope designations (F1-F5), allowing for the rapid adaptation to newest revisions of standard methods or the introduction of new parameters. For clients, this means faster onboarding of custom testing programs without waiting for external accreditation cycles."
+          "name": "Scope Management",
+          "implementation": "Requests are evaluated against current capability before they are represented as routine work.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Scope decisions are reviewed before new work is treated as standard.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "Quality and technical leadership review whether a request fits existing capability, needs development work, or should remain outside routine scope. This helps prevent overstatement and keeps project planning aligned with what the lab can actually support.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "This protects both the client and the lab by keeping commitments tied to real capability rather than assumption."
         },
         {
-          "name": "Closed-Loop CAPA System",
-          "implementation": "Proactive system variance remediation through formal Corrective and Preventive Action (CAPA).",
-          "deepDive": "We view anomalies as opportunities for system hardening. Any out-of-specification (OOS) result triggers a formal investigation and root-cause analysis. This guarantees that analytical challenges are documented, resolved, and permanently prevented from recurring."
+          "name": "Issue Review & Follow-Through",
+          "implementation": "Deviations, recurring issues, and process friction points are documented and followed through to resolution.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Problems should lead to action, not just notation.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "When something needs correction, the focus is on documenting the issue, understanding the cause, assigning responsibility, and improving the process where needed. The goal is practical follow-through that reduces repeat problems over time.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "A quality system is credible when issues are surfaced and addressed, not hidden."
         }
       ]
     },
     {
       "id": "competency",
       "title": "Technical Competency",
-      "subtitle": "Personnel & Proficiency",
+      "subtitle": "Personnel & Oversight",
       "icon": "ri-user-star-line",
-      "summary": "Qualified analysts backed by Demonstration of Capability (DOC) and rigorous peer review.",
+      "summary": "Reliable results depend on trained personnel, clear review practices, and methods that are appropriate for the work being performed.",
+      "heroSummary": "Training, competency review, and technical oversight support reliable work and clear accountability.",
+      "heroLinkLabel": "View detail",
       "elements": [
         {
-          "name": "100% Peer Technical Review",
-          "implementation": "A multi-stage review protocol ensuring every dataset is verified by a second qualified scientist.",
-          "deepDive": "No data leaves the bench unverified. Our \"Review-at-the-Bench\" protocol requires a secondary scientist to verify all raw instrument data, dilution factors, and manual calculations. This eliminates transcription errors and ensures the Certificate of Analysis (COA) is completely defensible."
+          "name": "Training & Onboarding",
+          "implementation": "Personnel are trained on methods, systems, documentation expectations, and role-specific responsibilities before independent work.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Training covers both technical execution and the records that support it.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "Training is not limited to instrument use. It includes method instructions, data handling, review expectations, and department-specific responsibilities so people understand both the task and the quality context around it.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "Good training reduces avoidable errors and creates more consistent project execution."
         },
         {
-          "name": "Matrix Suitability & Spiking",
-          "implementation": "Rigorous testing to ensure methods perform accurately on your specific product formulation.",
-          "deepDive": "A method that works on pure water might fail on a complex botanical or cosmetic cream. We perform matrix spiking and recovery studies to prove that our analytical methods are scientifically valid and free from interference for your specific product type."
+          "name": "Competency Review",
+          "implementation": "Competency is demonstrated through supervised work, observation, performance checks, and ongoing oversight.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Technical independence should be earned and maintained.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "Competency review is treated as an ongoing responsibility, not a one-time event. Supervisors and technical leads use observed performance, review outcomes, and task complexity to determine where additional support or restriction is appropriate.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "Clients benefit when the person doing the work is matched to the complexity of the assignment."
         },
         {
-          "name": "Analyst Capability (DOC)",
-          "implementation": "Mandatory, quantified demonstration of technical proficiency (IDOC/CDOC) for every analyst.",
-          "deepDive": "Training is quantified. Before testing client samples, analysts must complete an Initial Demonstration of Capability (IDOC) by running blind replicates with acceptable precision. Competency is continuously monitored and re-verified annually within our LIMS."
+          "name": "Technical Review Practices",
+          "implementation": "Results and supporting records are reviewed at the level appropriate for the work before release.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Data review should confirm that the result and the supporting record tell the same story.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "Review practices focus on completeness, technical plausibility, documentation quality, and consistency between the reported result and the underlying record. The objective is not unnecessary delay. It is cleaner release and fewer downstream questions.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "Thoughtful review helps catch avoidable issues before they leave the lab."
         }
       ]
     },
     {
       "id": "infrastructure",
-      "title": "Infrastructure & Metrology",
-      "subtitle": "Equipment & Calibration",
+      "title": "Equipment & Controls",
+      "subtitle": "Equipment & Controls",
       "icon": "ri-settings-5-line",
-      "summary": "Systematic control of analytical hardware through NIST-traceable calibration and validation.",
+      "summary": "Instruments and laboratory conditions require maintenance, checks, and monitoring so methods can operate inside intended conditions.",
+      "heroSummary": "Maintenance, calibration, and environmental controls help keep instruments operating as intended.",
+      "heroLinkLabel": "View detail",
       "elements": [
         {
-          "name": "IQ/OQ/PQ Validation",
-          "implementation": "Comprehensive validation lifecycle for all high-complexity analytical instrumentation.",
-          "deepDive": "New instrumentation undergoes strict Installation (IQ), Operational (OQ), and Performance Qualification (PQ). This proves that highly sensitive systems (like GC-MS and HPLC) operate exactly within manufacturer specifications in our specific lab environment before touching a client sample."
+          "name": "Instrument Lifecycle Control",
+          "implementation": "Equipment is selected, maintained, serviced, and documented so it remains fit for its intended use.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Instrument control is about sustained fitness for use, not just initial installation.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "The quality framework addresses how instruments are brought into service, maintained over time, taken out for service when needed, and returned to use with appropriate documentation. The emphasis is continuity and traceability across the equipment lifecycle.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "Reliable results depend on equipment being managed as a controlled asset, not treated as a black box."
         },
         {
-          "name": "NIST-Traceable Metrology",
-          "implementation": "Critical measurement tools are calibrated by accredited providers using traceable standards.",
-          "deepDive": "Exact measurement is the foundation of chemistry. Balances, pipettes, and timers are calibrated annually by third-party ISO 17025 metrology services. A centralized registry tracks all tools; if one falls out of tolerance, we immediately execute an impact analysis on affected data."
+          "name": "Calibration & Performance Checks",
+          "implementation": "Calibration status and performance checks help confirm that instruments are operating within expected conditions.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Routine checks provide evidence that systems remain suitable for ongoing work.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "Calibration activities and routine performance checks are used to support instrument readiness for active projects. The goal is to identify drift, confirm acceptable performance, and maintain confidence in day-to-day operation.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "This is one of the practical controls that supports defensible analytical work."
         },
         {
           "name": "Environmental Monitoring",
-          "implementation": "24/7 automated monitoring of laboratory environments and stability chambers.",
-          "deepDive": "Environmental fluctuations can invalidate complex testing. We utilize automated, continuous monitoring systems with instant alarm protocols to track temperature and humidity across our facility, ensuring the physical integrity of your samples and stability studies is never compromised."
+          "implementation": "Laboratory spaces, storage areas, and stability environments are monitored where conditions matter to the work.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "When environment matters, it should be observed and recorded.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "Environmental controls support work that depends on stable storage conditions, controlled laboratory settings, or monitored stability environments. Records help show that relevant conditions were maintained when they matter to sample handling or test execution.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "Monitoring reduces avoidable uncertainty around storage, handling, and condition-sensitive work."
         }
       ]
     },
     {
       "id": "integrity",
-      "title": "Digital Integrity",
-      "subtitle": "LIMS & Data Systems",
+      "title": "Data Integrity",
+      "subtitle": "Data Integrity",
       "icon": "ri-database-2-line",
-      "summary": "ALCOA+ data integrity principles powered by the LabLynx LIMS ecosystem.",
+      "summary": "Quality depends on records that are attributable, reviewable, and retained in a way that supports traceability over time.",
+      "heroSummary": "Controlled records, review practices, and retained histories support traceable results.",
+      "heroLinkLabel": "View detail",
       "elements": [
         {
-          "name": "LabLynx Client Portal",
-          "implementation": "Secure, 24/7 access to our dedicated portal for real-time sample tracking and COA retrieval.",
-          "deepDive": "Transparency accelerates your workflow. Clients receive dedicated credentials to our secure LabLynx portal, providing a real-time window into the testing lifecycle. You can track sample status, download QA-released COAs instantly, and securely access your historical data anytime."
+          "name": "Controlled Data Systems",
+          "implementation": "Operational systems and data workflows are configured to support controlled entry, review, and retrieval of project information.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Data systems should support good practice, not work around it.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "BioChroma uses controlled digital workflows to organize sample information, project records, and supporting documentation so data can be reviewed and retrieved without unnecessary ambiguity. The emphasis is practical control and clarity.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "Clients benefit from clearer status visibility, cleaner records, and less confusion during review."
         },
         {
-          "name": "ALCOA+ Audit Trails",
-          "implementation": "Strict adherence to data integrity principles with cryptographically secure electronic audit trails.",
-          "deepDive": "Our digital ecosystem is built for regulatory scrutiny. Every digital action is timestamped, attributed to a specific user, and locked against unauthorized changes. This ensures data is 100% Attributable, Legible, Contemporaneous, Original, and Accurate."
+          "name": "Review Trails & Change History",
+          "implementation": "Review activity and meaningful changes should leave a traceable history.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "A defensible record shows what happened, who reviewed it, and when changes mattered.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "Where systems and workflows support it, review history and change tracking help show how records moved through the process and when meaningful updates occurred. This supports traceability without overstating what every system does.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "Traceable history is useful when questions arise later about revisions, release, or decision timing."
         },
         {
-          "name": "Secure Archival & Retains",
-          "implementation": "Climate-controlled physical retain storage and redundant off-site digital backups.",
-          "deepDive": "We protect data for the long haul. Physical sample retains are securely archived for potential re-testing or audit inquiries. Digital project records and raw instrument data are backed up daily with off-site redundancy to ensure compliance with 5-year retention requirements."
+          "name": "Record Retention & Backup",
+          "implementation": "Released records and supporting documentation are retained and backed up according to controlled practices.",
+          "modalLabel": "Quality system detail",
+          "quoteHeading": "Core implementation",
+          "quoteText": "Retention only works when records remain retrievable.",
+          "deepDiveHeading": "Technical detail",
+          "deepDive": "A quality framework must account for where records live, how they are retained, and how they are recovered when needed. The focus is continuity: important project and quality records should remain available for future review within the lab’s defined controls.",
+          "calloutTitle": "Why it matters",
+          "calloutBody": "Retention and backup support continuity, client follow-up, and responsible record stewardship."
         }
       ]
     }

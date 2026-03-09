@@ -98,7 +98,7 @@ const pageDataCollection = defineCollection({
     engagementSignals: z.array(z.object({ title: z.string(), description: z.string(), icon: z.string() })).optional(),
     supportOutputs: z.array(z.object({ title: z.string(), description: z.string() })).optional(),
     testingConnection: z.object({ summary: z.string(), steps: z.array(z.string()), primaryAction: z.object({ label: z.string(), href: z.string() }) }).optional(),
-    qseDeepDive: z.array(z.object({ id: z.string(), title: z.string(), subtitle: z.string(), icon: z.string(), summary: z.string(), elements: z.array(z.object({ name: z.string(), implementation: z.string(), deepDive: z.string() })) })).optional(),
+    qseDeepDive: z.array(z.object({ id: z.string(), title: z.string(), subtitle: z.string(), icon: z.string(), summary: z.string(), heroSummary: z.string().optional(), heroLinkLabel: z.string().optional(), elements: z.array(z.object({ name: z.string(), implementation: z.string(), modalLabel: z.string().optional(), quoteHeading: z.string().optional(), quoteText: z.string().optional(), deepDiveHeading: z.string().optional(), deepDive: z.string(), calloutTitle: z.string().optional(), calloutBody: z.string().optional() })) })).optional(),
     pathways: z.array(z.object({ title: z.string(), description: z.string(), email: z.string().email(), serviceHref: z.string(), serviceLabel: z.string() })).optional(),
     routingSteps: z.array(z.object({ label: z.string(), text: z.string() })).optional(),
     headquarters: z.object({ addressLines: z.array(z.string()), mapUrl: z.string(), responseNote: z.string() }).optional(),

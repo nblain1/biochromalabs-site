@@ -1,18 +1,19 @@
 ---
 title: Quality
-layoutTitle: Quality & Compliance - BioChroma Analytical Labs LLC
-layoutDescription: ISO/IEC 17025:2017 accredited quality systems (PJLA #L24-580-R1) and LabLynx LIMS data management.
-heroEyebrow: PJLA Accredited • LabLynx Integrated
-heroTitle: Technical validity built on a foundation of rigor.
-heroLead: BioChroma quality programs combine accreditation, validated infrastructure, and auditable digital workflows to support defensible scientific outcomes.
-sectionQuickLinksTitle: Quality Pillars
-sectionSystemTitle: Quality System Elements (QSE)
+layoutTitle: Quality | Documented Systems & Data Integrity
+layoutDescription: Learn how BioChroma supports defensible finished-goods testing through documented workflows, trained personnel, maintained instrumentation, and controlled data review.
+heroEyebrow: Documented Systems • Controlled Review
+heroTitle: Quality systems that support defensible results.
+heroLead: BioChroma’s quality approach combines documented workflows, trained personnel, maintained instrumentation, and controlled data review to support reliable finished-goods testing.
+heroMediaTitle: Data Integrity Focus
+heroMediaText: Traceable records and controlled review practices across each project.
 sectionSystemEyebrow: Technical Guardrails
-ctaTitle: Ready to verify our credentials?
-ctaDescription: Our quality team can provide full ISO 17025 scopes of accreditation, redacted SOP overviews, and sample submission guidelines for your QA team.
+sectionSystemTitle: Quality System Foundations
+ctaTitle: Need quality documentation for review?
+ctaDescription: Share your documentation, quality, or accreditation question and we will connect you with the right quality or technical contact.
 ctaPrimaryLabel: Speak with Quality Team
 ctaPrimaryHref: /contact
 ctaSecondaryLabel: Review Capabilities
 ctaSecondaryHref: /capabilities
 ---
-Our quality framework is designed to protect data integrity, improve reproducibility, and support confidence during audits and regulatory review.
+Quality at BioChroma is built around documented processes, accountable review, and clear communication. The goal is not complexity for its own sake. It is consistent execution, traceable records, and results that can be understood, reviewed, and used with confidence.
