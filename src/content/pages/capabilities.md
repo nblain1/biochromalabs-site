@@ -4,7 +4,7 @@ layoutTitle: Testing Services - BioChroma Labs
 layoutDescription: Testing support for product release and quality decisions.
 heroEyebrow: Testing Services
 heroTitle: Testing support for product release and quality decisions.
-heroLead: Use this page to find the right pathway for analytical testing, microbiology testing, and stability support.
+heroLead: Use this page to find the right pathway for analytical testing, microbiology testing, and stability support across pharmaceutical and consumer product programs.
 heroMediaTitle: Testing Services
 heroMediaText: Analytical, microbiology, and stability support.
 overviewEyebrow: Service pathways

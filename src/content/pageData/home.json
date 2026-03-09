@@ -51,10 +51,12 @@
     }
   ],
   "industries": [
+    "OTC drug products",
+    "Topical and transdermal products",
+    "Oral and liquid formulations",
+    "Sterile and injectable products",
     "Cosmetics and personal care",
-    "Topical products",
     "Dietary supplements",
-    "Food and beverage",
     "Household and consumer care"
   ],
   "actionCards": [
