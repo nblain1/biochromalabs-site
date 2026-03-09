@@ -16,4 +16,4 @@ ctaPrimaryHref: /contact
 ctaSecondaryLabel: Review Capabilities
 ctaSecondaryHref: /capabilities
 ---
-Quality at BioChroma is built around documented processes, accountable review, and clear communication. The goal is not complexity for its own sake. It is consistent execution, traceable records, and results that can be understood, reviewed, and used with confidence.
+Our quality framework is designed to support consistent execution, traceable data, and clear review practices throughout each project.
