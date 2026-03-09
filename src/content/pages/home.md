@@ -11,11 +11,11 @@ routesLead: Choose the path that fits your project.
 trustTitle: Why teams work with BioChroma Labs
 trustLead: Clear communication and practical support from scope through reporting.
 scopeTitle: Product categories we commonly support
-scopeLead: We work across consumer product categories.
+scopeLead: We support work across common consumer product categories.
 actionsTitle: Ready to move forward?
-actionsLead: Use direct channels for quotes, sample submissions, and technical questions.
+actionsLead: Choose the fastest path for quotes, sample submission, and technical questions.
 ctaTitle: Need help choosing the right path?
-ctaDescription: Tell us what you are working on and we will point you to the right team.
+ctaDescription: Tell us what you are working on, your timeline, and what decision you need to make. We will point you to the right team.
 ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
 ctaSecondaryLabel: Explore Testing Services

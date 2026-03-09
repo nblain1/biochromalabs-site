@@ -15,7 +15,7 @@ customerFitEyebrow: Customer fit
 customerFitTitle: Who this page is for
 relatedPathwayEyebrow: Related pathway
 ctaTitle: Need a testing plan?
-ctaDescription: Share your product type, timeline, and quality priorities. We will connect you to the right team.
+ctaDescription: Tell us what needs to be tested, your timeline, and whether the work supports release, investigation, or shelf-life decisions. We will connect you to the right team.
 ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
 ctaSecondaryLabel: Explore Quality Systems

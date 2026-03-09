@@ -29,8 +29,8 @@
       "linkLabel": "Download Submission Form"
     },
     {
-      "title": "Quality",
-      "description": "Review accreditation and quality-system information.",
+      "title": "Quality Systems",
+      "description": "Review documented systems, accreditation context, and data-integrity controls.",
       "href": "/quality",
       "icon": "ri-shield-check-line",
       "linkLabel": "Explore Quality Systems"
@@ -62,11 +62,11 @@
       "title": "New testing projects",
       "description": "Email sales for project scoping, timelines, and quote requests.",
       "href": "mailto:sales@biochromalabs.com",
-      "label": "Email sales & quotes"
+      "label": "Email Sales & Quotes"
     },
     {
-      "title": "Technical department support",
-      "description": "Use the contact page to reach chemistry, microbiology, product development, or operations.",
+      "title": "Department routing",
+      "description": "Open the contact page to reach chemistry, microbiology, product development, or operations.",
       "href": "/contact",
       "label": "Open Contact Page"
     },
@@ -74,10 +74,10 @@
       "title": "Sample submission resources",
       "description": "Download the submission form for incoming sample logistics.",
       "href": "/documents/submission-form.pdf",
-      "label": "Download submission form"
+      "label": "Download Submission Form"
     },
     {
-      "title": "Call BioChroma Labs",
+      "title": "Call BioChroma",
       "description": "Call the lab during business hours for urgent coordination.",
       "href": "tel:9724549166",
       "label": "(972) 454-9166"
