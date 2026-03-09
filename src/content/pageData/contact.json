@@ -19,21 +19,21 @@
       "description": "Use this route for chemistry testing questions, methods, quotes, and project scoping.",
       "email": "chemistryinfo@biochromalabs.com",
       "serviceHref": "/capabilities",
-      "serviceLabel": "View Testing Services"
+      "serviceLabel": "Explore Testing Services"
     },
     {
       "title": "Microbiology Inquiries",
       "description": "Use this route for microbiology testing questions, sample context, and related documentation.",
       "email": "microinfo@biochromalabs.com",
       "serviceHref": "/capabilities",
-      "serviceLabel": "View Testing Services"
+      "serviceLabel": "Explore Testing Services"
     },
     {
       "title": "Product Development Support",
       "description": "Use this route for formulation, troubleshooting, development planning, and launch-readiness support.",
       "email": "sales@biochromalabs.com",
       "serviceHref": "/product-development",
-      "serviceLabel": "View Product Development"
+      "serviceLabel": "Explore Product Development"
     },
     {
       "title": "Sample Submission / Courier Coordination",
@@ -56,13 +56,13 @@
       "title": "Sample Submission Form",
       "description": "Download the official submission form for incoming samples.",
       "href": "/documents/submission-form.pdf",
-      "label": "Download submission form"
+      "label": "Download Submission Form"
     },
     {
       "title": "Courier Scheduling",
       "description": "Email operations for pickup and delivery coordination.",
       "href": "mailto:courierpickup@biochromalabs.com",
-      "label": "Email courier operations"
+      "label": "Email Courier Operations"
     }
   ],
   "existingClients": {
@@ -74,7 +74,7 @@
         "href": "tel:9724549166"
       },
       {
-        "label": "Email sales & quotes",
+        "label": "Email Sales & Quotes",
         "href": "mailto:sales@biochromalabs.com"
       }
     ]

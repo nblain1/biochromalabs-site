@@ -19,7 +19,7 @@ ctaTitle: Start a technical conversation
 ctaDescription: Share your scope, timeline, and priorities. We will connect you with the right scientific and operational leads for practical next steps.
 ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
-ctaSecondaryLabel: Explore Capabilities
+ctaSecondaryLabel: Explore Testing Services
 ctaSecondaryHref: /capabilities
 ---
 BioChroma is structured to help clients make confident decisions with disciplined science, clear project ownership, and consistent communication from kickoff through final reporting.

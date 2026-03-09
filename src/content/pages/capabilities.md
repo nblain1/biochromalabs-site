@@ -18,7 +18,7 @@ ctaTitle: Need a testing plan?
 ctaDescription: Share your product type, timeline, and quality priorities. We will connect you to the right team.
 ctaPrimaryLabel: Contact BioChroma
 ctaPrimaryHref: /contact
-ctaSecondaryLabel: View quality standards
+ctaSecondaryLabel: Explore Quality Systems
 ctaSecondaryHref: /quality
 ---
 Use this page to identify the testing pathway that best fits your product, timeline, and quality questions.

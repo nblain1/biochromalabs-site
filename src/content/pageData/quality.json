@@ -7,7 +7,7 @@
       "icon": "ri-shield-check-line",
       "summary": "Quality oversight starts with documented procedures, scope discipline, and clear follow-through when something needs correction.",
       "heroSummary": "Documented procedures, change control, and issue follow-through support consistent project execution.",
-      "heroLinkLabel": "View detail",
+      "heroLinkLabel": "View details",
       "elements": [
         {
           "name": "Documented Procedures",
@@ -51,7 +51,7 @@
       "icon": "ri-user-star-line",
       "summary": "Reliable results depend on trained personnel, clear review practices, and methods that are appropriate for the work being performed.",
       "heroSummary": "Training, competency review, and technical oversight support reliable work and clear accountability.",
-      "heroLinkLabel": "View detail",
+      "heroLinkLabel": "View details",
       "elements": [
         {
           "name": "Training & Onboarding",
@@ -95,7 +95,7 @@
       "icon": "ri-settings-5-line",
       "summary": "Instruments and laboratory conditions require maintenance, checks, and monitoring so methods can operate inside intended conditions.",
       "heroSummary": "Maintenance, calibration, and environmental controls help keep instruments operating as intended.",
-      "heroLinkLabel": "View detail",
+      "heroLinkLabel": "View details",
       "elements": [
         {
           "name": "Instrument Lifecycle Control",
@@ -139,7 +139,7 @@
       "icon": "ri-database-2-line",
       "summary": "Quality depends on records that are attributable, reviewable, and retained in a way that supports traceability over time.",
       "heroSummary": "Controlled records, review practices, and retained histories support traceable results.",
-      "heroLinkLabel": "View detail",
+      "heroLinkLabel": "View details",
       "elements": [
         {
           "name": "Controlled Data Systems",
