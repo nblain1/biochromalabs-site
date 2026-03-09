@@ -69,9 +69,9 @@ const { copy, data, Content } = await getPageContent('quality');
               </span>
               <h2 class="text-white font-bold text-lg group-hover:text-emerald-400 transition-colors">{item.subtitle}</h2>
             </div>
-            <p class="text-slate-400 text-sm leading-relaxed mb-4">{item.summary}</p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-4">{item.heroSummary ?? item.summary}</p>
             <span class="text-emerald-400 text-sm font-semibold flex items-center gap-1 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all">
-              Examine Protocol <i class="ri-arrow-down-line"></i>
+              {item.heroLinkLabel ?? "View detail"} <i class="ri-arrow-down-line"></i>
             </span>
           </a>
         ))}
@@ -135,7 +135,7 @@ const { copy, data, Content } = await getPageContent('quality');
                             </div>
                             <div>
                               <h4 class="text-2xl font-bold text-white">{element.name}</h4>
-                              <p class="text-emerald-400/60 text-xs font-bold uppercase tracking-widest mt-1">Audit Trail Information</p>
+                              <p class="text-emerald-400/60 text-xs font-bold uppercase tracking-widest mt-1">{element.modalLabel ?? "Quality system detail"}</p>
                             </div>
                           </div>
                           <button
@@ -150,15 +150,15 @@ const { copy, data, Content } = await getPageContent('quality');
                         
                         <div class="space-y-6">
                           <div class="bg-emerald-500/5 border-l-4 border-emerald-500 p-5 rounded-r-lg">
-                            <h5 class="text-white text-sm font-bold uppercase tracking-widest mb-2">Core Implementation</h5>
+                            <h5 class="text-white text-sm font-bold uppercase tracking-widest mb-2">{element.quoteHeading ?? "Core implementation"}</h5>
                             <p class="text-slate-300 leading-relaxed italic">
-                              "{element.implementation}"
+                              "{element.quoteText ?? element.implementation}"
                             </p>
                           </div>
 
                           <div class="space-y-4">
                             <h5 class="text-emerald-400 text-sm font-semibold uppercase tracking-wider border-b border-emerald-400/20 pb-2">
-                              Technical Deep-Dive & Protocol
+                              {element.deepDiveHeading ?? "Technical detail"}
                             </h5>
                             <p class="text-slate-300 leading-relaxed text-lg">
                               {element.deepDive}
@@ -169,9 +169,9 @@ const { copy, data, Content } = await getPageContent('quality');
                             <div class="flex gap-3 items-start">
                               <i class="ri-information-fill text-emerald-400 text-xl mt-0.5"></i>
                               <div>
-                                <p class="text-white text-sm font-semibold mb-1">Audit Readiness Note</p>
+                                <p class="text-white text-sm font-semibold mb-1">{element.calloutTitle ?? "Why it matters"}</p>
                                 <p class="text-slate-400 text-xs leading-relaxed">
-                                  Full SOPs, historical logs, and specific validation reports for this element are digitally stored in LabLynx and available for review during client site audits or regulatory inspections.
+                                  {element.calloutBody}
                                 </p>
                               </div>
                             </div>
