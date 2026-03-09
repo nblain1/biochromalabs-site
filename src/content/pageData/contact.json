@@ -1,43 +1,43 @@
 {
   "routingSteps": [
     {
-      "label": "Step 1",
-      "text": "Choose the area that best matches your need."
+      "label": "Department contacts",
+      "text": "Analytical, microbiology, product development, and logistics contacts are listed below."
     },
     {
-      "label": "Step 2",
-      "text": "Email the department directly with your product type, timeline, and question."
+      "label": "Project context",
+      "text": "Include your product type, timeline, and question so the right team can respond efficiently."
     },
     {
-      "label": "Step 3",
-      "text": "Call the main office for urgent coordination."
+      "label": "Urgent coordination",
+      "text": "Call the main office when timing or delivery needs require immediate follow-up."
     }
   ],
   "pathways": [
     {
       "title": "Analytical / Chemistry Inquiries",
-      "description": "Use this route for chemistry testing questions, methods, quotes, and project scoping.",
+      "description": "Chemistry testing support for methods, quotes, project scope, and analytical questions.",
       "email": "chemistryinfo@biochromalabs.com",
       "serviceHref": "/capabilities",
       "serviceLabel": "Explore Testing Services"
     },
     {
       "title": "Microbiology Inquiries",
-      "description": "Use this route for microbiology testing questions, sample context, and related documentation.",
+      "description": "Microbiology support for contamination risk, sample context, and related testing questions.",
       "email": "microinfo@biochromalabs.com",
       "serviceHref": "/capabilities",
       "serviceLabel": "Explore Testing Services"
     },
     {
       "title": "Product Development Support",
-      "description": "Use this route for formulation, troubleshooting, development planning, and launch-readiness support.",
+      "description": "Development support for formulation work, troubleshooting, planning, and launch-readiness questions.",
       "email": "sales@biochromalabs.com",
       "serviceHref": "/product-development",
       "serviceLabel": "Explore Product Development"
     },
     {
       "title": "Sample Logistics / Courier Coordination",
-      "description": "Use this route for sample logistics, pickups, receiving windows, and shipping coordination.",
+      "description": "Operational support for pickups, receiving windows, sample delivery, and shipping coordination.",
       "email": "courierpickup@biochromalabs.com",
       "serviceHref": "/documents/submission-form.pdf",
       "serviceLabel": "Download Submission Form"
@@ -49,7 +49,7 @@
       "Dallas, TX 75235"
     ],
     "mapUrl": "https://maps.google.com/?q=1420+Viceroy+Dr,+Dallas,+TX+75235",
-    "responseNote": "For faster routing, include your product type, sample matrix, timeline, and reporting need."
+    "responseNote": "Including product type, sample matrix, timeline, and reporting needs helps BioChroma route your request efficiently."
   },
   "sampleResources": [
     {
@@ -67,7 +67,7 @@
   ],
   "existingClients": {
     "title": "Existing Clients",
-    "description": "If you are following up on current or prior work, include a project name or sample ID so we can route you faster.",
+    "description": "For ongoing or prior work, include a project name or sample ID so BioChroma can locate the correct record quickly.",
     "actions": [
       {
         "label": "Call main office",

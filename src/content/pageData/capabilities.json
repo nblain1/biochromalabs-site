@@ -1,6 +1,6 @@
 {
   "orientation": {
-    "title": "What this page covers",
+    "title": "Testing disciplines",
     "description": "BioChroma supports release-related, investigation, and shelf-life work across chemistry, microbiology, and stability.",
     "points": [
       "Analytical testing for identity, potency, and chemistry-related quality questions",
@@ -93,11 +93,11 @@
     }
   ],
   "customerFit": {
-    "title": "Who this page is for",
+    "title": "Teams and decisions we support",
     "segments": [
-      "Founders and brand teams preparing products for market",
-      "Manufacturers and operations teams managing release timelines",
-      "QA/QC and regulatory teams preparing for review or audit"
+      "Brand and product teams preparing products for release or market entry",
+      "Manufacturing and operations teams managing timelines, investigations, and continuity",
+      "Quality, technical, and regulatory teams supporting review, documentation, and shelf-life decisions"
     ]
   },
   "relatedPathway": {
