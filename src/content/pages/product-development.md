@@ -4,7 +4,7 @@ layoutTitle: Product Development Support | BioChroma Labs
 layoutDescription: Product development support for products moving toward market.
 heroEyebrow: Product Development Support
 heroTitle: Product development support for products moving toward market.
-heroLead: Work with BioChroma on formulation support, development testing plans, and launch readiness.
+heroLead: Work with BioChroma on formulation support, development testing plans, and launch readiness across pharmaceutical and consumer product programs.
 heroMediaTitle: Development support
 heroMediaText: Development decisions informed by lab data.
 overviewTitle: How we help
@@ -14,7 +14,7 @@ signalsLead: Engage Product Development when technical uncertainty is slowing pr
 outputsTitle: What support outputs can look like
 outputsLead: Concrete guidance designed to help teams make the next decision.
 areasTitle: Who we support
-areasLead: Use BioChroma for focused development support across team types.
+areasLead: We support development-stage work across OTC, topical, oral, sterile, injectable, and consumer product programs.
 fitTitle: Where this fits in your process
 fitLead: We support work from early concept through late-stage readiness.
 connectionTitle: How Product Development connects to Testing Services
